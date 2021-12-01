@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  15 NOV 2021 13:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  1 DEC 2021 16:32
 entering extended mode
 **./ML_PAPER_SINGLE_COLUMN.tex
 (ML_PAPER_SINGLE_COLUMN.tex
@@ -660,15 +660,152 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.c
 fg)))
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip69
+\fb@frw=\dimen261
+\fb@frh=\dimen262
+\FrameRule=\dimen263
+\FrameSep=\dimen264
+)
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\multico
+l.sty
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count320
+\mult@box=\box61
+\multicol@leftmargin=\dimen265
+\c@unbalance=\count321
+\c@collectmore=\count322
+\doublecol@number=\count323
+\multicoltolerance=\count324
+\multicolpretolerance=\count325
+\full@width=\dimen266
+\page@free=\dimen267
+\premulticols=\dimen268
+\postmulticols=\dimen269
+\multicolsep=\skip70
+\multicolbaselineskip=\skip71
+\partial@page=\box62
+\last@line=\box63
+\maxbalancingoverflow=\dimen270
+\mult@rightbox=\box64
+\mult@grightbox=\box65
+\mult@gfirstbox=\box66
+\mult@firstbox=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\c@minrows=\count326
+\c@columnbadness=\count327
+\c@finalcolumnbadness=\count328
+\last@try=\dimen271
+\multicolovershoot=\dimen272
+\multicolundershoot=\dimen273
+\mult@nat@firstbox=\box105
+\colbreak@box=\box106
+\mc@col@check@num=\count329
+)
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/nomencl\nomencl.sty
+Package: nomencl 2020/12/29 v5.5 Nomenclature package
+
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.t
+ex
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.
+tex
+\XKV@toks=\toks31
+\XKV@tempa@toks=\toks32
+)
+\XKV@depth=\count330
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\tocbasi
+c.sty
+Package: tocbasic 2020/09/21 v3.32 KOMA-Script package (handling toc-files)
+
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase
+.sty
+Package: scrbase 2020/09/21 v3.32 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfil
+e.sty
+Package: scrlfile 2020/09/21 v3.32 KOMA-Script package (file load hooks)
+
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfil
+e-hook.sty
+Package: scrlfile-hook 2020/09/21 v3.32 KOMA-Script package (using LaTeX hooks)
+
+
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo
+.sty
+Package: scrlogo 2020/09/21 v3.32 KOMA-Script package (logo)
+))))
+\scr@dte@tocline@numberwidth=\skip72
+\scr@dte@tocline@numbox=\box107
+)
+Package tocbasic Info: babel extension for `nlo' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 187.
+Package tocbasic Info: babel extension for `nls' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 188.
+\nomlabelwidth=\dimen274
+\nom@tempdim=\dimen275
+\nomitemsep=\skip73
+)
+\@nomenclaturefile=\write3
+\openout3 = `ML_PAPER_SINGLE_COLUMN.nlo'.
+
+Package nomencl Info: Writing nomenclature file ML_PAPER_SINGLE_COLUMN.nlo on i
+nput line 28.
+
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip69
-\bibsep=\skip70
+\bibhang=\skip74
+\bibsep=\skip75
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count320
+\c@NAT@ctr=\count331
 )
-LaTeX Font Info:    Trying to load font information for T1+stix on input line 4
-4.
+LaTeX Font Info:    Trying to load font information for T1+stix on input line 5
+7.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\t1stix.fd
 File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
@@ -676,55 +813,55 @@ File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
 (ML_PAPER_SINGLE_COLUMN.aux)
 \openout1 = `ML_PAPER_SINGLE_COLUMN.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 57.
 LaTeX Font Info:    Trying to load font information for LS1+stix on input line 
-44.
+57.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 57.
 LaTeX Font Info:    Trying to load font information for LS2+stix on input line 
-44.
+57.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    ... okay on input line 57.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pd
 f.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count321
-\scratchdimen=\dimen261
-\scratchbox=\box61
-\nofMPsegments=\count322
-\nofMParguments=\count323
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count324
-\MPscratchDim=\dimen262
-\MPnumerator=\count325
-\makeMPintoPDFobject=\count326
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count332
+\scratchdimen=\dimen276
+\scratchbox=\box108
+\nofMPsegments=\count333
+\nofMParguments=\count334
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count335
+\MPscratchDim=\dimen277
+\MPnumerator=\count336
+\makeMPintoPDFobject=\count337
+\everyMPtoPDFconversion=\toks34
 )
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstop
 df-base.sty
@@ -740,7 +877,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
 )
-Package hyperref Info: Link coloring ON on input line 44.
+Package hyperref Info: Link coloring ON on input line 57.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.st
 y
@@ -754,14 +891,14 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ttitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count327
+\c@section@level=\count338
 )
-LaTeX Info: Redefining \ref on input line 44.
-LaTeX Info: Redefining \pageref on input line 44.
-LaTeX Info: Redefining \nameref on input line 44.
+LaTeX Info: Redefining \ref on input line 57.
+LaTeX Info: Redefining \pageref on input line 57.
+LaTeX Info: Redefining \nameref on input line 57.
  (ML_PAPER_SINGLE_COLUMN.out) (ML_PAPER_SINGLE_COLUMN.out)
-\@outlinefile=\write3
-\openout3 = `ML_PAPER_SINGLE_COLUMN.out'.
+\@outlinefile=\write4
+\openout4 = `ML_PAPER_SINGLE_COLUMN.out'.
 
 
 *geometry* driver: auto-detecting
@@ -798,116 +935,141 @@ LaTeX Info: Redefining \nameref on input line 44.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\verbatim@out=\write4
-\openout4 = `ML_PAPER_SINGLE_COLUMN.abs'.
+\verbatim@out=\write5
+\openout5 = `ML_PAPER_SINGLE_COLUMN.abs'.
 
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-155.
+164.
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 )
-[0
-
-{C:/Users/RWLBRA001/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 166.
+ne 165.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 166.
+e 165.
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 166
+LaTeX Font Info:    Trying to load font information for U+msa on input line 165
 .
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 166
+LaTeX Font Info:    Trying to load font information for U+msb on input line 165
 .
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 166.
+ine 165.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 166.
+e 165.
  (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 166.
+ne 165.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 166.
+e 165.
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 166.
+e 165.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 )
-Overfull \hbox (117.0831pt too wide) detected at line 166
+[0
+
+{C:/Users/RWLBRA001/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+Overfull \hbox (117.0831pt too wide) detected at line 175
 []
  []
 
 (ML_PAPER_SINGLE_COLUMN.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 166.
+Package hyperref Warning: Ignoring empty anchor on input line 175.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 166.
+Package hyperref Warning: Ignoring empty anchor on input line 175.
 
-<thumbnails/cas-email.jpeg, id=11, 225.84375pt x 225.84375pt>
+<thumbnails/cas-email.jpeg, id=12, 225.84375pt x 225.84375pt>
 File: thumbnails/cas-email.jpeg Graphic file (type jpg)
 <use thumbnails/cas-email.jpeg>
-Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 166.
+Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 175.
 (pdftex.def)             Requested size: 7.99838pt x 8.0pt.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-66.
+75.
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 
-Package hyperref Warning: Ignoring empty anchor on input line 166.
+Package hyperref Warning: Ignoring empty anchor on input line 175.
 
-No file ML_PAPER_SINGLE_COLUMN.bbl.
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 2
-62.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
+83.
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-[1 <./thumbnails/cas-email.jpeg>] (ML_PAPER_SINGLE_COLUMN.aux)
+[1 <./thumbnails/cas-email.jpeg>] (ML_PAPER_SINGLE_COLUMN.nls)
+Underfull \hbox (badness 10000) has occurred while \output is active
+$[]$
+ []
+
+[2]
+Overfull \hbox (26.63849pt too wide) in alignment at lines 269--278
+[][][] 
+ []
+
+
+Overfull \hbox (24.57478pt too wide) in alignment at lines 285--295
+[][][][] 
+ []
+
+No file ML_PAPER_SINGLE_COLUMN.bbl.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+$[]$
+ []
+
+[3
+
+] (ML_PAPER_SINGLE_COLUMN.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `ML_PAPER_SINGLE_COLUMN.out' has not changed.
 
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 15640 strings out of 479616
- 225413 string characters out of 2863101
- 500039 words of memory out of 3000000
- 32529 multiletter control sequences out of 15000+200000
- 476370 words of font info for 103 fonts, out of 3000000 for 9000
+ 16936 strings out of 479616
+ 249432 string characters out of 2863101
+ 574290 words of memory out of 3000000
+ 33774 multiletter control sequences out of 15000+200000
+ 498428 words of font info for 147 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,9n,88p,292b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 113i,13n,116p,329b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm
 -super-t1.enc}{C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
 /stix/stix-t1.enc}{C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/d
@@ -917,11 +1079,13 @@ ms/MiKTeX/fonts/type1/public/stix/STIXGeneral-Italic.pfb><C:/Users/RWLBRA001/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/stix/STIXGeneral-Regular.pfb><C:
 /Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss
 0900.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public/c
-m-super/sftt0800.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/stix/stix-mathrm.pfb>
-Output written on ML_PAPER_SINGLE_COLUMN.pdf (2 pages, 169483 bytes).
+m-super/sfsx0900.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/cm-super/sftt0800.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/stix/stix-mathit.pfb><C:/Users/RWLBRA001/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/stix/stix-mathrm.pfb>
+Output written on ML_PAPER_SINGLE_COLUMN.pdf (4 pages, 206594 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
+ 77 PDF objects out of 1000 (max. 8388607)
+ 18 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

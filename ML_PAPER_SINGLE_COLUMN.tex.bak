@@ -18,7 +18,20 @@
 %% single column output.
 
 \documentclass[a4paper,fleqn]{cas-sc}
+% Use to make nonmenclature
+\usepackage{framed} % Framing content
 
+\usepackage{multicol} % Multiple columns environment
+
+\usepackage{nomencl} % Nomenclature package
+
+\makenomenclature
+
+\setlength{\nomitemsep}{-\parskip} % Baseline skip between items
+
+\renewcommand*\nompreamble{\begin{multicols}{2}}
+
+\renewcommand*\nompostamble{\end{multicols}}
 % If the frontmatter runs over more than one page
 % use the longmktitle option.
 
@@ -47,13 +60,13 @@
 \def\textpagefraction{.001}
 
 % Short title
-%\shorttitle{<short title of the paper for running head>}    
+\shorttitle{}    
 
 % Short author
 \shortauthors{B.T. Rawlins et el.}  
 
 % Main title of the paper
-\title [mode = title]{This is a Title}  
+\title [mode = title]{Validation of an integrated data-driven surrogate model and a thermo-hydraulic network based model to determine boiler operational loads using a fully connected mixture density network}  
 
 % Title footnote mark
 % eg: \tnotemark[1]
@@ -138,11 +151,7 @@
 
 % Here goes the abstract
 \begin{abstract}
-ss fhvosjv \\
-sfjvnsfklnvjksfn\\
-skfnvkpsfn \\
-sjkvnsf skfnv\\
-ksfvn;sfv,  
+A data-driven surrogate model is proposed for a 620$MW_e$ sub-critical power boiler. The surrogate model was developed using computational fluid dynamic (CFD) simulation data. The simulation data covered a varied range of inputs.
 \end{abstract}
 
 % Use if graphical abstract is present
@@ -152,15 +161,15 @@ ksfvn;sfv,
 
 % Research highlights
 \begin{highlights}
-\item Computational Fluid Dynamics capture trend of boiler heat uptake at reduced loads.
-\item Computational Fluid Dynamics capture trend of boiler heat uptake at reduced loads.
-\item Computational Fluid Dynamics capture trend of boiler heat uptake at reduced loads.
+\item Development of mixture density network using simulation data.
+\item Model based on validated CFD model of a 620 $MW_e$ sub-critical boiler.
+\item Surrogate model prediction errors are below 10\%.
 \end{highlights}
 
 % Keywords
 % Each keyword is seperated by \sep
 \begin{keywords}
-Mixture density model \sep Steady State \sep \sep
+Mixture density network \sep Surrogate modelling \sep Boiler operation \sep 
 \end{keywords}
 
 \maketitle
@@ -168,6 +177,21 @@ Mixture density model \sep Steady State \sep \sep
 % Main text
 \section{Introduction}\label{intro}
 
+The use of neural networks for the modelling of energy systems has been awesome. Optimization of a plant is extremely fun
+
+
+\newpage
+\begin{table*}[!t]   
+
+\begin{framed}
+
+\nomenclature{$abbreviation$}{explanation for the abbreviation}
+\nomenclature{$CFD$}{Computational Fluid Dynamics}
+\printnomenclature
+
+\end{framed}
+
+\end{table*}
 % Numbered list
 % Use the style of numbering in square brackets.
 % If nothing is used, default style will be taken.
@@ -225,21 +249,62 @@ Mixture density model \sep Steady State \sep \sep
 %% appendix sections are then done as normal sections
 %% \appendix
 
-\section{Mathematical Model}
+\section{Data generation}
+This section aims to highlight the important and relevant theory behind ANN
 
-\subsection{Artificial neural networks}
+\subsection{CFD model setup}
+The CFD mdoel is from the passt paper data is good
 
-\subsection{Mixture density networks}
+Validated for variable load range as shown by Rawlins et al()
 
-\section{Case study boiler configuration}
+\subsection{Simulated dataset}
 
 \section{Model development}
 
+\subsection{Network based model integration}
+
+
 \subsection{Hyper parameter tuning}
+
+table of NN and MDN data comparison for tuning
+
+\clearpage
+\begin{table}[h!]
+\caption{Hyperparameter search space for fully connected NN and MDN models}\label{tbl_tuning}
+\begin{tabular*}{\tblwidth}{p{0.5\textwidth}p{0.24\textwidth}p{0.24\textwidth}}
+\toprule
+ Parameter& NN search space & MDN search space \\ % Table header row
+\midrule
+ Number of distributions & - & 2,3,4  \\
+ Number of neurons per layer & 10, 40, 80, 100  & 10, 40, 80, 100\\
+ Learning rates & 1e-3, 1e-4, 1e-5 &  1e-3, 1e-4, 1e-5   \\
+ Mini batch sizes  & 16, 32, 64 & 16, 32, 64  \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+
+
+\begin{table}[h!]
+\caption{Design of experiments input ranges for  simulations}\label{tbl_doe}
+\begin{tabular*}{\tblwidth}{p{0.5\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}}
+\toprule
+ Input variable& Min& Max& Units \\ % Table header row
+\midrule
+ Fuel flow rate for mills 1 to 6 & & & $kg/s$ \\
+ Fuel proximate analysis moisture mass fraction, $Y_{H_2O}$ & 0.025 & 0.085 & $kg/kg$ \\
+ Fuel proximate analysis ash mass fraction, $Y_{ash}$  & 0.259 & 0.559 & $kg/kg$ \\
+ Platen SH fouling thermal resistance, $R_{platen}$  & 0.004 & 0.007 & $m^2K/W$ \\
+ Final SH fouling thermal resistance, $R_{final}$  &0.01 & 0.017 & $m^2K/W$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
 
 \section{Results and discussion}
 
 \section{Conclusion}
+
+The present work has shown it is possible
 % To print the credit authorship contribution details
 \printcredits
 
