@@ -22,7 +22,7 @@
 \usepackage{framed} % Framing content
 
 \usepackage{multicol} % Multiple columns environment
-
+\usepackage{amsmath}
 \usepackage{nomencl} % Nomenclature package
 
 \makenomenclature
@@ -250,13 +250,41 @@ The use of neural networks for the modelling of energy systems has been awesome.
 %% \appendix
 
 \section{Data generation}
-This section aims to highlight the important and relevant theory behind ANN
+A steady-state multiphase non-thermal equilibrium CFD model was used to generate the target data, subsequently used for training of an appropriate machine learning model. 
 
 \subsection{CFD model setup}
-The CFD mdoel is from the passt paper data is good
 
-Validated for variable load range as shown by Rawlins et al()
+The current study makes use of the commercial CFD software package ANSYS\textsuperscript{\textregistered} Fluent 2019 R3 to resolve the fluid flow, heat transfer and combustion processes for 620$MW_e$ utility scale boiler. The computational domain is modelled on a symmetry plane half way through the depth of the boiler. This was done to reduce the cell count Figure () highlights the computational domain. The validation of the model and mesh specifics are provided in the works of Rawlins et al (REFERENCE).\\
 
+The general conservation equations, which include, continuity, momentum, energy and species, were solved using a Eulerian approach. The subsequent equations can be seen in Equation (\ref{eqn_cfd}).
+
+\begin{flalign} \label{eqn_cfd}
+&\frac{\partial}{\partial x_{i}}(\rho \bar{u}_{i})=S_{m} \nonumber &&\\
+&\frac{\partial}{\partial x_{i}}(\rho_{eff} u_{i}u_{j})+\frac{\partial \overline{p}}{\partial x_{j}}=\frac{\partial}{\partial x_{i}}\left[\mu\left\{\frac{\partial u_{j}}{\partial x_{i}}+\frac{\partial u_{i}}{\partial x_{j}}-\frac{2}{3}\delta_{ij}\frac{\partial u_{i}}{\partial x_{i}}\right\}\right]+\frac{\partial}{\partial x_{i}}(-\rho\overline{u_{i}^{'}u_{j}^{'}})+S_m \nonumber &&\\
+&\frac{\partial }{\partial x_{i}} (u_{i}[\rho E+p])=\frac{\partial }{\partial x_{j}}\left[\lambda\frac{\partial T_{g}}{\partial x_{j}}\right] +S_{h} &&\\
+&\frac{\partial}{\partial x_{i}}(\rho u_{j}Y_{k})=-\frac{\partial}{\partial x_{j}}(\vec{J_{k}})+ \sum_r R_{j,r} + S_{k} \nonumber && \\
+&k = 1,2,3...N \nonumber
+\end{flalign}
+
+The P1 radiation model was used to resolve the radiative field in the domain. Particle transport was modelled using a multiphase approach with further details provided in the validation study of Rawlins et al(REFERENCE). The combustion follows a four step sequential process, beginning with the evaporation of moisture in the fuel, followed by devolatilization of the volatiles, which made use of single rate model, finally the phenomena of char burnout would follow making use of the kinetic/diffusion model of Baum and Street (REFERENCE). For the gas-phase reactions the turbulence-chemistry interaction was approximated using the eddy dissipation-finite rate model. A summary of the combustion models used by the CFD model are provided in Table (). \\
+\clearpage
+\begin{table}[h!]
+\caption{CFD model utilized combustion model summary}\label{tbl_combustion}
+\begin{tabular*}{\tblwidth}{p{0.4\textwidth}p{0.29\textwidth}p{0.29\textwidth}}
+\toprule
+ Model & Equation & Constants \\ % Table header row
+\midrule
+Devolatilization - Single rate (REFERNCE) & $\frac{dm_{vol}}{dt} = R_{vol}(m_{0,vol}-m_{vol}),\,\,\,R_{vol} = A_{vol}exp\left(\frac{E_{a,vol}}{RT_p}\right)$ & $A_{vol} = 2\times10^5 [s^{-1}],\,\,\,E_{a,vol} = 6.7\times10^7 [J/kmol]$   \\
+Char burnout - Kinetic/diffusion model (REFERCNE) & $\frac{dm_{char}}{dt} = -A_p p_{O_{2}} \frac{R_{diff}R_c}{R_{diff} + R_c}$& $A_{c} = 0.0053 [kg/m^2sPa]\,\,\,\,\,\,\,\,\,\,E_{a,c} = 8.37\times10^7 [J/kmol]$\\
+Gaseous reactions - Eddy Dissipation Model (REFRECNE) & & \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+The simulations were solved using the SIMPLE pressure–velocity coupling scheme. The pressure term 
+was discretized using the PRESTO! scheme. Momentum, species and energy equations were discretized 
+using the second-order upwind scheme and the turbulent kinetic energy and dissipation rate using
+the first-order upwind scheme. The convergence criteria for the simulation model was set to 1e-3 for the continuity equation, 1e-4 for the velocity equations and 1e-6 for the remaining transport equations.
 \subsection{Simulated dataset}
 
 \section{Model development}

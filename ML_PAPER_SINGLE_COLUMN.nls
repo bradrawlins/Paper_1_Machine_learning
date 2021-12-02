@@ -2,5 +2,6 @@
 \begin{thenomenclature} 
 \nomgroup{A}
   \item [{$abbreviation$}]\begingroup explanation for the abbreviation\nomeqref {0}\nompageref{2}
+  \item [{$CFD$}]\begingroup Computational Fluid Dynamics\nomeqref {0}\nompageref{2}
 
 \end{thenomenclature}

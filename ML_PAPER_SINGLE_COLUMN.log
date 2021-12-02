@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  1 DEC 2021 16:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  2 DEC 2021 18:38
 entering extended mode
 **./ML_PAPER_SINGLE_COLUMN.tex
 (ML_PAPER_SINGLE_COLUMN.tex
@@ -1032,17 +1032,39 @@ LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 [1 <./thumbnails/cas-email.jpeg>] (ML_PAPER_SINGLE_COLUMN.nls)
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+
+ []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
 [2]
-Overfull \hbox (26.63849pt too wide) in alignment at lines 269--278
+Overfull \hbox (26.62419pt too wide) in alignment at lines 273--281
 [][][] 
  []
 
 
-Overfull \hbox (24.57478pt too wide) in alignment at lines 285--295
+Underfull \hbox (badness 10000) has occurred while \output is active
+$[]$
+ []
+
+[3
+
+]
+Overfull \hbox (26.63849pt too wide) in alignment at lines 302--311
+[][][] 
+ []
+
+
+Overfull \hbox (24.57478pt too wide) in alignment at lines 318--328
 [][][][] 
  []
 
@@ -1052,24 +1074,21 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
-[3
+[4
 
 ] (ML_PAPER_SINGLE_COLUMN.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `ML_PAPER_SINGLE_COLUMN.out' has not changed.
 
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16936 strings out of 479616
- 249432 string characters out of 2863101
- 574290 words of memory out of 3000000
- 33774 multiletter control sequences out of 15000+200000
- 498428 words of font info for 147 fonts, out of 3000000 for 9000
+ 16944 strings out of 479616
+ 249530 string characters out of 2863101
+ 576395 words of memory out of 3000000
+ 33779 multiletter control sequences out of 15000+200000
+ 501531 words of font info for 149 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,13n,116p,329b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 113i,15n,116p,786b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm
 -super-t1.enc}{C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
 /stix/stix-t1.enc}{C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/d
@@ -1081,11 +1100,12 @@ pData/Local/Programs/MiKTeX/fonts/type1/public/stix/STIXGeneral-Regular.pfb><C:
 0900.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public/c
 m-super/sfsx0900.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/cm-super/sftt0800.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/stix/stix-mathit.pfb><C:/Users/RWLBRA001/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/stix/stix-mathrm.pfb>
-Output written on ML_PAPER_SINGLE_COLUMN.pdf (4 pages, 206594 bytes).
+TeX/fonts/type1/public/stix/stix-mathex.pfb><C:/Users/RWLBRA001/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/stix/stix-mathit.pfb><C:/Users/RWLBRA001/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathrm.pfb>
+Output written on ML_PAPER_SINGLE_COLUMN.pdf (5 pages, 236692 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
+ 89 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
