@@ -187,6 +187,18 @@ The use of neural networks for the modelling of energy systems has been awesome.
 
 \nomenclature{$abbreviation$}{explanation for the abbreviation}
 \nomenclature{$CFD$}{Computational Fluid Dynamics}
+\nomenclature{$u,\,\,\,[m/s]$}{Directional velocity}
+\nomenclature{$p,\,\,\,[Pa]$}{Pressure}
+\nomenclature{$E,\,\,\,[J/kg]$}{Total energy}
+\nomenclature{$Y_k,\,\,\,[kg/kg]$}{Mass fraction of species $k$}
+\nomenclature{$T_g,\,\,\,[K]$}{Gas temperature}
+\nomenclature{$\lambda,\,\,\,[W/mK]$}{Thermal conductivity}
+\nomenclature{$\mu,\,\,\,[Pa.s]$}{Viscosity}
+\nomenclature{$S,\,\,\,[kg/m^3]$}{Mass source term}
+\nomenclature{$S_m,\,\,\,[N/m^3]$}{Momentum source term}
+\nomenclature{$S_h,\,\,\,[W/m^3]$}{Energy source term}
+\nomenclature{$S_k,\,\,\,[kg/m^3]$}{Species source term}
+\nomenclature{$J_k,\,\,\,[kg/m^3]$}{Diffusion flux of species $k$}
 \printnomenclature
 
 \end{framed}
@@ -249,37 +261,82 @@ The use of neural networks for the modelling of energy systems has been awesome.
 %% appendix sections are then done as normal sections
 %% \appendix
 
+\section{Applicable machine learning theory}
+
 \section{Data generation}
-A steady-state multiphase non-thermal equilibrium CFD model was used to generate the target data, subsequently used for training of an appropriate machine learning model. 
+
+A steady-state multiphase non-thermal equilibrium CFD model was used to generate the target data, and was subsequently used for training/development of an appropriate machine learning model.
 
 \subsection{CFD model setup}
 
-The current study makes use of the commercial CFD software package ANSYS\textsuperscript{\textregistered} Fluent 2019 R3 to resolve the fluid flow, heat transfer and combustion processes for 620$MW_e$ utility scale boiler. The computational domain is modelled on a symmetry plane half way through the depth of the boiler. This was done to reduce the cell count Figure () highlights the computational domain. The validation of the model and mesh specifics are provided in the works of Rawlins et al (REFERENCE).\\
+The current study makes use of the commercial CFD software package ANSYS\textsuperscript{\textregistered} Fluent 2019 R3 to resolve the fluid flow, heat transfer and combustion processes for 620$MW_e$ utility scale boiler burning a pulverised fuel. The computational domain is modelled on a symmetry plane half way through the depth of the boiler. This was done to reduce the cell count. Figure () highlights the computational domain and illustrates the important boundary conditions.\\ 
+
+(INSERT FIGURE)
 
 The general conservation equations, which include, continuity, momentum, energy and species, were solved using a Eulerian approach. The subsequent equations can be seen in Equation (\ref{eqn_cfd}).
 
 \begin{flalign} \label{eqn_cfd}
-&\frac{\partial}{\partial x_{i}}(\rho \bar{u}_{i})=S_{m} \nonumber &&\\
+&\frac{\partial}{\partial x_{i}}(\rho \bar{u}_{i})=S \nonumber &&\\
 &\frac{\partial}{\partial x_{i}}(\rho_{eff} u_{i}u_{j})+\frac{\partial \overline{p}}{\partial x_{j}}=\frac{\partial}{\partial x_{i}}\left[\mu\left\{\frac{\partial u_{j}}{\partial x_{i}}+\frac{\partial u_{i}}{\partial x_{j}}-\frac{2}{3}\delta_{ij}\frac{\partial u_{i}}{\partial x_{i}}\right\}\right]+\frac{\partial}{\partial x_{i}}(-\rho\overline{u_{i}^{'}u_{j}^{'}})+S_m \nonumber &&\\
 &\frac{\partial }{\partial x_{i}} (u_{i}[\rho E+p])=\frac{\partial }{\partial x_{j}}\left[\lambda\frac{\partial T_{g}}{\partial x_{j}}\right] +S_{h} &&\\
-&\frac{\partial}{\partial x_{i}}(\rho u_{j}Y_{k})=-\frac{\partial}{\partial x_{j}}(\vec{J_{k}})+ \sum_r R_{j,r} + S_{k} \nonumber && \\
-&k = 1,2,3...N \nonumber
+&\frac{\partial}{\partial x_{i}}(\rho u_{j}Y_{k})=-\frac{\partial}{\partial x_{j}}(\vec{J_{k}})+ \sum_r R_{j,r} + S_{k} \nonumber && 
 \end{flalign}
 
-The P1 radiation model was used to resolve the radiative field in the domain. Particle transport was modelled using a multiphase approach with further details provided in the validation study of Rawlins et al(REFERENCE). The combustion follows a four step sequential process, beginning with the evaporation of moisture in the fuel, followed by devolatilization of the volatiles, which made use of single rate model, finally the phenomena of char burnout would follow making use of the kinetic/diffusion model of Baum and Street (REFERENCE). For the gas-phase reactions the turbulence-chemistry interaction was approximated using the eddy dissipation-finite rate model.
+The resolution of the Reynolds stress term found in the momentum equation, $-\rho\overline{u_{i}^{'}u_{j}^{'}}$, was approximated using the Boussineq equation \citep{Versteeg2007}. In the present study the realizable k-$\varepsilon$ turbulence model was utilized to address the turbulence closure problem, this model was selected for its applicability in modelling the effects of coal-fired swirl burners \citep{Modlinski2010}.\\
+
+The P1 radiation model was used to resolve the radiative field in the domain. Particle transport was modelled using a multiphase approach with further details on the modelling is provided in the validation study of Rawlins et al \citep{Rawlins2021}. The combustion follows a four step sequential process, beginning with the heating and evaporation of moisture in the fuel, followed by devolatilization of the volatiles, the phenomena of char burnout would follow, finally the gas phase reactions can commence. The char oxidation reaction was set so that the product species is $CO$. For the gas-phase reactions the turbulence-chemistry interaction was approximated using the eddy dissipation model. A summary of the combustion equations and constants are provided in Table \ref{tbl_combust} for the interested reader.\\
+
+\begin{table}[h!]
+\caption{Summary of combustion models and constants used in the CFD model}\label{tbl_combust}
+\begin{tabular*}{\tblwidth}{p{0.35\textwidth}p{0.35\textwidth}p{0.25\textwidth}}
+\toprule
+Model & Equation/s & Constant/s\\
+\midrule
+\multicolumn{3}{l}{\textit{Devolatilization}} \\ % Table header row
+Single rate kinetic &$\frac{dm_{vol}}{dt} = R_{vol}(m_{0,vol}-m_{vol})$, $R_{vol} = A_{vol}exp\left(\frac{E_{a,vol}}{RT_p}\right)$  & $A_{vol} = 2\times10^5 [s^{-1}]$, $ E_{a,vol} = 6.7\times10^7 [J/kmol]$ - \cite{Sheng2004} \\
+\multicolumn{3}{l}{\textit{Char oxidation}} \\
+Diffusion/kinetic - \citep{Baum1971} & $\frac{dm_{char}}{dt} = -A_p p_{O_{2}} \frac{R_{diff}R_c}{R_{diff} + R_c}$, $R_{c} = A_{c}exp\left(\frac{E_{a,c}}{RT_p}\right)$, $R_{diff} = \frac{5\times10^{-12}}{d_p} \left(\frac{T_g+T_p}{2}\right)^{0.75}$ & $A_{c} = 0.0053 [kg/m^2sPa]$, $E_{a,c} = 8.37\times10^7 [J/kmol]$ - \cite{Sheng2004}\\
+\multicolumn{3}{l}{\textit{Gaseous reactions of volatiles and $CO$}} \\
+Eddy dissipation model - \cite{Ansys} & $R_{k,r,P} =\vartheta_{k,r}M_{w,k}AB\rho\frac{\varepsilon}{k}min\left(\frac{\sum_{p} Y_p}{\sum_{j}\vartheta_{j,r}M_{w,j}}\right)$, $R_{k,r,R} =\vartheta_{k,r}M_{w,k}A\rho\frac{\varepsilon}{k}min\left(\frac{Y_R}{\varepsilon_{R,r}M_{w,R}}\right)$ & $A=4.0$, $B=0.5$\\
+\bottomrule
+\end{tabular*}
+\end{table}
 
 The simulations were solved using the SIMPLE pressure–velocity coupling scheme. The pressure term 
 was discretized using the PRESTO! scheme. Momentum, species and energy equations were discretized 
 using the second-order upwind scheme and the turbulent kinetic energy and dissipation rate using
-the first-order upwind scheme. The convergence criteria for the simulation model was set to 1e-3 for the continuity equation, 1e-4 for the velocity equations and 1e-6 for the remaining transport equations.
+the first-order upwind scheme. The convergence criteria for the simulation model was set to $1\times10^{-3}$ for the continuity equation, $1\times10^{-4}$ for the velocity equations, $1\times10^{-6}$ for the remaining transport equations, and $1\times10^{-4}$ for monitored key parameters.
+
 \subsection{Simulated dataset}
+design of experiments (DOE) was conducted to generate a set of 180 simulation cases.
+
+Use inputs based on 
+
+High low values for DOE what mapping etc
+
+\begin{table}[h!]
+\caption{Design of experiments input ranges for  simulations}\label{tbl_doe}
+\begin{tabular*}{\tblwidth}{p{0.5\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}}
+\toprule
+ Input variable& Min& Max& Units \\ % Table header row
+\midrule
+ Fuel flow rate for mills 1 to 6 & & & $kg/s$ \\
+ Fuel proximate analysis moisture mass fraction, $Y_{H_2O}$ & 0.025 & 0.085 & $kg/kg$ \\
+ Fuel proximate analysis ash mass fraction, $Y_{ash}$  & 0.259 & 0.559 & $kg/kg$ \\
+ Platen SH fouling thermal resistance, $R_{platen}$  & 0.004 & 0.007 & $m^2K/W$ \\
+ Final SH fouling thermal resistance, $R_{final}$  &0.01 & 0.017 & $m^2K/W$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
 
 \section{Model development}
 
-\subsection{Network based model integration}
+The present work makes use of two types of machine learning models, namely a standard artificial neural network (ANN) and a mixture density designated model connected to a standard ANN (MDN-ANN). The following section will discuss the hyper parameter tuning and final selected model configuration. The programming language Python 3.7.8 and the Tensorflow machine learning libraries were utilized in the present study. 
+
+\subsection{Data pre-processing}
 
 
-\subsection{Hyper parameter tuning}
+\subsection{Hyper parameter tuning \& final model selection}
 
 table of NN and MDN data comparison for tuning
 
@@ -300,20 +357,7 @@ table of NN and MDN data comparison for tuning
 
 
 
-\begin{table}[h!]
-\caption{Design of experiments input ranges for  simulations}\label{tbl_doe}
-\begin{tabular*}{\tblwidth}{p{0.5\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}}
-\toprule
- Input variable& Min& Max& Units \\ % Table header row
-\midrule
- Fuel flow rate for mills 1 to 6 & & & $kg/s$ \\
- Fuel proximate analysis moisture mass fraction, $Y_{H_2O}$ & 0.025 & 0.085 & $kg/kg$ \\
- Fuel proximate analysis ash mass fraction, $Y_{ash}$  & 0.259 & 0.559 & $kg/kg$ \\
- Platen SH fouling thermal resistance, $R_{platen}$  & 0.004 & 0.007 & $m^2K/W$ \\
- Final SH fouling thermal resistance, $R_{final}$  &0.01 & 0.017 & $m^2K/W$ \\
-\bottomrule
-\end{tabular*}
-\end{table}
+
 
 \section{Results and discussion}
 
@@ -328,7 +372,7 @@ The present work has shown it is possible
 \bibliographystyle{cas-model2-names}
 
 % Loading bibliography database
-\bibliography{}
+\bibliography{ML_paper}
 
 % Biography
 \bio{}

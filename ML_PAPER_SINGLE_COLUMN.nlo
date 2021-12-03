@@ -1,2 +1,14 @@
 \nomenclatureentry{a$abbreviation$@[{$abbreviation$}]\begingroup explanation for the abbreviation\nomeqref {0}|nompageref}{2}
 \nomenclatureentry{a$CFD$@[{$CFD$}]\begingroup Computational Fluid Dynamics\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$u,\,\,\,[m/s]$@[{$u,\,\,\,[m/s]$}]\begingroup Directional velocity\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$p,\,\,\,[Pa]$@[{$p,\,\,\,[Pa]$}]\begingroup Pressure\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$E,\,\,\,[J/kg]$@[{$E,\,\,\,[J/kg]$}]\begingroup Total energy\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$Y_k,\,\,\,[kg/kg]$@[{$Y_k,\,\,\,[kg/kg]$}]\begingroup Mass fraction of species $k$\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$T_g,\,\,\,[K]$@[{$T_g,\,\,\,[K]$}]\begingroup Gas temperature\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$\lambda,\,\,\,[W/mK]$@[{$\lambda,\,\,\,[W/mK]$}]\begingroup Thermal conductivity\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$\mu,\,\,\,[Pa.s]$@[{$\mu,\,\,\,[Pa.s]$}]\begingroup Viscosity\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$S,\,\,\,[kg/m^3]$@[{$S,\,\,\,[kg/m^3]$}]\begingroup Mass source term\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$S_m,\,\,\,[N/m^3]$@[{$S_m,\,\,\,[N/m^3]$}]\begingroup Momentum source term\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$S_h,\,\,\,[W/m^3]$@[{$S_h,\,\,\,[W/m^3]$}]\begingroup Energy source term\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$S_k,\,\,\,[kg/m^3]$@[{$S_k,\,\,\,[kg/m^3]$}]\begingroup Species source term\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$J_k,\,\,\,[kg/m^3]$@[{$J_k,\,\,\,[kg/m^3]$}]\begingroup Diffusion flux of species $k$\nomeqref {0}|nompageref}{2}

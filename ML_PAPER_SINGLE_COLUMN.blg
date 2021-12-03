@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ML_PAPER_SINGLE_COLUMN.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+The style file: cas-model2-names.bst
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+Database file #1: ML_paper.bib
+Warning--to sort, need author, editor, or key in Ansys
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Warning--empty author and editor in Ansys
+Warning--empty pages in Rawlins2021
+You've used 6 entries,
+            2990 wiz_defined-function locations,
+            784 strings with 7402 characters,
+and the built_in function-call counts, 3655 in all, are:
+= -- 281
+> -- 110
+< -- 3
++ -- 43
+- -- 37
+* -- 391
+:= -- 522
+add.period$ -- 20
+call.type$ -- 6
+change.case$ -- 44
+chr.to.int$ -- 6
+cite$ -- 11
+duplicate$ -- 284
+empty$ -- 300
+format.name$ -- 54
+if$ -- 690
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 53
+newline$ -- 47
+num.names$ -- 22
+pop$ -- 104
+preamble$ -- 1
+purify$ -- 36
+quote$ -- 0
+skip$ -- 85
+stack$ -- 0
+substring$ -- 139
+swap$ -- 190
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 48
+warning$ -- 3
+while$ -- 21
+width$ -- 0
+write$ -- 102
+(There were 3 warnings)

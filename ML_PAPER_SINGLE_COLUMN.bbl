@@ -1,0 +1,61 @@
+\begin{thebibliography}{6}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Book
+\bibitem[{Ans(2021)}]{Ansys}
+, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{{ANSYS Fluent Theory Guide}}.
+\newblock \bibinfo{edition}{20} ed., \bibinfo{publisher}{Ansys Inc.}
+%Type = Article
+\bibitem[{Baum and Street(1971)}]{Baum1971}
+\bibinfo{author}{Baum, M.}, \bibinfo{author}{Street, P.}, \bibinfo{year}{1971}.
+\newblock \bibinfo{title}{{Predicting the combustion behaviour of coal
+  particles}}.
+\newblock \bibinfo{journal}{Combustion science and Technolodgy}
+  \bibinfo{volume}{3}, \bibinfo{pages}{231}.
+%Type = Article
+\bibitem[{Modlinski(2010)}]{Modlinski2010}
+\bibinfo{author}{Modlinski, N.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{{Computational modeling of a utility boiler
+  tangentially-fired furnace retrofitted with swirl burners}}.
+\newblock \bibinfo{journal}{Fuel Processing Technology} \bibinfo{volume}{91},
+  \bibinfo{pages}{1601--1608}.
+\newblock \DOIprefix\doi{10.1016/j.fuproc.2010.06.008}.
+%Type = Inproceedings
+\bibitem[{Rawlins et~al.(2021)Rawlins, Laubscher and Rousseau}]{Rawlins2021}
+\bibinfo{author}{Rawlins, B.T.}, \bibinfo{author}{Laubscher, R.},
+  \bibinfo{author}{Rousseau, P.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{{No Title}}, in: \bibinfo{editor}{Skatulla, S.}
+  (Ed.), \bibinfo{booktitle}{12th South African Conference on Computational and
+  Applied Mechanics (SACAM2020)}, \bibinfo{address}{Cape Town}.
+%Type = Article
+\bibitem[{Sheng et~al.(2004)Sheng, Moghtaderi, Gupta and Wall}]{Sheng2004}
+\bibinfo{author}{Sheng, C.}, \bibinfo{author}{Moghtaderi, B.},
+  \bibinfo{author}{Gupta, R.}, \bibinfo{author}{Wall, T.F.},
+  \bibinfo{year}{2004}.
+\newblock \bibinfo{title}{{A computational fluid dynamics based study of the
+  combustion characteristics of coal blends in pulverised coal-fired furnace}}.
+\newblock \bibinfo{journal}{Fuel} \bibinfo{volume}{83},
+  \bibinfo{pages}{1543--1552}.
+\newblock \DOIprefix\doi{10.1016/j.fuel.2004.02.011}.
+%Type = Book
+\bibitem[{Versteeg and Malalasekera(2007)}]{Versteeg2007}
+\bibinfo{author}{Versteeg, H.}, \bibinfo{author}{Malalasekera, W.},
+  \bibinfo{year}{2007}.
+\newblock \bibinfo{title}{{Introduction to Computational Fluid Dynamics, The
+  finite volume method}}.
+\newblock \bibinfo{edition}{Second} ed., \bibinfo{publisher}{Pearson Prentice
+  Hall}.
+\newblock \DOIprefix\doi{10.1002/9781119369189}.
+
+\end{thebibliography}

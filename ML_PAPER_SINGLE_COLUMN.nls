@@ -1,7 +1,18 @@
 
 \begin{thenomenclature} 
 \nomgroup{A}
+  \item [{$\lambda\,\,\,[W/mK]$}]\begingroup Thermal conductivity\nomeqref {0}\nompageref{2}
+  \item [{$\mu\,\,\,[Pa.s]$}]\begingroup Viscosity\nomeqref {0}\nompageref{2}
   \item [{$abbreviation$}]\begingroup explanation for the abbreviation\nomeqref {0}\nompageref{2}
   \item [{$CFD$}]\begingroup Computational Fluid Dynamics\nomeqref {0}\nompageref{2}
+  \item [{$E\,\,\,[J/kg]$}]\begingroup Total energy\nomeqref {0}\nompageref{2}
+  \item [{$p\,\,\,[Pa]$}]\begingroup Pressure\nomeqref {0}\nompageref{2}
+  \item [{$S\,\,\,[kg/m^3]$}]\begingroup Mass source term\nomeqref {0}\nompageref{2}
+  \item [{$S_h\,\,\,[W/m^3]$}]\begingroup Energy source term\nomeqref {0}\nompageref{2}
+  \item [{$S_k\,\,\,[kg/m^3]$}]\begingroup Species source term\nomeqref {0}\nompageref{2}
+  \item [{$S_m\,\,\,[N/m^3]$}]\begingroup Momentum source term\nomeqref {0}\nompageref{2}
+  \item [{$T_g\,\,\,[K]$}]\begingroup Gas temperature\nomeqref {0}\nompageref{2}
+  \item [{$u\,\,\,[m/s]$}]\begingroup Directional velocity\nomeqref {0}\nompageref{2}
+  \item [{$Y_k\,\,\,[kg/kg]$}]\begingroup Mass fraction of species $k$\nomeqref {0}\nompageref{2}
 
 \end{thenomenclature}
