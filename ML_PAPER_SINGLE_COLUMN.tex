@@ -177,7 +177,7 @@ Mixture density network \sep Surrogate modelling \sep Boiler operation \sep
 % Main text
 \section{Introduction}\label{intro}
 
-The use of neural networks for the modelling of energy systems has been awesome. Optimization of a plant is extremely fun
+The use of neural networks for the modelling of energy systems has been awesome. Optimization of a plant is extremely fun. Using the surrogate model development the model can be developed
 
 
 \newpage
@@ -199,6 +199,8 @@ The use of neural networks for the modelling of energy systems has been awesome.
 \nomenclature{$S_h,\,\,\,[W/m^3]$}{Energy source term}
 \nomenclature{$S_k,\,\,\,[kg/m^3]$}{Species source term}
 \nomenclature{$J_k,\,\,\,[kg/m^3]$}{Diffusion flux of species $k$}
+\nomenclature{$\rho,\,\,\,[kg/m^3]$}{Gas density}
+\nomenclature{$\rho_{eff},\,\,\,[kg/m^3]$}{Effective density}
 \printnomenclature
 
 \end{framed}
@@ -312,7 +314,10 @@ design of experiments (DOE) was conducted to generate a set of 180 simulation ca
 
 Use inputs based on 
 
+Preprocessing data?
+
 High low values for DOE what mapping etc
+The aim is to predict the heat flux profile  based on operational inputs. These inputs are listed in the table ()
 
 \begin{table}[h!]
 \caption{Design of experiments input ranges for  simulations}\label{tbl_doe}
@@ -321,6 +326,7 @@ High low values for DOE what mapping etc
  Input variable& Min& Max& Units \\ % Table header row
 \midrule
  Fuel flow rate for mills 1 to 6 & & & $kg/s$ \\
+ Excess air & & & $\%$\\
  Fuel proximate analysis moisture mass fraction, $Y_{H_2O}$ & 0.025 & 0.085 & $kg/kg$ \\
  Fuel proximate analysis ash mass fraction, $Y_{ash}$  & 0.259 & 0.559 & $kg/kg$ \\
  Platen SH fouling thermal resistance, $R_{platen}$  & 0.004 & 0.007 & $m^2K/W$ \\
@@ -329,11 +335,10 @@ High low values for DOE what mapping etc
 \end{tabular*}
 \end{table}
 
-\section{Model development}
+\section{Surrogate model development}
 
 The present work makes use of two types of machine learning models, namely a standard artificial neural network (ANN) and a mixture density designated model connected to a standard ANN (MDN-ANN). The following section will discuss the hyper parameter tuning and final selected model configuration. The programming language Python 3.7.8 and the Tensorflow machine learning libraries were utilized in the present study. 
-
-\subsection{Data pre-processing}
+\subsection{Model configuration}
 
 
 \subsection{Hyper parameter tuning \& final model selection}
@@ -355,12 +360,21 @@ table of NN and MDN data comparison for tuning
 \end{tabular*}
 \end{table}
 
-
-
-
-
 \section{Results and discussion}
+\subsection{Hyper-parameter tuning results}
 
+It can be seen that the best model based on the hyperparameter tuning and model selestcion is the MDN model. In some cases it is better 
+\subsection{Multiple load validation}
+
+Validation includes the use of integrating the surrogate model with a network based-process model of the water/steam side of the utility boiler under investigation. A C\# script is used to access the Python API available in the process modelling software, Flownex SE\textsuperscript{\textregistered} 2021. This allows for predictions to be made using the trained MDN model. The most probable predictions are retrieved using the surrogate model script and transferred to the respective process model components. A schematic of the surrogate and process models integration is provided in Figure \ref{fig_int_model}.
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.65]{INTEGRATED_MODEL}S
+	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
+\end{figure}
+
+Measured plant data for a 100\%, 81\% and 60\% MCR load ratings was made available and is to be used compare the accuracy of the integrated model. 
 \section{Conclusion}
 
 The present work has shown it is possible

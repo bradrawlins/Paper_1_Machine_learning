@@ -12,3 +12,5 @@
 \nomenclatureentry{a$S_h,\,\,\,[W/m^3]$@[{$S_h,\,\,\,[W/m^3]$}]\begingroup Energy source term\nomeqref {0}|nompageref}{2}
 \nomenclatureentry{a$S_k,\,\,\,[kg/m^3]$@[{$S_k,\,\,\,[kg/m^3]$}]\begingroup Species source term\nomeqref {0}|nompageref}{2}
 \nomenclatureentry{a$J_k,\,\,\,[kg/m^3]$@[{$J_k,\,\,\,[kg/m^3]$}]\begingroup Diffusion flux of species $k$\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$\rho,\,\,\,[kg/m^3]$@[{$\rho,\,\,\,[kg/m^3]$}]\begingroup Gas density\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{a$\rho_{eff},\,\,\,[kg/m^3]$@[{$\rho_{eff},\,\,\,[kg/m^3]$}]\begingroup Effective density\nomeqref {0}|nompageref}{2}
