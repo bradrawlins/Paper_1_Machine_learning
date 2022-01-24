@@ -11,28 +11,28 @@ Warning--empty author and editor in Ansys
 Warning--empty pages in Rawlins2021
 You've used 6 entries,
             2990 wiz_defined-function locations,
-            784 strings with 7402 characters,
-and the built_in function-call counts, 3655 in all, are:
-= -- 281
+            786 strings with 7581 characters,
+and the built_in function-call counts, 3692 in all, are:
+= -- 284
 > -- 110
 < -- 3
 + -- 43
 - -- 37
-* -- 391
-:= -- 522
-add.period$ -- 20
+* -- 400
+:= -- 524
+add.period$ -- 21
 call.type$ -- 6
 change.case$ -- 44
 chr.to.int$ -- 6
 cite$ -- 11
-duplicate$ -- 284
-empty$ -- 300
+duplicate$ -- 287
+empty$ -- 303
 format.name$ -- 54
-if$ -- 690
+if$ -- 697
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 53
-newline$ -- 47
+missing$ -- 54
+newline$ -- 48
 num.names$ -- 22
 pop$ -- 104
 preamble$ -- 1
@@ -41,7 +41,7 @@ quote$ -- 0
 skip$ -- 85
 stack$ -- 0
 substring$ -- 139
-swap$ -- 190
+swap$ -- 195
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
@@ -49,5 +49,5 @@ type$ -- 48
 warning$ -- 3
 while$ -- 21
 width$ -- 0
-write$ -- 102
+write$ -- 104
 (There were 3 warnings)

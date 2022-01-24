@@ -35,9 +35,12 @@
 \bibitem[{Rawlins et~al.(2021)Rawlins, Laubscher and Rousseau}]{Rawlins2021}
 \bibinfo{author}{Rawlins, B.T.}, \bibinfo{author}{Laubscher, R.},
   \bibinfo{author}{Rousseau, P.}, \bibinfo{year}{2021}.
-\newblock \bibinfo{title}{{No Title}}, in: \bibinfo{editor}{Skatulla, S.}
-  (Ed.), \bibinfo{booktitle}{12th South African Conference on Computational and
-  Applied Mechanics (SACAM2020)}, \bibinfo{address}{Cape Town}.
+\newblock \bibinfo{title}{{Validation of a thermal non-equilibrium
+  Eulerian-Eulerian multiphase model of a 620 MWe pulverized fuel power
+  boiler.}}, in: \bibinfo{editor}{Skatulla, S.} (Ed.), \bibinfo{booktitle}{12th
+  South African Conference on Computational and Applied Mechanics (SACAM2020)},
+  \bibinfo{publisher}{MATEC Web of Conferences}, \bibinfo{address}{Cape Town}.
+\newblock \DOIprefix\doi{https://doi.org/10.1051/matecconf/202134700004}.
 %Type = Article
 \bibitem[{Sheng et~al.(2004)Sheng, Moghtaderi, Gupta and Wall}]{Sheng2004}
 \bibinfo{author}{Sheng, C.}, \bibinfo{author}{Moghtaderi, B.},

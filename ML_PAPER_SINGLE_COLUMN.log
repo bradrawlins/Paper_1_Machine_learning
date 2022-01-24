@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  7 DEC 2021 15:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  24 JAN 2022 16:48
 entering extended mode
 **./ML_PAPER_SINGLE_COLUMN.tex
 (ML_PAPER_SINGLE_COLUMN.tex
@@ -1032,58 +1032,43 @@ LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 [1 <./thumbnails/cas-email.jpeg>] (ML_PAPER_SINGLE_COLUMN.nls)
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
-
- []
-
-
-Underfull \hbox (badness 5189) in paragraph at lines 298--298
-[]|$[] \LS1/stix/m/n/9 = \LS1/stix/m/it/9 R[]\LS1/stix/m/n/9 .\LS1/stix/m/it/9 
-m[] \LS1/stix/m/n/9 * \LS1/stix/m/it/9 m[]\LS1/stix/m/n/9 /$\T1/cmss/m/n/9 , $\
-LS1/stix/m/it/9 R[] \LS1/stix/m/n/9 =
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 300--300
-[]|$[] \LS1/stix/m/n/9 = *\LS1/stix/m/it/9 A[]p[][]$\T1/cmss/m/n/9 , $\LS1/stix
-/m/it/9 R[] \LS1/stix/m/n/9 =
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 300--301
-[]|$\LS1/stix/m/it/9 A[] \LS1/stix/m/n/9 = 0\LS1/stix/m/it/9 :\LS1/stix/m/n/9 0
-053[\LS1/stix/m/it/9 kg\LS1/stix/m/n/9 _\LS1/stix/m/it/9 m[]sPa\LS1/stix/m/n/9 
-]$\T1/cmss/m/n/9 ,
- []
-
-
-Underfull \hbox (badness 1194) in paragraph at lines 302--302
-[]|$\LS1/stix/m/it/9 R[] \LS1/stix/m/n/9 = \LS1/stix/m/it/9 #[]M[]AB[]min []$\
-T1/cmss/m/n/9 ,
- []
-
-
-Overfull \hbox (12.58908pt too wide) in alignment at lines 293--304
-[][][] 
- []
-
+<CFD_GEOMETRY.png, id=23, 922.94812pt x 489.32813pt>
+File: CFD_GEOMETRY.png Graphic file (type png)
+<use CFD_GEOMETRY.png>
+Package pdftex.def Info: CFD_GEOMETRY.png  used on input line 276.
+(pdftex.def)             Requested size: 461.47293pt x 244.66345pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
-[2]
-Overfull \hbox (24.57478pt too wide) in alignment at lines 324--335
+[2 <./CFD_GEOMETRY.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 307--307
+[]|$\LS1/stix/m/it/9 R[] \LS1/stix/m/n/9 = \LS1/stix/m/it/9 #[]M[]AB[]min []$\
+T1/cmss/m/n/9 ,
+ []
+
+
+Overfull \hbox (0.87648pt too wide) in alignment at lines 295--309
+[][][] 
+ []
+
+
+Overfull \hbox (24.57478pt too wide) in alignment at lines 326--337
 [][][][] 
  []
 
@@ -1093,17 +1078,22 @@ $[]$
  []
 
 [3]
-Overfull \hbox (26.63849pt too wide) in alignment at lines 351--360
+Underfull \hbox (badness 10000) has occurred while \output is active
+$[]$
+ []
+
+[4]
+Overfull \hbox (26.63849pt too wide) in alignment at lines 353--362
 [][][] 
  []
 
-<INTEGRATED_MODEL.png, id=60, 732.48656pt x 412.54124pt>
+<INTEGRATED_MODEL.png, id=67, 732.48656pt x 412.54124pt>
 File: INTEGRATED_MODEL.png Graphic file (type png)
 <use INTEGRATED_MODEL.png>
-Package pdftex.def Info: INTEGRATED_MODEL.png  used on input line 377.
+Package pdftex.def Info: INTEGRATED_MODEL.png  used on input line 375.
 (pdftex.def)             Requested size: 476.11061pt x 268.14864pt.
 
-Overfull \hbox (12.91585pt too wide) in paragraph at lines 377--378
+Overfull \hbox (12.91585pt too wide) in paragraph at lines 375--376
  [][]\T1/cmss/m/n/9 S 
  []
 
@@ -1112,26 +1102,26 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
-[4
+[5
 
  <./INTEGRATED_MODEL.png>])
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
-[5] (ML_PAPER_SINGLE_COLUMN.aux)
+[6] (ML_PAPER_SINGLE_COLUMN.aux)
 Package rerunfilecheck Info: File `ML_PAPER_SINGLE_COLUMN.out' has not changed.
 
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17004 strings out of 479616
- 250503 string characters out of 2863101
- 589658 words of memory out of 3000000
- 33823 multiletter control sequences out of 15000+200000
+ 17014 strings out of 479616
+ 250665 string characters out of 2863101
+ 590835 words of memory out of 3000000
+ 33831 multiletter control sequences out of 15000+200000
  502355 words of font info for 150 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,15n,116p,869b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 113i,15n,116p,875b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm
 -super-t1.enc}{C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
 /stix/stix-t1.enc}{C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/d
@@ -1147,9 +1137,9 @@ TeX/fonts/type1/public/cm-super/sftt0800.pfb><C:/Users/RWLBRA001/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/stix/stix-mathex.pfb><C:/Users/RWLBRA001/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathit.pfb><C:/Users/RW
 LBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathrm.pfb>
-Output written on ML_PAPER_SINGLE_COLUMN.pdf (6 pages, 324939 bytes).
+Output written on ML_PAPER_SINGLE_COLUMN.pdf (7 pages, 392673 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
