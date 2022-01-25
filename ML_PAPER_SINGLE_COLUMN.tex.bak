@@ -337,7 +337,7 @@ The aim is to predict the heat flux profile  based on operational inputs. These 
 \end{tabular*}
 \end{table}
 
-\section{Surrogate model development}
+\section{Model development}
 
 The present work makes use of two types of machine learning models, namely a standard artificial neural network (ANN) and a mixture density designated model connected to a standard ANN (MDN-ANN). The following section will discuss the hyper parameter tuning and final selected model configuration. The programming language Python 3.7.8 and the Tensorflow machine learning libraries were utilized in the present study. 
 \subsection{Model configuration}
