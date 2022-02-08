@@ -349,12 +349,31 @@ table of NN and MDN data comparison for tuning
 
 \clearpage
 \begin{table}[h!]
-\caption{Hyperparameter search space for fully connected NN and MDN models}\label{tbl_tuning}
+\caption{Hyper-parameter search space for fully connected NN and MDN models}\label{tbl_tuning}
 \begin{tabular*}{\tblwidth}{p{0.5\textwidth}p{0.24\textwidth}p{0.24\textwidth}}
 \toprule
  Parameter& NN search space & MDN search space \\ % Table header row
 \midrule
  Number of distributions & - & 2,3,4  \\
+ Number of layers & 2,3,4 & 2,3,4\\
+ Number of neurons per layer & 10, 40, 80, 100  & 10, 40, 80, 100\\
+ Learning rates & 1e-3, 1e-4, 1e-5 &  1e-3, 1e-4, 1e-5   \\
+ Mini batch sizes  & 16, 32, 64 & 16, 32, 64  \\
+\bottomrule
+\end{tabular*}
+\end{table}
+Table \ref{tbl_tuning} highlights the hyper-parameter search spaces for both the ANN and ANN-MDN model. The ANN-MDN has an added parameter namely the number of additional distributions the ANN-MDN would fit to the output data. \\
+
+The hyper-parameter search was conducted in a sequential manner with the number of layers and neurons per layer being the initial step, after which the learning rates were varied, followed by the batch sizes. The ANN-MDN hyper-parameter tuning was conducted in a similar manner only that an additional step is required to establish the best amount of distributions.
+
+\begin{table}[h!]
+\caption{ANN model selection results}\label{tbl_tuning}
+\begin{tabular*}{\tblwidth}{p{0.5\textwidth}p{0.24\textwidth}p{0.24\textwidth}}
+\toprule
+ Parameter& NN search space & MDN search space \\ % Table header row
+\midrule
+ Number of distributions & - & 2,3,4  \\
+ Number of layers & 2,3,4 & 2,3,4\\
  Number of neurons per layer & 10, 40, 80, 100  & 10, 40, 80, 100\\
  Learning rates & 1e-3, 1e-4, 1e-5 &  1e-3, 1e-4, 1e-5   \\
  Mini batch sizes  & 16, 32, 64 & 16, 32, 64  \\
@@ -363,9 +382,6 @@ table of NN and MDN data comparison for tuning
 \end{table}
 
 \section{Results and discussion}
-\subsection{Hyper-parameter tuning results}
-
-It can be seen that the best model based on the hyperparameter tuning and model selestcion is the MDN model. In some cases it is better 
 \subsection{Multiple load validation}
 
 Validation includes the use of integrating the surrogate model with a network based-process model of the water/steam side of the utility boiler under investigation. A C\# script is used to access the Python API available in the process modelling software, Flownex SE\textsuperscript{\textregistered} 2021. This allows for predictions to be made using the trained MDN model. The most probable predictions are retrieved using the surrogate model script and transferred to the respective process model components. A schematic of the surrogate and process models integration is provided in Figure \ref{fig_int_model}.
@@ -376,7 +392,12 @@ Validation includes the use of integrating the surrogate model with a network ba
 	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
 \end{figure}
 
-Measured plant data for a 100\%, 81\% and 60\% MCR load ratings was made available and is to be used compare the accuracy of the integrated model. 
+Measured plant data for a 100\%, 81\% and 60\% MCR load ratings was made available and is to be used compare the accuracy of the integrated model.
+\subsection{Utility boiler response to poor fuel combustion}
+The fuel quality is an important factor when determining the 
+Fuels with total moisture contents exceeding 
+The following results illustrate the effects poor quality fuel has on the case studies boiler operational. The study made use of the developed surrogate model to investigate the steady state operation of the boiler burning poor quality coal.  
+In this section the results of a study conducted  
 \section{Conclusion}
 
 The present work has shown it is possible
