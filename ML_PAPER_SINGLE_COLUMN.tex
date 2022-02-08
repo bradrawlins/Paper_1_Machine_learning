@@ -269,7 +269,7 @@ The use of neural networks for the modelling of energy systems has been awesome.
 A steady-state multiphase non-thermal equilibrium CFD model was used to generate the target data, which was subsequently used for training/development of an appropriate surrogate model.
 
 \subsection{CFD model setup}
-The current study makes use of the commercial CFD software package ANSYS\textsuperscript{\textregistered} Fluent 2019 R3 to resolve the fluid flow, heat transfer and combustion processes for a 620$MW_e$ utility scale coal fired boiler. The computational domain is modelled on a symmetry plane half way through the depth of the boiler. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and illustrates the important boundary conditions.\\ 
+The current study makes use of the commercial CFD software package ANSYS\textsuperscript{\textregistered} Fluent 2019 R3 to resolve the fluid flow, heat transfer and combustion processes for a 620$MW_e$ utility scale coal fired boiler. The computational domain is modelled on a symmetry plane half way through the depth of the boiler. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and defines the important boundary conditions.\\ 
 
 \begin{figure}[h!]
 	\centering
@@ -288,7 +288,7 @@ The general conservation equations, which include, continuity, momentum, energy 
 
 The resolution of the Reynolds stress term found in the momentum equation, $-\rho\overline{u_{i}^{'}u_{j}^{'}}$, was approximated using the Boussineq equation \citep{Versteeg2007}. In the present study the realizable k-$\varepsilon$ turbulence model was utilized to address the turbulence closure problem, this model was selected for its applicability in modelling the effects of coal-fired swirl burners \citep{Modlinski2010}.\\
 
-The P1 radiation model was used to resolve the radiative field in the domain. Particle transport was modelled using a multiphase approach with further details on the modelling is provided in the validation study of Rawlins et al \citep{Rawlins2021}. The combustion follows a four step sequential process, beginning with the heating and evaporation of moisture in the fuel, followed by devolatilization of the volatiles, the phenomena of char burnout would follow, finally the gas phase reactions can commence. The char oxidation reaction was set so that the product species is $CO$. For the gas-phase reactions the turbulence-chemistry interaction was approximated using the eddy dissipation model (EDM). A summary of the combustion equations and constants are provided in Table \ref{tbl_combust} for the interested reader.\\
+The P1 radiation model was used to resolve the radiative field in the domain. Particle transport was modelled using a multiphase approach, further details on the approach are provided in the validation study of Rawlins et al \citep{Rawlins2021}. The combustion follows a four step sequential process, beginning with the heating and evaporation of the moisture present in the fuel, followed by the devolatilization process where the volatiles are liberated from the solid particle, succeeded by the phenomena of char burnout, and finally the gas phase reactions would commence. The char oxidation reaction product species was set to that of carbon monoxide ($CO$). For the gas-phase reactions the turbulence-chemistry interaction was approximated using the eddy dissipation model (EDM). A summary of the combustion equations and constants are provided in Table \ref{tbl_combust}.\\
 
 \begin{table}[h!]
 \caption{Summary of combustion models and constants used in the CFD model}\label{tbl_combust}
@@ -309,17 +309,12 @@ Eddy dissipation model - \cite{Ansys} & $R_{k,r,P} =\vartheta_{k,r}M_{w,k}AB\rho
 \end{tabular*}
 \end{table}
 
-The simulations were solved using the SIMPLE pressure–velocity coupling scheme. The pressure term was discretized using the PRESTO! scheme. Momentum, species and energy equations were discretized using the second-order upwind scheme and the turbulent kinetic energy and dissipation rate using the first-order upwind scheme. The convergence criteria for the simulation model was set to $1\times10^{-3}$ for the continuity equation, $1\times10^{-4}$ for the velocity equations, $1\times10^{-6}$ for the remaining transport equations, and $1\times10^{-4}$ for monitored key parameters.
+The simulations were solved using the SIMPLE pressure–velocity coupling scheme. The pressure term was discretized using the PRESTO! scheme. Momentum, species and energy equations were discretized using the second-order upwind scheme and the turbulent kinetic energy and dissipation rate using the first-order upwind scheme. The numerical mesh was generated using quadrilateral elements consisting of 6 million cells.  The convergence criteria for the simulation model was set to $1\times10^{-3}$ for the continuity equation, $1\times10^{-4}$ for the velocity equations, $1\times10^{-6}$ for the remaining transport equations, and $1\times10^{-4}$ for monitored key parameters.
 
 \subsection{Simulated dataset}
-design of experiments (DOE) was conducted to generate a set of 180 simulation cases.
+As previously mentioned the aim this study is to illustrate the use of a data-driven surrogate model, integrated with a 1D process model, to predict the heat loads to the various heat exchanging components, the flue-gas composition and exit gas temperatures for a utility scale boiler using various high-level inputs. The inputs include the the following, the excess air ratio per burner, the total mill flowrate for the six mills in operation, the average steam temperatures for the platen and final superheaters, the fouling resistance for the platen and final superheaters, the composition of ash and moisture of the fuel and the gross calorific value of the fuel. Thus the input field has a dimensionality of $d_{input}=14$.\\
 
-Use inputs based on 
-
-Preprocessing data?
-
-High low values for DOE what mapping etc
-The aim is to predict the heat flux profile  based on operational inputs. These inputs are listed in the table ()
+A design of experiments (DOE) was conducted to generate a set of 180 simulation cases to obtain a representative set of results. The various model input ranges used in the DOE are given in Table \ref{tbl_doe}. The ranges where selected to cover a wide range of operational loads with maximum continuous ratings (MCR) between 100\% and 30\%.
 
 \begin{table}[h!]
 \caption{Design of experiments input ranges for  simulations}\label{tbl_doe}
@@ -338,7 +333,6 @@ The aim is to predict the heat flux profile  based on operational inputs. These 
 \end{table}
 
 \section{Model development}
-
 The present work makes use of two types of machine learning models, namely a standard artificial neural network (ANN) and a mixture density designated model connected to a standard ANN (MDN-ANN). The following section will discuss the hyper parameter tuning and final selected model configuration. The programming language Python 3.7.8 and the Tensorflow machine learning libraries were utilized in the present study. 
 \subsection{Model configuration}
 
