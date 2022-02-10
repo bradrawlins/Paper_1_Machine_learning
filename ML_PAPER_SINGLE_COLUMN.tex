@@ -123,7 +123,7 @@
 %\fnmark[2]
 
 % Email id of the second author
-\ead{rlaubscher@sun.ac.za}
+%\ead{rlaubscher@sun.ac.za}
 % URL of the second author
 %\ead[url]{}
 % Credit authorship
@@ -142,7 +142,7 @@
 %\nonumnote{}
 \author[1]{Pieter Rousseau}
 % Email id of the second author
-\ead{pieter.rousseau@uct.ac.za}
+%\ead{pieter.rousseau@uct.ac.za}
 % Credit authorship
 \credit{Writing review \& editing, Resources, Conceptualization}
 
@@ -264,7 +264,63 @@ The use of neural networks for the modelling of energy systems has been awesome.
 %% \appendix
 
 \section{Applicable machine learning theory}
+The present work makes use of various machine learning architectures to develop a surrogate model that can predict the thermal and combustion characteristics of a utility scale boiler using high level inputs. The current section discusses the details of the respective architectures, namely linear regression, ANN and ANN-MDN models.  
+\subsection{Multiple linear regression}
+The present work makes use of a multiple linear regression model as a base model for comparative purposes. The main assumption of a multiple linear regression model is that the output/s can be calculated from a linear combination of the variable inputs. In other words a linear regression models aims to determine the quantitative relationship between the dependent and independent variables \cite{Wen2022}. The representation of the $i$-th dependent variable ($y_i$) can be written as follows for $m$-number of independent variables ($x_{mi}$):
+\begin{equation}
+\begin{split}
+&y_i = \beta_0+\beta_1x_{1i}+...+\beta_mx_{mi}\\
+&i = 1,2,3...n
+\end{split}
+\end{equation}
+where $\beta_0$ is a constant term, $\beta_{m}$ is the $m$-th coefficient, and $n$ is the total number of observations.\\
+ 
+The optimal solution can be estimated by minimizing the cost function ($J$). A cost function usually calculates the difference between the estimated and the desired values and is reported as a single number. Multiple linear regression problems namely utilize the mean square error (MSE) between the desired and estimated ($\hat{y_i}$)  values \cite{Wheeler2019}, which is given in equation \ref{eqn_lin_cost}.
+ 
+\begin{equation}\label{eqn_lin_cost}
+J=\frac{1}{n}\sum^n_{i=1}(y_i-\hat{y_i})^2
+\end{equation} 
 
+To minimize the cost function, the gradient descent algorithm is the preferred method \cite{Wen2022}, which is an iterative procedure used to find the local minimum/maximum. Considering the cost function as a function of the weight the algorithm can be written as shown in equation \ref{eqn_grad_descent}.  
+
+\begin{equation}\label{eqn_grad_descent}
+\beta_{m} = \beta_m-\gamma\frac{\partial}{\partial\beta_m}J(\beta_m)
+\end{equation}
+where $\gamma$ is known as the learning rate.\\
+
+In most cases the relationship between the dependent and independent variables are not always linear. Special linear basis models, such as polynomial, sinusoidal and radial can be used to optimize the training results \cite{Rasmussen2006}. For the current work a multiple linear progression model is utilized as a base model for comparison. 
+\subsection{Artificial neural networks (ANNs)}
+There are many classifications of ANNs, with multilayer perception networks (MLP) being the standard representation \citep{goodfellow}. Typically MLPs are adapted for supervised learning problems where the input variables are mapped to labelled output variables. The relationship between the input and output variables are learned by optimizing the weights ($\overline{w}$) and biases ($\overline{b}$) to minimize a selected cost function, which for most cases is the MSE given in equation \ref{eqn_lin_cost}. A standard MLP schematic is given in figure \ref{fig_mlp_schematic}, illustrating the common features of a MLP, that being the input, hidden and output layers.
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.5]{ML_SCHEMATIC}
+	  \caption{Traditional MLP schematic}\label{fig_mlp_schematic}
+\end{figure}
+
+To calculate the output values ($\hat{y_i}$) the forward propagation algorithm is utilized, which calculates the output for each layer and moves sequentially through the network till an output is determined. Each network layer output is calculated using two steps, the first being the calculation of the summed signal $\overline{z}_l$ and secondly the use of an activation function to generate the output signal $\overline{h}_l$. Equation \ref{eqn_summed_sig} highlights the first step, where $\overline{h}_{l-1}$ is the output signal from the previous layer.
+
+\begin{equation}\label{eqn_summed_sig}
+\overline{z}_l = \overline{h}_{l-1}\cdot\overline{w}_l+\overline{b}_l
+\end{equation}
+
+The result of the equation \ref{eqn_summed_sig} is subsequently passed to an activation function ($\overline{h}_l = \sigma_l(\overline{z}_l)$). There are various activation functions that can be utilized, such as linear, ReLu, Elu, and the hyperbolic-tangent \citep{goodfellow}, with the final layer activation function usually being linear for regression models. The current work makes use of RelU and linear activation functions. Equation \ref{eqn_act_func} highlights the ReLu and linear activation functions.
+
+\begin{equation}\label{eqn_act_func}
+\begin{split}
+&\overline{h}_l=\sigma_{ReLu}(\overline{z}_l) = \overline{z}_l =  
+	\begin{cases}
+	 \overline{h}_{l-1}\cdot\overline{w}_l+\overline{b}_l\,\,\,\, &if\,\,\,\, \overline{z}_l>0\\
+	 0\,\,\,\, &if\,\,\,\, \overline{z}_l<0
+	\end{cases}\\
+&\overline{h}_l=\sigma_{linear}(\overline{z}_l) = \overline{z}_l = \overline{h}_{l-1}\cdot\overline{w}_l+\overline{b}_l
+\end{split}
+\end{equation}
+
+
+
+
+\subsection{Mixture density networks}
 \section{Data generation}
 A steady-state multiphase non-thermal equilibrium CFD model was used to generate the target data, which was subsequently used for training/development of an appropriate surrogate model.
 

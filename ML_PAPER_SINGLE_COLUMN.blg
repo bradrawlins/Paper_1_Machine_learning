@@ -9,45 +9,45 @@ Warning--to sort, need author, editor, or key in Ansys
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Warning--empty author and editor in Ansys
 Warning--empty pages in Rawlins2021
-You've used 6 entries,
+You've used 10 entries,
             2990 wiz_defined-function locations,
-            786 strings with 7581 characters,
-and the built_in function-call counts, 3692 in all, are:
-= -- 284
-> -- 110
-< -- 3
-+ -- 43
-- -- 37
-* -- 400
-:= -- 524
-add.period$ -- 21
-call.type$ -- 6
-change.case$ -- 44
-chr.to.int$ -- 6
-cite$ -- 11
-duplicate$ -- 287
-empty$ -- 303
-format.name$ -- 54
-if$ -- 697
+            814 strings with 8239 characters,
+and the built_in function-call counts, 6307 in all, are:
+= -- 469
+> -- 222
+< -- 5
++ -- 86
+- -- 76
+* -- 706
+:= -- 899
+add.period$ -- 34
+call.type$ -- 10
+change.case$ -- 77
+chr.to.int$ -- 10
+cite$ -- 15
+duplicate$ -- 487
+empty$ -- 501
+format.name$ -- 109
+if$ -- 1187
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 54
-newline$ -- 48
-num.names$ -- 22
-pop$ -- 104
+missing$ -- 98
+newline$ -- 69
+num.names$ -- 38
+pop$ -- 187
 preamble$ -- 1
-purify$ -- 36
+purify$ -- 65
 quote$ -- 0
-skip$ -- 85
+skip$ -- 135
 stack$ -- 0
-substring$ -- 139
-swap$ -- 195
+substring$ -- 201
+swap$ -- 344
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 75
 warning$ -- 3
-while$ -- 21
+while$ -- 34
 width$ -- 0
-write$ -- 104
+write$ -- 162
 (There were 3 warnings)

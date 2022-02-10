@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -23,6 +23,20 @@
   particles}}.
 \newblock \bibinfo{journal}{Combustion science and Technolodgy}
   \bibinfo{volume}{3}, \bibinfo{pages}{231}.
+%Type = Book
+\bibitem[{Goodfellow et~al.(2017)Goodfellow, Bengio and Courville}]{goodfellow}
+\bibinfo{author}{Goodfellow, I.}, \bibinfo{author}{Bengio, Y.},
+  \bibinfo{author}{Courville, A.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{{Deep Learning}}.
+\newblock \bibinfo{edition}{First edit} ed., \bibinfo{publisher}{MIT Press},
+  \bibinfo{address}{Chennai}.
+%Type = Book
+\bibitem[{Kochenderfer and Wheeler(2019)}]{Wheeler2019}
+\bibinfo{author}{Kochenderfer, M.}, \bibinfo{author}{Wheeler, T.},
+  \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{{Algorithms for optimization}}.
+\newblock \bibinfo{edition}{1} ed., \bibinfo{publisher}{The MIT Press},
+  \bibinfo{address}{Cambridge, Massachusetts}.
 %Type = Article
 \bibitem[{Modlinski(2010)}]{Modlinski2010}
 \bibinfo{author}{Modlinski, N.}, \bibinfo{year}{2010}.
@@ -31,6 +45,13 @@
 \newblock \bibinfo{journal}{Fuel Processing Technology} \bibinfo{volume}{91},
   \bibinfo{pages}{1601--1608}.
 \newblock \DOIprefix\doi{10.1016/j.fuproc.2010.06.008}.
+%Type = Book
+\bibitem[{Rasmussen and Williams(2006)}]{Rasmussen2006}
+\bibinfo{author}{Rasmussen, C.}, \bibinfo{author}{Williams, C.},
+  \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{{Gaussian Processes for Machine Learning}}.
+\newblock \bibinfo{edition}{1} ed., \bibinfo{publisher}{The MIT Press},
+  \bibinfo{address}{Cambridge, Massachusetts}.
 %Type = Inproceedings
 \bibitem[{Rawlins et~al.(2021)Rawlins, Laubscher and Rousseau}]{Rawlins2021}
 \bibinfo{author}{Rawlins, B.T.}, \bibinfo{author}{Laubscher, R.},
@@ -60,5 +81,16 @@
 \newblock \bibinfo{edition}{Second} ed., \bibinfo{publisher}{Pearson Prentice
   Hall}.
 \newblock \DOIprefix\doi{10.1002/9781119369189}.
+%Type = Article
+\bibitem[{Wen et~al.(2022)Wen, Pan, Chen, Aziz, Zhou and Li}]{Wen2022}
+\bibinfo{author}{Wen, D.}, \bibinfo{author}{Pan, Y.}, \bibinfo{author}{Chen,
+  X.}, \bibinfo{author}{Aziz, M.}, \bibinfo{author}{Zhou, Q.},
+  \bibinfo{author}{Li, N.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{{Analysis and prediction of thermal stress
+  distribution on the membrane wall in the arch-fired boiler based on machine
+  learning technology}}.
+\newblock \bibinfo{journal}{Thermal Science and Engineering Progress}
+  \bibinfo{volume}{28}, \bibinfo{pages}{101137}.
+\newblock \DOIprefix\doi{10.1016/j.tsep.2021.101137}.
 
 \end{thebibliography}
