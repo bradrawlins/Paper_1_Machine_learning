@@ -48,8 +48,8 @@
 %%%
 
 % Uncomment and use as if needed
-%\newtheorem{theorem}{Theorem}
-%\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{theorem}{Algorithm}
+\newtheorem{lemma}[theorem]{Lemma}
 %\newdefinition{rmk}{Remark}
 %\newproof{pf}{Proof}
 %\newproof{pot}{Proof of Theorem \ref{thm}}
@@ -278,15 +278,15 @@ where $\beta_0$ is a constant term, $\beta_{m}$ is the $m$-th coefficient, and $
 The optimal solution can be estimated by minimizing the cost function ($J$). A cost function usually calculates the difference between the estimated and the desired values and is reported as a single number. Multiple linear regression problems namely utilize the mean square error (MSE) between the desired and estimated ($\hat{y_i}$)  values \cite{Wheeler2019}, which is given in equation \ref{eqn_lin_cost}.
  
 \begin{equation}\label{eqn_lin_cost}
-J=\frac{1}{n}\sum^n_{i=1}(y_i-\hat{y_i})^2
+J_{MSE}=\frac{1}{n}\sum^n_{i=1}(y_i-\hat{y_i})^2
 \end{equation} 
 
 To minimize the cost function, the gradient descent algorithm is the preferred method \cite{Wen2022}, which is an iterative procedure used to find the local minimum/maximum. Considering the cost function as a function of the weight the algorithm can be written as shown in equation \ref{eqn_grad_descent}.  
 
 \begin{equation}\label{eqn_grad_descent}
-\beta_{m} = \beta_m-\gamma\frac{\partial}{\partial\beta_m}J(\beta_m)
+\beta_{m} = \beta_m-\eta\frac{\partial}{\partial\beta_m}J(\beta_m)
 \end{equation}
-where $\gamma$ is known as the learning rate.\\
+where $\eta$ is known as the learning rate.\\
 
 In most cases the relationship between the dependent and independent variables are not always linear. Special linear basis models, such as polynomial, sinusoidal and radial can be used to optimize the training results \cite{Rasmussen2006}. For the current work a multiple linear progression model is utilized as a base model for comparison. 
 \subsection{Artificial neural networks (ANNs)}
@@ -304,7 +304,7 @@ To calculate the output values ($\hat{y_i}$) the forward propagation algorithm i
 \overline{z}_l = \overline{h}_{l-1}\cdot\overline{w}_l+\overline{b}_l
 \end{equation}
 
-The result of the equation \ref{eqn_summed_sig} is subsequently passed to an activation function ($\overline{h}_l = \sigma_l(\overline{z}_l)$). There are various activation functions that can be utilized, such as linear, ReLu, Elu, and the hyperbolic-tangent \citep{goodfellow}, with the final layer activation function usually being linear for regression models. The current work makes use of RelU and linear activation functions. Equation \ref{eqn_act_func} highlights the ReLu and linear activation functions.
+The result of the equation \ref{eqn_summed_sig} is subsequently passed to an activation function ($\overline{h}_l = \sigma_l(\overline{z}_l)$). There are various activation functions that can be utilized, such as linear, ReLu, Elu, and the hyperbolic-tangent \citep{goodfellow}, with the final layer activation function usually being linear for regression models. The current work makes use of ReLu and linear activation functions for the hidden layers. The ReLu and linear activation functions are shown in Equation \ref{eqn_act_func}.
 
 \begin{equation}\label{eqn_act_func}
 \begin{split}
@@ -317,10 +317,26 @@ The result of the equation \ref{eqn_summed_sig} is subsequently passed to an act
 \end{split}
 \end{equation}
 
+When the forward propagation step is complete, the network weights and biases can be updated to minimize the cost function (refer to Equation \ref{eqn_lin_cost})  using the backward propagation method \ref{Rumelhart1986}. The methodology calculates the gradient of the cost function with respect to the weights and biases for each layer. Once the gradients have been calculated the weights and biases are updated using the gradient descent algorithm. The current work makes use of the Adam \cite{goodfellow} alternative to the gradient descent algorithm and is illustrated in Equation \ref{eqn_adam_algor}. Forward- and backward-propagation algorithms would be iteratively conducted until the cost function is reduced to below a desired threshold.
+
+\begin{theorem} 
+\begin{equation}\label{eqn_adam_algor} 
+\begin{split}
+&\bar{m}\leftarrow \beta_1\bar{m}+(1-\beta_1)\nabla_{\theta}J_{MSE}(\bar{\theta})\\
+&\bar{s}\leftarrow \beta_1\bar{s}+(1-\beta_2)\nabla_{\theta}J_{MSE}(\bar{\theta})\otimes&\nabla_{\theta}J_{MSE}(\bar{\theta})\\
+&\bar{m}\leftarrow\frac{\bar{m}}{1-\beta_1^t} \\
+&\bar{s}\leftarrow\frac{\bar{s}}{1-\beta_2^t}\\
+&\bar{\theta}\leftarrow\bar{\theta}-\eta\bar{m}\otimes(\sqrt{\bar{s}+\epsilon})^{-1}\\
+\end{split}
+\end{equation}
+\end{theorem}
+
+The variable $\bar{\theta}$, of Equation \ref{eqn_adam_algor}, represents the model parameters weights ($\bar{w}$) and biases ($\bar{b}$) for each layer. Scaling ($\bar{s}$) and momentum ($\bar{m}$) matrices are initialized to zero when beginning the training phase, $t$ is the iterative counter, $\beta_1$ and $\beta_2$ are the momentum and scaling decay hyper-parameters set to values of 0.9 and 0.999 respectively. Lastly $\epsilon$ is a smoothing term set to a value of $10^{-8}$.
+
+\subsection{Mixture density networks (MDNs)}
+MDNs are simply a MLP with an additional layer that allows the prediction of the Gaussian distribution.
 
 
-
-\subsection{Mixture density networks}
 \section{Data generation}
 A steady-state multiphase non-thermal equilibrium CFD model was used to generate the target data, which was subsequently used for training/development of an appropriate surrogate model.
 
