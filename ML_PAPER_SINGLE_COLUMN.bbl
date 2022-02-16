@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{12}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -23,6 +23,12 @@
   particles}}.
 \newblock \bibinfo{journal}{Combustion science and Technolodgy}
   \bibinfo{volume}{3}, \bibinfo{pages}{231}.
+%Type = Techreport
+\bibitem[{Bishop(1994)}]{bishop1994}
+\bibinfo{author}{Bishop, C.}, \bibinfo{year}{1994}.
+\newblock \bibinfo{title}{{Mixture Density Networks}}.
+\newblock \bibinfo{type}{Technical Report}. Aston University.
+\newblock \DOIprefix\doi{10.1007/978-3-322-81570-5_8}.
 %Type = Book
 \bibitem[{Goodfellow et~al.(2017)Goodfellow, Bengio and Courville}]{goodfellow}
 \bibinfo{author}{Goodfellow, I.}, \bibinfo{author}{Bengio, Y.},
@@ -45,6 +51,16 @@
 \newblock \bibinfo{journal}{Fuel Processing Technology} \bibinfo{volume}{91},
   \bibinfo{pages}{1601--1608}.
 \newblock \DOIprefix\doi{10.1016/j.fuproc.2010.06.008}.
+%Type = Article
+\bibitem[{Oko et~al.(2015)Oko, Wang and Zhang}]{Oko2015}
+\bibinfo{author}{Oko, E.}, \bibinfo{author}{Wang, M.}, \bibinfo{author}{Zhang,
+  J.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{{Neural network approach for predicting drum pressure
+  and level in coal-fired subcritical power plant}}.
+\newblock \bibinfo{journal}{Fuel} \bibinfo{volume}{151},
+  \bibinfo{pages}{139--145}.
+\newblock \URLprefix \url{http://dx.doi.org/10.1016/j.fuel.2015.01.091},
+  \DOIprefix\doi{10.1016/j.fuel.2015.01.091}.
 %Type = Book
 \bibitem[{Rasmussen and Williams(2006)}]{Rasmussen2006}
 \bibinfo{author}{Rasmussen, C.}, \bibinfo{author}{Williams, C.},

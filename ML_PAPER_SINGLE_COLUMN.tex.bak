@@ -265,7 +265,7 @@ The use of neural networks for the modelling of energy systems has been awesome.
 
 \section{Applicable machine learning theory}
 The present work makes use of various machine learning architectures to develop a surrogate model that can predict the thermal and combustion characteristics of a utility scale boiler using high level inputs. The current section discusses the details of the respective architectures, namely linear regression, ANN and ANN-MDN models.  
-\subsection{Multiple linear regression}
+\subsection{Linear regression}
 The present work makes use of a multiple linear regression model as a base model for comparative purposes. The main assumption of a multiple linear regression model is that the output/s can be calculated from a linear combination of the variable inputs. In other words a linear regression models aims to determine the quantitative relationship between the dependent and independent variables \cite{Wen2022}. The representation of the $i$-th dependent variable ($y_i$) can be written as follows for $m$-number of independent variables ($x_{mi}$):
 \begin{equation}
 \begin{split}
@@ -275,7 +275,7 @@ The present work makes use of a multiple linear regression model as a base model
 \end{equation}
 where $\beta_0$ is a constant term, $\beta_{m}$ is the $m$-th coefficient, and $n$ is the total number of observations.\\
  
-The optimal solution can be estimated by minimizing the cost function ($J$). A cost function usually calculates the difference between the estimated and the desired values and is reported as a single number. Multiple linear regression problems namely utilize the mean square error (MSE) between the desired and estimated ($\hat{y_i}$)  values \cite{Wheeler2019}, which is given in equation \ref{eqn_lin_cost}.
+The optimal solution can be estimated by minimizing the cost function ($J$). A cost function usually calculates the difference between the estimated and the desired values and is reported as a single number. Multiple linear regression problems namely utilize the mean square error (MSE) between the desired and estimated ($\hat{y_i}$)  values \cite{Wheeler2019}, which is given in Equation \ref{eqn_lin_cost}.
  
 \begin{equation}\label{eqn_lin_cost}
 J_{MSE}=\frac{1}{n}\sum^n_{i=1}(y_i-\hat{y_i})^2
@@ -289,8 +289,8 @@ To minimize the cost function, the gradient descent algorithm is the preferred m
 where $\eta$ is known as the learning rate.\\
 
 In most cases the relationship between the dependent and independent variables are not always linear. Special linear basis models, such as polynomial, sinusoidal and radial can be used to optimize the training results \cite{Rasmussen2006}. For the current work a multiple linear progression model is utilized as a base model for comparison. 
-\subsection{Artificial neural networks (ANNs)}
-There are many classifications of ANNs, with multilayer perception networks (MLP) being the standard representation \citep{goodfellow}. Typically MLPs are adapted for supervised learning problems where the input variables are mapped to labelled output variables. The relationship between the input and output variables are learned by optimizing the weights ($\overline{w}$) and biases ($\overline{b}$) to minimize a selected cost function, which for most cases is the MSE given in equation \ref{eqn_lin_cost}. A standard MLP schematic is given in figure \ref{fig_mlp_schematic}, illustrating the common features of a MLP, that being the input, hidden and output layers.
+\subsection{Multilayer perception networks (MLPs)}
+Artificial neural networks (ANN) are machine learning systems inspired by biological animal brains \cite{Rasmussen2006}. There are many classifications of ANNs, with multilayer perception networks (MLP) being the standard representation \citep{goodfellow}. Typically MLPs are adapted for supervised learning problems where the input variables are mapped to labelled output variables. The relationship between the input and output variables are learned by optimizing the weights ($\overline{w}$) and biases ($\overline{b}$) to minimize a selected cost function, which for most cases is the MSE given in equation \ref{eqn_lin_cost}. A standard MLP schematic is given in figure \ref{fig_mlp_schematic}, illustrating the common features of a MLP, that being the input, hidden and output layers.
 
 \begin{figure}[h!]
 	\centering
@@ -333,7 +333,49 @@ When the forward propagation step is complete, the network weights and biases ca
 
 The variable $\bar{\theta}$, of Equation \ref{eqn_adam_algor}, represents the model parameters weights ($\bar{w}$) and biases ($\bar{b}$) for each layer. Scaling ($\bar{s}$) and momentum ($\bar{m}$) matrices are initialized to zero when beginning the training phase, $t$ is the iterative counter, $\beta_1$ and $\beta_2$ are the momentum and scaling decay hyper-parameters set to values of 0.9 and 0.999 respectively. Lastly $\epsilon$ is a smoothing term set to a value of $10^{-8}$.
 
-\subsection{Mixture density networks}
+\subsection{Mixture density networks (MDNs)}
+Mixture density networks are fundamentally built from two components, that being an ANN and a mixture model, this allows for multi-modal predictions. The ANN can be a standard feed-forward MLP or a recurrent neural network (RNN), with RNNs traditionally being used in dynamic applications with at least one feedback loop \citep{Oko2015}. For this study the traditionally MLP is used.\\
+
+MDNs are used to predict the parameters of a probability distribution ($P(\bar{X}\mid\bar{Y})$) allowing for non-Gaussian distributions to be modelled, thus making MDNs a probabilistic machine learning framework. MDNs estimate the conditional probability distribution as a mixture of Gaussian distributions where the mixing coefficients ($\bar{\pi}_k$) and component densities are flexible functions of the input data ($\bar{X}$). Equation \ref{eqn_cond_prob_func} illustrates the conditional probability function.
+
+\begin{equation}\label{eqn_cond_prob_func}
+P(\bar{X}\mid\bar{Y}) = \sum_{k=1}^K\pi_k(\bar{X})\cdot \mathbb{N}(\bar{Y}\mid\bar{\mu}_k(\bar{X}),\bar{\sigma}^2_k(\bar{X}))
+\end{equation}
+where $K$ represents the number of selected normal distributions, while $\bar{\mu}_k$ and $\bar{\sigma}^2_k$ are the predicted means and variances for each distribution $k$ given the input data $\bar{X}$ respectively.\\
+
+A schematic of a simple ANN-MDN network is given in Figure \ref{fig_mdn_schematic}, highlighting the mixing coefficients, predicted means and deviations. It can is shown that modifications are made to the output layer by splitting the network output into three parts in order to calculate the $\bar{\pi}_k$, $\bar{\mu}_k$ and $\bar{\sigma}^2_k$ for each $k$ distribution. This enables the MDN network to learn the $P(\bar{X}\mid\bar{Y})$.\\
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.5]{MDN_SCHEMATIC}
+	  \caption{Simple MDN network}\label{fig_mdn_schematic}
+\end{figure}
+
+Bishop \cite{bishop1994} proposed the following restrictions for the mixing coefficients and variance components of the MDN output layer. Since the mixing coefficients contain the discrete probabilities of an output belonging to each $K$ normal distribution for all observations, the mixing coefficients must satisfy the constraints listed in Equation \ref{eqn_mix_coef_constraint}.\\
+
+\begin{equation}\label{eqn_mix_coef_constraint}
+\begin{split}
+&\sum_{k=1}^K\bar{\pi}_k^n=1\\
+&0\leq\bar{\pi}_k^n\leq1
+\end{split}
+\end{equation}
+These constraints are met by using a Softmax function on the output of the hidden layer $h^{\pi}$. The mixing coefficient is calculated using Equation \ref{eqn_mix_coeff}.
+\begin{equation}\label{eqn_mix_coeff}
+\bar{\pi}_k^n(\bar{x}^n)=\frac{exp(h_k^{\pi,n})}{\sum_{k=1}^Kexp(h_k^{\pi,n})}
+\end{equation}
+
+Similarly a constraint is applied to the standard deviation values ensuring a positive value, this is achieved through the use of an exponential function being applied to the standard deviation leg of the MDN output layer, namely $h^{\sigma}$. Equations \ref{eqn_stddev} shows the imposed constraint for the standard deviation leg.\\
+\begin{equation}\label{eqn_stddev}
+(\bar{\sigma}^n_k(\bar{x}^n))^2\geq0
+\sigma_k^n(\bar{x}^n)=exp(h_k^{\sigma,n})
+\end{equation}
+
+The MDN weights and biases are optimized by minimizing the negative log-likelihood for all observations in a batch, this is shown in Equation \ref{eqn_nll}.
+
+\begin{equation}\label{eqn_nll}
+J_{NLL}(\bar{Y},\bar{\pi},\bar{\sigma},\bar{\mu})=-\sum^N_{n=1}ln\left\lbrace\sum^K_{k=1}\bar{\pi}_k(\bar{X}^n,\bar{\theta})\cdot\mathbb{N}(\bar{Y}^n\mid\bar{\mu}_k(\bar{X}^n,\bar{\theta}),\bar{\sigma}^2_k(\bar{X}^n,\bar{\theta})) \right\rbrace
+\end{equation}
+
 \section{Data generation}
 A steady-state multiphase non-thermal equilibrium CFD model was used to generate the target data, which was subsequently used for training/development of an appropriate surrogate model.
 
@@ -381,36 +423,45 @@ Eddy dissipation model - \cite{Ansys} & $R_{k,r,P} =\vartheta_{k,r}M_{w,k}AB\rho
 The simulations were solved using the SIMPLE pressure–velocity coupling scheme. The pressure term was discretized using the PRESTO! scheme. Momentum, species and energy equations were discretized using the second-order upwind scheme and the turbulent kinetic energy and dissipation rate using the first-order upwind scheme. The numerical mesh was generated using quadrilateral elements consisting of 6 million cells.  The convergence criteria for the simulation model was set to $1\times10^{-3}$ for the continuity equation, $1\times10^{-4}$ for the velocity equations, $1\times10^{-6}$ for the remaining transport equations, and $1\times10^{-4}$ for monitored key parameters.
 
 \subsection{Simulated dataset}
-As previously mentioned the aim this study is to illustrate the use of a data-driven surrogate model, integrated with a 1D process model, to predict the heat loads to the various heat exchanging components, the flue-gas composition and exit gas temperatures for a utility scale boiler using various high-level inputs. The inputs include the the following, the excess air ratio per burner, the total mill flowrate for the six mills in operation, the average steam temperatures for the platen and final superheaters, the fouling resistance for the platen and final superheaters, the composition of ash and moisture of the fuel and the gross calorific value of the fuel. Thus the input field has a dimensionality of $d_{input}=14$.\\
+As previously mentioned the aim this study is to illustrate the use of a data-driven surrogate model, integrated with a 1D process model, to predict the heat loads to the various heat exchanging components, the flue-gas composition and exit gas temperatures for a utility scale boiler using various high-level inputs. The inputs include the the following, the excess air ratio per burner, the total mill flowrate for the six mills in operation, the average steam temperatures for the platen and final superheaters, the fouling resistance for the platen and final superheaters, the composition of ash and moisture of the fuel and the gross calorific value of the fuel. Thus the input field has a dimensionality of $d_{inputs}=14$.\\
 
-A design of experiments (DOE) was conducted to generate a set of 180 simulation cases to obtain a representative set of results. The various model input ranges used in the DOE are given in Table \ref{tbl_doe}. The ranges where selected to cover a wide range of operational loads with maximum continuous ratings (MCR) between 100\% and 30\%.
+A design of experiments (DOE) was conducted to generate a set of 180 simulation cases to obtain a representative set of results. The various model input ranges used in the DOE are given in Table \ref{tbl_doe}. The ranges where selected to cover a wide range of operational loads with maximum continuous ratings (MCR) between 100\% and 30\%. A total of 27 output target values ($d_{targets}$) are realised for each CFD simulation case. Due to the quasi-steady nature of the CFD simulations, output target values for were taken every 50 iterations for the last 2500 iterations for a converged CFD simulation. This results in the a solution matrix of size ($\bar{Y}\in50\times27$) for each CFD simulation case.\\
+
+The DOE matrix was populated using the Latin Hypercube Sampling (LHS) method provided in the Python $pyDOE$ library. Once the CFD simulations achieved convergence the target data, comprising of the discretized heat loads to the furnace, platen and final SHs, the exit flue-gas temperatures and combustion characteristics, was stored for each case. The target dataset was split with 80\% being used for training purposes and the remainder for testing. To reduce the training time of the neural networks a min-max normalization was utilized scaling all the dataset entries to values between $0\rightarrow1$.\\
 
 \begin{table}[h!]
 \caption{Design of experiments input ranges for  simulations}\label{tbl_doe}
 \begin{tabular*}{\tblwidth}{p{0.5\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}}
 \toprule
- Input variable& Min& Max& Units \\ % Table header row
+ Input variables& Min& Max& Units \\ % Table header row
 \midrule
  Total fuel flow rate for mills 1 to 6 & 39.5 & 120.2 & $kg/s$ \\
- Excess air & 1.155 & 1.401 & $\%$\\
  Fuel proximate analysis moisture mass fraction, $Y_{H_2O}$ & 0.025 & 0.085 & $kg/kg$ \\
  Fuel proximate analysis ash mass fraction, $Y_{ash}$  & 0.259 & 0.559 & $kg/kg$ \\
  Platen SH fouling thermal resistance, $R_{platen}$  & 0.004 & 0.007 & $m^2K/W$ \\
  Final SH fouling thermal resistance, $R_{final}$  &0.01 & 0.017 & $m^2K/W$ \\
+\midrule
+Dependent variables& \multicolumn{2}{l}{Function of}& Units\\
+\midrule
+Higher heating value&\multicolumn{2}{l}{Fuel constituents $Y_{H_2O}$ and $Y_{ash}$}&$J/kg$\\
+Excess air & \multicolumn{2}{l}{Total fuel flow rate for mills} & $\%$\\
+Platen SH internal steam temperature& \multicolumn{2}{l}{$R_{platen}$} & $K$\\
+Final SH internal steam temperature& \multicolumn{2}{l}{$R_{final}$} & $K$\\
 \bottomrule
 \end{tabular*}
 \end{table}
 
 \section{Model development}
-The present work makes use of two types of machine learning models, namely a standard artificial neural network (ANN) and a mixture density designated model connected to a standard ANN (MDN-ANN). The following section will discuss the hyper parameter tuning and final selected model configuration. The programming language Python 3.7.8 and the Tensorflow machine learning libraries were utilized in the present study. 
+The present work makes use of two types of machine learning models, namely a standard artificial neural network (ANN/MLP) and a mixture density designated model connected to a standard ANN (MDN-ANN). The following section will discuss the hyper parameter tuning and final selected model configuration. The programming language Python 3.7.8 and the Tensorflow machine learning libraries were utilized in the present study. 
 \subsection{Model configuration}
+The goal of the final machine learning configuration is to be able to predict the heat load distributions to the furnace, platen SH and final SH walls, the combustion characteristics and flue-gas temperatures at the exit, using the high level inputs given in Table \ref{tbl_doe}.\\
+
+The outputs for the MLP will consist of $y=50\times180=9000$ outputs. Thus, for a data batch size, $m_b$, the output tensor for the MLP model will be $\hat{Y}\in \mathbb{R}^{m_b\times y\times 27}$ since $d_{targets}=27$. However, the MDN-ANN models output data will consist of three parts, namely; the mixing coefficients tensor of shape  $\bar{\pi}\in \mathbb{R}^{m_b \times y\times K}$, the output standard deviation tensor of shape $\bar{\sigma}\in \mathbb{R}^{K\times m_b\times y\times 27}$ and the predicted means of tensor shape $\bar{\mu}\in \mathbb{R}^{K\times m_b\times y\times 27}$. The input data fed into both the MLP and MDN-ANN will have shape $\bar{X}\in \mathbb{R}^{m_b\times d_{inputs}}$. The input features will be varied based on the DOE, to account for burner mill biassing, fuel quality and SH heating component fouling.\\
 
 
-\subsection{Hyper parameter tuning \& final model selection}
+\subsection{Hyper-parameter tuning \& final model selection}
+Table \ref{tbl_tuning} highlights the hyper-parameter search spaces for both the ANN and ANN-MDN model. The ANN-MDN has an added parameter namely the number of additional distributions the ANN-MDN would fit to the output data. \\
 
-table of NN and MDN data comparison for tuning
-
-\clearpage
 \begin{table}[h!]
 \caption{Hyper-parameter search space for fully connected NN and MDN models}\label{tbl_tuning}
 \begin{tabular*}{\tblwidth}{p{0.5\textwidth}p{0.24\textwidth}p{0.24\textwidth}}
@@ -425,7 +476,6 @@ table of NN and MDN data comparison for tuning
 \bottomrule
 \end{tabular*}
 \end{table}
-Table \ref{tbl_tuning} highlights the hyper-parameter search spaces for both the ANN and ANN-MDN model. The ANN-MDN has an added parameter namely the number of additional distributions the ANN-MDN would fit to the output data. \\
 
 The hyper-parameter search was conducted in a sequential manner with the number of layers and neurons per layer being the initial step, after which the learning rates were varied, followed by the batch sizes. The ANN-MDN hyper-parameter tuning was conducted in a similar manner only that an additional step is required to establish the best amount of distributions.
 
@@ -445,8 +495,8 @@ The hyper-parameter search was conducted in a sequential manner with the number 
 \end{table}
 
 \section{Results and discussion}
+A illustrated in the previous section the MDN-ANN model is selected model used for the subsequent validation and fuel quality case studies.
 \subsection{Multiple load validation}
-
 Validation includes the use of integrating the surrogate model with a network based-process model of the water/steam side of the utility boiler under investigation. A C\# script is used to access the Python API available in the process modelling software, Flownex SE\textsuperscript{\textregistered} 2021. This allows for predictions to be made using the trained MDN model. The most probable predictions are retrieved using the surrogate model script and transferred to the respective process model components. A schematic of the surrogate and process models integration is provided in Figure \ref{fig_int_model}.
 
 \begin{figure}[h!]
