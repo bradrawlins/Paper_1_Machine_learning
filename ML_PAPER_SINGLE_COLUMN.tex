@@ -425,9 +425,9 @@ The simulations were solved using the SIMPLE pressure–velocity coupling scheme
 \subsection{Simulated dataset}
 As previously mentioned the aim this study is to illustrate the use of a data-driven surrogate model, integrated with a 1D process model, to predict the heat loads to the various heat exchanging components, the flue-gas composition and exit gas temperatures for a utility scale boiler using various high-level inputs. The inputs include the the following, the excess air ratio per burner, the total mill flowrate for the six mills in operation, the average steam temperatures for the platen and final superheaters, the fouling resistance for the platen and final superheaters, the composition of ash and moisture of the fuel and the gross calorific value of the fuel. Thus the input field has a dimensionality of $d_{inputs}=14$.\\
 
-A design of experiments (DOE) was conducted to generate a set of 180 simulation cases to obtain a representative set of results. The various model input ranges used in the DOE are given in Table \ref{tbl_doe}. The ranges where selected to cover a wide range of operational loads with maximum continuous ratings (MCR) between 100\% and 30\%. A total of 27 output target values ($d_{targets}$) are realised for each CFD simulation case. Due to the quasi-steady nature of the CFD simulations, output target values for were taken every 50 iterations for the last 2500 iterations for a converged CFD simulation. This results in the a solution matrix of size ($\bar{Y}\in50\times27$) for each CFD simulation case.\\
+A design of experiments (DOE) was conducted to generate a set of 180 simulation cases to obtain a representative set of results. The various model input ranges used in the DOE are given in Table \ref{tbl_doe}. The ranges where selected to cover a wide range of operational loads with maximum continuous ratings (MCR) between 100\% and 30\%. A total of 27 output target values ($d_{targets}$) are realised for each CFD simulation case. Due to the quasi-steady nature of the CFD simulations, output target values for were taken every 50 iterations for the last 2500 iterations for a converged CFD simulation. This results in each CFD simulation case having a data solution matrix size of ($\bar{Y}\in50\times27$).\\
 
-The DOE matrix was populated using the Latin Hypercube Sampling (LHS) method provided in the Python $pyDOE$ library. Once the CFD simulations achieved convergence the target data, comprising of the discretized heat loads to the furnace, platen and final SHs, the exit flue-gas temperatures and combustion characteristics, was stored for each case. The target dataset was split with 80\% being used for training purposes and the remainder for testing. To reduce the training time of the neural networks a min-max normalization was utilized scaling all the dataset entries to values between $0\rightarrow1$.\\
+The DOE matrix was populated using the Latin Hypercube Sampling (LHS) method provided in the Python $pyDOE$ library. Once the CFD simulations achieved convergence, the target data, comprising of the discretized heat loads to the furnace, platen and final SHs, the exit flue-gas temperatures and combustion characteristics, was stored for each case. The target dataset was split with 80\% being used for training purposes and the remainder for testing. To reduce the training time of the neural networks a min-max normalization was utilized scaling all the dataset entries to values between $0\rightarrow1$.\\
 
 \begin{table}[h!]
 \caption{Design of experiments input ranges for  simulations}\label{tbl_doe}
@@ -458,7 +458,6 @@ The goal of the final machine learning configuration is to be able to predict th
 
 The outputs for the MLP will consist of $y=50\times180=9000$ outputs. Thus, for a data batch size, $m_b$, the output tensor for the MLP model will be $\hat{Y}\in \mathbb{R}^{m_b\times y\times 27}$ since $d_{targets}=27$. However, the MDN-ANN models output data will consist of three parts, namely; the mixing coefficients tensor of shape  $\bar{\pi}\in \mathbb{R}^{m_b \times y\times K}$, the output standard deviation tensor of shape $\bar{\sigma}\in \mathbb{R}^{K\times m_b\times y\times 27}$ and the predicted means of tensor shape $\bar{\mu}\in \mathbb{R}^{K\times m_b\times y\times 27}$. The input data fed into both the MLP and MDN-ANN will have shape $\bar{X}\in \mathbb{R}^{m_b\times d_{inputs}}$. The input features will be varied based on the DOE, to account for burner mill biassing, fuel quality and SH heating component fouling.\\
 
-
 \subsection{Hyper-parameter tuning \& final model selection}
 Table \ref{tbl_tuning} highlights the hyper-parameter search spaces for both the ANN and ANN-MDN model. The ANN-MDN has an added parameter namely the number of additional distributions the ANN-MDN would fit to the output data. \\
 
@@ -468,14 +467,15 @@ Table \ref{tbl_tuning} highlights the hyper-parameter search spaces for both the
 \toprule
  Parameter& NN search space & MDN search space \\ % Table header row
 \midrule
- Number of distributions & - & 2,3,4  \\
+ Number of distributions & - & 1,2,3,4  \\
  Number of layers & 2,3,4 & 2,3,4\\
  Number of neurons per layer & 10, 40, 80, 100  & 10, 40, 80, 100\\
- Learning rates & 1e-3, 1e-4, 1e-5 &  1e-3, 1e-4, 1e-5   \\
- Mini batch sizes  & 16, 32, 64 & 16, 32, 64  \\
+ Learning rates & 1e-3, 1e-4, 1e-5, 1e-6 &  1e-3, 1e-4, 1e-5, 1e-6   \\
+ Mini batch sizes  &32, 64, 128, 256 &32, 64, 128, 256  \\
 \bottomrule
 \end{tabular*}
 \end{table}
+
 
 The hyper-parameter search was conducted in a sequential manner with the number of layers and neurons per layer being the initial step, after which the learning rates were varied, followed by the batch sizes. The ANN-MDN hyper-parameter tuning was conducted in a similar manner only that an additional step is required to establish the best amount of distributions.
 
