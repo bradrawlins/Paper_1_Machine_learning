@@ -454,6 +454,31 @@ The hyper-parameter search was conducted in a sequential manner with the number 
 \bottomrule
 \end{tabular*}
 \end{table*}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[\textwidth]{NEURONS_HYPER}
+	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
+\end{figure}
+
+%\begin{figure}[h!]
+%	\centering
+%		\includegraphics[scale=0.5]{LR_HYPER}S
+%	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%	\centering
+%		\includegraphics[scale=0.5]{BATCH_SIZE_HYPER}S
+%	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%	\centering
+%		\includegraphics[scale=0.5]{DIST_HYPER}S
+%	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
+%\end{figure}
+
 \subsection{Process model integration}
 Th validation and the subsequent case-studies of Section \ref{sec_results_diss}, make use of an integrated surrogate and network based-process model. The process model is used to capture the thermodynamic response of the water/steam side of the utility boiler under investigation, the the developed data-driven surrogate model providing the gas-side thermal predictions.\\
 
