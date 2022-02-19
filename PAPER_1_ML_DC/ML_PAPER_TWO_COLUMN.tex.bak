@@ -23,8 +23,9 @@
 % use the longmktitle option.
 
 %\documentclass[a4paper,fleqn,longmktitle]{cas-dc}
-
+\usepackage{subfigure}
 \usepackage[numbers]{natbib}
+\usepackage{multicol}
 %\usepackage[authoryear]{natbib}
 %\usepackage[authoryear,longnamesfirst]{natbib}
 
@@ -250,8 +251,7 @@ where $\eta$ is known as the learning rate.\\
 
 In most cases the relationship between the dependent and independent variables are not always linear. Special linear basis models, such as polynomial, sinusoidal and radial can be used to optimize the training results \cite{Rasmussen2006}. For the current work a multiple linear progression model is utilized as a base model for comparison. 
 \subsection{Multilayer perception networks (MLPs)}
-Artificial neural networks (ANN) are machine learning systems inspired by biological animal brains \cite{Rasmussen2006}. There are many classifications of ANNs, with multilayer perception networks (MLP) being the standard representation \citep{goodfellow}. Typically MLPs are adapted for supervised learning problems where the input variables are mapped to labelled output variables. The relationship between the input and output variables are learned by optimizing the weights ($\overline{w}$) and biases ($\overline{b}$) to minimize a selected cost function, which for most cases is the MSE given in equation \ref{eqn_lin_cost}. A standard MLP schematic is given in figure \ref{fig_mlp_schematic}, illustrating the common features of a MLP, that being the input, hidden and output layers.
-
+Artificial neural networks (ANN) are machine learning systems inspired by biological animal brains \cite{Rasmussen2006}. There are many classifications of ANNs, with multilayer perception networks (MLP) being the standard representation \citep{goodfellow}. Typically MLPs are adapted for supervised learning problems where the input variables are mapped to labelled output variables. The relationship between the input and output variables are learned by optimizing the weights ($\overline{w}$) and biases ($\overline{b}$) to minimize a selected cost function, which for most cases is the MSE given in equation \ref{eqn_lin_cost}. A standard MLP schematic is given in figure \ref{fig_mlp_schematic}, illustrating the common features of a MLP, that being the input, hidden and output layers.\\
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=0.5]{ML_SCHEMATIC}
@@ -300,7 +300,7 @@ P(\overline{X}\mid\overline{Y}) = \sum_{k=1}^K\pi_k(\overline{X})\cdot \mathbb{N
 \end{equation}
 where $K$ represents the number of selected normal distributions, while $\overline{\mu}_k$ and $\overline{\sigma}^2_k$ are the predicted means and variances for each distribution $k$ given the input data $\overline{X}$ respectively.\\
 
-A schematic of a simple ANN-MDN network is given in Figure \ref{fig_mdn_schematic}, highlighting the mixing coefficients, predicted means and deviations. It can is shown that modifications are made to the output layer by splitting the network output into three parts in order to calculate the $\overline{\pi}_k$, $\overline{\mu}_k$ and $\overline{\sigma}^2_k$ for each $k$ distribution. This enables the MDN network to learn the $P(\overline{X}\mid\overline{Y})$.\\
+A schematic of a simple MDN-ANN network is given in Figure \ref{fig_mdn_schematic}, highlighting the mixing coefficients, predicted means and deviations. It can is shown that modifications are made to the output layer by splitting the network output into three parts in order to calculate the $\overline{\pi}_k$, $\overline{\mu}_k$ and $\overline{\sigma}^2_k$ for each $k$ distribution. This enables the MDN network to learn the $P(\overline{X}\mid\overline{Y})$.\\
 
 \begin{figure*}[h!]
 	\centering
@@ -339,14 +339,14 @@ The MDN weights and biases are optimized by minimizing the negative log-likeliho
 
 
 \section{Data generation}
-A steady-state multiphase non-thermal equilibrium CFD model was used to generate the target data, which was subsequently used for training/development of an appropriate surrogate model.
+A steady-state multiphase non-thermal equilibrium CFD model was used to generate the target data, which was subsequently used for training/testing of an appropriate surrogate model.
 
 \subsection{CFD model setup}
 The current study makes use of the commercial CFD software package ANSYS\textsuperscript{\textregistered} Fluent 2019 R3 to resolve the fluid flow, heat transfer and combustion processes for a 620$MW_e$ utility scale coal fired boiler. The computational domain is modelled on a symmetry plane half way through the depth of the boiler. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and defines the important boundary conditions.\\ 
 
 \begin{figure*}[h!]
 	\centering
-		\includegraphics[scale=0.5]{CFD_GEOMETRY}S
+		\includegraphics[scale=0.5]{CFD_GEOMETRY}
 	  \caption{CFD model geometry and boundary condition descriptions.}\label{fig_cfd_geom_bc}
 \end{figure*}
 
@@ -437,65 +437,79 @@ Table \ref{tbl_tuning} highlights the hyper-parameter search spaces for both the
 \end{tabular*}
 \end{table*}
 
+The hyper-parameter tuning of both the MLP and MDN-ANN models made use of a single epoch run consisting of 1000 training/testing passes. This was deemed adequate to train/test the models for the various hyper-parameter search spaces, and was utilized to reduce the computational effort/time.\\
 
-The hyper-parameter search was conducted in a sequential manner with the number of layers and neurons per layer being the initial step, after which the learning rates were varied, followed by the batch sizes. The ANN-MDN hyper-parameter tuning was conducted in a similar manner only that an additional step is required to establish the best amount of distributions.
-
-\begin{table*}[h!]
-\caption{ANN model selection results}\label{tbl_tuning}
-\begin{tabular*}{\tblwidth}{p{0.5\textwidth}p{0.24\textwidth}p{0.24\textwidth}}
-\toprule
- Parameter& NN search space & MDN search space \\ % Table header row
-\midrule
- Number of distributions & - & 2,3,4  \\
- Number of layers & 2,3,4 & 2,3,4\\
- Number of neurons per layer & 10, 40, 80, 100  & 10, 40, 80, 100\\
- Learning rates & 1e-3, 1e-4, 1e-5 &  1e-3, 1e-4, 1e-5   \\
- Mini batch sizes  & 16, 32, 64 & 16, 32, 64  \\
-\bottomrule
-\end{tabular*}
-\end{table*}
+The hyper-parameter search was conducted in a sequential manner with the mean absolute errors (MAE) and root mean square errors (RMSE) being taken as important performance indicators for each sequential step. Firstly both models (MLP \& MDN-ANN) hidden layer architectures was varied by considering the amount of hidden layers and neurons per layer. Figure \ref{fig_mlp_hyper} (a) illustrates the MLP model performance for the various hidden layer architectures. It can be seen that the neuron capacity reaches a minimum MAE at 80 neurons per layer for a 4-layer architecture, further neuron capacity results in an increase in the MAE, possibly indicating an over fitting of data. Secondly, the learning rates were varied for the best performing architecture of the first hyper-parameter tuning step. Considering Figure \ref{fig_mlp_hyper} (b), a decrease in the learning rate shows an improvement in the MAE, with a learning rate of $1\times10^{-5}$ being the best for the current epoch size. For comparative purposes, learning rates of $1\times10^{-5}$ and $1\times10^{-6}$ were used in the final step, where the mini-batch sizes are varied. Figure \ref{fig_mlp_hyper} (c) highlights the comparison, for a fixed epoch, with a mini-batch size of 32 and a corresponding learning rate of $1\times10^{-5}$ show the best MAE improvement.\\
 
 \begin{figure}[h!]
 	\centering
-		\includegraphics[\textwidth]{NEURONS_HYPER}
-	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
+	\subfigure[]{\includegraphics[width=0.5\textwidth, height=5cm]{NEURONS_HYPER}}
+	\subfigure[]{\includegraphics[width=0.49\textwidth, height=5cm]{LR_HYPER}}
+	\subfigure[]{\includegraphics[width=0.49\textwidth, height=5cm]{BATCH_SIZE_HYPER}}
+	\caption{MLP model performance for; (a) hidden layer architecture, (b) varying learning rates, and (c) varying mini-batch sizes}\label{fig_mlp_hyper}
 \end{figure}
 
-%\begin{figure}[h!]
-%	\centering
-%		\includegraphics[scale=0.5]{LR_HYPER}S
-%	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
-%\end{figure}
-%
-%\begin{figure}[h!]
-%	\centering
-%		\includegraphics[scale=0.5]{BATCH_SIZE_HYPER}S
-%	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
-%\end{figure}
-%
-%\begin{figure}[h!]
-%	\centering
-%		\includegraphics[scale=0.5]{DIST_HYPER}S
-%	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
-%\end{figure}
+The MDN-ANN hyper-parameter tuning was conducted in a similar manner only that an additional step was required. This was to consider the number of distributions the MDN-ANN would use to capture the probabilistic characteristics. Figure \ref{fig_mdn_hyper} shows the MAE for the various distributions, with a distribution of 1 representing the best MLP model. An increase in the number of distributions tends to improve the MAE, however it is evident that a threshold of 3 distributions results in the best improvement.\\
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=0.5\textwidth]{DIST_HYPER}
+	  \caption{MDN-ANN model performance for number of distributions}\label{fig_mdn_hyper}
+\end{figure}
 
+The results of hyper-parameter search are given in Table \ref{tbl_hyper_results}. Unlike the MLP, which can only produce a single set of predictions for an input, the MDN-ANN is able to produce a distribution of predictions based on the most probable mixing coefficient. This highlights one of the main advantages of the using the MDN-ANN model is its ability to learn the uncertainty that comes from using a probabilistic model. This is shown in the error distributions graphs of Figures \ref{fig_frequency_data} (a) and (b) with addition of uncertainty on the percentage error is introduced. A simple linear regression model was used as a base model for comparative purposes. For MDN-ANN model it is seen that approximately 80-90\% of the training data has mean absolute percentage errors (MAPEs) below 10\%, with the MLP model showing a similar trend. Both models show considerable improvement in comparison to the linear model.\\
+
+Based on the above analysis, the MDN-ANN model was selected as the best model to be used for the surrogate model implementation. As mentioned, the MDN-ANN model is able determine the uncertainty associated with each prediction, an important feature for future investigations incorporating transient/dynamic responses.
+
+\begin{table}[h!]
+\caption{Hyper-parameter search results}\label{tbl_hyper_results}
+\begin{tabular*}{\tblwidth}{lp{0.1\textwidth}l}
+\toprule
+ Parameter& MLP & MDN-ANN \\ % Table header row
+\midrule
+ Number of distributions & - & 3  \\
+ Number of layers & 4 & 4\\
+ Number of neurons per layer & 80  & 80\\
+ Learning rate & 1e-5 &  1e-5   \\
+ Mini batch size  &32 & 32  \\
+\midrule
+Errors & &\\
+Average RMSE & &\\
+Average MAE & &\\
+\bottomrule
+\end{tabular*}
+\end{table}  
+
+\begin{figure}[h!]
+	\centering
+	\subfigure[]{\includegraphics[width=0.5\textwidth, height=5cm]{OVERALL_TRAIN}}
+	\subfigure[]{\includegraphics[width=0.5\textwidth, height=5cm]{OVERALL_TEST}}
+	\caption{Error distributions for the selected MLP and MDN-ANN model h; (a) training data and (b) testing data}\label{fig_frequency_data}
+\end{figure}
 \subsection{Process model integration}
-Th validation and the subsequent case-studies of Section \ref{sec_results_diss}, make use of an integrated surrogate and network based-process model. The process model is used to capture the thermodynamic response of the water/steam side of the utility boiler under investigation, the the developed data-driven surrogate model providing the gas-side thermal predictions.\\
+The validation and the subsequent case-studies of Section \ref{sec_results_diss}, make use of an integrated surrogate and network based-process model. The process model is used to capture the thermodynamic response of the water/steam side of the utility boiler under investigation, with the developed data-driven surrogate model (i.e. MDN-ANN) providing the gas-side thermal predictions and heat-exchanger heat loads.\\
 
-A C\# script is used to access the Python API available in the process modelling software, Flownex SE\textsuperscript{\textregistered} 2021. This allows for predictions to be made using the trained MDN-ANN model (surrogate model). The most probable predictions are retrieved using the script and transferred to the respective process model components as inputs. A schematic of the surrogate and process models integration is provided in Figure \ref{fig_int_model}.
+A C\# script is used to access the Python application programming interface (API) available in the process modelling software, Flownex SE\textsuperscript{\textregistered} 2021. This allows for predictions to be made using the trained MDN-ANN model. The most probable predictions are retrieved using the script and transferred to the respective process model components as inputs. A schematic of the surrogate and process models integration is provided in Figure \ref{fig_int_model}.\\
 \begin{figure*}[h!]
 	\centering
-		\includegraphics[scale=0.65]{INTEGRATED_MODEL}S
+		\includegraphics[scale=0.15]{INTEGRATED_MODEL}S
 	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
 \end{figure*}
-fhhf
 
+The boiler can be split into three parts namely, the furnace, the radiative pass consisting of the platen (SH2) and final (SH3) SHs, and the convective pass consisting of the secondary re-heater (RH2), primary SH (SH1), primary re-heater (RH1) and the economizer (ECO). The furnace heat load predictions to the furnace walls determine the evaporation rate. The high pressure (HP) steam outlet steam flow rate is calculated as the addition of the attemperation flow rates (ATT1 and ATT2) and the evaporation flow rate. The attemperators are used to control the steam temperature to ensure an exit temperature of $808K$ at both the HP outlet and RH outlet. In addition to the furnace heat loads the surrogate model predicts the platen and final SH heat loads. Lastly the surrogate model is able to predict the flue-gas conditions at the inlet to convective pass (i.e. RH2). The furnace walls, platen and final SHs are represented by a single lumped parameter pipe flow component, interconnected with nodes that introduce the attemperation flows to the water/steam side. The convective pass components are modelled using an in house heat exchanger model that accounts for the radiative (gas and direct), convective and conduction heat transfer mechanisms to and from the gas-side and steam-side control volumes, as well as between the up- and downstream heat exchangers on the gas side.
 
 \section{Results and discussion}\label{sec_results_diss}
-A illustrated in the previous section the MDN-ANN model is selected model used for the subsequent validation and fuel quality case studies.
+A illustrated in the previous section the MDN-ANN model is selected model used for the subsequent validation and fuel quality case studies. 
 
 \subsection{Multiple load validation}
-
+\begin{figure}[h!]
+	\centering
+	\subfigure[100\% MCR]{\includegraphics[width=0.5\textwidth]{100_CASE}}
+	\subfigure[80\% MCR]{\includegraphics[width=0.5\textwidth]{80_CASE}}
+	\subfigure[60\% MCR]{\includegraphics[width=0.5\textwidth]{80_CASE}}
+%	\subfigure[]{\includegraphics[width=0.25\textwidth]{80_CASE}}
+%	\subfigure[]{\includegraphics[width=0.25\textwidth]{60_CASE}}
+	\caption{Heat loads}\label{fig_valid_heat}
+\end{figure}
 
 
 
@@ -505,16 +519,37 @@ The fuel quality is an important factor when determining the
 Fuels with total moisture contents exceeding 
 The following results illustrate the effects poor quality fuel has on the case studies boiler operational. The study made use of the developed surrogate model to investigate the steady state operation of the boiler burning poor quality coal.  
 In this section the results of a study conducted  
+
+\begin{table}[h!]
+\caption{dstuf}\label{tbl_hyper_results}
+\begin{tabular*}{\tblwidth}{lp{0.05\textwidth}p{0.05\textwidth}p{0.05\textwidth}}
+\toprule
+\textit{Variable}& Base & High-ash & High-moisture \\ % Table header row
+\midrule
+Mean boiler efficiency [\%]& & &\\
+\midrule
+\multicolumn{4}{l}{\textit{Radiative heat transfer percentage (Convective pass)} }\\
+\midrule
+RH2 & & &\\
+SH1 & & &\\
+RH1 & & &\\
+ECO & & &\\
+\bottomrule
+\end{tabular*}
+\end{table}  
+
+
 \section{Conclusion}
 
 The present work has shown it is possible
 % To print the credit authorship contribution details
+\newpage
 \printcredits
 
 %% Loading bibliography style file
 %\bibliographystyle{model1-num-names}
 \bibliographystyle{cas-model2-names}
-\newpage
+
 % Loading bibliography database
 \bibliography{ML_paper}
 
