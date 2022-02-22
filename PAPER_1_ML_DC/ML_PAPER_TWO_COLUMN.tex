@@ -513,70 +513,94 @@ A C\# script is used to access the Python application programming interface (API
 	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
 \end{figure*}
 
-The boiler can be split into three parts namely, the furnace, the radiative pass consisting of the platen (SH2) and final (SH3) SHs, and the convective pass consisting of the secondary re-heater (RH2), primary SH (SH1), primary re-heater (RH1) and the economizer (ECO). The furnace heat load predictions to the furnace walls determine the evaporation rate. The high pressure (HP) steam outlet steam flow rate is calculated as the addition of the attemperation flow rates (ATT1 and ATT2) and the evaporation flow rate. The attemperators are used to control the steam temperature to ensure an exit temperature of $808K$ at both the HP outlet and RH outlet. In addition to the furnace heat loads the surrogate model predicts the platen and final SH heat loads. Lastly the surrogate model is able to predict the flue-gas conditions at the inlet to convective pass (i.e. RH2). The furnace walls, platen and final SHs are represented by a single lumped parameter pipe flow component, interconnected with nodes that introduce the attemperation flows to the water/steam side. The convective pass components are modelled using an in house heat exchanger model that accounts for the radiative (gas and direct), convective and conduction heat transfer mechanisms to and from the gas-side and steam-side control volumes, as well as between the up- and downstream heat exchangers on the gas side.
+The boiler can be split into three sections namely, the furnace, the radiative pass consisting of the platen (SH2) and final (SH3) SHs, and the convective pass consisting of the secondary re-heater (RH2), primary SH (SH1), primary re-heater (RH1) and the economizer (ECO). The furnace heat load predictions to the furnace walls determine the evaporation rate. The high pressure (HP) steam outlet steam flow rate is calculated as the addition of the attemperation flow rates (ATT1 and ATT2) and the evaporation flow rate. The attemperators are used to control the steam temperature to ensure an exit temperature of $808K$ at both the HP outlet and RH outlet. In addition to the furnace heat loads the surrogate model predicts the platen and final SH heat loads. Lastly the surrogate model is able to predict the flue-gas conditions at the inlet to convective pass (i.e. RH2). The furnace walls, platen and final SHs are represented by a single lumped parameter pipe flow component, interconnected with nodes that introduce the attemperation flows to the water/steam side. The convective pass components are modelled using an in house heat exchanger model that accounts for the radiative (gas and direct), convective and conduction heat transfer mechanisms to and from the gas-side and steam-side control volumes, as well as between the up- and downstream heat exchangers on the gas side.
 
 \section{Results and discussion}\label{sec_results_diss}
-As concluded in Section \ref{sec_hyper}, the ANN-MDN model is the model used for the surrogate model integration. The subsequent sections provide a validation of the integrated models thermal response and a case study the investigates the effects of using a poor quality fuel. 
+As concluded in Section \ref{sec_hyper}, the ANN-MDN model is used for the surrogate model integration. The subsequent sections provide a validation of the integrated models thermal response and a case study that investigates the effects of using poor quality fuel. 
 
 \subsection{Multiple load validation}
-The surrogate models thermal prediction and response are validated for 100\%, 80\% and 60\% MCR load cases. The measured plant data for the respective load ratings were made available, allowing foe the mean and standard deviation to be calculated from the plant data, thus capturing the uncertainty of the measurement devices used in the plant. 
+The surrogate models predictions and thermal-hydraulic response are validated for 100\%, 80\% and 60\% MCR load cases. The measured plant data for the respective load ratings were made available, allowing for the mean and standard deviation to be calculated from the plant data, thus capturing the uncertainty of the measurement devices used in the plant.\\ 
 
-use of  amonte-carlo simulation ruin to determine the confidence band for the 
+The benefit of using the ANN-MDN surrogate model is its ability to provide predictions along with  its respective standard deviation. To incorporate the prediction/s uncertainty and propagate this through the entire integrated model, the current work made use of the Monte Carlo method \cite{Thomopoulos2013}. The method is used to illustrate how a model responds to randomly generated inputs, the process is described as follows process. Firstly random sampling of the input variable/s (in this case the ANN-MDN model predictions) are performed based on the mean and standard deviation to produce $N$ number of scenarios, secondly simulations are run for each scenario, finally ongoing assessment of the simulations results are performed on measures such as the mean and standard deviation.\\ 
 
-Figure \ref{} (a-c)
+The use of Flownex SE\textsuperscript{\textregistered} 2021s built in Monte Carlo method, requires the mean and standard deviation for the inputs that are to be varied \cite{flownex}. For this study $N$=1000 scenarios where performed for each validation case with the mean and standard deviation being used as measures to determine convergence. The ANN-MDN input vectors ($\overline{X}$) for the validation cases are provided in Table \ref{tbl_inputs}, these inputs were obtained from the works of Laubscher and Rousseau \cite{Laubscher2019b}.\\
 
-What does the thermal response imply
-discuss the results. The use of MDn provides a confidence band.
-\begin{figure*}\label{fig_100_valid}
+\begin{table*}[h!]
+\caption{ANN-MDN input vectors ($\overline{X}$) for the validation and varied fuel case studies}\label{tbl_inputs}
+\begin{tabular*}{\tblwidth}{lp{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}}
+\toprule
+ & \multicolumn{3}{c}{\textbf{Validation load cases}}&\multicolumn{2}{c}{\textbf{Varied fuel load cases}}\\
+\textit{Inputs}& 100\%  & 80\% & 60\% & High-ash & High-moisture  \\
+\midrule
+Excess air ratio - [-] & 1.155 & 1.209 & 1.263 & 1.155 & 1.155  \\
+$Y_{ASH}$ - [$kg/kg$] & 0.409 & 0.409 &  0.409 &0.5 & 0.409  \\
+$Y_{H_{2}O}$ - [$kg/kg$] & 0.055 & 0.055 & 0.055 & 0.055 & 0.146  \\
+HHV = $f(Y_{ASH},Y_{H_{2}O})$ - [$MJ/kg$] & 15.07 & 15.07 & 15.07 & 12.68 & 12.68  \\
+Platen SH fouling - [$K/W$]& 0.012 & 0.012 & 0.012 & 0.012 & 0.012  \\
+Final SH fouling - [$K/W$] & 0.0067&0.0067 &0.0067 & 0.0067&0.0067  \\
+Total fuel flowrate - [$kg/s$] &108.6 & 90.72 & 60.12 &108.6 & 108.6 \\
+Platen SH mean steam temp. - [$K$] & 698 &697&781 &698 &698  \\
+Final SH mean steam temp. - [$K$]& 787 & 793 &781 &787 &787  \\
+\bottomrule
+\end{tabular*}
+\end{table*}  
+\begin{figure*}
 \centering
 \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\textwidth, height = 4.25cm]{100_CASE}
-    \caption{}
+    \caption{100\% MCR}
 \end{subfigure}\hfill % maximize horizontal separation
 \begin{subfigure}{0.33\textwidth}
-    \includegraphics[width=\linewidth, height = 4.25cm]{100_CASE_STEAM}
-    \caption{}
+    \includegraphics[width=\linewidth, height = 4.25cm]{80_CASE}
+    \caption{80\% MCR}
 \end{subfigure}\hfill
 \begin{subfigure}{0.33\textwidth}
-    \includegraphics[width=\linewidth, height = 4.25cm]{100_CASE_ATTEMP}
-    \caption{}
+	\includegraphics[width=\linewidth, height = 4.25cm]{60_CASE}
+        \caption{60\% MCR}
 \end{subfigure}
-\caption{100\% MCR load validation result comparison of the measured data and ANN-MDN model results for (a) the various heat loads, (b) the steam exit and generation flowrates and (c) the required attemperator flowrates to maintain operational integrity}
+\caption{Load validation result comparison of the measured data and ANN-MDN model results for the various heat exchangers}
+\label{fig_heat_load}
 \end{figure*}
 
-\begin{figure*}\label{fig_80_valid}
+\begin{figure*}
 \centering
 \begin{subfigure}{0.33\textwidth}
-    \includegraphics[width=\linewidth, height = 4.25cm]{80_CASE}
-    \caption{}
+\includegraphics[width=\linewidth, height = 4.25cm]{100_CASE_STEAM}
+        \caption{100\% MCR}
 \end{subfigure}\hfill % maximize horizontal separation
 \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\linewidth, height = 4.25cm]{80_CASE_STEAM}
-    \caption{}
+    \caption{80\% MCR}
 \end{subfigure}\hfill
 \begin{subfigure}{0.33\textwidth}
-    \includegraphics[width=\linewidth, height = 4.25cm]{80_CASE_ATTEMP}
-    \caption{}
+	\includegraphics[width=\linewidth, height = 4.25cm]{60_CASE_STEAM}
+    \caption{60\% MCR}
 \end{subfigure}
-\caption{80\% MCR load validation result comparison of the measured data and ANN-MDN model results for (a) the various heat loads, (b) the steam exit and generation flowrates and (c) the required attemperator flowrates to maintain operational integrity}
+\caption{Load validation result comparison of the measured data and ANN-MDN model results for the steam exit and generation flowrates}
+\label{fig_steam_gen}
 \end{figure*}
 
-\begin{figure*}\label{fig_60_valid}
+\begin{figure*}
 \centering
 \begin{subfigure}{0.33\textwidth}
-    \includegraphics[width=\linewidth, height = 4.25cm]{60_CASE}
-    \caption{}
+    \includegraphics[width=\linewidth, height = 4.25cm]{100_CASE_ATTEMP}
+    \caption{100\% MCR}
 \end{subfigure}\hfill % maximize horizontal separation
 \begin{subfigure}{0.33\textwidth}
-    \includegraphics[width=\linewidth, height = 4.25cm]{60_CASE_STEAM}
-    \caption{}
+    \includegraphics[width=\linewidth, height = 4.25cm]{80_CASE_ATTEMP}
+    \caption{80\% MCR}
 \end{subfigure}\hfill
 \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\linewidth, height = 4.25cm]{60_CASE_ATTEMP}
-    \caption{}
+    \caption{60\% MCR}
 \end{subfigure}
-\caption{60\% MCR load validation result comparison of the measured data and ANN-MDN model results for (a) the various heat loads, (b) the steam exit and generation flowrates and (c) the required attemperator flowrates to maintain operational integrity}
+\caption{Load validation result comparison of the measured data and ANN-MDN model results for the required attemperator flowrates to maintain operational integrity}
+\label{fig_attemp}
 \end{figure*}
+
+Figures \ref{fig_heat_load} - \ref{fig_attemp} provide comparative results of the measured data and integrated model responses for all three load cases. It can be seen for a range of MCR loads the integrated model is able capture the heat loads to the various heat exchangers (Figures \ref{fig_heat_load} (a-c)) with sufficient accuracy. The associated uncertainty of the of the integrated model overlaps with the measured data uncertainty with minimal outliers. The biggest difference arise\\ 
+
+Considering the steam generation results of Figures \ref{fig_100_valid} - \ref{fig_60_valid} (b),  
 
 \subsection{Utility boiler response for a fuel with high ash \& moisture contents}
 Mention the importance of fuel energy, case 

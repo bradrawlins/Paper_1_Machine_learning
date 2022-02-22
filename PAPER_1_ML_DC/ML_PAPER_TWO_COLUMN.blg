@@ -5,49 +5,47 @@ Reallocating 'name_of_file' (item size: 1) to 17 items.
 The style file: cas-model2-names.bst
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 Database file #1: ML_paper.bib
-Warning--to sort, need author, editor, or key in Ansys
 Reallocating 'singl_function' (item size: 4) to 100 items.
-Warning--empty author and editor in Ansys
 Warning--empty pages in Rawlins2021
-You've used 12 entries,
+You've used 15 entries,
             2990 wiz_defined-function locations,
-            830 strings with 8580 characters,
-and the built_in function-call counts, 7493 in all, are:
-= -- 567
-> -- 258
-< -- 6
-+ -- 100
-- -- 88
-* -- 826
-:= -- 1074
-add.period$ -- 42
-call.type$ -- 12
-change.case$ -- 91
-chr.to.int$ -- 12
-cite$ -- 17
-duplicate$ -- 581
-empty$ -- 590
-format.name$ -- 125
-if$ -- 1409
+            851 strings with 9131 characters,
+and the built_in function-call counts, 9016 in all, are:
+= -- 677
+> -- 306
+< -- 11
++ -- 118
+- -- 103
+* -- 956
+:= -- 1320
+add.period$ -- 52
+call.type$ -- 15
+change.case$ -- 109
+chr.to.int$ -- 15
+cite$ -- 16
+duplicate$ -- 710
+empty$ -- 711
+format.name$ -- 148
+if$ -- 1693
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 116
-newline$ -- 81
-num.names$ -- 46
-pop$ -- 221
+missing$ -- 143
+newline$ -- 97
+num.names$ -- 62
+pop$ -- 277
 preamble$ -- 1
-purify$ -- 77
+purify$ -- 94
 quote$ -- 0
-skip$ -- 163
+skip$ -- 211
 stack$ -- 0
-substring$ -- 248
-swap$ -- 407
-text.length$ -- 0
+substring$ -- 279
+swap$ -- 481
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 93
-warning$ -- 3
-while$ -- 42
+type$ -- 114
+warning$ -- 1
+while$ -- 54
 width$ -- 0
-write$ -- 195
-(There were 3 warnings)
+write$ -- 239
+(There was 1 warning)
