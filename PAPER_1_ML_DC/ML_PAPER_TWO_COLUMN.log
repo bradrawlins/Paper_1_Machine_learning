@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  23 FEB 2022 18:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  23 FEB 2022 18:45
 entering extended mode
 **./ML_PAPER_TWO_COLUMN.tex
 (ML_PAPER_TWO_COLUMN.tex
@@ -1419,39 +1419,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 611--612
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 624--624
+Underfull \hbox (badness 10000) in paragraph at lines 625--625
 []|\T1/cmss/m/n/9 High-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 624--625
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
 []|\T1/cmss/m/n/9 High-
  []
 
 
-Overfull \hbox (8.38023pt too wide) in paragraph at lines 624--625
+Overfull \hbox (8.38023pt too wide) in paragraph at lines 625--626
 \T1/cmss/m/n/9 moisture| 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 622--636
+Underfull \hbox (badness 10000) in alignment at lines 623--637
 [][][][] 
  []
 
 <100_FUEL_CASE.png, id=228, 761.84625pt x 524.96124pt>
 File: 100_FUEL_CASE.png Graphic file (type png)
 <use 100_FUEL_CASE.png>
-Package pdftex.def Info: 100_FUEL_CASE.png  used on input line 642.
+Package pdftex.def Info: 100_FUEL_CASE.png  used on input line 643.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
 <100_FUEL_CASE_STEAM.png, id=229, 761.84625pt x 522.95375pt>
 File: 100_FUEL_CASE_STEAM.png Graphic file (type png)
 <use 100_FUEL_CASE_STEAM.png>
-Package pdftex.def Info: 100_FUEL_CASE_STEAM.png  used on input line 646.
+Package pdftex.def Info: 100_FUEL_CASE_STEAM.png  used on input line 647.
 (pdftex.def)             Requested size: 163.17763pt x 120.92317pt.
 <100_FUEL_CASE_ATTEMP.png, id=230, 742.775pt x 527.9725pt>
 File: 100_FUEL_CASE_ATTEMP.png Graphic file (type png)
 <use 100_FUEL_CASE_ATTEMP.png>
-Package pdftex.def Info: 100_FUEL_CASE_ATTEMP.png  used on input line 650.
+Package pdftex.def Info: 100_FUEL_CASE_ATTEMP.png  used on input line 651.
 (pdftex.def)             Requested size: 163.18433pt x 120.92357pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1459,7 +1459,7 @@ $[]$
  []
 
 [10]
-Underfull \hbox (badness 1824) in paragraph at lines 662--663
+Underfull \hbox (badness 1824) in paragraph at lines 663--664
 \T1/stix/m/n/10 ol-ogy, Re-sources, Con-cep-tu-al-iza-tion.. \T1/stix/b/n/10 Pi
 eter Rousseau:
  []
@@ -1512,7 +1512,7 @@ ype1/public/stix/stix-mathit.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/stix/stix-mathrm.pfb><C:/Users/RWLBRA001/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/stix/stix-mathscr.pfb><C:/Users/RWLBRA001/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on ML_PAPER_TWO_COLUMN.pdf (12 pages, 1969312 bytes).
+Output written on ML_PAPER_TWO_COLUMN.pdf (12 pages, 1969345 bytes).
 PDF statistics:
  330 PDF objects out of 1000 (max. 8388607)
  78 named destinations out of 1000 (max. 500000)
