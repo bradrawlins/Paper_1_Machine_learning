@@ -55,7 +55,7 @@
 \shortauthors{B.T. Rawlins et el.}  
 
 % Main title of the paper
-\title [mode = title]{Validation of an integrated data-driven surrogate model and a thermo-hydraulic network based model to determine thermal response of a 620 $MWe$ utility scale boiler using a fully connected mixture density network}  
+\title [mode = title]{Validation of an integrated data-driven surrogate model and a thermo-hydraulic network based model to determine thermal response of a 620 $MW_e$ utility scale boiler using a fully connected mixture density network}  
 
 % Title footnote mark
 % eg: \tnotemark[1]
@@ -518,7 +518,7 @@ The boiler can be split into three sections namely, the furnace, the radiative p
 \section{Results and discussion}\label{sec_results_diss}
 As concluded in Section \ref{sec_hyper}, the ANN-MDN model is used for the surrogate model integration. The subsequent sections provide a validation of the integrated models thermal response and a case study that investigates the effects of using poor quality fuel. 
 
-\subsection{Multiple load validation}
+\subsection{Multiple load validation}\label{sec_result_1}
 The surrogate models predictions and thermal-hydraulic response are validated for 100\%, 80\% and 60\% MCR load cases. The measured plant data for the respective load ratings were made available, allowing for the mean and standard deviation to be calculated from the plant data, thus capturing the uncertainty of the measurement devices used in the plant.\\ 
 
 The benefit of using the ANN-MDN surrogate model is its ability to provide predictions along with  its respective standard deviation. To incorporate the prediction/s uncertainty and propagate this through the entire integrated model, the current work made use of the Monte Carlo method \cite{Thomopoulos2013}. The method is used to illustrate how a model responds to randomly generated inputs, the process is described as follows process. Firstly random sampling of the input variable/s (in this case the ANN-MDN model predictions) are performed based on the mean and standard deviation to produce $N$ number of scenarios, secondly simulations are run for each scenario, finally ongoing assessment of the simulations results are performed on measures such as the mean and standard deviation.\\ 
@@ -598,25 +598,33 @@ Final SH mean steam temp. - [$K$]& 787 & 793 &781 &787 &787  \\
 \label{fig_attemp}
 \end{figure*}
 
-Figures \ref{fig_heat_load} - \ref{fig_attemp} provide comparative results of the measured data and integrated model responses for all three load cases. It can be seen for a range of MCR loads the integrated model is able capture the heat loads to the various heat exchangers (Figures \ref{fig_heat_load} (a-c)) with sufficient accuracy. The associated uncertainty of the of the integrated model overlaps with the measured data uncertainty with minimal outliers. The biggest difference arise\\ 
+Figures \ref{fig_heat_load} - \ref{fig_attemp} provide comparative results of the measured data and integrated model responses for all three load cases. It can be seen for a range of MCR loads the integrated model is able capture the heat loads to the various heat exchangers (Figures \ref{fig_heat_load} (a-c)) with sufficient accuracy. In general the model under-predicts the mean of the heat loads in the furnace and radiative pass, with slight over-predictions seen in the convective pass. However, the associated uncertainty of the integrated model overlaps with the measured data uncertainty with minimal outliers.\\ 
 
-Considering the steam generation results of Figures \ref{fig_100_valid} - \ref{fig_60_valid} (b),  
+Considering the steam generation and exit flowrates of Figure \ref{fig_steam_gen} (a-c), it can be seen that the integrated model is able to sufficiently capture the hydraulic response of the case study boiler for a wide range of loads. A higher degree of uncertainty is associated with the integrated model but this is deemed acceptable since the response overlaps with the measured data. The attemperators of a utility scale boiler, are an integral part of the control systems put in place to ensure safe operating conditions and minimal wear on the downstream components, namely the steam HP and Low-pressure steam turbines \cite{Kakac1991}. Figure  \ref{fig_attemp} (a-c) highlight the attemperator flowrates across a wide range of loads. The integrated model is shown to adequately resolve the flowrates with a slightly higher mean being predicted for the 80\% load case.\\
 
+It has been shown that integrated model is able to resolve the thermal response based on the predictions of the ANN-MDN model for a wide range of loads with sufficient accuracy. The heat loads are within a 5\% tolerance of the measured data's mean value, while the steam generation rates exhibit a maximum difference of 7\%, which seen in the 60\% MCR load case (refer to Figure \ref{fig_steam_gen} (c)). The attemperators results feature the largest uncertainty/confidence band of all the results (Figure \ref{fig_attemp}), however the confidence bands do overlap within 5\%. 
 \subsection{Utility boiler response for a fuel with high ash \& moisture contents}
-Mention the importance of fuel energy, case 
-The fuel quality is an important factor when determining the 
-Fuels with total moisture contents exceeding 
-The following results illustrate the effects poor quality fuel has on the case studies boiler operational. The study made use of the developed surrogate model to investigate the steady state operation of the boiler burning poor quality coal.  
-In this section the results of a study conducted  
+The following section makes use of the validated model of Section \ref{sec_result_1}. The fuel constituents that effect the energy content of the fuel (HHV) the most are primarily the ash ($Y_{ASH}$) and moisture ($Y_{H_{2}O}$) content. Thus, two case studies were made to illustrate the effects of using poor quality fuel.\\
+
+The input vectors for the two fuel cases are provided in Table \ref{tbl_inputs}, it can be seen that the all the inputs are identical to the 100\% load case except for the ash, moisture and higher heating value of the respective fuels. This was done to compare the effects of the poor quality coal to that of the 100\% load case, in terms of the boiler efficiency, heat pick-up and thermal response. It is important to note that both the high ash and moisture case studies have the same HHV value, thus allowing for a productive correlation of the results.\\
+
+As with validation case studies of Section \ref{sec_result_1}, the Monte Carlo method was employed to ascertain the integrated models uncertainty for all responses. The base model heading of Figure \ref{fig_fuel_results} (a-c) refers to the integrated model results for the 100\% load case of Figures \ref{fig_heat_load}-\ref{fig_attemp}. Figure \ref{fig_fuel_results}  (a) highlights the effects that poor quality fuel have on the heat load to the various heat exchangers, with a 20\% drop being observed. This is an expected result since the energy content of the fuel is lower than that of the base case. To maintain 100\% load capabilities using the poor quality fuel an increase in the fuel flowrate would be suggested, this provides more energy content, however the mill operational output limited. The operational protocol for the 100\% load case makes use of 5 mills operating 30 of the 36 burners, at full capacity with a standby mill and burner arrangement placed in reserve to help mitigate operational risks, such as maintenance schedules. Using the the standby mill would allow the fuel flowrate to increase by maximum 17\% , yet this would decrease the operational integrity and increase the associated risks. Since when burning the high-ash content fuel the likelihood of ash deposition/fouling of the heat exchanging components increases.\\
+
+The steam generation rates and attemperators (Figure \ref{fig_fuel_results} (b-c)), similarly illustrate a decrease in the water/steam flowrates. The generation rates exhibit similar characteristics to the the 80\% load case of Figure \ref{fig_steam_gen} (b), illustrating a significant decrease in the operational capabilities when using a poor quality fuel. The predicted flue-gas temperatures entering the the convective pass are shown in Table \ref{tbl_fuel_results}. It is shown that for an increase in the fuels ash content the inlet temperature increases, which results in a higher radiative heat transfer percentage for the convective pass components (table \ref{tbl_fuel_results}). While the presence of more moisture in the fuel results in a lower inlet temperature, primarily due to the fact that the extra moisture requires a higher heat rate of evaporation, leading to lower radiative heat transfer percentages. Where the radiative heat transfer percentage per component $i$ is defined as follows: \\
+\begin{equation}
+\dot{Q}_{rad,i}\% = \frac{\dot{Q}_{rad,i}}{\dot{Q}_{rad,i}+\dot{Q}_{conv,i}}\times 100
+\end{equation}
+
+The boiler efficiency is measure used to convey how well the combustion heat is transferred to the working fluid, and is defined as the ratio of total amount of heat absorbed by the heat exchangers (i.e. sum of the furnace, radiative and convective pass heat loads) and the combustion energy released ($m_{fuel}HHV$). A significant decrease in the boiler efficiency is highlighted in Table \ref{tbl_fuel_results}, for both fuel cases with the high ash fuel showing a slightly better result. 
 
 \begin{table}[h!]
 \caption{Model results for poor fuel characteristics}\label{tbl_fuel_results}
-\begin{tabular*}{\tblwidth}{lp{0.05\textwidth}p{0.05\textwidth}p{0.05\textwidth}}
+\begin{tabular*}{\tblwidth}{p{0.2\textwidth}p{0.05\textwidth}p{0.05\textwidth}p{0.05\textwidth}}
 \toprule
 \textit{Variable}& Base & High-ash & High-moisture \\ % Table header row
 \midrule
-Mean boiler efficiency [\%]& 88.2 & 76.6 & 75.9\\
-Inlet flue-gas temperature [$K$]& 1352 & 1368 & 1311\\
+Mean boiler efficiency [\%]& 88.2 & 77.6 & 75.9\\
+Convective pass inlet flue-gas temp. [$K$]& 1352 & 1368 & 1311\\
 \midrule
 \multicolumn{4}{l}{\textit{Radiative heat transfer percentage (Convective pass)} }\\
 \midrule
@@ -643,6 +651,7 @@ ECO & 6.7& 8.3& 5.4\\
     \caption{}
 \end{subfigure}
 \caption{caption here}
+\label{fig_fuel_results}
 \end{figure*}
 
 \section{Conclusion}
@@ -653,8 +662,8 @@ The present work has shown it is possible
 \printcredits
 
 %% Loading bibliography style file
-%\bibliographystyle{model1-num-names}
-\bibliographystyle{cas-model2-names}
+\bibliographystyle{model1-num-names}
+%\bibliographystyle{cas-model2-names}
 
 % Loading bibliography database
 \bibliography{ML_paper}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  22 FEB 2022 11:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  23 FEB 2022 18:41
 entering extended mode
 **./ML_PAPER_TWO_COLUMN.tex
 (ML_PAPER_TWO_COLUMN.tex
@@ -928,6 +928,10 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 58.
 
 \verbatim@out=\write4
@@ -1378,11 +1382,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 601--602
  []
 
 
-LaTeX Warning: Reference `fig_100_valid' on page 8 undefined on input line 603.
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
 
-
-
-LaTeX Warning: Reference `fig_60_valid' on page 8 undefined on input line 603.
+ []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1397,80 +1399,95 @@ $[]$
 [9 <./100_CASE.png> <./80_CASE.png> <./60_CASE.png> <./100_CASE_STEAM.png> <./8
 0_CASE_STEAM.png> <./60_CASE_STEAM.png> <./100_CASE_ATTEMP.png> <./80_CASE_ATTE
 MP.png> <./60_CASE_ATTEMP.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 616--616
+Underfull \hbox (badness 10000) in paragraph at lines 607--608
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 609--610
+
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 611--612
+\T1/stix/m/n/10 to help mit-i-gate op-er-a-tional risks, such as main-te-nance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--612
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 624--624
 []|\T1/cmss/m/n/9 High-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--617
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
 []|\T1/cmss/m/n/9 High-
  []
 
 
-Overfull \hbox (8.38023pt too wide) in paragraph at lines 616--617
+Overfull \hbox (8.38023pt too wide) in paragraph at lines 624--625
 \T1/cmss/m/n/9 moisture| 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 614--628
+Underfull \hbox (badness 10000) in alignment at lines 622--636
 [][][][] 
  []
 
-<100_FUEL_CASE.png, id=211, 761.84625pt x 524.96124pt>
+<100_FUEL_CASE.png, id=228, 761.84625pt x 524.96124pt>
 File: 100_FUEL_CASE.png Graphic file (type png)
 <use 100_FUEL_CASE.png>
-Package pdftex.def Info: 100_FUEL_CASE.png  used on input line 634.
+Package pdftex.def Info: 100_FUEL_CASE.png  used on input line 642.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
-<100_FUEL_CASE_STEAM.png, id=212, 761.84625pt x 522.95375pt>
+<100_FUEL_CASE_STEAM.png, id=229, 761.84625pt x 522.95375pt>
 File: 100_FUEL_CASE_STEAM.png Graphic file (type png)
 <use 100_FUEL_CASE_STEAM.png>
-Package pdftex.def Info: 100_FUEL_CASE_STEAM.png  used on input line 638.
+Package pdftex.def Info: 100_FUEL_CASE_STEAM.png  used on input line 646.
 (pdftex.def)             Requested size: 163.17763pt x 120.92317pt.
-<100_FUEL_CASE_ATTEMP.png, id=213, 742.775pt x 516.93124pt>
+<100_FUEL_CASE_ATTEMP.png, id=230, 742.775pt x 527.9725pt>
 File: 100_FUEL_CASE_ATTEMP.png Graphic file (type png)
 <use 100_FUEL_CASE_ATTEMP.png>
-Package pdftex.def Info: 100_FUEL_CASE_ATTEMP.png  used on input line 642.
-(pdftex.def)             Requested size: 163.18433pt x 120.91882pt.
+Package pdftex.def Info: 100_FUEL_CASE_ATTEMP.png  used on input line 650.
+(pdftex.def)             Requested size: 163.18433pt x 120.92357pt.
 
-Underfull \hbox (badness 1824) in paragraph at lines 653--654
+Underfull \hbox (badness 10000) has occurred while \output is active
+$[]$
+ []
+
+[10]
+Underfull \hbox (badness 1824) in paragraph at lines 662--663
 \T1/stix/m/n/10 ol-ogy, Re-sources, Con-cep-tu-al-iza-tion.. \T1/stix/b/n/10 Pi
 eter Rousseau:
  []
 
 (ML_PAPER_TWO_COLUMN.bbl
-Underfull \hbox (badness 1377) in paragraph at lines 106--112
+Underfull \hbox (badness 1377) in paragraph at lines 111--117
 []\T1/stix/m/n/8 Thomopoulos, N.T., 2013.  Es-sen-tials of Monte Carlo sim-u-la
 -
  []
 
-
+)
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
-[10 <./100_FUEL_CASE.png> <./100_FUEL_CASE_STEAM.png> <./100_FUEL_CASE_ATTEMP.p
-ng>])
-Underfull \hbox (badness 10000) has occurred while \output is active
-$[]$
- []
-
-[11
-
-] (ML_PAPER_TWO_COLUMN.aux)
+[11 <./100_FUEL_CASE.png> <./100_FUEL_CASE_STEAM.png> <./100_FUEL_CASE_ATTEMP.p
+ng>] (ML_PAPER_TWO_COLUMN.aux)
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `ML_PAPER_TWO_COLUMN.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17720 strings out of 479616
- 263865 string characters out of 2863101
- 561395 words of memory out of 3000000
- 34509 multiletter control sequences out of 15000+200000
+ 17725 strings out of 479616
+ 263946 string characters out of 2863101
+ 561525 words of memory out of 3000000
+ 34512 multiletter control sequences out of 15000+200000
  511955 words of font info for 165 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,16n,131p,1415b,675s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1495,9 +1512,9 @@ ype1/public/stix/stix-mathit.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/stix/stix-mathrm.pfb><C:/Users/RWLBRA001/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/stix/stix-mathscr.pfb><C:/Users/RWLBRA001/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on ML_PAPER_TWO_COLUMN.pdf (12 pages, 1961283 bytes).
+Output written on ML_PAPER_TWO_COLUMN.pdf (12 pages, 1969312 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
+ 330 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
  116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
