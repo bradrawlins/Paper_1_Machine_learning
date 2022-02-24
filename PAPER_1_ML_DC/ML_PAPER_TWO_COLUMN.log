@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  23 FEB 2022 18:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  24 FEB 2022 14:56
 entering extended mode
 **./ML_PAPER_TWO_COLUMN.tex
 (ML_PAPER_TWO_COLUMN.tex
@@ -938,62 +938,62 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \openout4 = `ML_PAPER_TWO_COLUMN.abs'.
 
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 157.
+ne 153.
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 157.
+e 153.
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 157
+LaTeX Font Info:    Trying to load font information for U+msa on input line 153
 .
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 157
+LaTeX Font Info:    Trying to load font information for U+msb on input line 153
 .
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 157.
+ine 153.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 157.
+e 153.
  (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 157.
+ne 153.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 157.
+e 153.
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 157.
+e 153.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-157.
+153.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/stix\ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
@@ -1001,109 +1001,101 @@ File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 [0
 
 {C:/Users/RWLBRA001/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Overfull \hbox (123.62721pt too wide) detected at line 168
+Overfull \hbox (123.62721pt too wide) detected at line 163
 []
  []
 
 (ML_PAPER_TWO_COLUMN.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 168.
+Package hyperref Warning: Ignoring empty anchor on input line 163.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 168.
+Package hyperref Warning: Ignoring empty anchor on input line 163.
 
 <thumbnails/cas-email.jpeg, id=12, 225.84375pt x 225.84375pt>
 File: thumbnails/cas-email.jpeg Graphic file (type jpg)
 <use thumbnails/cas-email.jpeg>
-Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 168.
+Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 163.
 (pdftex.def)             Requested size: 7.99838pt x 8.0pt.
 LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 16
-8.
+3.
 
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\t1zi4.f
 d
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 6.80005pt on input line 168.
+(Font)              scaled to size 6.80005pt on input line 163.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 168.
+Package hyperref Warning: Ignoring empty anchor on input line 163.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--241
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
+Underfull \hbox (badness 10000) in paragraph at lines 245--247
 
  []
 
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 2
-56.
+51.
 (C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 <ML_SCHEMATIC.png, id=23, 413.253pt x 400.77pt>
 File: ML_SCHEMATIC.png Graphic file (type png)
 <use ML_SCHEMATIC.png>
-Package pdftex.def Info: ML_SCHEMATIC.png  used on input line 258.
+Package pdftex.def Info: ML_SCHEMATIC.png  used on input line 253.
 (pdftex.def)             Requested size: 206.62599pt x 200.3845pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [1
 
  <./thumbnails/cas-email.jpeg>]
 
-LaTeX Warning: Reference `Rumelhart1986' on page 2 undefined on input line 279.
+LaTeX Warning: Reference `Rumelhart1986' on page 2 undefined on input line 274.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--303
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--305
+Underfull \hbox (badness 10000) in paragraph at lines 296--298
 
  []
 
-<MDN_SCHEMATIC.png, id=57, 570.63188pt x 349.305pt>
-File: MDN_SCHEMATIC.png Graphic file (type png)
-<use MDN_SCHEMATIC.png>
-Package pdftex.def Info: MDN_SCHEMATIC.png  used on input line 308.
-(pdftex.def)             Requested size: 285.31525pt x 174.65207pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
 [2 <./ML_SCHEMATIC.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
-<CFD_GEOMETRY.png, id=82, 897.3525pt x 499.11469pt>
+<MDN_SCHEMATIC.png, id=73, 570.63188pt x 349.305pt>
+File: MDN_SCHEMATIC.png Graphic file (type png)
+<use MDN_SCHEMATIC.png>
+Package pdftex.def Info: MDN_SCHEMATIC.png  used on input line 303.
+(pdftex.def)             Requested size: 285.31525pt x 174.65207pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
+<CFD_GEOMETRY.png, id=80, 897.3525pt x 499.11469pt>
 File: CFD_GEOMETRY.png Graphic file (type png)
 <use CFD_GEOMETRY.png>
-Package pdftex.def Info: CFD_GEOMETRY.png  used on input line 350.
+Package pdftex.def Info: CFD_GEOMETRY.png  used on input line 345.
 (pdftex.def)             Requested size: 448.67514pt x 249.55672pt.
 
-Overfull \hbox (25.62086pt too wide) detected at line 362
+Overfull \hbox (25.62086pt too wide) detected at line 357
 []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
-
  []
 
 
@@ -1112,43 +1104,43 @@ $[]$
  []
 
 [3 <./MDN_SCHEMATIC.png>]
-Underfull \hbox (badness 1107) in paragraph at lines 366--367
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 361--362
 \T1/stix/m/n/10 pro-vided in the val-i-da-tion study of Rawl-ins et al [[]].
  []
 
 
-Underfull \hbox (badness 1142) in paragraph at lines 366--367
+Underfull \hbox (badness 1142) in paragraph at lines 361--362
 \T1/stix/m/n/10 The com-bus-tion fol-lows a four step se-quen-tial pro-cess,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
 
-Underfull \hbox (badness 6978) in paragraph at lines 382--382
+Underfull \hbox (badness 6978) in paragraph at lines 377--377
 []|$\LS1/stix/m/it/9 R[] \LS1/stix/m/n/9 = \LS1/stix/m/it/9 #[]M[]AB[]min []$\
 T1/cmss/m/n/9 ,
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 370--384
+Underfull \hbox (badness 10000) in alignment at lines 365--379
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 392--393
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
@@ -1158,28 +1150,23 @@ $[]$
  []
 
 [4 <./CFD_GEOMETRY.png>]
-Overfull \hbox (23.26549pt too wide) in alignment at lines 398--415
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
+
+ []
+
+
+Overfull \hbox (23.26549pt too wide) in alignment at lines 393--410
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 424--425
-
- []
-
-
-Overfull \hbox (26.11525pt too wide) in alignment at lines 428--438
-[][][] 
  []
 
 
@@ -1188,74 +1175,71 @@ $[]$
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 443--444
+Overfull \hbox (26.11525pt too wide) in alignment at lines 423--433
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
+
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 438--439
 []\T1/stix/m/n/10 The hyper-parameter search was con-ducted in a se-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 443--444
+Underfull \hbox (badness 10000) in paragraph at lines 438--439
 
  []
 
-<NEURONS_HYPER.png, id=134, 561.59813pt x 312.41719pt>
+<NEURONS_HYPER.png, id=132, 561.59813pt x 312.41719pt>
 File: NEURONS_HYPER.png Graphic file (type png)
 <use NEURONS_HYPER.png>
-Package pdftex.def Info: NEURONS_HYPER.png  used on input line 448.
+Package pdftex.def Info: NEURONS_HYPER.png  used on input line 443.
 (pdftex.def)             Requested size: 247.25444pt x 137.54501pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 447--450
+Overfull \hbox (9.0pt too wide) in paragraph at lines 442--445
  []$[]$ 
  []
 
-<LR_HYPER.png, id=135, 569.12625pt x 322.95656pt>
+<LR_HYPER.png, id=133, 569.12625pt x 322.95656pt>
 File: LR_HYPER.png Graphic file (type png)
 <use LR_HYPER.png>
-Package pdftex.def Info: LR_HYPER.png  used on input line 452.
+Package pdftex.def Info: LR_HYPER.png  used on input line 447.
 (pdftex.def)             Requested size: 247.25444pt x 140.30756pt.
-<BATCH_SIZE_HYPER.png, id=136, 575.14874pt x 307.90031pt>
+<BATCH_SIZE_HYPER.png, id=134, 575.14874pt x 307.90031pt>
 File: BATCH_SIZE_HYPER.png Graphic file (type png)
 <use BATCH_SIZE_HYPER.png>
-Package pdftex.def Info: BATCH_SIZE_HYPER.png  used on input line 456.
+Package pdftex.def Info: BATCH_SIZE_HYPER.png  used on input line 451.
 (pdftex.def)             Requested size: 247.25444pt x 132.36635pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 451--459
+Overfull \hbox (9.0pt too wide) in paragraph at lines 446--454
  []$[]$ 
  []
 
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 451--459
+Overfull \hbox (9.0pt too wide) in paragraph at lines 446--454
  []$ 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<DIST_HYPER.png, id=138, 556.32843pt x 306.39468pt>
+<DIST_HYPER.png, id=136, 545.03625pt x 304.13625pt>
 File: DIST_HYPER.png Graphic file (type png)
 <use DIST_HYPER.png>
-Package pdftex.def Info: DIST_HYPER.png  used on input line 465.
-(pdftex.def)             Requested size: 247.25444pt x 136.17456pt.
+Package pdftex.def Info: DIST_HYPER.png  used on input line 460.
+(pdftex.def)             Requested size: 247.25444pt x 137.96918pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 465--466
+Overfull \hbox (9.0pt too wide) in paragraph at lines 460--461
  [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 1454) in paragraph at lines 469--470
-\T1/stix/m/n/10 of pre-dic-tions for an in-put, the ANN-MDN is able to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
-
  []
 
 
@@ -1264,27 +1248,32 @@ $[]$
  []
 
 [6 <./NEURONS_HYPER.png> <./LR_HYPER.png> <./BATCH_SIZE_HYPER.png>]
-Overfull \hbox (1.33253pt too wide) in alignment at lines 475--490
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+
+ []
+
+
+Overfull \hbox (1.33253pt too wide) in alignment at lines 470--485
 [][][] 
  []
 
-<OVERALL_TRAIN.png, id=152, 537.00626pt x 359.3425pt>
+<OVERALL_TRAIN.png, id=151, 537.00626pt x 359.3425pt>
 File: OVERALL_TRAIN.png Graphic file (type png)
 <use OVERALL_TRAIN.png>
-Package pdftex.def Info: OVERALL_TRAIN.png  used on input line 496.
+Package pdftex.def Info: OVERALL_TRAIN.png  used on input line 491.
 (pdftex.def)             Requested size: 247.25531pt x 156.49365pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 495--498
+Overfull \hbox (9.0pt too wide) in paragraph at lines 490--493
  []$[]$ 
  []
 
-<OVERALL_TEST.png, id=153, 537.00626pt x 359.3425pt>
+<OVERALL_TEST.png, id=152, 537.00626pt x 359.3425pt>
 File: OVERALL_TEST.png Graphic file (type png)
 <use OVERALL_TEST.png>
-Package pdftex.def Info: OVERALL_TEST.png  used on input line 500.
+Package pdftex.def Info: OVERALL_TEST.png  used on input line 495.
 (pdftex.def)             Requested size: 247.25531pt x 156.49365pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 499--503
+Overfull \hbox (9.0pt too wide) in paragraph at lines 494--498
  []$[]$ 
  []
 
@@ -1292,14 +1281,14 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 499--503
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--508
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
 
  []
 
-<INTEGRATED_MODEL.png, id=156, 3044.37375pt x 1770.615pt>
+<INTEGRATED_MODEL.png, id=155, 3044.37375pt x 1770.615pt>
 File: INTEGRATED_MODEL.png Graphic file (type png)
 <use INTEGRATED_MODEL.png>
-Package pdftex.def Info: INTEGRATED_MODEL.png  used on input line 512.
+Package pdftex.def Info: INTEGRATED_MODEL.png  used on input line 507.
 (pdftex.def)             Requested size: 456.63637pt x 265.5808pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1307,82 +1296,77 @@ $[]$
  []
 
 [7 <./DIST_HYPER.png> <./OVERALL_TRAIN.png> <./OVERALL_TEST.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 522--523
+Underfull \hbox (badness 10000) in paragraph at lines 517--518
 
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 524--525
+Underfull \hbox (badness 1552) in paragraph at lines 519--520
 \T1/stix/m/n/10 to ran-domly gen-er-ated in-puts, the pro-cess is de-scribed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 524--525
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--527
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
  []
 
 
-Overfull \hbox (10.78354pt too wide) in alignment at lines 530--545
+Overfull \hbox (10.78354pt too wide) in alignment at lines 525--540
 [][][][][][] 
  []
 
 <100_CASE.png, id=173, 761.84625pt x 524.96124pt>
 File: 100_CASE.png Graphic file (type png)
 <use 100_CASE.png>
-Package pdftex.def Info: 100_CASE.png  used on input line 550.
+Package pdftex.def Info: 100_CASE.png  used on input line 545.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
 <80_CASE.png, id=174, 761.84625pt x 524.96124pt>
 File: 80_CASE.png Graphic file (type png)
 <use 80_CASE.png>
-Package pdftex.def Info: 80_CASE.png  used on input line 554.
+Package pdftex.def Info: 80_CASE.png  used on input line 549.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
 <60_CASE.png, id=175, 761.84625pt x 524.96124pt>
 File: 60_CASE.png Graphic file (type png)
 <use 60_CASE.png>
-Package pdftex.def Info: 60_CASE.png  used on input line 558.
+Package pdftex.def Info: 60_CASE.png  used on input line 553.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
 <100_CASE_STEAM.png, id=176, 761.84625pt x 516.93124pt>
 File: 100_CASE_STEAM.png Graphic file (type png)
 <use 100_CASE_STEAM.png>
-Package pdftex.def Info: 100_CASE_STEAM.png  used on input line 568.
+Package pdftex.def Info: 100_CASE_STEAM.png  used on input line 563.
 (pdftex.def)             Requested size: 163.17763pt x 120.91882pt.
 <80_CASE_STEAM.png, id=177, 761.84625pt x 524.96124pt>
 File: 80_CASE_STEAM.png Graphic file (type png)
 <use 80_CASE_STEAM.png>
-Package pdftex.def Info: 80_CASE_STEAM.png  used on input line 572.
+Package pdftex.def Info: 80_CASE_STEAM.png  used on input line 567.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
 <60_CASE_STEAM.png, id=178, 761.84625pt x 524.96124pt>
 File: 60_CASE_STEAM.png Graphic file (type png)
 <use 60_CASE_STEAM.png>
-Package pdftex.def Info: 60_CASE_STEAM.png  used on input line 576.
+Package pdftex.def Info: 60_CASE_STEAM.png  used on input line 571.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
 <100_CASE_ATTEMP.png, id=179, 742.775pt x 524.96124pt>
 File: 100_CASE_ATTEMP.png Graphic file (type png)
 <use 100_CASE_ATTEMP.png>
-Package pdftex.def Info: 100_CASE_ATTEMP.png  used on input line 586.
+Package pdftex.def Info: 100_CASE_ATTEMP.png  used on input line 581.
 (pdftex.def)             Requested size: 163.18433pt x 120.92278pt.
 <80_CASE_ATTEMP.png, id=180, 742.775pt x 524.96124pt>
 File: 80_CASE_ATTEMP.png Graphic file (type png)
 <use 80_CASE_ATTEMP.png>
-Package pdftex.def Info: 80_CASE_ATTEMP.png  used on input line 590.
+Package pdftex.def Info: 80_CASE_ATTEMP.png  used on input line 585.
 (pdftex.def)             Requested size: 163.18433pt x 120.92278pt.
 <60_CASE_ATTEMP.png, id=181, 742.775pt x 524.96124pt>
 File: 60_CASE_ATTEMP.png Graphic file (type png)
 <use 60_CASE_ATTEMP.png>
-Package pdftex.def Info: 60_CASE_ATTEMP.png  used on input line 594.
+Package pdftex.def Info: 60_CASE_ATTEMP.png  used on input line 589.
 (pdftex.def)             Requested size: 163.18433pt x 120.92278pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--602
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 603--604
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
 
  []
 
@@ -1399,72 +1383,113 @@ $[]$
 [9 <./100_CASE.png> <./80_CASE.png> <./60_CASE.png> <./100_CASE_STEAM.png> <./8
 0_CASE_STEAM.png> <./60_CASE_STEAM.png> <./100_CASE_ATTEMP.png> <./80_CASE_ATTE
 MP.png> <./60_CASE_ATTEMP.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 607--608
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 609--610
+Underfull \hbox (badness 10000) in paragraph at lines 602--603
 
  []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 611--612
-\T1/stix/m/n/10 to help mit-i-gate op-er-a-tional risks, such as main-te-nance
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 611--612
+Underfull \hbox (badness 10000) in paragraph at lines 604--605
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--625
+Underfull \hbox (badness 10000) in paragraph at lines 606--607
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--619
 []|\T1/cmss/m/n/9 High-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 619--620
 []|\T1/cmss/m/n/9 High-
  []
 
 
-Overfull \hbox (8.38023pt too wide) in paragraph at lines 625--626
+Overfull \hbox (8.38023pt too wide) in paragraph at lines 619--620
 \T1/cmss/m/n/9 moisture| 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 623--637
+Underfull \hbox (badness 10000) in alignment at lines 617--631
 [][][][] 
  []
 
-<100_FUEL_CASE.png, id=228, 761.84625pt x 524.96124pt>
+<100_FUEL_CASE.png, id=229, 761.84625pt x 524.96124pt>
 File: 100_FUEL_CASE.png Graphic file (type png)
 <use 100_FUEL_CASE.png>
-Package pdftex.def Info: 100_FUEL_CASE.png  used on input line 643.
+Package pdftex.def Info: 100_FUEL_CASE.png  used on input line 637.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
-<100_FUEL_CASE_STEAM.png, id=229, 761.84625pt x 522.95375pt>
+<100_FUEL_CASE_STEAM.png, id=230, 761.84625pt x 522.95375pt>
 File: 100_FUEL_CASE_STEAM.png Graphic file (type png)
 <use 100_FUEL_CASE_STEAM.png>
-Package pdftex.def Info: 100_FUEL_CASE_STEAM.png  used on input line 647.
+Package pdftex.def Info: 100_FUEL_CASE_STEAM.png  used on input line 641.
 (pdftex.def)             Requested size: 163.17763pt x 120.92317pt.
-<100_FUEL_CASE_ATTEMP.png, id=230, 742.775pt x 527.9725pt>
+<100_FUEL_CASE_ATTEMP.png, id=231, 742.775pt x 527.9725pt>
 File: 100_FUEL_CASE_ATTEMP.png Graphic file (type png)
 <use 100_FUEL_CASE_ATTEMP.png>
-Package pdftex.def Info: 100_FUEL_CASE_ATTEMP.png  used on input line 651.
+Package pdftex.def Info: 100_FUEL_CASE_ATTEMP.png  used on input line 645.
 (pdftex.def)             Requested size: 163.18433pt x 120.92357pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+
+ []
+
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
 [10]
-Underfull \hbox (badness 1824) in paragraph at lines 663--664
+Underfull \hbox (badness 1490) in paragraph at lines 655--656
+\T1/stix/m/n/10 scale boiler us-ing CFD sim-u-la-tions was pre-sented that
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
+
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 659--660
+\T1/stix/m/n/10 model re-sults were com-pared to the mea-sured ther-mal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
+
+ []
+
+
+Underfull \hbox (badness 1824) in paragraph at lines 664--668
 \T1/stix/m/n/10 ol-ogy, Re-sources, Con-cep-tu-al-iza-tion.. \T1/stix/b/n/10 Pi
 eter Rousseau:
  []
 
 (ML_PAPER_TWO_COLUMN.bbl
+Underfull \hbox (badness 10000) has occurred while \output is active
+$[]$
+ []
+
+[11 <./100_FUEL_CASE.png> <./100_FUEL_CASE_STEAM.png> <./100_FUEL_CASE_ATTEMP.p
+ng>]
 Underfull \hbox (badness 1377) in paragraph at lines 111--117
 []\T1/stix/m/n/8 Thomopoulos, N.T., 2013.  Es-sen-tials of Monte Carlo sim-u-la
 -
@@ -1475,22 +1500,26 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
-[11 <./100_FUEL_CASE.png> <./100_FUEL_CASE_STEAM.png> <./100_FUEL_CASE_ATTEMP.p
-ng>] (ML_PAPER_TWO_COLUMN.aux)
+[12
+
+] (ML_PAPER_TWO_COLUMN.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `ML_PAPER_TWO_COLUMN.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17725 strings out of 479616
- 263946 string characters out of 2863101
- 561525 words of memory out of 3000000
+ 17726 strings out of 479616
+ 263953 string characters out of 2863101
+ 559739 words of memory out of 3000000
  34512 multiletter control sequences out of 15000+200000
  511955 words of font info for 165 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,16n,131p,1415b,675s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 86i,16n,131p,1424b,675s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm
 -super-t1.enc}{C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
 /inconsolata/i4-t1-0.enc}{C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/font
@@ -1512,9 +1541,9 @@ ype1/public/stix/stix-mathit.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/stix/stix-mathrm.pfb><C:/Users/RWLBRA001/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/stix/stix-mathscr.pfb><C:/Users/RWLBRA001/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on ML_PAPER_TWO_COLUMN.pdf (12 pages, 1969345 bytes).
+Output written on ML_PAPER_TWO_COLUMN.pdf (13 pages, 1974090 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 78 named destinations out of 1000 (max. 500000)
+ 338 PDF objects out of 1000 (max. 8388607)
+ 79 named destinations out of 1000 (max. 500000)
  116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
