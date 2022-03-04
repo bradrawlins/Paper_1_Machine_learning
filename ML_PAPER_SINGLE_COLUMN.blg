@@ -2,52 +2,53 @@ This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: ML_PAPER_SINGLE_COLUMN.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
-The style file: cas-model2-names.bst
+The style file: model1-num-names.bst
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 Database file #1: ML_paper.bib
-Warning--to sort, need author, editor, or key in Ansys
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Warning--empty author and editor in Ansys
+Repeated entry---line 159 of file ML_paper.bib
+ : @article{Rousseau2020
+ :                      ,
+I'm skipping whatever remains of this entry
 Warning--empty pages in Rawlins2021
-You've used 12 entries,
-            2990 wiz_defined-function locations,
-            830 strings with 8586 characters,
-and the built_in function-call counts, 7493 in all, are:
-= -- 567
-> -- 258
-< -- 6
-+ -- 100
-- -- 88
-* -- 826
-:= -- 1074
-add.period$ -- 42
-call.type$ -- 12
-change.case$ -- 91
-chr.to.int$ -- 12
-cite$ -- 17
-duplicate$ -- 581
-empty$ -- 590
-format.name$ -- 125
-if$ -- 1409
+You've used 31 entries,
+            2616 wiz_defined-function locations,
+            793 strings with 10340 characters,
+and the built_in function-call counts, 17461 in all, are:
+= -- 1279
+> -- 761
+< -- 18
++ -- 284
+- -- 253
+* -- 2186
+:= -- 2690
+add.period$ -- 31
+call.type$ -- 31
+change.case$ -- 236
+chr.to.int$ -- 31
+cite$ -- 32
+duplicate$ -- 1120
+empty$ -- 1156
+format.name$ -- 348
+if$ -- 3116
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 116
-newline$ -- 81
-num.names$ -- 46
-pop$ -- 221
+missing$ -- 272
+newline$ -- 139
+num.names$ -- 126
+pop$ -- 259
 preamble$ -- 1
-purify$ -- 77
+purify$ -- 239
 quote$ -- 0
-skip$ -- 163
+skip$ -- 309
 stack$ -- 0
-substring$ -- 248
-swap$ -- 407
-text.length$ -- 0
+substring$ -- 771
+swap$ -- 1003
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 93
-warning$ -- 3
-while$ -- 42
+type$ -- 249
+warning$ -- 1
+while$ -- 124
 width$ -- 0
-write$ -- 195
-(There were 3 warnings)
+write$ -- 393
+(There was 1 error message)

@@ -140,7 +140,7 @@
 
 % Here goes the abstract
 \begin{abstract}
-An integrated data-driven surrogate model and 1-dimensional (1D) process model of a 620 $MW_e$ utility scale boiler was developed. A robust and computationally inexpensive computational fluid dynamic (CFD) model of the utility boiler was utilized to generate the solution dataset for surrogate model training and testing. In the present work, a standard multi-layer perception (MLP) and MLP connected mixture density network network (MLP-MDN) machine learning architectures are compared for use as a surrogate model to predict the boilers' heat exchanger heat loads and the flue-gas inlet conditions to the convective pass. A hyperparameter search was performed to find the best MLP and MLP-MDN architecture, with the MLP-MDN model being capable of predicting the uncertainty. The MLP-MDN showed approximately a 20\% decrease in the mean absolute error (MAE) and was selected for surrogate model integration. Validation of the integrated model against plant data was performed for a wide range of loads. Sufficient resolution of the thermal-hydraulic response was observed for all load ranges with a 5-8\% error discrepancy. The validated model was subsequently used to investigate the effects of using a poor quality fuel for the 100\% maximum continuous rating (MCR) load case. The results show that poor quality fuel leads to a lower operational efficiency for the same load case.
+An integrated data-driven surrogate model and 1-dimensional (1D) process model of a 620 $MW_e$ utility scale boiler was developed. A robust and computationally inexpensive computational fluid dynamic (CFD) model of the utility boiler was utilized to generate the solution dataset for surrogate model training and testing. In the present work, a standard multi-layer perception (MLP) and MLP connected mixture density network (MLP-MDN) machine learning architectures are compared for use as a surrogate model to predict the boilers' heat exchanger heat loads and the flue-gas inlet conditions to the convective pass. A hyperparameter search was performed to find the best MLP and MLP-MDN architecture, with the MLP-MDN model being capable of predicting the uncertainty. The MLP-MDN showed approximately a 20\% decrease in the mean absolute error (MAE) and was selected for surrogate model integration. Validation of the integrated model against plant data was performed for a wide range of loads. Sufficient resolution of the thermal-hydraulic response was observed for all load ranges with a 5-8\% error discrepancy. The validated model was subsequently used to investigate the effects of using a poor quality fuel for the 100\% maximum continuous rating (MCR) load case. The results show that poor quality fuel leads to a lower operational efficiency for the same operational inputs.
 \end{abstract}
 
 % Use if graphical abstract is present
@@ -150,8 +150,8 @@ An integrated data-driven surrogate model and 1-dimensional (1D) process model o
 
 % Research highlights
 \begin{highlights}
-\item Surrogate model development using CFD solution data.
-\item 
+\item Data-driven surrogate model development using CFD solution data.
+\item 1-D process and surrogate model integration.
 \end{highlights}
 
 % Keywords
@@ -164,68 +164,26 @@ Mixture density network \sep data-driven surrogate modelling \sep Computational 
 
 % Main text
 \section{Introduction}\label{intro}
+A significant portion of the developing world, including South Africa, rely on the use of conventional coal fired power plants to meet the local energy demand \cite{Rousseau2020}. However, international relief and pressure have lead to many renewable energy sources being implemented worldwide. The increasing penetration of renewable energy sources onto the current electrical grids is predicted to push conventional base-load thermal power plants to operate on a mid-merit basis. The mid-merit operation requires these power plants to operate flexibly, with faster ramping and start-up rates \cite{Safdarnejad2019}. This can result in an increase in the thermal stresses on key operational components due to the changes in heat loads \cite{Modlinski2019}. Therefore it is important to be able to predict the thermal-hydraulic response of these components at off design conditions.\\
 
-% Numbered list
-% Use the style of numbering in square brackets.
-% If nothing is used, default style will be taken.
-%\begin{enumerate}[a)]
-%\item 
-%\item 
-%\item 
-%\end{enumerate}  
+Computational fluid dynamics (CFD) aligns itself well for the analysis of solid fuel combustion systems, providing sufficient resolution of the fluid flow, particle concentration and heat transfer characteristics. Simulations using CFD predominately explore the effects that the flue-gas has on the overall system, investigating pollutant limits \cite{Liu2021}, design optimization \cite{dugum2019, Gu2020} and particle effects \cite{Laubscher2020}. The associated computational burden limits the use of CFD for steady-state analysis for industrial sized systems. However, the use of a multiphase modelling approach has been shown by researchers Rawlins et al \cite{Rawlins2022} to reduce the computational effort by approximately 25\%.\\
 
-% Unnumbered list
-%\begin{itemize}
-%\item 
-%\item 
-%\item 
-%\end{itemize}  
+Investigating the thermal-hydraulic response requires the use of 1-D process modelling to capture the steam/water cycle, since the 3-D simulation of the working fluid network would amount to a drastic increase in the computational demand. Co-simulation techniques involve the use of both 3-D CFD models and 1-D process models to investigate operational limits. Rousseau and Laubscher \cite{Rousseau2020} used the methodology to investigate the effects high ash quality fuel has on the heat absorption of the radiant superheaters (SHs). The feasibility of co-simulation models rely on the integration of the two models and are limited to steady state applications.\\
 
-% Description list
-%\begin{description}
-%\item[]
-%\item[] 
-%\item[] 
-%\end{description}  
+Negating the high computational burden, data-driven surrogate models are typically utilized. Data driven surrogate models form part of statistical regression models, where the true objective function is namely fitted using true evaluations of the objective function \cite{Wheeler2019}. Artificial neural networks (ANNs) are one of the main machine learning algorithms/techniques to facilitate the learning process, other procedures include Kriging models \cite{Fei2015} and support vector machines \cite{Lv2017}.\\
 
-% Figure
-%\begin{figure}%[<options>]
-	%\centering
-	%	\includegraphics[<options>]{}
-	 % \caption{}\label{fig1}
-%\end{figure}
+The works of Singh and Abbassi \cite{Singh2018} incorporated the use of an ANN and CFD model to investigate the transient thermal modelling of an off-highway machinery cabin. The ANN training data was obtained from a 1-D process model for the refrigeration cycle. The methodology was successfully able to integrate the ANN capabilities with a 3-D CFD simulation model negating the need for a coupled simulation procedure. Similary, Fei et al \cite{Fei2015} made use of a fast set of reduced order models (ROMs), using the Kriging method, based off of CFD data to investigate the retrofitting of coal fired power plant under oxy-fuel conditions. Using an integrated ROM to process model, a range of air-coal conditions where investigated, with the model illustrating sufficiently accurate results. However no operational uncertainty was not incorporated into the input parameters to account for real world operational effects (disturbances, local atmospheric conditions etc.).\\
 
+The importance for predicting and acknowledging system/load uncertainties in conventional coal fired power plants are paramount for the safe operation and maintenance of these plants \cite{Madejski_18}. The uncertainty associated with a thermal power plants operational parameters such as fuel quality, combustion processes, and  burner biasing can lead to significant changes in the thermal-hydraulic response \cite{Sarkar2015}. The design space load uncertainty of a combined cooling, heating and power system was investigated by Lu et al \cite{Lu2021}. Using a multi-objective optimization model, factors such as pollutant emission, economy and the system reliability were incorporated to improve the operational performance. The model illustrated its future use for designers in providing the best configuration scheme under system load uncertainties.\\ 
 
-%\begin{table}[<options>]
-%\caption{}\label{tbl1}
-%\begin{tabular*}{\tblwidth}{@{}LL@{}}
-%\toprule
- % &  \\ % Table header row
-%\midrule
- %& \\
- %& \\
- %& \\
-% & \\
-%\bottomrule
-%\end{tabular*}
-%\end{table}
-
-% Uncomment and use as the case may be
-%\begin{theorem} 
-%\end{theorem}
-
-% Uncomment and use as the case may be
-%\begin{lemma} 
-%\end{lemma}
-
-%% The Appendices part is started with the command \appendix;
-%% appendix sections are then done as normal sections
-%% \appendix
+It is noted that CFD cannot meet the real time requirement for on line performance monitoring, due to the complex solving mechanisms and time-consuming calculations. However, it is a feasible alternative to generate training and testing datasets for ANN implementation, since using CFD does not interfere with normal operation of the plant. In addition to this a wider range of appropriate operating conditions can be simulated.\\
+ 
+In the present work, an integrated data-driven surrogate model and 1-D process model was proposed to investigate the thermal response of a 620 $MW_e$ utility scale boiler. A steady-state multiphase CFD model was developed for the 620 $MW_e$ utility scale boiler under investigation and was used to generate a simulation dataset for a 180 different input conditions. To establish the data-driven surrogate model complexity, various ANN frameworks were considered, namely a standard MLP and a MLP-MDN, where the latter allows the introduction of uncertainty into the model predictions. A hyper-parameter search was conducted to establish the best performing model, with the lowest MAE being an essential criterion. Validation of the integrated surrogate and process model was performed for maximum continuous ratings (MCR) for the 100\%, 80\% and 60\% load ranges where measured data was made available. Subsequently the use of the validated model to investigate poor fuel quality at 100\% MCR was conducted, where the ash and moisture contents where varied for two separate cases.
 
 \section{Applicable machine learning theory}
 The present work makes use of various machine learning architectures to develop a surrogate model that can predict the thermal and combustion characteristics of a utility scale boiler using high level inputs. The current section discusses the details of the respective architectures, namely linear regression, ANN and MLP-MDN models.  
 \subsection{Linear regression}
-The present work makes use of a multiple linear regression model as a base model for comparative purposes. The main assumption of a multiple linear regression model is that the output/s can be calculated from a linear combination of the variable inputs. In other words a linear regression models aims to determine the quantitative relationship between the dependent and independent variables \cite{Wen2022}. The representation of the $i$-th dependent variable ($y_i$) can be written as follows for $m$-number of independent variables ($x_{mi}$):
+The present work makes use of a multiple linear regression model as a base model for comparative purposes in the validation case study of Section \ref{sec_result_1}. The main assumption of a multiple linear regression model is that the output/s can be calculated from a linear combination of the variable inputs. In other words a linear regression models aims to determine the quantitative relationship between the dependent and independent variables \cite{Wen2022}. The representation of the $i$-th dependent variable ($y_i$) can be written as follows for $m$-number of independent variables ($x_{mi}$):
 \begin{equation}
 \begin{split}
 &y_i = \beta_0+\beta_1x_{1i}+...+\beta_mx_{mi}\\
@@ -245,8 +203,8 @@ To minimize the cost function, the gradient descent algorithm is the preferred m
 \end{equation}
 where $\eta$ is known as the learning rate.\\
 
-In most cases the relationship between the dependent and independent variables are not always linear. Special linear basis models, such as polynomial, sinusoidal and radial can be used to optimize the training results \cite{Rasmussen2006}. For the current work a multiple linear progression model is utilized as a base model for comparison. 
-\subsection{Multilayer perception networks (MLPs)}
+In most cases the relationship between the dependent and independent variables are not always linear. Special linear basis models, such as polynomial, sinusoidal and radial can be used to optimize the training results \cite{Rasmussen2006}. For the current work a multiple linear progression model is utilized as a base model for comparison in Section \ref{sec_result_1}. 
+\subsection{Multilayer perception networks}
 Artificial neural networks (ANN) are machine learning systems inspired by biological animal brains \cite{Rasmussen2006}. There are many classifications of ANNs, with multilayer perception networks (MLP) being the standard representation \citep{goodfellow}. Typically MLPs are adapted for supervised learning problems where the input variables are mapped to labelled output variables. The relationship between the input and output variables are learned by optimizing the weights ($\overline{w}$) and biases ($\overline{b}$) to minimize a selected cost function, which for most cases is the MSE given in equation \ref{eqn_lin_cost}. A standard MLP schematic is given in figure \ref{fig_mlp_schematic}, illustrating the common features of a MLP, that being the input, hidden and output layers.\\
 \begin{figure}[h!]
 	\centering
@@ -271,7 +229,7 @@ The result of the equation \ref{eqn_summed_sig} is subsequently passed to an act
 \end{split}
 \end{equation}
 
-When the forward propagation step is complete, the network weights and biases can be updated to minimize the cost function (refer to Equation \ref{eqn_lin_cost}) using the backward propagation method \ref{Rumelhart1986}. The methodology calculates the gradient of the cost function with respect to the weights and biases for each layer. Once the gradients have been calculated the weights and biases are updated using the gradient descent algorithm. The current work makes use of the Adam \cite{goodfellow} alternative to the gradient descent algorithm and is illustrated in Equation \ref{eqn_adam_algor}. Forward- and backward-propagation algorithms would be iteratively conducted until the cost function is reduced to below a desired threshold.
+When the forward propagation step is complete, the network weights and biases can be updated to minimize the cost function (refer to Equation \ref{eqn_lin_cost}) using the backward propagation method \cite{Rumelhart1986}. The methodology calculates the gradient of the cost function with respect to the weights and biases for each layer. Once the gradients have been calculated the weights and biases are updated using the gradient descent algorithm. The current work makes use of the Adam \cite{goodfellow} alternative to the gradient descent algorithm and is illustrated in Equation \ref{eqn_adam_algor}. Forward- and backward-propagation algorithms would be iteratively conducted until the cost function is reduced to below a desired threshold.
 
 \begin{theorem} 
 \begin{equation}\label{eqn_adam_algor} 
@@ -660,7 +618,7 @@ A validation case study was performed using the integrated model for a wide rang
 
 The subsequent analysis results investigated the using of poor quality fuels at 100\% MCR operation. The results highlight the drop in performance due to the fuel quality resulting in a substantial decrease in boiler efficiency. Using a high-ash fuel can result in a higher exit flue-gas temperature resulting in a marginal increase in performance of the convective pass heat exchangers when compared to the high moisture fuel. However the increase in particle loading increases the likelihood of ash deposition occurring.\\ 
 
-The current work has shown that it is possible to adequately resolve the thermal-hydraulic response of a utility scale boiler using a data-driven surrogate model based off of CFD simulation result data. The integration of the surrogate and 1D process model is paramount in modelling the thermal response and provides valuable operational insight for various load cases. The use of the model also provides a fast turn around and significant reduction in computational time when compared to co-simulation models using a combination of CFD and process modelling.
+The current work has shown that it is possible to adequately resolve the thermal-hydraulic response of a utility scale boiler using a data-driven surrogate model based off of CFD simulation result data. The integration of the surrogate and 1-D process model is paramount in modelling the thermal response and provides valuable operational insight for various load cases. The use of the model also provides a fast turn around and significant reduction in computational time when compared to co-simulation models using a combination of CFD and process modelling.
 \printcredits
 %% Loading bibliography style file
 \bibliographystyle{model1-num-names}
@@ -669,14 +627,6 @@ The current work has shown that it is possible to adequately resolve the thermal
 % Loading bibliography database
 \bibliography{ML_paper}
 
-% Biography
-\bio{}
-% Here goes the biography details.
-\endbio
-
-%$\bio{pic1}
-% Here goes the biography details.
-%\endbio
 
 \end{document}
 

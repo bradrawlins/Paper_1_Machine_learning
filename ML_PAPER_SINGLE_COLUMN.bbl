@@ -1,112 +1,236 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{31}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-\providecommand{\url}[1]{\texttt{#1}}
-\providecommand{\href}[2]{#2}
-\providecommand{\path}[1]{#1}
-\providecommand{\DOIprefix}{doi:}
-\providecommand{\ArXivprefix}{arXiv:}
-\providecommand{\URLprefix}{URL: }
-\providecommand{\Pubmedprefix}{pmid:}
-\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
-\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
-%Type = Book
-\bibitem[{Ans(2021)}]{Ansys}
-, \bibinfo{year}{2021}.
-\newblock \bibinfo{title}{{ANSYS Fluent Theory Guide}}.
-\newblock \bibinfo{edition}{20} ed., \bibinfo{publisher}{Ansys Inc.}
 %Type = Article
-\bibitem[{Baum and Street(1971)}]{Baum1971}
-\bibinfo{author}{Baum, M.}, \bibinfo{author}{Street, P.}, \bibinfo{year}{1971}.
-\newblock \bibinfo{title}{{Predicting the combustion behaviour of coal
-  particles}}.
-\newblock \bibinfo{journal}{Combustion science and Technolodgy}
-  \bibinfo{volume}{3}, \bibinfo{pages}{231}.
-%Type = Techreport
-\bibitem[{Bishop(1994)}]{bishop1994}
-\bibinfo{author}{Bishop, C.}, \bibinfo{year}{1994}.
-\newblock \bibinfo{title}{{Mixture Density Networks}}.
-\newblock \bibinfo{type}{Technical Report}. Aston University.
-\newblock \DOIprefix\doi{10.1007/978-3-322-81570-5_8}.
-%Type = Book
-\bibitem[{Goodfellow et~al.(2017)Goodfellow, Bengio and Courville}]{goodfellow}
-\bibinfo{author}{Goodfellow, I.}, \bibinfo{author}{Bengio, Y.},
-  \bibinfo{author}{Courville, A.}, \bibinfo{year}{2017}.
-\newblock \bibinfo{title}{{Deep Learning}}.
-\newblock \bibinfo{edition}{First edit} ed., \bibinfo{publisher}{MIT Press},
-  \bibinfo{address}{Chennai}.
+\bibitem[{Rousseau and Laubscher(2020)}]{Rousseau2020}
+\bibinfo{author}{P.~Rousseau}, \bibinfo{author}{R.~Laubscher},
+\newblock \bibinfo{title}{{Analysis of the impact of coal quality on the heat
+  transfer distribution in a high-ash pulverized coal boiler using
+  co-simulation}},
+\newblock \bibinfo{journal}{Energy} \bibinfo{volume}{198}
+  (\bibinfo{year}{2020}) \bibinfo{pages}{117343}.
+%Type = Article
+\bibitem[{Safdarnejad et~al.(2019)Safdarnejad, Tuttle, and
+  Powell}]{Safdarnejad2019}
+\bibinfo{author}{S.~M. Safdarnejad}, \bibinfo{author}{J.~F. Tuttle},
+  \bibinfo{author}{K.~M. Powell},
+\newblock \bibinfo{title}{{Dynamic modeling and optimization of a coal-fired
+  utility boiler to forecast and minimize NOx and CO emissions
+  simultaneously}},
+\newblock \bibinfo{journal}{Computers and Chemical Engineering}
+  \bibinfo{volume}{124} (\bibinfo{year}{2019}) \bibinfo{pages}{62--79}.
+%Type = Article
+\bibitem[{Modli{\'{n}}ski et~al.(2019)Modli{\'{n}}ski, Szczepanek, Nabag{\l}o,
+  Madejski, and Modli{\'{n}}ski}]{Modlinski2019}
+\bibinfo{author}{N.~Modli{\'{n}}ski}, \bibinfo{author}{K.~Szczepanek},
+  \bibinfo{author}{D.~Nabag{\l}o}, \bibinfo{author}{P.~Madejski},
+  \bibinfo{author}{Z.~Modli{\'{n}}ski},
+\newblock \bibinfo{title}{{Mathematical procedure for predicting tube metal
+  temperature in the second stage reheater of the operating flexibly steam
+  boiler}},
+\newblock \bibinfo{journal}{Applied Thermal Engineering} \bibinfo{volume}{146}
+  (\bibinfo{year}{2019}) \bibinfo{pages}{854--865}.
+%Type = Article
+\bibitem[{Liu et~al.(2021)Liu, Zhang, Tan, Mo, Wang, and Wang}]{Liu2021}
+\bibinfo{author}{X.~Liu}, \bibinfo{author}{J.~Zhang}, \bibinfo{author}{H.~Tan},
+  \bibinfo{author}{Q.~Mo}, \bibinfo{author}{X.~Wang},
+  \bibinfo{author}{Y.~Wang},
+\newblock \bibinfo{title}{{Numerical and experimental study on co-firing of low
+  volatile coal in a 330 MW tangentially fired boiler}},
+\newblock \bibinfo{journal}{Journal of the Energy Institute}
+  \bibinfo{volume}{96} (\bibinfo{year}{2021}) \bibinfo{pages}{242--250}.
+%Type = Article
+\bibitem[{Dugum and Hanjali{\'{c}}(2019)}]{dugum2019}
+\bibinfo{author}{A.~Dugum}, \bibinfo{author}{K.~Hanjali{\'{c}}},
+\newblock \bibinfo{title}{{Numerical simulation of coal-air mixture flow in a
+  real double-swirl burner and implications on combustion anomalies in a
+  utility boiler}},
+\newblock \bibinfo{journal}{Energy} \bibinfo{volume}{170}
+  (\bibinfo{year}{2019}) \bibinfo{pages}{942--953}.
+%Type = Article
+\bibitem[{Gu et~al.(2020)Gu, Liu, Zhong, and Yu}]{Gu2020}
+\bibinfo{author}{J.~Gu}, \bibinfo{author}{Q.~Liu}, \bibinfo{author}{W.~Zhong},
+  \bibinfo{author}{A.~Yu},
+\newblock \bibinfo{title}{{Study on scale-up characteristics of oxy-fuel
+  combustion in circulating fluidized bed boiler by 3D CFD simulation}},
+\newblock \bibinfo{journal}{Advanced Powder Technology} \bibinfo{volume}{31}
+  (\bibinfo{year}{2020}) \bibinfo{pages}{2136--2151}.
+%Type = Article
+\bibitem[{Laubscher and Rousseau(2020)}]{Laubscher2020}
+\bibinfo{author}{R.~Laubscher}, \bibinfo{author}{P.~Rousseau},
+\newblock \bibinfo{title}{{Numerical investigation on the impact of variable
+  particle radiation properties on the heat transfer in high ash pulverized
+  coal boiler through co-simulation}},
+\newblock \bibinfo{journal}{Energy} \bibinfo{volume}{195}
+  (\bibinfo{year}{2020}) \bibinfo{pages}{117006}.
+%Type = Article
+\bibitem[{Rawlins et~al.(2022)Rawlins, Laubscher, and Rousseau}]{Rawlins2022}
+\bibinfo{author}{B.~Rawlins}, \bibinfo{author}{R.~Laubscher},
+  \bibinfo{author}{P.~Rousseau},
+\newblock \bibinfo{title}{{Application of computational fluid dynamics and
+  process modelling to investigate low-load operation of a subcritical
+  utility-scale boiler.}},
+\newblock \bibinfo{journal}{ASME Journal of Thermal Science and Engineering
+  Applications}  (\bibinfo{year}{2022}) \bibinfo{pages}{1--29}.
 %Type = Book
 \bibitem[{Kochenderfer and Wheeler(2019)}]{Wheeler2019}
-\bibinfo{author}{Kochenderfer, M.}, \bibinfo{author}{Wheeler, T.},
-  \bibinfo{year}{2019}.
-\newblock \bibinfo{title}{{Algorithms for optimization}}.
-\newblock \bibinfo{edition}{1} ed., \bibinfo{publisher}{The MIT Press},
-  \bibinfo{address}{Cambridge, Massachusetts}.
+\bibinfo{author}{M.~Kochenderfer}, \bibinfo{author}{T.~Wheeler},
+  \bibinfo{title}{{Algorithms for optimization}}, \bibinfo{publisher}{The MIT
+  Press}, \bibinfo{address}{Cambridge, Massachusetts}, \bibinfo{edition}{1}
+  edition, \bibinfo{year}{2019}.
 %Type = Article
-\bibitem[{Modlinski(2010)}]{Modlinski2010}
-\bibinfo{author}{Modlinski, N.}, \bibinfo{year}{2010}.
-\newblock \bibinfo{title}{{Computational modeling of a utility boiler
-  tangentially-fired furnace retrofitted with swirl burners}}.
-\newblock \bibinfo{journal}{Fuel Processing Technology} \bibinfo{volume}{91},
-  \bibinfo{pages}{1601--1608}.
-\newblock \DOIprefix\doi{10.1016/j.fuproc.2010.06.008}.
+\bibitem[{Fei et~al.(2015)Fei, Black, Szuh{\'{a}}nszki, Ma, Ingham, Stanger,
+  and Pourkashanian}]{Fei2015}
+\bibinfo{author}{Y.~Fei}, \bibinfo{author}{S.~Black},
+  \bibinfo{author}{J.~Szuh{\'{a}}nszki}, \bibinfo{author}{L.~Ma},
+  \bibinfo{author}{D.~B. Ingham}, \bibinfo{author}{P.~J. Stanger},
+  \bibinfo{author}{M.~Pourkashanian},
+\newblock \bibinfo{title}{{Evaluation of the potential of retrofitting a coal
+  power plant to oxy-firing using CFD and process co-simulation}},
+\newblock \bibinfo{journal}{Fuel Processing Technology} \bibinfo{volume}{131}
+  (\bibinfo{year}{2015}) \bibinfo{pages}{45--58}.
 %Type = Article
-\bibitem[{Oko et~al.(2015)Oko, Wang and Zhang}]{Oko2015}
-\bibinfo{author}{Oko, E.}, \bibinfo{author}{Wang, M.}, \bibinfo{author}{Zhang,
-  J.}, \bibinfo{year}{2015}.
-\newblock \bibinfo{title}{{Neural network approach for predicting drum pressure
-  and level in coal-fired subcritical power plant}}.
-\newblock \bibinfo{journal}{Fuel} \bibinfo{volume}{151},
-  \bibinfo{pages}{139--145}.
-\newblock \URLprefix \url{http://dx.doi.org/10.1016/j.fuel.2015.01.091},
-  \DOIprefix\doi{10.1016/j.fuel.2015.01.091}.
+\bibitem[{Lv et~al.(2017)Lv, Hong, Yang, Fang, and Liu}]{Lv2017}
+\bibinfo{author}{Y.~Lv}, \bibinfo{author}{F.~Hong}, \bibinfo{author}{T.~Yang},
+  \bibinfo{author}{F.~Fang}, \bibinfo{author}{J.~Liu},
+\newblock \bibinfo{title}{{A dynamic model for the bed temperature prediction
+  of circulating fluidized bed boilers based on least squares support vector
+  machine with real operational data}},
+\newblock \bibinfo{journal}{Energy} \bibinfo{volume}{124}
+  (\bibinfo{year}{2017}) \bibinfo{pages}{284--294}.
+%Type = Article
+\bibitem[{Singh and Abbassi(2018)}]{Singh2018}
+\bibinfo{author}{S.~Singh}, \bibinfo{author}{H.~Abbassi},
+\newblock \bibinfo{title}{{1D/3D transient HVAC thermal modeling of an
+  off-highway machinery cabin using CFD-ANN hybrid method}},
+\newblock \bibinfo{journal}{Applied Thermal Engineering} \bibinfo{volume}{135}
+  (\bibinfo{year}{2018}) \bibinfo{pages}{406--417}.
 %Type = Book
-\bibitem[{Rasmussen and Williams(2006)}]{Rasmussen2006}
-\bibinfo{author}{Rasmussen, C.}, \bibinfo{author}{Williams, C.},
-  \bibinfo{year}{2006}.
-\newblock \bibinfo{title}{{Gaussian Processes for Machine Learning}}.
-\newblock \bibinfo{edition}{1} ed., \bibinfo{publisher}{The MIT Press},
-  \bibinfo{address}{Cambridge, Massachusetts}.
-%Type = Inproceedings
-\bibitem[{Rawlins et~al.(2021)Rawlins, Laubscher and Rousseau}]{Rawlins2021}
-\bibinfo{author}{Rawlins, B.T.}, \bibinfo{author}{Laubscher, R.},
-  \bibinfo{author}{Rousseau, P.}, \bibinfo{year}{2021}.
-\newblock \bibinfo{title}{{Validation of a thermal non-equilibrium
-  Eulerian-Eulerian multiphase model of a 620 MWe pulverized fuel power
-  boiler.}}, in: \bibinfo{editor}{Skatulla, S.} (Ed.), \bibinfo{booktitle}{12th
-  South African Conference on Computational and Applied Mechanics (SACAM2020)},
-  \bibinfo{publisher}{MATEC Web of Conferences}, \bibinfo{address}{Cape Town}.
-\newblock \DOIprefix\doi{https://doi.org/10.1051/matecconf/202134700004}.
-%Type = Article
-\bibitem[{Sheng et~al.(2004)Sheng, Moghtaderi, Gupta and Wall}]{Sheng2004}
-\bibinfo{author}{Sheng, C.}, \bibinfo{author}{Moghtaderi, B.},
-  \bibinfo{author}{Gupta, R.}, \bibinfo{author}{Wall, T.F.},
-  \bibinfo{year}{2004}.
-\newblock \bibinfo{title}{{A computational fluid dynamics based study of the
-  combustion characteristics of coal blends in pulverised coal-fired furnace}}.
-\newblock \bibinfo{journal}{Fuel} \bibinfo{volume}{83},
-  \bibinfo{pages}{1543--1552}.
-\newblock \DOIprefix\doi{10.1016/j.fuel.2004.02.011}.
+\bibitem[{Madejski(2018)}]{Madejski_18}
+\bibinfo{author}{P.~Madejski}, \bibinfo{title}{Thermal Power Plants - New
+  Trends and Recent Developments}, \bibinfo{publisher}{IntechOpen},
+  \bibinfo{address}{London, United Kingdom}, \bibinfo{year}{2018}.
 %Type = Book
-\bibitem[{Versteeg and Malalasekera(2007)}]{Versteeg2007}
-\bibinfo{author}{Versteeg, H.}, \bibinfo{author}{Malalasekera, W.},
-  \bibinfo{year}{2007}.
-\newblock \bibinfo{title}{{Introduction to Computational Fluid Dynamics, The
-  finite volume method}}.
-\newblock \bibinfo{edition}{Second} ed., \bibinfo{publisher}{Pearson Prentice
-  Hall}.
-\newblock \DOIprefix\doi{10.1002/9781119369189}.
+\bibitem[{Sarkar(2015)}]{Sarkar2015}
+\bibinfo{author}{D.~Sarkar}, \bibinfo{title}{{THERMAL POWER PLANT Design and
+  Operation}}, \bibinfo{publisher}{Elsevier Inc.},
+  \bibinfo{address}{Amsterdam}, \bibinfo{year}{2015}.
 %Type = Article
-\bibitem[{Wen et~al.(2022)Wen, Pan, Chen, Aziz, Zhou and Li}]{Wen2022}
-\bibinfo{author}{Wen, D.}, \bibinfo{author}{Pan, Y.}, \bibinfo{author}{Chen,
-  X.}, \bibinfo{author}{Aziz, M.}, \bibinfo{author}{Zhou, Q.},
-  \bibinfo{author}{Li, N.}, \bibinfo{year}{2022}.
+\bibitem[{Lu et~al.(2021)Lu, Wang, and Yan}]{Lu2021}
+\bibinfo{author}{C.~Lu}, \bibinfo{author}{J.~Wang}, \bibinfo{author}{R.~Yan},
+\newblock \bibinfo{title}{{Multi-objective optimization of combined cooling,
+  heating and power system considering the collaboration of thermal energy
+  storage with load uncertainties}},
+\newblock \bibinfo{journal}{Journal of Energy Storage} \bibinfo{volume}{40}
+  (\bibinfo{year}{2021}) \bibinfo{pages}{102819}.
+%Type = Article
+\bibitem[{Wen et~al.(2022)Wen, Pan, Chen, Aziz, Zhou, and Li}]{Wen2022}
+\bibinfo{author}{D.~Wen}, \bibinfo{author}{Y.~Pan}, \bibinfo{author}{X.~Chen},
+  \bibinfo{author}{M.~Aziz}, \bibinfo{author}{Q.~Zhou},
+  \bibinfo{author}{N.~Li},
 \newblock \bibinfo{title}{{Analysis and prediction of thermal stress
   distribution on the membrane wall in the arch-fired boiler based on machine
-  learning technology}}.
+  learning technology}},
 \newblock \bibinfo{journal}{Thermal Science and Engineering Progress}
-  \bibinfo{volume}{28}, \bibinfo{pages}{101137}.
-\newblock \DOIprefix\doi{10.1016/j.tsep.2021.101137}.
+  \bibinfo{volume}{28} (\bibinfo{year}{2022}) \bibinfo{pages}{101137}.
+%Type = Book
+\bibitem[{Rasmussen and Williams(2006)}]{Rasmussen2006}
+\bibinfo{author}{C.~Rasmussen}, \bibinfo{author}{C.~Williams},
+  \bibinfo{title}{{Gaussian Processes for Machine Learning}},
+  \bibinfo{publisher}{The MIT Press}, \bibinfo{address}{Cambridge,
+  Massachusetts}, \bibinfo{edition}{1} edition, \bibinfo{year}{2006}.
+%Type = Book
+\bibitem[{Goodfellow et~al.(2017)Goodfellow, Bengio, and
+  Courville}]{goodfellow}
+\bibinfo{author}{I.~Goodfellow}, \bibinfo{author}{Y.~Bengio},
+  \bibinfo{author}{A.~Courville}, \bibinfo{title}{{Deep Learning}},
+  \bibinfo{publisher}{MIT Press}, \bibinfo{address}{Chennai},
+  \bibinfo{edition}{first edit} edition, \bibinfo{year}{2017}.
+%Type = Article
+\bibitem[{Rumelhart et~al.(1986)Rumelhart, Hinton, and
+  Williams}]{Rumelhart1986}
+\bibinfo{author}{D.~E. Rumelhart}, \bibinfo{author}{G.~E. Hinton},
+  \bibinfo{author}{R.~J. Williams},
+\newblock \bibinfo{title}{{Learning representations by back-propagating
+  errors}},
+\newblock \bibinfo{journal}{Nature} \bibinfo{volume}{323}
+  (\bibinfo{year}{1986}) \bibinfo{pages}{533--536}.
+%Type = Article
+\bibitem[{Oko et~al.(2015)Oko, Wang, and Zhang}]{Oko2015}
+\bibinfo{author}{E.~Oko}, \bibinfo{author}{M.~Wang},
+  \bibinfo{author}{J.~Zhang},
+\newblock \bibinfo{title}{{Neural network approach for predicting drum pressure
+  and level in coal-fired subcritical power plant}},
+\newblock \bibinfo{journal}{Fuel} \bibinfo{volume}{151} (\bibinfo{year}{2015})
+  \bibinfo{pages}{139--145}.
+%Type = Techreport
+\bibitem[{Bishop(1994)}]{bishop1994}
+\bibinfo{author}{C.~Bishop}, \bibinfo{title}{{Mixture Density Networks}},
+  \bibinfo{type}{Technical Report}, Aston University, \bibinfo{year}{1994}.
+%Type = Book
+\bibitem[{Versteeg and Malalasekera(2007)}]{Versteeg2007}
+\bibinfo{author}{H.~Versteeg}, \bibinfo{author}{W.~Malalasekera},
+  \bibinfo{title}{{Introduction to Computational Fluid Dynamics, The finite
+  volume method}}, \bibinfo{publisher}{Pearson Prentice Hall},
+  \bibinfo{edition}{second} edition, \bibinfo{year}{2007}.
+%Type = Article
+\bibitem[{Modlinski(2010)}]{Modlinski2010}
+\bibinfo{author}{N.~Modlinski},
+\newblock \bibinfo{title}{{Computational modeling of a utility boiler
+  tangentially-fired furnace retrofitted with swirl burners}},
+\newblock \bibinfo{journal}{Fuel Processing Technology} \bibinfo{volume}{91}
+  (\bibinfo{year}{2010}) \bibinfo{pages}{1601--1608}.
+%Type = Inproceedings
+\bibitem[{Rawlins et~al.(2021)Rawlins, Laubscher, and Rousseau}]{Rawlins2021}
+\bibinfo{author}{B.~T. Rawlins}, \bibinfo{author}{R.~Laubscher},
+  \bibinfo{author}{P.~Rousseau},
+\newblock \bibinfo{title}{{Validation of a thermal non-equilibrium
+  Eulerian-Eulerian multiphase model of a 620 MWe pulverized fuel power
+  boiler.}},
+\newblock in: \bibinfo{editor}{S.~Skatulla} (Ed.), \bibinfo{booktitle}{12th
+  South African Conference on Computational and Applied Mechanics (SACAM2020)},
+  \bibinfo{publisher}{MATEC Web of Conferences}, \bibinfo{address}{Cape Town},
+  \bibinfo{year}{2021}.
+%Type = Article
+\bibitem[{Sheng et~al.(2004)Sheng, Moghtaderi, Gupta, and Wall}]{Sheng2004}
+\bibinfo{author}{C.~Sheng}, \bibinfo{author}{B.~Moghtaderi},
+  \bibinfo{author}{R.~Gupta}, \bibinfo{author}{T.~F. Wall},
+\newblock \bibinfo{title}{{A computational fluid dynamics based study of the
+  combustion characteristics of coal blends in pulverised coal-fired furnace}},
+\newblock \bibinfo{journal}{Fuel} \bibinfo{volume}{83} (\bibinfo{year}{2004})
+  \bibinfo{pages}{1543--1552}.
+%Type = Article
+\bibitem[{Baum and Street(1971)}]{Baum1971}
+\bibinfo{author}{M.~Baum}, \bibinfo{author}{P.~Street},
+\newblock \bibinfo{title}{{Predicting the combustion behaviour of coal
+  particles}},
+\newblock \bibinfo{journal}{Combustion science and Technolodgy}
+  \bibinfo{volume}{3} (\bibinfo{year}{1971}) \bibinfo{pages}{231}.
+%Type = Book
+\bibitem[{ANSYS(2021)}]{Ansys}
+\bibinfo{author}{ANSYS}, \bibinfo{title}{{ANSYS Fluent Theory Guide}},
+  \bibinfo{publisher}{Ansys Inc.}, \bibinfo{edition}{20} edition,
+  \bibinfo{year}{2021}.
+%Type = Book
+\bibitem[{Thomopoulos(2013)}]{Thomopoulos2013}
+\bibinfo{author}{N.~T. Thomopoulos}, \bibinfo{title}{{Essentials of Monte Carlo
+  simulation: Statistical methods for building simulation models}}, volume
+  \bibinfo{volume}{9781461460220}, \bibinfo{year}{2013}.
+%Type = Book
+\bibitem[{MTech(2021)}]{flownex}
+\bibinfo{author}{MTech}, \bibinfo{title}{{Flownex Theory Guide}},
+  \bibinfo{publisher}{MTech inc.}, \bibinfo{year}{2021}.
+%Type = Article
+\bibitem[{Laubscher and Rousseau(2019)}]{Laubscher2019b}
+\bibinfo{author}{R.~Laubscher}, \bibinfo{author}{P.~Rousseau},
+\newblock \bibinfo{title}{{CFD study of pulverized coal-fired boiler evaporator
+  and radiant superheaters at varying loads}},
+\newblock \bibinfo{journal}{Applied Thermal Engineering} \bibinfo{volume}{160}
+  (\bibinfo{year}{2019}).
+%Type = Book
+\bibitem[{Kakac(1991)}]{Kakac1991}
+\bibinfo{author}{S.~Kakac}, \bibinfo{title}{{Boiler Evaporator and Condenser}},
+  \bibinfo{publisher}{Wiley Interscience}, \bibinfo{year}{1991}.
 
 \end{thebibliography}
