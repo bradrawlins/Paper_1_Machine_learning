@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  4 MAR 2022 17:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  5 MAR 2022 14:17
 entering extended mode
 **./ML_PAPER_SINGLE_COLUMN.tex
 (ML_PAPER_SINGLE_COLUMN.tex
@@ -1044,29 +1044,53 @@ File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 [0
 
 {C:/Users/RWLBRA001/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Overfull \hbox (117.0831pt too wide) detected at line 202
+Overfull \hbox (117.0831pt too wide) detected at line 200
 []
  []
 
 (ML_PAPER_SINGLE_COLUMN.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 202.
+Package hyperref Warning: Ignoring empty anchor on input line 200.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 202.
+Package hyperref Warning: Ignoring empty anchor on input line 200.
 
-<thumbnails/cas-email.jpeg, id=12, 225.84375pt x 225.84375pt>
-File: thumbnails/cas-email.jpeg Graphic file (type jpg)
-<use thumbnails/cas-email.jpeg>
-Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 202.
-(pdftex.def)             Requested size: 7.99838pt x 8.0pt.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-02.
-(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
 
-Package hyperref Warning: Ignoring empty anchor on input line 202.
+Package natbib Warning: Citation `Rousseau2020' on page 1 undefined on input li
+ne 204.
+
+
+Package natbib Warning: Citation `Safdarnejad2019' on page 1 undefined on input
+ line 204.
+
+
+Package natbib Warning: Citation `Modlinski2019' on page 1 undefined on input l
+ine 204.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+
+Package natbib Warning: Citation `Liu2021' on page 1 undefined on input line 20
+6.
+
+
+Package natbib Warning: Citation `dugum2019' on page 1 undefined on input line 
+206.
+
+
+Package natbib Warning: Citation `Gu2020' on page 1 undefined on input line 206
+.
+
+
+Package natbib Warning: Citation `Laubscher2020' on page 1 undefined on input l
+ine 206.
+
+
+Package natbib Warning: Citation `Rawlins2022' on page 1 undefined on input lin
+e 206.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 206--207
@@ -1074,24 +1098,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--207
  []
 
 
+Package natbib Warning: Citation `Rousseau2020' on page 1 undefined on input li
+ne 208.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
+
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 2
+09.
+(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
+File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+[1]
+
+Package natbib Warning: Citation `Wheeler2019' on page 2 undefined on input lin
+e 210.
+
+
+Package natbib Warning: Citation `Fei2015' on page 2 undefined on input line 21
+0.
+
+
+Package natbib Warning: Citation `Lv2017' on page 2 undefined on input line 210
+.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 2
-11.
-(C:\Users\RWLBRA001\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
-File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-[1 <./thumbnails/cas-email.jpeg>]
+
+Package natbib Warning: Citation `Singh2018' on page 2 undefined on input line 
+212.
+
+
+Package natbib Warning: Citation `Fei2015' on page 2 undefined on input line 21
+2.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
+
+
+Package natbib Warning: Citation `Madejski_18' on page 2 undefined on input lin
+e 214.
+
+
+Package natbib Warning: Citation `Sarkar2015' on page 2 undefined on input line
+ 214.
+
+
+Package natbib Warning: Citation `Lu2021' on page 2 undefined on input line 214
+.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 214--215
@@ -1104,9 +1165,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--217
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
+LaTeX Warning: Reference `sec_result_1' on page 2 undefined on input line 223.
 
- []
+
+Package natbib Warning: Citation `Wen2022' on page 2 undefined on input line 22
+3.
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1114,22 +1177,89 @@ $[]$
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 231--233
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
+Package natbib Warning: Citation `Wheeler2019' on page 3 undefined on input lin
+e 232.
+
+
+LaTeX Warning: Reference `eqn_lin_cost' on page 3 undefined on input line 232.
+
+
+Package natbib Warning: Citation `Wen2022' on page 3 undefined on input line 23
+7.
+
+
+LaTeX Warning: Reference `eqn_grad_descent' on page 3 undefined on input line 2
+37.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--242
 
  []
 
-<ML_SCHEMATIC.png, id=71, 413.253pt x 400.77pt>
+
+Package natbib Warning: Citation `Rasmussen2006' on page 3 undefined on input l
+ine 243.
+
+
+LaTeX Warning: Reference `sec_result_1' on page 3 undefined on input line 243.
+
+
+Package natbib Warning: Citation `Rasmussen2006' on page 3 undefined on input l
+ine 245.
+
+
+Package natbib Warning: Citation `goodfellow' on page 3 undefined on input line
+ 245.
+
+
+LaTeX Warning: Reference `eqn_lin_cost' on page 3 undefined on input line 245.
+
+
+LaTeX Warning: Reference `fig_mlp_schematic' on page 3 undefined on input line 
+245.
+
+<ML_SCHEMATIC.png, id=26, 413.253pt x 400.77pt>
 File: ML_SCHEMATIC.png Graphic file (type png)
 <use ML_SCHEMATIC.png>
-Package pdftex.def Info: ML_SCHEMATIC.png  used on input line 250.
+Package pdftex.def Info: ML_SCHEMATIC.png  used on input line 248.
 (pdftex.def)             Requested size: 206.62599pt x 200.3845pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `eqn_summed_sig' on page 3 undefined on input line 252
+.
+
+
+LaTeX Warning: Reference `eqn_summed_sig' on page 3 undefined on input line 257
+.
+
+
+Package natbib Warning: Citation `goodfellow' on page 3 undefined on input line
+ 257.
+
+
+LaTeX Warning: Reference `eqn_act_func' on page 3 undefined on input line 257.
+
+
+LaTeX Warning: Reference `eqn_lin_cost' on page 3 undefined on input line 269.
+
+
+Package natbib Warning: Citation `Rumelhart1986' on page 3 undefined on input l
+ine 269.
+
+
+Package natbib Warning: Citation `goodfellow' on page 3 undefined on input line
+ 269.
+
+
+LaTeX Warning: Reference `eqn_adam_algor' on page 3 undefined on input line 269
+.
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1137,9 +1267,22 @@ $[]$
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+LaTeX Warning: Reference `eqn_adam_algor' on page 4 undefined on input line 283
+.
+
+
+Package natbib Warning: Citation `Oko2015' on page 4 undefined on input line 28
+6.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 
  []
+
+
+LaTeX Warning: Reference `eqn_cond_prob_func' on page 4 undefined on input line
+ 288.
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1147,37 +1290,90 @@ $[]$
  []
 
 [4 <./ML_SCHEMATIC.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 293--295
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+LaTeX Warning: Reference `fig_mdn_schematic' on page 5 undefined on input line 
+294.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
 
  []
 
-<MDN_SCHEMATIC.png, id=113, 570.63188pt x 349.305pt>
+<MDN_SCHEMATIC.png, id=51, 570.63188pt x 349.305pt>
 File: MDN_SCHEMATIC.png Graphic file (type png)
 <use MDN_SCHEMATIC.png>
-Package pdftex.def Info: MDN_SCHEMATIC.png  used on input line 300.
+Package pdftex.def Info: MDN_SCHEMATIC.png  used on input line 298.
 (pdftex.def)             Requested size: 285.31525pt x 174.65207pt.
+
+Package natbib Warning: Citation `bishop1994' on page 5 undefined on input line
+ 302.
+
+
+LaTeX Warning: Reference `eqn_mix_coef_constraint' on page 5 undefined on input
+ line 302.
+
+
+LaTeX Warning: Reference `eqn_mix_coeff' on page 5 undefined on input line 309.
+
+
+
+LaTeX Warning: Reference `eqn_stddev' on page 5 undefined on input line 314.
+
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
 [5 <./MDN_SCHEMATIC.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+LaTeX Warning: Reference `eqn_nll' on page 6 undefined on input line 322.
+
+
+LaTeX Warning: Reference `fig_cfd_geom_bc' on page 6 undefined on input line 33
+3.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 
  []
 
-<CFD_GEOMETRY.png, id=133, 1056.94875pt x 551.81157pt>
+<CFD_GEOMETRY.png, id=63, 1056.94875pt x 551.81157pt>
 File: CFD_GEOMETRY.png Graphic file (type png)
 <use CFD_GEOMETRY.png>
-Package pdftex.def Info: CFD_GEOMETRY.png  used on input line 339.
+Package pdftex.def Info: CFD_GEOMETRY.png  used on input line 337.
 (pdftex.def)             Requested size: 422.772pt x 220.72072pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Reference `eqn_cfd' on page 6 undefined on input line 341.
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+$[]$
+ []
+
+[6 <./CFD_GEOMETRY.png>]
+
+Package natbib Warning: Citation `Versteeg2007' on page 7 undefined on input li
+ne 351.
+
+
+Package natbib Warning: Citation `Modlinski2010' on page 7 undefined on input l
+ine 351.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
+
+ []
+
+
+Package natbib Warning: Citation `Rawlins2021' on page 7 undefined on input lin
+e 353.
+
+
+LaTeX Warning: Reference `tbl_combust' on page 7 undefined on input line 353.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 353--354
@@ -1185,24 +1381,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 353--354
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+Package natbib Warning: Citation `Sheng2004' on page 7 undefined on input line 
+363.
 
- []
+
+Package natbib Warning: Citation `Baum1971' on page 7 undefined on input line 3
+65.
 
 
-Underfull \hbox (badness 10000) has occurred while \output is active
-$[]$
- []
+Package natbib Warning: Citation `Sheng2004' on page 7 undefined on input line 
+366.
 
-[6]
-Underfull \hbox (badness 1194) in paragraph at lines 371--371
+
+Package natbib Warning: Citation `Ansys' on page 7 undefined on input line 369.
+
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 369--369
 []|$\LS1/stix/m/it/9 R[] \LS1/stix/m/n/9 = \LS1/stix/m/it/9 #[]M[]AB[]min []$\
 T1/cmss/m/n/9 ,
  []
 
 
-Overfull \hbox (0.87648pt too wide) in alignment at lines 359--373
+Overfull \hbox (0.87648pt too wide) in alignment at lines 357--371
 [][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
+
  []
 
 
@@ -1210,7 +1417,11 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
-[7 <./CFD_GEOMETRY.png>]
+[7]
+
+LaTeX Warning: Reference `tbl_doe' on page 8 undefined on input line 379.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 379--380
 
  []
@@ -1221,13 +1432,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 381--382
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
-
+Overfull \hbox (24.57478pt too wide) in alignment at lines 385--402
+[][][][] 
  []
 
 
-Overfull \hbox (24.57478pt too wide) in alignment at lines 387--404
-[][][][] 
+LaTeX Warning: Reference `tbl_doe' on page 8 undefined on input line 407.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
+
  []
 
 
@@ -1241,59 +1455,87 @@ $[]$
  []
 
 [8]
+
+LaTeX Warning: Reference `tbl_tuning' on page 9 undefined on input line 411.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
-
- []
-
-
-Overfull \hbox (26.63849pt too wide) in alignment at lines 417--427
+Overfull \hbox (26.63849pt too wide) in alignment at lines 415--425
 [][][] 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
+
+ []
+
+
+LaTeX Warning: Reference `fig_mlp_hyper' on page 9 undefined on input line 430.
+
+
+
+LaTeX Warning: Reference `fig_mlp_hyper' on page 9 undefined on input line 430.
+
+
+
+LaTeX Warning: Reference `fig_mlp_hyper' on page 9 undefined on input line 430.
+
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 430--431
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
-
- []
-
-<NEURONS_HYPER.png, id=181, 561.59813pt x 312.41719pt>
+<NEURONS_HYPER.png, id=90, 561.59813pt x 312.41719pt>
 File: NEURONS_HYPER.png Graphic file (type png)
 <use NEURONS_HYPER.png>
-Package pdftex.def Info: NEURONS_HYPER.png  used on input line 437.
+Package pdftex.def Info: NEURONS_HYPER.png  used on input line 435.
 (pdftex.def)             Requested size: 234.1662pt x 130.26566pt.
-<LR_HYPER.png, id=182, 569.12625pt x 322.95656pt>
+<LR_HYPER.png, id=91, 569.12625pt x 322.95656pt>
 File: LR_HYPER.png Graphic file (type png)
 <use LR_HYPER.png>
-Package pdftex.def Info: LR_HYPER.png  used on input line 441.
+Package pdftex.def Info: LR_HYPER.png  used on input line 439.
 (pdftex.def)             Requested size: 234.1662pt x 132.8812pt.
-<BATCH_SIZE_HYPER.png, id=183, 575.14874pt x 307.90031pt>
+<BATCH_SIZE_HYPER.png, id=92, 575.14874pt x 307.90031pt>
 File: BATCH_SIZE_HYPER.png Graphic file (type png)
 <use BATCH_SIZE_HYPER.png>
-Package pdftex.def Info: BATCH_SIZE_HYPER.png  used on input line 445.
+Package pdftex.def Info: BATCH_SIZE_HYPER.png  used on input line 443.
 (pdftex.def)             Requested size: 234.1662pt x 125.35667pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<DIST_HYPER.png, id=185, 545.03625pt x 304.13625pt>
+
+LaTeX Warning: Reference `fig_mdn_hyper' on page 9 undefined on input line 449.
+
+
+<DIST_HYPER.png, id=93, 545.03625pt x 304.13625pt>
 File: DIST_HYPER.png Graphic file (type png)
 <use DIST_HYPER.png>
-Package pdftex.def Info: DIST_HYPER.png  used on input line 454.
+Package pdftex.def Info: DIST_HYPER.png  used on input line 452.
 (pdftex.def)             Requested size: 234.1662pt x 130.66466pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--459
+LaTeX Warning: Reference `tbl_hyper_results' on page 9 undefined on input line 
+456.
 
+
+LaTeX Warning: Reference `fig_frequency_data' on page 9 undefined on input line
+ 456.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
+
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 462--477
+[][][] 
  []
 
 
@@ -1302,42 +1544,54 @@ $[]$
  []
 
 [9]
-Underfull \hbox (badness 10000) in alignment at lines 464--479
-[][][] 
- []
-
-<OVERALL_TRAIN.png, id=198, 537.00626pt x 359.3425pt>
+<OVERALL_TRAIN.png, id=100, 537.00626pt x 359.3425pt>
 File: OVERALL_TRAIN.png Graphic file (type png)
 <use OVERALL_TRAIN.png>
-Package pdftex.def Info: OVERALL_TRAIN.png  used on input line 485.
+Package pdftex.def Info: OVERALL_TRAIN.png  used on input line 483.
 (pdftex.def)             Requested size: 234.16122pt x 156.49365pt.
-<OVERALL_TEST.png, id=199, 537.00626pt x 359.3425pt>
+<OVERALL_TEST.png, id=101, 537.00626pt x 359.3425pt>
 File: OVERALL_TEST.png Graphic file (type png)
 <use OVERALL_TEST.png>
-Package pdftex.def Info: OVERALL_TEST.png  used on input line 489.
+Package pdftex.def Info: OVERALL_TEST.png  used on input line 487.
 (pdftex.def)             Requested size: 234.16122pt x 156.49365pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
+LaTeX Warning: Reference `sec_results_diss' on page 10 undefined on input line 
+494.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--495
 
  []
 
+
+LaTeX Warning: Reference `fig_int_model' on page 10 undefined on input line 496
+.
+
+<INTEGRATED_MODEL.png, id=102, 3044.37375pt x 1770.615pt>
+File: INTEGRATED_MODEL.png Graphic file (type png)
+<use INTEGRATED_MODEL.png>
+Package pdftex.def Info: INTEGRATED_MODEL.png  used on input line 499.
+(pdftex.def)             Requested size: 456.63637pt x 265.5808pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
 [10 <./NEURONS_HYPER.png> <./LR_HYPER.png> <./BATCH_SIZE_HYPER.png>]
-<INTEGRATED_MODEL.png, id=210, 3044.37375pt x 1770.615pt>
-File: INTEGRATED_MODEL.png Graphic file (type png)
-<use INTEGRATED_MODEL.png>
-Package pdftex.def Info: INTEGRATED_MODEL.png  used on input line 501.
-(pdftex.def)             Requested size: 456.63637pt x 265.5808pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `sec_hyper' on page 11 undefined on input line 506.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 509--510
+
+ []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1345,9 +1599,25 @@ $[]$
  []
 
 [11 <./DIST_HYPER.png>]
+
+Package natbib Warning: Citation `Thomopoulos2013' on page 12 undefined on inpu
+t line 511.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
+
+
+Package natbib Warning: Citation `flownex' on page 12 undefined on input line 5
+13.
+
+
+LaTeX Warning: Reference `tbl_inputs' on page 12 undefined on input line 513.
+
+
+Package natbib Warning: Citation `Laubscher2019b' on page 12 undefined on input
+ line 513.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 513--514
@@ -1355,7 +1625,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 513--514
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 515--516
+Overfull \hbox (21.25476pt too wide) in alignment at lines 517--532
+[][][][][][] 
+ []
+
+<100_CASE.png, id=121, 761.84625pt x 524.96124pt>
+File: 100_CASE.png Graphic file (type png)
+<use 100_CASE.png>
+Package pdftex.def Info: 100_CASE.png  used on input line 537.
+(pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
+<80_CASE.png, id=122, 761.84625pt x 524.96124pt>
+File: 80_CASE.png Graphic file (type png)
+<use 80_CASE.png>
+Package pdftex.def Info: 80_CASE.png  used on input line 541.
+(pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
+<60_CASE.png, id=123, 761.84625pt x 524.96124pt>
+File: 60_CASE.png Graphic file (type png)
+<use 60_CASE.png>
+Package pdftex.def Info: 60_CASE.png  used on input line 545.
+(pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
+<100_CASE_STEAM.png, id=124, 761.84625pt x 516.93124pt>
+File: 100_CASE_STEAM.png Graphic file (type png)
+<use 100_CASE_STEAM.png>
+Package pdftex.def Info: 100_CASE_STEAM.png  used on input line 555.
+(pdftex.def)             Requested size: 154.54039pt x 120.91882pt.
+<80_CASE_STEAM.png, id=125, 761.84625pt x 524.96124pt>
+File: 80_CASE_STEAM.png Graphic file (type png)
+<use 80_CASE_STEAM.png>
+Package pdftex.def Info: 80_CASE_STEAM.png  used on input line 559.
+(pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
+<60_CASE_STEAM.png, id=126, 761.84625pt x 524.96124pt>
+File: 60_CASE_STEAM.png Graphic file (type png)
+<use 60_CASE_STEAM.png>
+Package pdftex.def Info: 60_CASE_STEAM.png  used on input line 563.
+(pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
+<100_CASE_ATTEMP.png, id=127, 742.775pt x 524.96124pt>
+File: 100_CASE_ATTEMP.png Graphic file (type png)
+<use 100_CASE_ATTEMP.png>
+Package pdftex.def Info: 100_CASE_ATTEMP.png  used on input line 573.
+(pdftex.def)             Requested size: 154.54796pt x 120.92278pt.
+<80_CASE_ATTEMP.png, id=128, 742.775pt x 524.96124pt>
+File: 80_CASE_ATTEMP.png Graphic file (type png)
+<use 80_CASE_ATTEMP.png>
+Package pdftex.def Info: 80_CASE_ATTEMP.png  used on input line 577.
+(pdftex.def)             Requested size: 154.54796pt x 120.92278pt.
+<60_CASE_ATTEMP.png, id=129, 742.775pt x 524.96124pt>
+File: 60_CASE_ATTEMP.png Graphic file (type png)
+<use 60_CASE_ATTEMP.png>
+Package pdftex.def Info: 60_CASE_ATTEMP.png  used on input line 581.
+(pdftex.def)             Requested size: 154.54796pt x 120.92278pt.
+
+LaTeX Warning: Reference `fig_heat_load' on page 12 undefined on input line 588
+.
+
+
+LaTeX Warning: Reference `fig_attemp' on page 12 undefined on input line 588.
+
+
+LaTeX Warning: Reference `fig_heat_load' on page 12 undefined on input line 588
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--589
 
  []
 
@@ -1365,64 +1696,28 @@ $[]$
  []
 
 [12 <./OVERALL_TRAIN.png> <./OVERALL_TEST.png>]
-Overfull \hbox (21.25476pt too wide) in alignment at lines 519--534
-[][][][][][] 
- []
 
-<100_CASE.png, id=232, 761.84625pt x 524.96124pt>
-File: 100_CASE.png Graphic file (type png)
-<use 100_CASE.png>
-Package pdftex.def Info: 100_CASE.png  used on input line 539.
-(pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
-<80_CASE.png, id=233, 761.84625pt x 524.96124pt>
-File: 80_CASE.png Graphic file (type png)
-<use 80_CASE.png>
-Package pdftex.def Info: 80_CASE.png  used on input line 543.
-(pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
-<60_CASE.png, id=234, 761.84625pt x 524.96124pt>
-File: 60_CASE.png Graphic file (type png)
-<use 60_CASE.png>
-Package pdftex.def Info: 60_CASE.png  used on input line 547.
-(pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
-<100_CASE_STEAM.png, id=235, 761.84625pt x 516.93124pt>
-File: 100_CASE_STEAM.png Graphic file (type png)
-<use 100_CASE_STEAM.png>
-Package pdftex.def Info: 100_CASE_STEAM.png  used on input line 557.
-(pdftex.def)             Requested size: 154.54039pt x 120.91882pt.
-<80_CASE_STEAM.png, id=236, 761.84625pt x 524.96124pt>
-File: 80_CASE_STEAM.png Graphic file (type png)
-<use 80_CASE_STEAM.png>
-Package pdftex.def Info: 80_CASE_STEAM.png  used on input line 561.
-(pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
-<60_CASE_STEAM.png, id=237, 761.84625pt x 524.96124pt>
-File: 60_CASE_STEAM.png Graphic file (type png)
-<use 60_CASE_STEAM.png>
-Package pdftex.def Info: 60_CASE_STEAM.png  used on input line 565.
-(pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
-<100_CASE_ATTEMP.png, id=238, 742.775pt x 524.96124pt>
-File: 100_CASE_ATTEMP.png Graphic file (type png)
-<use 100_CASE_ATTEMP.png>
-Package pdftex.def Info: 100_CASE_ATTEMP.png  used on input line 575.
-(pdftex.def)             Requested size: 154.54796pt x 120.92278pt.
-<80_CASE_ATTEMP.png, id=239, 742.775pt x 524.96124pt>
-File: 80_CASE_ATTEMP.png Graphic file (type png)
-<use 80_CASE_ATTEMP.png>
-Package pdftex.def Info: 80_CASE_ATTEMP.png  used on input line 579.
-(pdftex.def)             Requested size: 154.54796pt x 120.92278pt.
-<60_CASE_ATTEMP.png, id=240, 742.775pt x 524.96124pt>
-File: 60_CASE_ATTEMP.png Graphic file (type png)
-<use 60_CASE_ATTEMP.png>
-Package pdftex.def Info: 60_CASE_ATTEMP.png  used on input line 583.
-(pdftex.def)             Requested size: 154.54796pt x 120.92278pt.
+LaTeX Warning: Reference `fig_steam_gen' on page 13 undefined on input line 590
+.
+
+
+Package natbib Warning: Citation `Kakac1991' on page 13 undefined on input line
+ 590.
+
+
+LaTeX Warning: Reference `fig_attemp' on page 13 undefined on input line 590.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 590--591
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--593
+LaTeX Warning: Reference `fig_steam_gen' on page 13 undefined on input line 592
+.
 
- []
+
+LaTeX Warning: Reference `fig_attemp' on page 13 undefined on input line 592.
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1430,6 +1725,16 @@ $[]$
  []
 
 [13 <./INTEGRATED_MODEL.png>]
+
+LaTeX Warning: Reference `sec_result_1' on page 14 undefined on input line 594.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 594--595
+
+ []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
@@ -1437,9 +1742,32 @@ $[]$
 [14 <./100_CASE.png> <./80_CASE.png> <./60_CASE.png> <./100_CASE_STEAM.png> <./
 80_CASE_STEAM.png> <./60_CASE_STEAM.png> <./100_CASE_ATTEMP.png> <./80_CASE_ATT
 EMP.png> <./60_CASE_ATTEMP.png>]
+
+LaTeX Warning: Reference `tbl_inputs' on page 15 undefined on input line 596.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 596--597
 
  []
+
+
+LaTeX Warning: Reference `sec_result_1' on page 15 undefined on input line 598.
+
+
+
+LaTeX Warning: Reference `fig_fuel_results' on page 15 undefined on input line 
+598.
+
+
+LaTeX Warning: Reference `fig_heat_load' on page 15 undefined on input line 598
+.
+
+
+LaTeX Warning: Reference `fig_attemp' on page 15 undefined on input line 598.
+
+
+LaTeX Warning: Reference `fig_fuel_results' on page 15 undefined on input line 
+598.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 598--599
@@ -1447,30 +1775,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 598--599
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 600--601
+LaTeX Warning: Reference `fig_fuel_results' on page 15 undefined on input line 
+600.
 
- []
+
+LaTeX Warning: Reference `fig_steam_gen' on page 15 undefined on input line 600
+.
 
 
-Overfull \hbox (1.16386pt too wide) in alignment at lines 611--625
+LaTeX Warning: Reference `tbl_fuel_results' on page 15 undefined on input line 
+600.
+
+
+LaTeX Warning: Reference `tbl_fuel_results' on page 15 undefined on input line 
+600.
+
+
+LaTeX Warning: Reference `tbl_fuel_results' on page 15 undefined on input line 
+605.
+
+
+LaTeX Warning: Reference `fig_fuel_results' on page 15 undefined on input line 
+605.
+
+
+Overfull \hbox (1.16386pt too wide) in alignment at lines 609--623
 [][][][] 
  []
 
-<100_FUEL_CASE.png, id=287, 761.84625pt x 524.96124pt>
+<100_FUEL_CASE.png, id=161, 761.84625pt x 524.96124pt>
 File: 100_FUEL_CASE.png Graphic file (type png)
 <use 100_FUEL_CASE.png>
-Package pdftex.def Info: 100_FUEL_CASE.png  used on input line 631.
+Package pdftex.def Info: 100_FUEL_CASE.png  used on input line 629.
 (pdftex.def)             Requested size: 154.54039pt x 120.92278pt.
-<100_FUEL_CASE_STEAM.png, id=288, 761.84625pt x 522.95375pt>
+<100_FUEL_CASE_STEAM.png, id=162, 761.84625pt x 522.95375pt>
 File: 100_FUEL_CASE_STEAM.png Graphic file (type png)
 <use 100_FUEL_CASE_STEAM.png>
-Package pdftex.def Info: 100_FUEL_CASE_STEAM.png  used on input line 635.
+Package pdftex.def Info: 100_FUEL_CASE_STEAM.png  used on input line 633.
 (pdftex.def)             Requested size: 154.54039pt x 120.92317pt.
-<100_FUEL_CASE_ATTEMP.png, id=289, 742.775pt x 527.9725pt>
+<100_FUEL_CASE_ATTEMP.png, id=163, 742.775pt x 527.9725pt>
 File: 100_FUEL_CASE_ATTEMP.png Graphic file (type png)
 <use 100_FUEL_CASE_ATTEMP.png>
-Package pdftex.def Info: 100_FUEL_CASE_ATTEMP.png  used on input line 639.
+Package pdftex.def Info: 100_FUEL_CASE_ATTEMP.png  used on input line 637.
 (pdftex.def)             Requested size: 154.54796pt x 120.92357pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
+
+ []
+
+
+LaTeX Warning: Reference `tbl_doe' on page 15 undefined on input line 647.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 647--648
 
@@ -1496,38 +1851,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 653--654
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 655--656
-
- []
-
-
+(ML_PAPER_SINGLE_COLUMN.bbl
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
 [16 <./100_FUEL_CASE.png> <./100_FUEL_CASE_STEAM.png> <./100_FUEL_CASE_ATTEMP.p
-ng>] (ML_PAPER_SINGLE_COLUMN.bbl
+ng>])
+
+Package natbib Warning: There were undefined citations.
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
-[17])
-Underfull \hbox (badness 10000) has occurred while \output is active
-$[]$
- []
+[17] (ML_PAPER_SINGLE_COLUMN.aux
 
-[18] (ML_PAPER_SINGLE_COLUMN.aux)
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `ML_PAPER_SINGLE_COLUMN.out' has not changed.
 
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 18602 strings out of 479616
- 280975 string characters out of 2863101
- 613872 words of memory out of 3000000
- 35348 multiletter control sequences out of 15000+200000
- 511960 words of font info for 165 fonts, out of 3000000 for 9000
+ 18569 strings out of 479616
+ 280051 string characters out of 2863101
+ 610118 words of memory out of 3000000
+ 35324 multiletter control sequences out of 15000+200000
+ 514376 words of font info for 165 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,16n,131p,1428b,675s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm
@@ -1541,18 +1901,17 @@ pData/Local/Programs/MiKTeX/fonts/type1/public/stix/STIXGeneral-Regular.pfb><C:
 0900.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public/c
 m-super/sfss0900.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/cm-super/sfsx0900.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/cm-super/sftt0800.pfb><C:/Users/RWLBRA001/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/stix/stix-mathbb.pfb><C:/Users/RWLBRA001/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathcal.pfb><C:/Users/R
-WLBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathex.pfb>
-<C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-
-mathit.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/stix/stix-mathrm.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/stix/stix-mathscr.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on ML_PAPER_SINGLE_COLUMN.pdf (19 pages, 2020738 bytes).
+TeX/fonts/type1/public/stix/stix-mathbb.pfb><C:/Users/RWLBRA001/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/stix/stix-mathcal.pfb><C:/Users/RWLBRA001/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathex.pfb><C:/Users/RW
+LBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathit.pfb><
+C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-m
+athrm.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+stix/stix-mathscr.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/stix/stix-mathsf.pfb>
+Output written on ML_PAPER_SINGLE_COLUMN.pdf (18 pages, 1963563 bytes).
 PDF statistics:
- 388 PDF objects out of 1000 (max. 8388607)
- 100 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 98 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

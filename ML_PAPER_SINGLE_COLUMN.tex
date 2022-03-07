@@ -189,8 +189,6 @@ An integrated data-driven surrogate model and 1-dimensional (1D) process model o
 \item Data-driven surrogate model development using CFD solution data.
 \item 1-D process and surrogate model integration.
 \item Development of mixture density network using simulation data.
-\item Model based on validated CFD model of a 620 $MW_e$ sub-critical boiler.
-\item Surrogate model prediction errors are below 10\%.
 \end{highlights}
 
 % Keywords
@@ -368,7 +366,7 @@ Diffusion/kinetic - \citep{Baum1971} & $\frac{dm_{char}}{dt} = -A_p p_{O_{2}} \f
 & $R_{c} = A_{c}exp\left(\frac{E_{a,c}}{RT_p}\right)$,  & $E_{a,c} = 8.37\times10^7 [J/kmol]$ - \cite{Sheng2004} \\
 & $R_{diff} = \frac{5\times10^{-12}}{d_p} \left(\frac{T_g+T_p}{2}\right)^{0.75}$&\\
 \multicolumn{3}{l}{\textit{Gaseous reactions of volatiles and $CO$}} \\
-Eddy dissipation model - \cite{Ansys} & $R_{k,r,P} =\vartheta_{k,r}M_{w,k}AB\rho\frac{\varepsilon}{k}min\left(\frac{\sum_{p} Y_p}{\sum_{j}\vartheta_{j,r}M_{w,j}}\right)$, $R_{k,r,R} =\vartheta_{k,r}M_{w,k}A\rho\frac{\varepsilon}{k}min\left(\frac{Y_R}{\varepsilon_{R,r}M_{w,R}}\right)$ & $A=4.0$, $B=0.5$\\
+Eddy dissipation model - \cite{Ansys} & $R_{k,r,P} =\vartheta_{k,r}M_{w,k}AB\rho\frac{\varepsilon}{k}min\left(\frac{\sum_{p} Y_p}{\sum_{j}\vartheta_{j,r}M_{w,j}}\right)$, $R_{k,r,R} =\vartheta_{k,r}M_{w,k}A\rho\frac{\varepsilon}{k}min\left(\frac{Y_R}{\vartheta_{R,r}M_{w,R}}\right)$ & $A=4.0$, $B=0.5$\\
 \bottomrule
 \end{tabular*}
 \end{table*}
