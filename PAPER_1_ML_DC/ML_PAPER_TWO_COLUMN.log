@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  8 MAR 2022 11:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  26 APR 2022 12:15
 entering extended mode
 **./ML_PAPER_TWO_COLUMN.tex
 (ML_PAPER_TWO_COLUMN.tex
@@ -1568,7 +1568,7 @@ Package rerunfilecheck Info: File `ML_PAPER_TWO_COLUMN.out' has not changed.
 Here is how much of TeX's memory you used:
  17778 strings out of 479616
  264881 string characters out of 2863101
- 561647 words of memory out of 3000000
+ 561648 words of memory out of 3000000
  34544 multiletter control sequences out of 15000+200000
  505115 words of font info for 151 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1594,7 +1594,7 @@ ype1/public/stix/stix-mathit.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/stix/stix-mathrm.pfb><C:/Users/RWLBRA001/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/stix/stix-mathscr.pfb><C:/Users/RWLBRA001/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on ML_PAPER_TWO_COLUMN.pdf (15 pages, 2135070 bytes).
+Output written on ML_PAPER_TWO_COLUMN.pdf (15 pages, 2135073 bytes).
 PDF statistics:
  382 PDF objects out of 1000 (max. 8388607)
  99 named destinations out of 1000 (max. 500000)
