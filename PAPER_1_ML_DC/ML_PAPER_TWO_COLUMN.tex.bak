@@ -24,7 +24,7 @@
 
 %\documentclass[a4paper,fleqn,longmktitle]{cas-dc}
 \usepackage{subcaption}
-
+\usepackage{hyperref}
 \usepackage[numbers]{natbib}
 \usepackage{multicol}
 %\usepackage[authoryear]{natbib}
@@ -179,7 +179,7 @@ Acknowledging and predicting the impact of uncertainties in conventional coal fi
 
 It is noted that CFD cannot meet the real time requirement for on line performance monitoring, due to the complex solution mechanisms and time-consuming calculations. However, it is a feasible alternative to generate training and testing datasets for ANN implementation, since using CFD does not interfere with normal operation of the plant. In addition to this a wider range of appropriate operating conditions can be simulated.\\
  
-In the present work, an integrated data-driven surrogate model and 1-D process model is proposed to investigate the thermal response of a 620 $MW_e$ utility scale boiler. An existing steady-state multiphase CFD model (INFUB paper) of the 620 $MW_e$ utility scale boiler under investigation was used to generate a simulation dataset for 180 different operating states. To determine the required complexity of the data-driven surrogate model, two different ANN frameworks were considered, namely a standard MLP and an MLP-MDN, where the latter allows the introduction of uncertainty into the model predictions. A hyper-parameter search was conducted to establish the best performing model, with the lowest mean absolute error (MAE) being the essential criterion. Validation of the integrated surrogate and process model was performed for maximum continuous ratings (MCR) of 100\%, 80\% and 60\% load for which measured data is available. Following this, the validated model was used to investigate the impact of poor fuel quality at 100\% MCR, where the ash and moisture contents were varied for two separate cases.
+In the present work, an integrated data-driven surrogate model and 1-D process model is proposed to investigate the thermal response of a 620 $MW_e$ utility scale boiler. An existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the 620 $MW_e$ utility scale boiler under investigation was used to generate a simulation dataset for 180 different operating states. To determine the required complexity of the data-driven surrogate model, two different ANN frameworks were considered, namely a standard MLP and an MLP-MDN, where the latter allows the introduction of uncertainty into the model predictions. A hyper-parameter search was conducted to establish the best performing model, with the lowest mean absolute error (MAE) being the essential criterion. Validation of the integrated surrogate and process model was performed for maximum continuous ratings (MCR) of 100\%, 80\% and 60\% load for which measured data is available. Following this, the validated model was used to investigate the impact of poor fuel quality at 100\% MCR, where the ash and moisture contents were varied for two separate cases.
 
 \section{Case study boiler}
 
@@ -198,21 +198,21 @@ The boiler forms part of a 620 MWe power plant and consists of a furnace with wa
 
 The validation and the subsequent case-studies presented here, make use of an integrated surrogate and network based 1D process model. The process model is used to capture the thermodynamic response of the water/steam side of the utility boiler under investigation, with the developed data-driven surrogate model providing predictions of the gas-side thermal characteristics (i.e. combustion product species, temperature and incident radiation flux) and heat-exchanger heat loads to the EV, SH2 and SH3 walls.\\
 
-The network model is set up in the process modelling software, Flownex SE\textsuperscript{\textregistered} 2021 (REFERENCE).  The software can solve both the steady state and transient forms of the fundamental conservation equations of mass, energy, and momentum together with built in fluid property relations and component characteristics representative of all the different types of components.  To this one can add control elements to obtain a complete integrated dynamic system simulation model of a plant, sub system or component. The software also allows flexible coupling with other software tools such as Matlab, Simulink, and Python via API (Application Programming Interface) functionality and have specific capabilities to embed models or calculations developed in Excel, Mathcad, Engineering Equation Solver (EES), Relap and via C# scripts. 
+The network model is set up in the process modelling software, Flownex SE\textsuperscript{\textregistered} 2021 \cite{flownex}.  The software can solve both the steady state and transient forms of the fundamental conservation equations of mass, energy, and momentum together with built in fluid property relations and component characteristics representative of all the different types of components.  To this one can add control elements to obtain a complete integrated dynamic system simulation model of a plant, sub system or component. The software also allows flexible coupling with other software tools such as Matlab, Simulink, and Python via API (Application Programming Interface) functionality and have specific capabilities to embed models or calculations developed in Excel, Mathcad, Engineering Equation Solver (EES), Relap and via C\# scripts. 
 
-In the current work a C\# script is used to access the Python application programming interface (API). This allows for predictions to be made using the trained MLP-MDN model. The most probable predictions are retrieved using the script and transferred to the respective process model components as inputs. A schematic of the surrogate and process models' integration is provided in Figure \ref{fig_int_model}.\\
+In the current work a C\# script is used to access the Python application programming interface (API). This allows for predictions to be made using the trained MLP-MDN model developed in Python code. The most probable predictions are retrieved using the script and transferred to the respective process model components as inputs. A schematic of the process model and its integration with the surrogate model is provided in Figure \ref{fig_int_model}.\\
 \begin{figure*}[h!]
 	\centering
 		\includegraphics[scale=0.15]{INTEGRATED_MODEL}S
-	  \caption{Schematic of integrated surrogate and network based process model}\label{fig_int_model}
+	  \caption{Schematic of network based process model integrated with the surrogate model}\label{fig_int_model}
 \end{figure*}
 
-The boiler can be split into three sections namely, the furnace, the radiative pass consisting of SH2 and SH3, and the convective pass consisting of RH2, SH1, RH1 and the EC. The furnace heat load predictions to the EV walls determine the evaporation rate. The high pressure (HP) steam outlet steam flow rate is calculated as the sum of the attemperation flow rates (ATT1 and ATT2) and the evaporation flow rate. The attemperators are used to control the steam temperature to ensure an exit temperature of $808K$ at both the HP outlet and RH outlet. In addition to the furnace heat loads the surrogate model predicts the SH2 and SH3 heat loads. Lastly the surrogate model is able to predict the flue-gas conditions at the inlet to convective pass (i.e. RH2). The EV, SH2 and SH3 walls are represented by a single lumped parameter pipe flow component, interconnected with nodes that introduce the attemperation flows to the water/steam side. The convective pass components are modelled using an in-house heat exchanger model that accounts for the radiative (gas and direct), convective and conduction heat transfer mechanisms to and from the gas-side and steam-side control volumes, as well as between the up- and downstream heat exchangers on the gas side.
+The boiler can be split into three sections namely, the furnace consisting of EV waterwalls, the radiative pass consisting of SH2 and SH3, and the convective pass consisting of RH2, SH1, RH1 and the EC. The furnace heat load predictions to the EV walls determine the evaporation rate. The high pressure (HP) steam outlet flow rate is calculated as the sum of the attemperation flow rates (ATT1 and ATT2) and the evaporation flow rate. The attemperators are used to control the steam temperature to ensure an exit temperature of $808K$ at both the HP outlet and RH outlet. In addition to the furnace heat loads the surrogate model predicts the SH2 and SH3 heat loads. Lastly the surrogate model is able to predict the flue-gas conditions at the inlet to the convective pass (i.e. RH2). The EV, SH2 and SH3 walls are each represented by a single lumped parameter pipe flow component, interconnected with nodes that introduce the attemperation flows to the water/steam side. The convective pass components are modelled using an in-house heat exchanger model that accounts for the radiative (gas and direct), convective and conduction heat transfer mechanisms to and from the gas-side and steam-side control volumes, as well as between the up- and downstream heat exchangers on the gas side.
 
 \section{Applicable machine learning theory}
 The present work makes use of various machine learning architectures to develop a surrogate model that can predict the thermal and combustion characteristics of a utility scale boiler using high level inputs. The current section discusses the details of the respective architectures, namely linear regression, ANN and MLP-MDN models.  
 \subsection{Linear regression}
-The present work makes use of a multiple linear regression model as a base model for comparative purposes in the validation case study of Section \ref{sec_result_1}. The main assumption of a multiple linear regression model is that the output/s can be calculated from a linear combination of the variable inputs. In other words, a linear regression models aims to determine the quantitative relationship between the dependent and independent variables \cite{Wen2022}. The representation of the $i$-th dependent variable ($y_i$) can be written as follows for $m$-number of independent variables ($x_{mi}$);
+A linear regression model was established as a base model for comparative purposes in the validation case study of Section \ref{sec_result_1}. The main assumption of a multiple linear regression model is that the output/s can be calculated from a linear combination of the input variables. In other words, a linear regression models aims to determine the quantitative relationship between the dependent and independent variables \cite{Wen2022}. The representation of the $i$-th dependent variable ($y_i$) can be written as follows for $m$-number of independent variables ($x_{mi}$);
 \begin{equation}
 \begin{split}
 &y_i = \beta_0+\beta_1 x_{1i}+...+\beta_m x_{mi}\\
@@ -221,7 +221,7 @@ The present work makes use of a multiple linear regression model as a base model
 \end{equation}
 where $\beta_0$ is a constant term, $\beta_{m}$ is the $m$-th coefficient, and $n$ is the total number of observations.\\
  
-The optimal solution can be estimated by minimizing the cost function ($J$). A cost function usually calculates the difference between the estimated and the desired values and is reported as a single number. Multiple linear regression problems namely utilize the mean square error (MSE) between the desired and estimated ($\hat{y_i}$)  values \cite{Wheeler2019}, which is given in Equation \ref{eqn_lin_cost}.
+The optimal solution can be estimated by minimizing the cost function ($J$). A cost function usually calculates the difference between the estimated and the desired values and is reported as a single number. Multiple linear regression problems typically utilize the mean square error (MSE) between the desired and estimated ($\hat{y_i}$)  values \cite{Wheeler2019}, which is given in Equation \ref{eqn_lin_cost}.
  \begin{equation}\label{eqn_lin_cost}
 J_{MSE}=\frac{1}{n}\sum^n_{i=1}(y_i-\hat{y_i})^2
 \end{equation} 
@@ -232,21 +232,21 @@ To minimize the cost function, the gradient descent algorithm is the preferred m
 \end{equation}
 where $\eta$ is known as the learning rate.\\
 
-In most cases the relationship between the dependent and independent variables are not always linear. Special linear basis models, such as polynomial, sinusoidal, and radial can be used to optimize the training results \cite{Rasmussen2006}. For the current work a multiple linear progression model is utilized as a base model for comparison in Section \ref{sec_result_1}. 
+In most cases the relationship between the dependent and independent variables are not linear. Special linear basis models, such as polynomial, sinusoidal, and radial can be used to optimize the training results \cite{Rasmussen2006}. For the current work a multiple linear regression model is utilized as a base model for comparison in Section \ref{sec_result_1}. 
 \subsection{Multilayer perception networks}
 Artificial neural networks (ANN) are machine learning systems inspired by biological animal brains \cite{Rasmussen2006}. There are many classifications of ANNs, with multilayer perception networks (MLP) being the standard representation \citep{goodfellow}. Typically, MLPs are adapted for supervised learning problems where the input variables are mapped to labelled output variables. The relationship between the input and output variables are learned by optimizing the weights ($\overline{w}$) and biases ($\overline{b}$) to minimize a selected cost function, which for most cases is the MSE given in equation \ref{eqn_lin_cost}. A standard MLP schematic is given in figure \ref{fig_mlp_schematic}, illustrating the common features of a MLP, that being the input, hidden and output layers.\\
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=0.5]{ML_SCHEMATIC}
-	  \caption{Traditional MLP schematic}\label{fig_mlp_schematic}
+	  \caption{Traditional MLP schematic.}\label{fig_mlp_schematic}
 \end{figure}
 
-To calculate the output values ($\hat{y_i}$) the forward propagation algorithm is utilized, which calculates the output for each layer and moves sequentially through the network till an output is determined. Each network layer output is calculated using two steps, the first being the calculation of the summed signal $\overline{z}_l$ and secondly the use of an activation function to generate the output signal $\overline{h}_l$. Equation \ref{eqn_summed_sig} highlights the first step, where $\overline{h}_{l-1}$ is the output signal from the previous layer.
+To calculate the output values ($\hat{y_i}$) the forward propagation algorithm is utilized, which calculates the output for each layer and moves sequentially through the network until an output is determined. Each network layer output is calculated using two steps, the first being the calculation of the summed signal $\overline{z}_l$ and secondly the use of an activation function to generate the output signal $\overline{h}_l$. Equation \ref{eqn_summed_sig} highlights the first step, where $\overline{h}_{l-1}$ is the output signal from the previous layer.
 \begin{equation}\label{eqn_summed_sig}
 \overline{z}_l = \overline{h}_{l-1}\cdot\overline{w}_l+\overline{b}_l
 \end{equation}
 
-The result of the equation \ref{eqn_summed_sig} is subsequently passed to an activation function ($\overline{h}_l = \sigma_l(\overline{z}_l)$). There are various activation functions that can be utilized, such as linear, ReLu, Elu, and the hyperbolic tangent \citep{goodfellow}, with the final layer activation function usually being linear for regression models. The current work makes use of ReLu and linear activation functions for the hidden layers. The ReLu and linear activation functions are shown in Equation \ref{eqn_act_func}.
+The result of equation \ref{eqn_summed_sig} is subsequently passed to an activation function ($\overline{h}_l = \sigma_l(\overline{z}_l)$). There are various activation functions that can be utilized, such as linear, ReLu, Elu, and the hyperbolic tangent \citep{goodfellow}, with the final layer activation function usually being linear for regression models. The current work makes use of ReLu and linear activation functions for the hidden layers. The ReLu and linear activation functions are shown in Equation \ref{eqn_act_func}.
 \begin{equation}\label{eqn_act_func}
 \begin{split}
 &\overline{h}_l=\sigma_{ReLu}(\overline{z}_l) = \overline{z}_l =  
@@ -258,7 +258,7 @@ The result of the equation \ref{eqn_summed_sig} is subsequently passed to an act
 \end{split}
 \end{equation}
 
-When the forward propagation step is complete, the network weights and biases can be updated to minimize the cost function (refer to Equation \ref{eqn_lin_cost}) using the backward propagation method \cite{Rumelhart1986}. The methodology calculates the gradient of the cost function with respect to the weights and biases for each layer. Once the gradients have been calculated the weights and biases are updated using the gradient descent algorithm. The current work makes use of the Adam \cite{goodfellow} alternative to the gradient descent algorithm and is illustrated in Equation \ref{eqn_adam_algor}. Forward- and backward-propagation algorithms would be iteratively conducted until the cost function is reduced to below a desired threshold.
+When the forward propagation step is complete, the network weights and biases can be updated to minimize the cost function (refer to Equation \ref{eqn_lin_cost}) using the backward propagation method \cite{Rumelhart1986}. The methodology calculates the gradient of the cost function with respect to the weights and biases for each layer. Once the gradients have been calculated the weights and biases are updated using the gradient descent algorithm. The current work makes use of the Adam \cite{goodfellow} alternative to the gradient descent algorithm, which is illustrated in Equation \ref{eqn_adam_algor}. Forward- and backward-propagation algorithms would be iteratively conducted until the cost function is reduced to below a desired threshold.
 
 \begin{theorem} 
 \begin{equation}\label{eqn_adam_algor} 
@@ -272,12 +272,12 @@ When the forward propagation step is complete, the network weights and biases ca
 \end{equation}
 \end{theorem}
 
-The variable $\bar{\theta}$, of Equation \ref{eqn_adam_algor}, represents the model parameters weights and biases for each layer. Scaling ($\bar{s}$) and the momentum ($\bar{m}$) matrices are initialized to zero when beginning the training phase, $t$ is the iterative counter, while $\beta_1$ and $\beta_2$ are the momentum and scaling decay hyper-parameters set to values of 0.9 and 0.999 respectively. Lastly $\epsilon$ is a smoothing term set to a value of $10^{-8}$.
+The variable $\bar{\theta}$ in Equation \ref{eqn_adam_algor}, represents the model weights and biases for each layer. Scaling ($\bar{s}$) and the momentum ($\bar{m}$) matrices are initialized to zero when beginning the training phase. $t$ is the iteration counter, while $\beta_1$ and $\beta_2$ are the momentum and scaling decay hyper-parameters set to values of 0.9 and 0.999 respectively. Lastly $\epsilon$ is a smoothing term set to a value of $10^{-8}$.
 
 \subsection{Mixture density networks (MDNs)}
-Mixture density networks are fundamentally built from two components, that being an ANN and a mixture model, this allows for multi-modal predictions. The ANN can be a standard feed forward MLP or a recurrent neural network (RNN), with RNNs being namely used in dynamic applications with at least one feedback loop \citep{Oko2015}.\\
+Mixture density networks are fundamentally built from two components, namely an ANN and a mixture model. This allows for multi-modal predictions. The ANN can be a standard feed-forward MLP or a recurrent neural network (RNN), with RNNs being used in dynamic applications with at least one feedback loop \citep{Oko2015}.\\
 
-MDNs are used to predict the parameters of a probability distribution ($P(\overline{X}\mid\overline{Y})$) allowing for non-Gaussian distributions to be modelled, thus making MDNs a probabilistic machine learning framework. MDNs estimate the conditional probability distribution as a mixture of Gaussian distributions where the mixing coefficients ($\overline{\pi}_k$) and component densities are flexible functions of the input data ($\overline{X}$). Equation \ref{eqn_cond_prob_func} illustrates the conditional probability function.
+MDNs are used to predict the parameters of a probability distribution ($P(\overline{X}\mid\overline{Y})$), allowing for non-Gaussian distributions to be modelled, thus making MDNs a probabilistic machine learning framework. MDNs estimate the conditional probability distribution as a mixture of Gaussian distributions where the mixing coefficients ($\overline{\pi}_k$) and component densities are flexible functions of the input data ($\overline{X}$). Equation \ref{eqn_cond_prob_func} illustrates the conditional probability function.
 \begin{equation}\label{eqn_cond_prob_func}
 P(\overline{X}\mid\overline{Y}) = \sum_{k=1}^K\overline{\pi}_k(\overline{X})\cdot \mathbb{N}(\overline{Y}\mid \overline{\mu}_k(\overline{X}),\overline{\sigma}^2_k(\overline{X}))
 \end{equation}
@@ -288,7 +288,7 @@ A schematic of a simple MLP-MDN network is given in Figure \ref{fig_mdn_schemati
 \begin{figure*}[h!]
 	\centering
 		\includegraphics[scale=0.5]{MDN_SCHEMATIC}
-	  \caption{Simple MLP-MDN network}\label{fig_mdn_schematic}
+	  \caption{Simple MLP-MDN network.}\label{fig_mdn_schematic}
 \end{figure*}
 
 Bishop \cite{bishop1994} proposed the following restrictions for the mixing coefficients and variance components of the MDN output layer. Since the mixing coefficients contain the discrete probabilities of an output belonging to each $K$ normal distribution for all observations, the mixing coefficients must satisfy the constraints listed in Equation \ref{eqn_mix_coef_constraint}.
@@ -311,7 +311,7 @@ Similarly, a constraint is applied to the standard deviation values ensuring a p
 \end{split}
 \end{equation}
 
-The MDN weights and biases are optimized by minimizing the negative log-likelihood for all observations in a batch, this is shown in Equation \ref{eqn_nll}.
+The MDN weights and biases are optimized by minimizing the negative log-likelihood for all observations in a batch. This is shown in Equation \ref{eqn_nll}.
 
 \begin{equation}\label{eqn_nll}
 \begin{split}
@@ -324,15 +324,15 @@ The MDN weights and biases are optimized by minimizing the negative log-likeliho
 A steady-state multiphase non-thermal equilibrium CFD model was used to generate the target data, which was subsequently used for training/testing of an appropriate surrogate model.
 
 \subsection{CFD model setup}
-The current study makes use of the commercial CFD software package ANSYS\textsuperscript{\textregistered} Fluent 2019 R3 to resolve the fluid flow, heat transfer and combustion processes for a 620$MW_e$ utility scale coal fired boiler. The computational domain was modelled on a symmetry plane halfway through the depth of the boiler. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and defines the important boundary conditions.\\ 
+The current study makes use of an existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the boiler under investigation using the commercial CFD software package ANSYS\textsuperscript{\textregistered} Fluent 2019 R3 to resolve the fluid flow, heat transfer and combustion processes. This section provides a short overview of the model for the sake of completeness.\\
+
+The computational domain was modelled on a symmetry plane halfway through the depth of the boiler. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and defines the important boundary conditions. The general conservation equations of mass, momentum, energy, and species were solved using a Eulerian approach. These are provided in Equation (\ref{eqn_cfd}).\\ 
 
 \begin{figure*}[h!]
 	\centering
 		\includegraphics[scale=0.5]{CFD_GEOMETRY}
 	  \caption{CFD model geometry and boundary condition descriptions.}\label{fig_cfd_geom_bc}
 \end{figure*}
-
-The general conservation equations, which include, continuity, momentum, energy, and species, were solved using a Eulerian approach. The subsequent equations are stated in Equation (\ref{eqn_cfd}).
 
 \begin{flalign} \label{eqn_cfd}
 &\frac{\partial}{\partial x_{i}}(\rho \bar{u}_{i})=S \nonumber &&\\
@@ -365,14 +365,16 @@ Eddy dissipation model - \cite{Ansys} & $R_{k,r,P} =\vartheta_{k,r}M_{w,k}AB\rho
 \end{tabular*}
 \end{table*}
 
-The simulations were solved using the SIMPLE pressure–velocity coupling scheme. The pressure term was discretized using the PRESTO! scheme. Momentum, species, and energy equations were discretized using the second order upwind scheme and the turbulent kinetic energy and dissipation rate using the first-order upwind scheme. The numerical mesh was generated using quadrilateral elements consisting of 6 million cells.  The convergence criteria for the simulation model was set to $1\times10^{-3}$ for the continuity equation, $1\times10^{-4}$ for the velocity equations, $1\times10^{-6}$ for the remaining transport equations, and $1\times10^{-4}$ for monitored key parameters.
+The simulations were solved using the SIMPLE pressure–velocity coupling scheme. The pressure term was discretized using the PRESTO! scheme. Momentum, species, and energy equations were discretized using the second order upwind scheme and the turbulent kinetic energy and dissipation rate using the first-order upwind scheme. The numerical mesh was generated using quadrilateral elements consisting of 6 million cells.  The convergence criteria for the simulation model were set to $1\times10^{-3}$ for the continuity equation, $1\times10^{-4}$ for the velocity equations, $1\times10^{-6}$ for the remaining transport equations, and $1\times10^{-4}$ for monitored key parameters.
 
 \subsection{Simulated dataset}
-As previously mentioned, the aim of this study is to illustrate the use of a data-driven surrogate model, integrated with a 1D process model, to predict the heat loads to the various heat exchanging components, the flue-gas composition and exit gas temperatures for a utility scale boiler using various high-level inputs. The inputs include the following, the excess air ratio per burner, the total mill flowrate for the six mills in operation, the average steam temperatures for the platen and final superheaters, the fouling resistance for the platen and final superheaters, the composition of ash and moisture of the fuel and the gross calorific value of the fuel. Thus the input field has a dimensionality of $d_{inputs}=14$.\\
+The inputs to the surrogate model include the following: the excess air ratio per burner, the total mill flowrate for the six mills in operation, the average steam temperatures for the platen and final superheaters, the fouling resistance for the platen and final superheaters, the composition of ash and moisture of the fuel and the gross calorific value of the fuel. Thus the input field has a dimensionality of $d_{inputs}=14$.\\
 
-A design of experiments (DOE) was conducted to generate a set of 180 simulation cases to obtain a representative set of results. The various model input ranges used in the DOE are given in Table \ref{tbl_doe}. The ranges where selected to cover a wide range of operational loads with maximum continuous ratings (MCR) between 100\% and 30\%. A total of 27 output target values ($d_{targets}$) are realised for each CFD simulation case. Due to the quasi-steady nature of the CFD simulations, output target values for were taken every 50 iterations for the last 2500 iterations for a converged CFD simulation. This results in each CFD simulation case having a data solution matrix size of ($\bar{Y}\in50\times27$).\\
+To obtain a representative set of results for training the surrogate model, a design of experiments (DOE) was conducted to generate a set of 180 simulation cases. The various model input ranges used in the DOE are provided in Table \ref{tbl_doe}. The ranges where selected to cover a wide range of operational loads with maximum continuous ratings (MCR) between 100\% and 30\%. The DOE matrix was populated using the Latin Hypercube Sampling (LHS) method provided in the Python pyDOE library.\\
 
-The DOE matrix was populated using the Latin Hypercube Sampling (LHS) method provided in the Python $pyDOE$ library. Once the CFD simulations achieved convergence, the target data, comprising of the discretized heat loads to the furnace, platen and final SHs, the exit flue-gas temperatures and combustion characteristics, was stored for each case. The target dataset was split with 80\% being used for training purposes and the remainder for testing. To reduce the training time of the neural networks a min-max normalization was utilized scaling all the dataset entries to values between $0\rightarrow1$.\\
+Once the CFD simulations achieved convergence, the target data, comprising of the discretized heat loads to the furnace, platen and final SHs, the exit flue-gas temperatures and combustion characteristics, was stored for each case. A total of 27 output target values ($d_{targets}$) are extracted from the results for each CFD simulation case. Due to the inherently unsteady nature of the CFD simulations even when convergence has been achieved, the output target values were extracted after every 50 iterations for an additional 2500 iterations once convergence was achieved. This results in each CFD simulation case having a solution data matrix size of ($\bar{Y}\in50\times27$).\\
+
+The target dataset was split with 80\% for training purposes and the remainder for testing. To reduce the training time of the neural networks a min-max normalization was utilized to scale all the dataset entries to values between $0\rightarrow1$.\\
 
 \begin{table*}[h!]
 \caption{Design of experiments input ranges for  simulations}\label{tbl_doe}
@@ -395,14 +397,14 @@ Final SH internal steam temperature& \multicolumn{2}{l}{$R_{final}$} & $K$\\
 \bottomrule
 \end{tabular*}
 \end{table*}
-\section{Model development}
+\section{Surrogate model development}
 The present work makes use of two types of machine learning models, namely a standard artificial neural network (ANN/MLP) and a mixture density designated model connected to a standard ANN (MLP-MDN). The following section will discuss the hyper parameter tuning and final selected model configuration. The programming language Python 3.7.8 and the Tensorflow machine learning libraries were utilized in the present study. 
 \subsection{Model configuration}
-The goal of the final machine learning configuration is to be able to predict the heat load distributions to the furnace, platen superheater (SH) and final SH walls, the combustion characteristics, and flue-gas temperatures at the exit, using the high level input ranges given in Table \ref{tbl_doe}.\\
+The goal of the surrogate model is to predict the heat load distributions to the furnace water walls (EV), the platen superheater (SH2) tubes, and the final superheater (SH3) tubes, as well as the combustion characteristics and flue-gas temperatures at the exit, using the high level inputs for the ranges provided in Table \ref{tbl_doe}.\\
 
 The outputs for the MLP will consist of $y=50\times180=9000$ outputs. Thus, for a data batch size, $m_b$, the output tensor for the MLP model will be $\hat{Y}\in \mathbb{R}^{m_b\times y\times 27}$ since $d_{targets}=27$. However, the MDN-ANN models output data will consist of three parts, namely; the mixing coefficients tensor of shape  $\overline{\pi}\in \mathbb{R}^{m_b \times y\times K}$, the output standard deviation tensor of shape $\overline{\sigma}\in \mathbb{R}^{K\times m_b\times y\times 27}$ and the predicted means of tensor shape $\overline{\mu}\in \mathbb{R}^{K\times m_b\times y\times 27}$. The input data fed into both the MLP and MDN-ANN will have shape $\overline{X}\in \mathbb{R}^{m_b\times d_{inputs}}$. The input features will be varied based on the DOE, to account for burner mill biassing, fuel quality and SH heating component fouling.\\
 \subsection{Hyper-parameter tuning \& final model selection}\label{sec_hyper}
-Table \ref{tbl_tuning} highlights the hyper-parameter search spaces for both the MLP and MLP-MDN model. The MLP-MDN has an added parameter namely the number of additional distributions the MLP-MDN would need to fit to the output data. \\
+Table \ref{tbl_tuning} highlights the hyper-parameter search spaces for both the MLP and MLP-MDN model. The MLP-MDN has an added parameter namely the number of additional distributions the MLP-MDN would need to fit to the output data. The hyper-parameter tuning of both the MLP, and MDN-ANN models made use of a single epoch run consisting of 1000 training/testing passes. This was deemed adequate to train/test the models for the various hyper-parameter search spaces and was utilized to reduce the computational effort/time.\\
 
 \begin{table*}[h!]
 \caption{Hyper-parameter search space for fully connected MLP and MLP-MDN models}\label{tbl_tuning}
@@ -419,9 +421,7 @@ Table \ref{tbl_tuning} highlights the hyper-parameter search spaces for both the
 \end{tabular*}
 \end{table*}
 
-The hyper-parameter tuning of both the MLP, and MDN-ANN models made use of a single epoch run consisting of 1000 training/testing passes. This was deemed adequate to train/test the models for the various hyper-parameter search spaces and was utilized to reduce the computational effort/time.\\
-
-The hyper-parameter search was conducted in a sequential manner with the mean absolute errors (MAE) and root mean square errors (RMSE) being taken as important performance indicators for each sequential step. Firstly, both models (MLP \& MLP-MDN) hidden layer architectures were varied by considering the number of hidden layers and neurons per layer. Figure \ref{fig_mlp_hyper} (a) illustrates the MLP model performance for the various hidden layer architectures. The neuron capacity reaches a minimum MAE at 80 neurons per layer for a 4-layer architecture, further neuron capacity results in an increase in the MAE, possibly indicating an over fitting of data. Secondly, the learning rates were varied for the best performing architecture of the first hyper-parameter tuning step. Considering Figure \ref{fig_mlp_hyper} (b), a decrease in the learning rate shows an improvement in the MAE, with a learning rate of $1\times10^{-5}$ being the best for the current epoch size. For comparative purposes, learning rates of $1\times10^{-5}$ and $1\times10^{-6}$ were used in the final step, where the mini-batch sizes are varied. Figure \ref{fig_mlp_hyper} (c) highlights the comparison, for a fixed epoch, with a mini-batch size of 32 and a corresponding learning rate of $1\times10^{-5}$ show the best MAE improvement.\\
+The hyper-parameter search was conducted in a sequential manner with the mean absolute errors (MAE) and root mean square errors (RMSE) being taken as important performance indicators for each sequential step. Firstly, the hidden layer architecture of both models (MLP \& MLP-MDN) were varied by considering the number of hidden layers and neurons per layer. Figure \ref{fig_mlp_hyper} (a) illustrates the MLP model performance for the various hidden layer architectures. The neuron capacity reaches a minimum MAE at 80 neurons per layer for a 4-layer architecture. Further increasing the neuron capacity results in an increase in the MAE, possibly indicating an over fitting of data. Secondly, the learning rates were varied for the best performing architecture of the first hyper-parameter tuning step. Considering Figure \ref{fig_mlp_hyper} (b), a decrease in the learning rate shows an improvement in the MAE, with a learning rate of $1\times10^{-5}$ being the best for the current epoch size. For comparative purposes, learning rates of $1\times10^{-5}$ and $1\times10^{-6}$ were used in the final step, where the mini-batch sizes are varied. Figure \ref{fig_mlp_hyper} (c) highlights the comparison, for a fixed epoch, with a mini-batch size of 32 and a corresponding learning rate of $1\times10^{-5}$ show the best MAE improvement.\\
 
 \begin{figure}[h!]
 \centering
@@ -437,19 +437,17 @@ The hyper-parameter search was conducted in a sequential manner with the mean ab
     \includegraphics[width=1\textwidth]{BATCH_SIZE_HYPER}
     \caption{}
     \end{subfigure}
-    \caption{MLP model performance for; (a) hidden layer architecture, (b) varying learning rates, and (c) varying mini-batch sizes}\label{fig_mlp_hyper}
+    \caption{MLP model performance for; (a) hidden layer architecture, (b) varying learning rates, and (c) varying mini-batch sizes.}\label{fig_mlp_hyper}
 \end{figure}
 
-The MLP-MDN hyper-parameter tuning was conducted in a similar manner only that an additional step was required. This was to consider the number of distributions the MLP-MDN would use to capture the probabilistic characteristics. Figure \ref{fig_mdn_hyper} shows the MAE for the various distributions, with a distribution of 1 representing the best MLP model. An increase in the number of distributions tends to improve the MAE, however it is evident that a threshold of 3 distributions results in the best improvement.\\
+The MLP-MDN hyper-parameter tuning was conducted in a similar manner except that an additional step was required. This was to consider the number of distributions the MLP-MDN would use to capture the probabilistic characteristics. Figure \ref{fig_mdn_hyper} shows the MAE for the various distributions, with a distribution of 1 representing the best MLP model. An increase in the number of distributions tends to improve the MAE, however it is evident that a threshold of 3 distributions results in the best improvement.\\
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=0.5\textwidth]{DIST_HYPER}
-	  \caption{MLP-MDN model performance for number of distributions}\label{fig_mdn_hyper}
+	  \caption{MLP-MDN model performance for number of distributions.}\label{fig_mdn_hyper}
 \end{figure}
 
 The results of hyper-parameter search are given in Table \ref{tbl_hyper_results}. Unlike the MLP, which can only produce a single set of predictions for an input, the MLP-MDN is able to produce a distribution of predictions based on the most probable mixing coefficient. This highlights one of the main advantages of the using the MLP-MDN model is its ability to learn the uncertainty that comes from using a probabilistic model. This is shown in the error distributions graphs of Figures \ref{fig_frequency_data} (a) and (b). A simple linear regression model was used as a base model for comparative purposes. For the MLP-MDN model it is seen that approximately 80-90\% of the training data has mean absolute percentage errors (MAPEs) below 10\%, with the MLP model showing a similar trend. Both models show considerable improvement in comparison to the linear model.\\
-
-Based on the above analysis, the MLP-MDN model was selected as the best model to be used for the surrogate model implementation. As mentioned, the MLP-MDN model is able determine the uncertainty associated with each prediction, an important feature for future investigations incorporating transient/dynamic responses.
 
 \begin{table}[h!]
 \caption{Hyper-parameter search results}\label{tbl_hyper_results}
@@ -471,35 +469,24 @@ MAE & 0.0282& 0.0263\\
 \end{tabular*}
 \end{table}  
 
-\begin{figure}[h!]
-\centering
-    \begin{subfigure}{0.5\textwidth}
-    \includegraphics[width=1\textwidth, height =5.5cm]{OVERALL_TRAIN}
-    \caption{}
-    \end{subfigure}\\
-    \begin{subfigure}{0.5\textwidth}
-    \includegraphics[width=1\textwidth, height =5.5cm]{OVERALL_TEST}
-    \caption{}
-    \end{subfigure}
-    \caption{Error distributions for the selected MLP and MLP-MDN model h; (a) training data and (b) testing data}\label{fig_frequency_data}
-\end{figure}
+Based on the above analysis, the MLP-MDN model was selected as the best model to be used for the surrogate model implementation. The benefit of using the MLP-MDN surrogate model is the ability to provide not only the expected mean (most-probable) value of each output parameter, but also the associated standard deviation. Having the mean value of each of the furnace and heat exchanger heat loads together with its uncertainty in the form of a standard deviation, allows the uncertainty to be propagated through the entire integrated model. It is therefore possible to obtain the resultant mean values of the overall plant performance parameters together with their uncertainties.
 
 \section{Results and discussion}\label{sec_results_diss}
-As concluded in Section \ref{sec_hyper}, the MLP-MDN model is used for the surrogate model integration. The subsequent sections provide a validation of the integrated models thermal response and a case study that investigates the effects of using poor quality fuel. 
+This section provides the results of the validation study of the integrated model as well as an application case study that investigates the effects of fuel quality on the integrated boiler performance. 
 
-\subsection{Multiple load validation}\label{sec_result_1}
-The surrogate models' predictions and thermal-hydraulic response are validated for 100\%, 80\% and 60\% MCR load cases. The measured plant data for the respective load ratings were made available, allowing for the mean and standard deviation to be calculated from the plant data, thus capturing the uncertainty of the measurement devices used in the plant.\\ 
+\subsection{Validation}\label{sec_result_1}
+The results predicted using the surrogate model were validated for the 100\%, 80\% and 60\% MCR load cases. Measured data are available from the real plant for these load cases, which allow the mean and standard deviation to be determined.  The mean and standard deviation of each output can then be compared with the predicted mean and standard deviation obtained with the integrated model.\\
 
-The benefit of using the MLP-MDN surrogate model is its ability to provide predictions along with  its respective standard deviation. To incorporate the prediction/s uncertainty and propagate this through the entire integrated model, the current work made use of the Monte Carlo method \cite{Thomopoulos2013}. The method is used to illustrate how a model responds to randomly generated inputs; the process is described as follows process. Firstly, random sampling of the input variable/s (in this case the MLP-MDN model predictions) are performed based on the mean and standard deviation to produce $N$ number of scenarios, secondly simulations are run for each scenario, finally ongoing assessment of the simulations results are performed on measures such as the mean and standard deviation.\\ 
+In the current work the integrated model is applied in conjunction with the Monte Carlo method \cite{Thomopoulos2013}. Firstly, random sampling of the input variables to the integrated model are performed based on the mean and standard deviation predicted by the surrogate model.  Following this, simulations are run for each sample and the outputs are evaluated to determine the predicted mean and standard deviation of each overall plant parameter.\\
 
-The use of Flownex SE\textsuperscript{\textregistered} 2021s built in Monte Carlo method, requires the mean and standard deviation for the inputs that are to be varied \cite{flownex}. For this study $N$=1000 scenarios were performed for each validation case with the mean and standard deviation being used as measures to determine convergence. The MLP-MDN input vectors ($\overline{X}$) for the validation cases are provided in Table \ref{tbl_inputs}, these inputs were obtained from the works of Laubscher and Rousseau \cite{Laubscher2019b}.\\
+Fortunately, Flownex SE\textsuperscript{\textregistered} 2021, provides a built-in Monte Carlo facility. It requires as input the mean and standard deviation values for each model input \cite{flownex}. For this study $N$=1000 simulations were performed for each validation case with the mean and standard deviation being used as measures to determine convergence. The MLP-MDN input vectors ($\overline{X}$) for the validation cases are provided in Table \ref{tbl_inputs}. These inputs were obtained from the works of Laubscher and Rousseau \cite{Laubscher2019b}.\\
 
 \begin{table*}[h!]
 \caption{MLP-MDN input vectors ($\overline{X}$) for the validation and varied fuel case studies}\label{tbl_inputs}
 \begin{tabular*}{\tblwidth}{lp{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}p{0.12\textwidth}}
 \toprule
  & \multicolumn{3}{c}{\textbf{Validation load cases}}&\multicolumn{2}{c}{\textbf{Varied fuel load cases}}\\
-\textit{Inputs}& 100\%  & 80\% & 60\% & High-ash & High-moisture  \\
+\textit{Inputs} [\textbf{mean} - (\textit{min},\textit{max})]& 100\%  & 80\% & 60\% & High-ash & High-moisture  \\
 \midrule
 Excess air ratio - [-] & 1.155 & 1.209 & 1.263 & 1.155 & 1.155  \\
 $Y_{ASH}$ - [$kg/kg$] & 0.409 & 0.409 &  0.409 &0.5 & 0.409  \\
@@ -567,17 +554,15 @@ Final SH mean steam temp. - [$K$]& 787 & 793 &781 &787 &787  \\
 \label{fig_attemp}
 \end{figure*}
 
-Figures \ref{fig_heat_load} - \ref{fig_attemp} provide comparative results of the measured data and integrated model responses for all three load cases. It can be seen for a range of MCR loads the integrated model is able capture the heat loads to the various heat exchangers (Figures \ref{fig_heat_load} (a-c)) with sufficient accuracy. In general, the model under-predicts the mean of the heat loads in the furnace and radiative pass, with slight over-predictions seen in the convective pass. However, the associated uncertainty of the integrated model overlaps with the measured data uncertainty with minimal outliers.\\ 
+Figures \ref{fig_heat_load} - \ref{fig_attemp} provide comparative results of the measured data and integrated model responses for all three load cases. It can be seen for a range of MCR loads the integrated model is able to capture the heat loads to the various heat exchangers (Figures \ref{fig_heat_load} (a-c)) with sufficient accuracy. In general, the model under-predicts the mean of the heat loads in the furnace and radiative pass, with slight over-predictions seen in the convective pass. However, the associated uncertainty of the integrated model overlaps with the measured data uncertainty with minimal outliers.\\ 
 
-Considering the steam generation and exit flowrates of Figure \ref{fig_steam_gen} (a-c), the integrated model can sufficiently capture the hydraulic response of the case study boiler for a wide range of loads. More uncertainty is associated with the integrated model, but this is deemed acceptable since the response overlaps with the measured data. The attemperators of a utility scale boiler, are an integral part of the control systems put in place to ensure safe operating conditions and minimal wear on the downstream components, namely the steam HP and LP steam turbines \cite{Kakac1991}. Figure  \ref{fig_attemp} (a-c) highlight the attemperator flowrates across a wide range of loads. The integrated model is shown to adequately resolve the flowrates with a slightly higher mean being predicted for the 80\% load case.\\
+Considering the steam generation and exit flowrates of Figure \ref{fig_steam_gen} (a-c), the integrated model can sufficiently capture the hydraulic response of the case study boiler for a wide range of loads. More uncertainty is associated with the integrated model, but this is deemed acceptable since the response overlaps with the measured data. The attemperators of a utility scale boiler are an integral part of the control systems put in place to ensure safe operating conditions and minimal wear on the downstream components, namely the steam HP and LP steam turbines \cite{Kakac1991}. Figure  \ref{fig_attemp} (a-c) highlight the attemperator flowrates across a wide range of loads. The integrated model is shown to adequately resolve the flowrates with a slightly higher mean being predicted for the 80\% load case.\\
 
 It has been shown that integrated model is able to resolve the thermal response based on the predictions of the MLP-MDN model for a wide range of loads with sufficient accuracy. The heat loads are within a 5\% tolerance of the measured data's mean value, while the steam generation rates exhibit a maximum difference of 7\%, which seen in the 60\% MCR load case (refer to Figure \ref{fig_steam_gen} (c)). The attemperators results feature the largest uncertainty/confidence band of all the results (Figure \ref{fig_attemp}), however the confidence bands do overlap within 5\%. 
-\subsection{Utility boiler response for a fuel with high ash \& moisture contents}
-The following section makes use of the validated model of Section \ref{sec_result_1}. The fuel constituents that effect the energy content of the fuel (HHV) the most are primarily the ash ($Y_{ASH}$) and moisture ($Y_{H_{2}O}$) content. Thus, two case studies were made to illustrate the effects of using poor quality fuel.\\
+\subsection{Application}
+This section demonstrates the application of the validated integrated model by investigating the impact of fuel quality on the overall plant performance. The fuel quality parameters that are varied are the energy content of the fuel ($HHV$), together with the ash ($Y_{ASH}$) and moisture ($Y_{H_{2}O}$) contents. Two case studies are considered to determine the impact of the parameters on the boiler efficiency, heat pick-up and thermal response. The input vectors for the two fuel cases are provided in Table \ref{tbl_inputs}. The inputs are the same as those of the 100\% load case except for the ash, moisture, and higher heating value of the respective fuels.\\
 
-The input vectors for the two fuel cases are provided in Table \ref{tbl_inputs}, the all the inputs are identical to the 100\% load case except for the ash, moisture and higher heating value of the respective fuels. This was done to compare the effects of the poor quality coal to that of the 100\% load case, in terms of the boiler efficiency, heat pick-up and thermal response. It is important to note that both the high ash and moisture case studies have the same HHV value, thus allowing for a productive correlation of the results.\\
-
-As with validation case studies of Section \ref{sec_result_1}, the Monte Carlo method was employed to ascertain the integrated models uncertainty for all responses. The base model heading of Figure \ref{fig_fuel_results} (a-c) refers to the integrated model results for the 100\% load case of Figures \ref{fig_heat_load}-\ref{fig_attemp}. Figure \ref{fig_fuel_results}  (a) highlights the effects that poor quality fuel has on the heat load to the various heat exchangers, with a 20\% drop being observed. This is an expected result since the energy content of the fuel is lower than that of the base case. To maintain 100\% load capabilities using the poor quality fuel an increase in the fuel flowrate would be suggested, this provides more energy content, however the mill operational outputs are limited. The operational protocol for the 100\% load case makes use of 5 mills operating 30 of the 36 burners, at full capacity with a standby mill and burner arrangement placed in reserve to help mitigate operational risks, such as maintenance schedules. Using the the standby mill would allow the fuel flowrate to increase by maximum 17\% , yet this would decrease the operational integrity and increase the associated risks. Since when burning the high-ash content fuel the likelihood of ash deposition/fouling of the heat exchanging components increases.\\
+As with validation case studies of Section \ref{sec_result_1}, the Monte Carlo method was employed to ascertain the mean and standard deviation values predicted via the integrated model. The base model heading of Figure \ref{fig_fuel_results} (a-c) refers to the integrated model results for the 100\% load case of Figures \ref{fig_heat_load}-\ref{fig_attemp}. Figure \ref{fig_fuel_results}  (a) highlights the effects that poor quality fuel has on the heat load to the various heat exchangers, with a 20\% drop being observed. This is an expected result since the energy content of the fuel is lower than that of the base case. To maintain 100\% load capabilities using the poor quality fuel an increase in the fuel flowrate would be suggested, this provides more energy content, however the mill operational outputs are limited. The operational protocol for the 100\% load case makes use of 5 mills operating 30 of the 36 burners, at full capacity with a standby mill and burner arrangement placed in reserve to help mitigate operational risks, such as maintenance schedules. Using the the standby mill would allow the fuel flowrate to increase by maximum 17\% , yet this would decrease the operational integrity and increase the associated risks. Since when burning the high-ash content fuel the likelihood of ash deposition/fouling of the heat exchanging components increases.\\
 
 Figure \ref{fig_fuel_results} (b-c) similarly illustrates a decrease in the water/steam flowrates for the steam exit and attemperator conditions. The generation rates exhibit similar characteristics to the the 80\% load case of Figure \ref{fig_steam_gen} (b), illustrating a significant decrease in the operational capabilities when using a poor quality fuel. The predicted flue-gas temperatures entering the the convective pass are shown in Table \ref{tbl_fuel_results}. It is shown that for an increase in the fuels ash content the inlet temperature increases, which results in a higher radiative heat transfer percentage for the convective pass components (table \ref{tbl_fuel_results}). While the presence of more moisture in the fuel results in a lower inlet temperature, primarily due to the fact that the extra moisture requires a higher heat rate of evaporation, leading to lower radiative heat transfer percentages. Where the radiative heat transfer percentage per component $i$ is defined as follows: \\
 \begin{equation}
@@ -586,24 +571,24 @@ Figure \ref{fig_fuel_results} (b-c) similarly illustrates a decrease in the wate
 
 The boiler efficiency is the measure used to convey how well the combustion heat is transferred to the working fluid, and is defined as the ratio of total amount of heat absorbed by the heat exchangers (i.e. sum of the furnace, radiative and convective pass heat loads) and the combustion energy released ($m_{fuel}HHV$). A significant decrease in the boiler efficiency is highlighted in Table \ref{tbl_fuel_results}, for both fuel cases with the high ash fuel showing a slightly better result. The higher efficiency of the high-ash fuel is attributed to the fact that in general the heat loads to various heat exchangers are higher than that of the high-moisture fuel, this can be seen in Figure \ref{fig_fuel_results} (a). 
 
-\begin{table}[h!]
-\caption{Model results for poor fuel characteristics}\label{tbl_fuel_results}
-\begin{tabular*}{\tblwidth}{p{0.2\textwidth}p{0.05\textwidth}p{0.05\textwidth}p{0.05\textwidth}}
+\begin{table*}[h!]
+\caption{Model results for poor quality fuel characteristics}\label{tbl_fuel_results}
+\begin{tabular*}{\tblwidth}{p{0.3\textwidth}p{0.22\textwidth}p{0.22\textwidth}p{0.22\textwidth}}
 \toprule
-\textit{Variable}& Base & High-ash & High-moisture \\ % Table header row
+\textit{Variable} [\textbf{mean} - (\textit{min},\textit{max})]& Base & High-ash & High-moisture \\ % Table header row
 \midrule
-Mean boiler efficiency [\%]& 88.2 & 77.6 & 75.9\\
-Convective pass inlet flue-gas temp. [$K$]& 1352 & 1368 & 1311\\
+Mean boiler efficiency [\%]& \textbf{88.2} - (\textit{45},\textit{89}) & \textbf{77.6} & \textbf{75.9}\\
+Convective pass inlet flue-gas temp. [$K$]& \textbf{1352} & \textbf{1368} & \textbf{1311}\\
 \midrule
 \multicolumn{4}{l}{\textit{Radiative heat transfer percentage (Convective pass)} }\\
 \midrule
-RH2 & 52.3& 56.2 & 50.3\\
-SH1 & 46.3& 49.8& 47.2\\
-RH1 & 21.3& 26.7& 18.2\\
-ECO & 6.7& 8.3& 5.4\\
+RH2 & \textbf{52.3}& \textbf{56.2} & \textbf{50.3}\\
+SH1 & \textbf{46.3}& \textbf{49.8}& \textbf{47.2}\\
+RH1 & \textbf{21.3}& \textbf{26.7}& \textbf{18.2}\\
+ECO & \textbf{6.7}& \textbf{8.3}& \textbf{5.4}\\
 \bottomrule
 \end{tabular*}
-\end{table}  
+\end{table*}  
 
 \begin{figure*}
 \centering
@@ -634,12 +619,12 @@ A validation case study was performed using the integrated model for a wide rang
 
 The subsequent analysis results investigated the using of poor quality fuels at 100\% MCR operation. The results highlight the drop in performance due to the fuel quality resulting in a substantial decrease in boiler efficiency. Using a high-ash fuel can result in a higher exit flue-gas temperature resulting in a marginal increase in performance of the convective pass heat exchangers when compared to the high moisture fuel. However the increase in particle loading increases the likelihood of ash deposition occurring.\\ 
 
-The current work has shown that it is possible to adequately resolve the thermal-hydraulic response of a utility scale boiler using a data-driven surrogate model based off CFD simulation result data. The integration of the surrogate and 1-D process model is paramount in modelling the thermal response and provides valuable operational insight for various load cases. The use of the model also provides a fast turn around and significant reduction in computational time when compared to co-simulation models using a combination of CFD and process modelling.
+The current work has shown that it is possible to adequately resolve the thermofluid response of a utility scale boiler using a data-driven surrogate model based off CFD simulation result data. The integration of the surrogate and 1-D process model is paramount in modelling the thermal response and provides valuable operational insight for various load cases. The use of the model also provides a fast turn around and significant reduction in computational time when compared to co-simulation models using a combination of CFD and process modelling.
 \printcredits
 %% Loading bibliography style file
-\bibliographystyle{model1-num-names}
+%\bibliographystyle{model1-num-names}
 %\bibliographystyle{cas-model2-names}
-
+\bibliographystyle{elsarticle-num}
 % Loading bibliography database
 \bibliography{ML_paper}
 
