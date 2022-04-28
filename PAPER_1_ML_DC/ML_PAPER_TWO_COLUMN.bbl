@@ -65,16 +65,21 @@ R.~Laubscher, P.~Rousseau,
   {\path{doi:10.1016/j.energy.2020.117006}}.
 \newline\urlprefix\url{https://doi.org/10.1016/j.energy.2020.117006}
 
-\bibitem{Rawlins2022}
-B.~Rawlins, R.~Laubscher, P.~Rousseau,
-  \href{https://doi.org/10.1115/1.4054010}{{Application of computational fluid
-  dynamics and process modelling to investigate low-load operation of a
-  subcritical utility-scale boiler.}}, ASME Journal of Thermal Science and
-  Engineering Applications (2022) 1--29\href
-  {http://arxiv.org/abs/https://asmedigitalcollection.asme.org/thermalscienceapplication/article-pdf/doi/10.1115/1.4054010/6856445/tsea-21-1636.pdf}
-  {\path{arXiv:https://asmedigitalcollection.asme.org/thermalscienceapplication/article-pdf/doi/10.1115/1.4054010/6856445/tsea-21-1636.pdf}},
-  \href {http://dx.doi.org/10.1115/1.4054010} {\path{doi:10.1115/1.4054010}}.
-\newline\urlprefix\url{https://doi.org/10.1115/1.4054010}
+\bibitem{Rawlins2021}
+B.~T. Rawlins, R.~Laubscher, P.~Rousseau, {Validation of a thermal
+  non-equilibrium Eulerian-Eulerian multiphase model of a 620 MWe pulverized
+  fuel power boiler.}, in: S.~Skatulla (Ed.), 12th South African Conference on
+  Computational and Applied Mechanics (SACAM2020), MATEC Web of Conferences,
+  Cape Town, 2021.
+\newblock \href
+  {http://dx.doi.org/https://doi.org/10.1051/matecconf/202134700004}
+  {\path{doi:https://doi.org/10.1051/matecconf/202134700004}}.
+
+\bibitem{INFUB2022}
+B.~T. Rawlins, R.~Laubscher, P.~G. Rousseau, {A fast thermal non-equilibrium
+  Eulerian-Eulerian numerical simulation methodology of a pulverized fuel
+  combustor}, in: V.~Scherer, N.~Fricker, A.~Reis (Eds.), 13th European
+  Conference on Industrial Furnaces and Boilers, 2022.
 
 \bibitem{Wheeler2019}
 M.~Kochenderfer, T.~Wheeler, {Algorithms for optimization}, 1st Edition, The
@@ -126,22 +131,6 @@ C.~Lu, J.~Wang, R.~Yan,
 \newblock \href {http://dx.doi.org/10.1016/j.est.2021.102819}
   {\path{doi:10.1016/j.est.2021.102819}}.
 \newline\urlprefix\url{https://doi.org/10.1016/j.est.2021.102819}
-
-\bibitem{Rawlins2021}
-B.~T. Rawlins, R.~Laubscher, P.~Rousseau, {Validation of a thermal
-  non-equilibrium Eulerian-Eulerian multiphase model of a 620 MWe pulverized
-  fuel power boiler.}, in: S.~Skatulla (Ed.), 12th South African Conference on
-  Computational and Applied Mechanics (SACAM2020), MATEC Web of Conferences,
-  Cape Town, 2021.
-\newblock \href
-  {http://dx.doi.org/https://doi.org/10.1051/matecconf/202134700004}
-  {\path{doi:https://doi.org/10.1051/matecconf/202134700004}}.
-
-\bibitem{INFUB2022}
-B.~T. Rawlins, R.~Laubscher, P.~G. Rousseau, {A fast thermal non-equilibrium
-  Eulerian-Eulerian numerical simualtion methodology of a pulverized fuel
-  combustor}, in: V.~Scherer, N.~Fricker, A.~Reis (Eds.), 13th European
-  Conference on Industrial Furnaces and Boilers, 2022.
 
 \bibitem{flownex}
 MTech, {Flownex Theory Guide}, MTech inc., 2021.
@@ -195,6 +184,17 @@ N.~Modlinski, {Computational modeling of a utility boiler tangentially-fired
 \newblock \href {http://dx.doi.org/10.1016/j.fuproc.2010.06.008}
   {\path{doi:10.1016/j.fuproc.2010.06.008}}.
 
+\bibitem{Rawlins2022}
+B.~Rawlins, R.~Laubscher, P.~Rousseau,
+  \href{https://doi.org/10.1115/1.4054010}{{Application of computational fluid
+  dynamics and process modelling to investigate low-load operation of a
+  subcritical utility-scale boiler.}}, ASME Journal of Thermal Science and
+  Engineering Applications (2022) 1--29\href
+  {http://arxiv.org/abs/https://asmedigitalcollection.asme.org/thermalscienceapplication/article-pdf/doi/10.1115/1.4054010/6856445/tsea-21-1636.pdf}
+  {\path{arXiv:https://asmedigitalcollection.asme.org/thermalscienceapplication/article-pdf/doi/10.1115/1.4054010/6856445/tsea-21-1636.pdf}},
+  \href {http://dx.doi.org/10.1115/1.4054010} {\path{doi:10.1115/1.4054010}}.
+\newline\urlprefix\url{https://doi.org/10.1115/1.4054010}
+
 \bibitem{Sheng2004}
 C.~Sheng, B.~Moghtaderi, R.~Gupta, T.~F. Wall, {A computational fluid dynamics
   based study of the combustion characteristics of coal blends in pulverised
@@ -223,6 +223,6 @@ R.~Laubscher, P.~Rousseau, {CFD study of pulverized coal-fired boiler
   {\path{doi:10.1016/j.applthermaleng.2019.114057}}.
 
 \bibitem{Kakac1991}
-S.~Kakac, {Boiler Evaporator and Condenser}, Wiley Interscience, 1991.
+S.~Kakac, {Boilers, Evaporators and Condensers}, Wiley Interscience, 1991.
 
 \end{thebibliography}

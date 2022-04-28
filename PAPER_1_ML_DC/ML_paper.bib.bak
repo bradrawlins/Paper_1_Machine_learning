@@ -7,7 +7,7 @@ BibTeX export options can be customized via Options -> BibTeX in Mendeley Deskto
 author = {Rawlins, Brad Travis and Laubscher, Ryno and Rousseau, P. G.},
 booktitle = {13th European Conference on Industrial Furnaces and Boilers},
 editor = {Scherer, Viktor and Fricker, Neil and Reis, Albino},
-title = {{A fast thermal non-equilibrium Eulerian-Eulerian numerical simualtion methodology of a pulverized fuel combustor}},
+title = {{A fast thermal non-equilibrium Eulerian-Eulerian numerical simulation methodology of a pulverized fuel combustor}},
 year = {2022}
 }
 
@@ -279,7 +279,7 @@ file = {:C$\backslash$:/Users/RWLBRA001/AppData/Local/Mendeley Ltd./Mendeley Des
 isbn = {0471621706},
 mendeley-groups = {Boiler Design,Thesis},
 publisher = {Wiley Interscience},
-title = {{Boiler Evaporator and Condenser}},
+title = {{Boilers, Evaporators and Condensers}},
 year = {1991}
 }
 

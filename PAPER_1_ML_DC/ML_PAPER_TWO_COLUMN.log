@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  27 APR 2022 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.16)  28 APR 2022 16:14
 entering extended mode
 **./ML_PAPER_TWO_COLUMN.tex
 (ML_PAPER_TWO_COLUMN.tex
@@ -1103,7 +1103,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
-<CASE_STUDY_BOILER.png, id=55, 746.03719pt x 505.89pt>
+<CASE_STUDY_BOILER.png, id=57, 746.03719pt x 505.89pt>
 File: CASE_STUDY_BOILER.png Graphic file (type png)
 <use CASE_STUDY_BOILER.png>
 Package pdftex.def Info: CASE_STUDY_BOILER.png  used on input line 191.
@@ -1113,7 +1113,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
-<INTEGRATED_MODEL.png, id=62, 3044.37375pt x 1770.615pt>
+<INTEGRATED_MODEL.png, id=64, 3044.37375pt x 1770.615pt>
 File: INTEGRATED_MODEL.png Graphic file (type png)
 <use INTEGRATED_MODEL.png>
 Package pdftex.def Info: INTEGRATED_MODEL.png  used on input line 206.
@@ -1149,6 +1149,12 @@ $[]$
  []
 
 [4 <./ML_SCHEMATIC.png>]
+Underfull \hbox (badness 1331) in paragraph at lines 275--276
+[]\T1/stix/m/n/10 The vari-able $[]$ in Equa-tion [][]6[][] rep-re-sents the mo
+del
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
@@ -1201,11 +1207,6 @@ Overfull \hbox (25.62086pt too wide) detected at line 343
 
 Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
- []
-
-
-Underfull \hbox (badness 1107) in paragraph at lines 347--348
-\T1/stix/m/n/10 pro-vided in the val-i-da-tion study of Rawl-ins et al [[]].
  []
 
 
@@ -1289,7 +1290,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 424--425
 
  []
 
-<NEURONS_HYPER.png, id=198, 561.59813pt x 312.41719pt>
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+$[]$
+ []
+
+[8]
+<NEURONS_HYPER.png, id=211, 561.59813pt x 312.41719pt>
 File: NEURONS_HYPER.png Graphic file (type png)
 <use NEURONS_HYPER.png>
 Package pdftex.def Info: NEURONS_HYPER.png  used on input line 429.
@@ -1299,12 +1306,12 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 428--431
  []$[]$ 
  []
 
-<LR_HYPER.png, id=199, 569.12625pt x 322.95656pt>
+<LR_HYPER.png, id=212, 569.12625pt x 322.95656pt>
 File: LR_HYPER.png Graphic file (type png)
 <use LR_HYPER.png>
 Package pdftex.def Info: LR_HYPER.png  used on input line 433.
 (pdftex.def)             Requested size: 247.25444pt x 140.30756pt.
-<BATCH_SIZE_HYPER.png, id=200, 575.14874pt x 307.90031pt>
+<BATCH_SIZE_HYPER.png, id=213, 575.14874pt x 307.90031pt>
 File: BATCH_SIZE_HYPER.png Graphic file (type png)
 <use BATCH_SIZE_HYPER.png>
 Package pdftex.def Info: BATCH_SIZE_HYPER.png  used on input line 437.
@@ -1319,10 +1326,7 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 432--440
  []$ 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<DIST_HYPER.png, id=202, 545.03625pt x 304.13625pt>
+<DIST_HYPER.png, id=215, 545.03625pt x 304.13625pt>
 File: DIST_HYPER.png Graphic file (type png)
 <use DIST_HYPER.png>
 Package pdftex.def Info: DIST_HYPER.png  used on input line 446.
@@ -1332,12 +1336,6 @@ Overfull \hbox (9.0pt too wide) in paragraph at lines 446--447
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-$[]$
- []
-
-[8]
 
 LaTeX Warning: Reference `fig_frequency_data' on page 9 undefined on input line
  450.
@@ -1388,47 +1386,47 @@ Overfull \hbox (10.78354pt too wide) in alignment at lines 486--501
 [][][][][][] 
  []
 
-<100_CASE.png, id=227, 761.84625pt x 524.96124pt>
+<100_CASE.png, id=231, 761.84625pt x 524.96124pt>
 File: 100_CASE.png Graphic file (type png)
 <use 100_CASE.png>
 Package pdftex.def Info: 100_CASE.png  used on input line 506.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
-<80_CASE.png, id=228, 761.84625pt x 524.96124pt>
+<80_CASE.png, id=232, 761.84625pt x 524.96124pt>
 File: 80_CASE.png Graphic file (type png)
 <use 80_CASE.png>
 Package pdftex.def Info: 80_CASE.png  used on input line 510.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
-<60_CASE.png, id=229, 761.84625pt x 524.96124pt>
+<60_CASE.png, id=233, 761.84625pt x 524.96124pt>
 File: 60_CASE.png Graphic file (type png)
 <use 60_CASE.png>
 Package pdftex.def Info: 60_CASE.png  used on input line 514.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
-<100_CASE_STEAM.png, id=230, 761.84625pt x 516.93124pt>
+<100_CASE_STEAM.png, id=234, 761.84625pt x 516.93124pt>
 File: 100_CASE_STEAM.png Graphic file (type png)
 <use 100_CASE_STEAM.png>
 Package pdftex.def Info: 100_CASE_STEAM.png  used on input line 524.
 (pdftex.def)             Requested size: 163.17763pt x 120.91882pt.
-<80_CASE_STEAM.png, id=231, 761.84625pt x 524.96124pt>
+<80_CASE_STEAM.png, id=235, 761.84625pt x 524.96124pt>
 File: 80_CASE_STEAM.png Graphic file (type png)
 <use 80_CASE_STEAM.png>
 Package pdftex.def Info: 80_CASE_STEAM.png  used on input line 528.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
-<60_CASE_STEAM.png, id=232, 761.84625pt x 524.96124pt>
+<60_CASE_STEAM.png, id=236, 761.84625pt x 524.96124pt>
 File: 60_CASE_STEAM.png Graphic file (type png)
 <use 60_CASE_STEAM.png>
 Package pdftex.def Info: 60_CASE_STEAM.png  used on input line 532.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
-<100_CASE_ATTEMP.png, id=233, 742.775pt x 524.96124pt>
+<100_CASE_ATTEMP.png, id=237, 742.775pt x 524.96124pt>
 File: 100_CASE_ATTEMP.png Graphic file (type png)
 <use 100_CASE_ATTEMP.png>
 Package pdftex.def Info: 100_CASE_ATTEMP.png  used on input line 542.
 (pdftex.def)             Requested size: 163.18433pt x 120.92278pt.
-<80_CASE_ATTEMP.png, id=234, 742.775pt x 524.96124pt>
+<80_CASE_ATTEMP.png, id=238, 742.775pt x 524.96124pt>
 File: 80_CASE_ATTEMP.png Graphic file (type png)
 <use 80_CASE_ATTEMP.png>
 Package pdftex.def Info: 80_CASE_ATTEMP.png  used on input line 546.
 (pdftex.def)             Requested size: 163.18433pt x 120.92278pt.
-<60_CASE_ATTEMP.png, id=235, 742.775pt x 524.96124pt>
+<60_CASE_ATTEMP.png, id=239, 742.775pt x 524.96124pt>
 File: 60_CASE_ATTEMP.png Graphic file (type png)
 <use 60_CASE_ATTEMP.png>
 Package pdftex.def Info: 60_CASE_ATTEMP.png  used on input line 550.
@@ -1470,17 +1468,17 @@ Overfull \hbox (28.22296pt too wide) in alignment at lines 576--590
 [][][][] 
  []
 
-<100_FUEL_CASE.png, id=283, 761.84625pt x 524.96124pt>
+<100_FUEL_CASE.png, id=287, 761.84625pt x 524.96124pt>
 File: 100_FUEL_CASE.png Graphic file (type png)
 <use 100_FUEL_CASE.png>
 Package pdftex.def Info: 100_FUEL_CASE.png  used on input line 596.
 (pdftex.def)             Requested size: 163.17763pt x 120.92278pt.
-<100_FUEL_CASE_STEAM.png, id=284, 761.84625pt x 522.95375pt>
+<100_FUEL_CASE_STEAM.png, id=288, 761.84625pt x 522.95375pt>
 File: 100_FUEL_CASE_STEAM.png Graphic file (type png)
 <use 100_FUEL_CASE_STEAM.png>
 Package pdftex.def Info: 100_FUEL_CASE_STEAM.png  used on input line 600.
 (pdftex.def)             Requested size: 163.17763pt x 120.92317pt.
-<100_FUEL_CASE_ATTEMP.png, id=285, 742.775pt x 527.9725pt>
+<100_FUEL_CASE_ATTEMP.png, id=289, 742.775pt x 527.9725pt>
 File: 100_FUEL_CASE_ATTEMP.png Graphic file (type png)
 <use 100_FUEL_CASE_ATTEMP.png>
 Package pdftex.def Info: 100_FUEL_CASE_ATTEMP.png  used on input line 604.
@@ -1532,32 +1530,9 @@ eter Rousseau:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--78
-\T1/stix/m/n/8 fluid dy-nam-ics and pro-cess mod-elling to in-ves-ti-gate low-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--78
-\T1/stix/m/n/8 load op-er-a-tion of a sub-crit-i-cal utility-scale boiler.[][],
- ASME
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--78
-\T1/stix/m/n/8 Jour-nal of Ther-mal Sci-ence and En-gi-neer-ing Ap-pli-ca-tions
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--78
-\T1/stix/m/n/8 (2022) 1--29[][]$\T1/zi4/m/n/8 arXiv : https : / / asmedigitalco
-llection . asme . org /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--78
-\T1/zi4/m/n/8 thermalscienceapplication / article-[]pdf / doi / 10 . 1115 / 1 .
- 4054010 /
+Underfull \hbox (badness 1577) in paragraph at lines 69--77
+\T1/stix/m/n/8 MWe pul-ver-ized fuel power boiler., in: S. Skat-ulla (Ed.), 12t
+h
  []
 
 
@@ -1567,9 +1542,32 @@ $[]$
 
 [13 <./100_FUEL_CASE.png> <./100_FUEL_CASE_STEAM.png> <./100_FUEL_CASE_ATTEMP.p
 ng>]
-Underfull \hbox (badness 1577) in paragraph at lines 131--139
-\T1/stix/m/n/8 MWe pul-ver-ized fuel power boiler., in: S. Skat-ulla (Ed.), 12t
-h
+Underfull \hbox (badness 10000) in paragraph at lines 188--197
+\T1/stix/m/n/8 fluid dy-nam-ics and pro-cess mod-elling to in-ves-ti-gate low-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--197
+\T1/stix/m/n/8 load op-er-a-tion of a sub-crit-i-cal utility-scale boiler.[][],
+ ASME
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--197
+\T1/stix/m/n/8 Jour-nal of Ther-mal Sci-ence and En-gi-neer-ing Ap-pli-ca-tions
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--197
+\T1/stix/m/n/8 (2022) 1--29[][]$\T1/zi4/m/n/8 arXiv : https : / / asmedigitalco
+llection . asme . org /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--197
+\T1/zi4/m/n/8 thermalscienceapplication / article-[]pdf / doi / 10 . 1115 / 1 .
+ 4054010 /
  []
 
 )
@@ -1577,9 +1575,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 $[]$
  []
 
-[14
-
-] (ML_PAPER_TWO_COLUMN.aux)
+[14] (ML_PAPER_TWO_COLUMN.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1589,7 +1585,7 @@ Package rerunfilecheck Info: File `ML_PAPER_TWO_COLUMN.out' has not changed.
 Here is how much of TeX's memory you used:
  17771 strings out of 479616
  264762 string characters out of 2863101
- 567152 words of memory out of 3000000
+ 566509 words of memory out of 3000000
  34537 multiletter control sequences out of 15000+200000
  511955 words of font info for 165 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1615,9 +1611,9 @@ ype1/public/stix/stix-mathit.pfb><C:/Users/RWLBRA001/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/stix/stix-mathrm.pfb><C:/Users/RWLBRA001/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/stix/stix-mathscr.pfb><C:/Users/RWLBRA001/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on ML_PAPER_TWO_COLUMN.pdf (15 pages, 2132375 bytes).
+Output written on ML_PAPER_TWO_COLUMN.pdf (15 pages, 2134743 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
+ 451 PDF objects out of 1000 (max. 8388607)
  99 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
