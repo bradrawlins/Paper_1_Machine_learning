@@ -182,7 +182,7 @@ It is noted that CFD cannot meet the real time requirement for on line performan
 In the present work, an integrated data-driven surrogate model and 1-D process model is proposed to investigate the thermal response of a 620 $MW_e$ utility scale boiler. An existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the 620 $MW_e$ utility scale boiler under investigation was used to generate a simulation dataset for 180 different operating states. To determine the required complexity of the data-driven surrogate model, two different ANN frameworks were considered, namely a standard MLP and an MLP-MDN, where the latter allows the introduction of uncertainty into the model predictions. A hyper-parameter search was conducted to establish the best performing model, with the lowest mean absolute error (MAE) being the essential criterion. Validation of the integrated surrogate and process model was performed for maximum continuous ratings (MCR) of 100\%, 80\% and 60\% load for which measured data is available. Following this, the validated model was used to investigate the impact of poor fuel quality at 100\% MCR, where the ash and moisture contents were varied for two separate cases.
 
 \section{Case study boiler}
-
+This section provides an overview of the case study boiler layout as well as a description of the integrated model.
 \subsection{Boiler layout}
 The overall layout of the case study boiler is shown schematically in Figure \ref{fig_case_layout} \cite{Rousseau2020}.
 
@@ -448,6 +448,18 @@ The MLP-MDN hyper-parameter tuning was conducted in a similar manner except that
 \end{figure}
 
 The results of hyper-parameter search are given in Table \ref{tbl_hyper_results}. Unlike the MLP, which can only produce a single set of predictions for an input, the MLP-MDN is able to produce a distribution of predictions based on the most probable mixing coefficient. This highlights one of the main advantages of the using the MLP-MDN model, which is its ability to learn the uncertainty that comes from using a probabilistic model. This is shown in the error distributions graphs of Figures \ref{fig_frequency_data} (a) and (b). A simple linear regression model was used as a base model for comparative purposes. For the MLP-MDN model it is seen that approximately 80-90\% of the training data has mean absolute percentage errors (MAPEs) below 10\%, with the MLP model showing a similar trend. Both models show considerable improvement in comparison to the linear model.\\
+
+\begin{figure}[h!]
+    \begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=1\textwidth]{OVERALL_TRAIN}
+    \caption{}
+    \end{subfigure}\\
+        \begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=1\textwidth]{OVERALL_TEST}
+    \caption{}
+    \end{subfigure}
+    \caption{Error distributions for the selected MLP and MLP-MDN model h; (a) training data and (b) testing data.}\label{fig_frequency_data}
+\end{figure}
 
 \begin{table}[h!]
 \caption{Hyper-parameter search results}\label{tbl_hyper_results}
