@@ -309,7 +309,7 @@ When the forward propagation step is complete, the network weights and biases ca
 \end{equation}
 \end{theorem}
 
-The variable $\bar{\theta}$ in Equation \ref{eqn_adam_algor} represents the model weights and biases for each layer. Scaling ($\bar{s}$) and the momentum ($\bar{m}$) matrices are initialized to zero when beginning the training phase. $t$ is the iteration counter, while $\beta_1$ and $\beta_2$ are the momentum and scaling decay hyper-parameters set to values of 0.9 and 0.999 respectively. Lastly $\epsilon$ is a smoothing term set to a value of $10^{-8}$. In the present work various learning rates were investigated during the hyper-parameter search for both the MLP and MDN neural architectures.
+The variable $\bar{\theta}$ in Equation \ref{eqn_adam_algor} represents the model weights and biases for each layer. Scaling ($\bar{s}$) and the momentum ($\bar{m}$) matrices are initialized to zero when beginning the training phase. $t$ is the iteration counter, while $\beta_1$ and $\beta_2$ are the momentum and scaling decay hyper-parameters set to values of 0.9 and 0.999 respectively. Lastly $\epsilon$ is a smoothing term set to a value of $10^{-8}$. In the present work various learning rates ($\nu$) were investigated during the hyper-parameter search for both the MLP and MDN neural architectures.
 
 \subsection{Mixture density networks (MDNs)}
 Mixture density networks are fundamentally built from two components, namely an ANN and a mixture model. This allows for multi-modal predictions. The ANN can be a standard feed-forward MLP or a recurrent neural network (RNN), with RNNs being used in transient applications with at least one feedback loop \citep{Oko2015}.\\
@@ -519,7 +519,20 @@ The results predicted using the surrogate model were validated for the 100\%, 80
 
 In the current work the integrated model is applied in conjunction with the Monte Carlo method \cite{Thomopoulos2013}. Firstly, random sampling of the input variables to the integrated model are performed based on the mean and standard deviation predicted by the surrogate model.  Following this, simulations are run for each sample and the outputs are evaluated to determine the predicted mean and standard deviation of each overall plant parameter.\\
 
-Fortunately, Flownex SE\textsuperscript{\textregistered} 2021, provides a built-in Monte Carlo facility. It requires as input the mean and standard deviation values for each model input \cite{flownex}. The Monte Carlo model input used in this study are the predicted mean and standard deviation results obtained with the surrogate model, which utilized the MDN input vectors ($\overline{X}$) provided in Table \ref{tbl_inputs}. These inputs were obtained from the works of Laubscher and Rousseau \cite{Laubscher2019b}. For this study $N=1000$ simulations were performed for each validation case with the mean and standard deviation being used as measures to determine convergence. \\
+Fortunately, Flownex SE\textsuperscript{\textregistered} 2021, provides a built-in Monte Carlo facility. It requires as input the mean and standard deviation values for each model input \cite{flownex}. The Monte Carlo model input used in this study are the predicted mean and standard deviation results obtained with the surrogate model, which utilized the MDN input vectors ($\overline{X}$) provided in Table \ref{tbl_inputs}. These inputs were obtained from the works of Laubscher and Rousseau \cite{Laubscher2019b}. For this study $N=1000$ simulations were performed for each validation case with the mean and standard deviation being used as measures to determine convergence. Table \ref{tbl_fuel_bias} provides the total mill fuel flow rate for the validation cases. Biasing of the mill fuel flow rates was introduced to provide a realistic operational uncertainty to the model.\\
+
+\begin{table}[h!]
+\caption{Mill fuel flowrate biasing for the validation case study.}\label{tbl_fuel_bias}
+\begin{tabular*}{\tblwidth}{c p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}}
+\toprule
+ MCR load& Mill 1 & Mill 2 &Mill 3 &Mill 4 &Mill 5 &Mill 6 & Unit \\ % Table header row
+\midrule
+ 100\% & 19.14 & 20.22 & 19.92 & 19.98 & 19.41 & 0.00 & $kg/s$  \\
+ 80\% & 18.23 & 19.72 & 19.02 & 17.82 & 18.02 & 0.00 & $kg/s$  \\
+ 60\% & 15.46 & 16.13 & 0.00 & 15.11 & 15.32 & 0.00 & $kg/s$  \\
+\bottomrule
+\end{tabular*}
+\end{table}  
 
 \begin{table}[h!]
 \caption{MDN input vectors ($\overline{X}$) for the validation and varied fuel case studies}\label{tbl_inputs}

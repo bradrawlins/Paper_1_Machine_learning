@@ -61,6 +61,7 @@
 \citation{Rasmussen2006}
 \citation{goodfellow}
 \citation{goodfellow}
+\citation{Wheeler2019}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Multivariate linear regression}{5}{subsection.3.1}\protected@file@percent }
 \newlabel{eqn_lin_cost}{{2}{5}{Multivariate linear regression}{equation.3.2}{}}
 \newlabel{eqn_grad_descent}{{3}{5}{Multivariate linear regression}{equation.3.3}{}}
@@ -81,12 +82,6 @@
 \newlabel{eqn_mix_coef_constraint}{{8}{7}{Mixture density networks (MDNs)}{equation.3.8}{}}
 \newlabel{eqn_mix_coeff}{{9}{7}{Mixture density networks (MDNs)}{equation.3.9}{}}
 \citation{Rawlins2021,INFUB2022}
-\newlabel{eqn_stddev}{{10}{8}{Mixture density networks (MDNs)}{equation.3.10}{}}
-\newlabel{eqn_nll}{{11}{8}{Mixture density networks (MDNs)}{equation.3.11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Data generation}{8}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}CFD model setup}{8}{subsection.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces CFD model geometry and boundary condition descriptions.\relax }}{8}{figure.caption.5}\protected@file@percent }
-\newlabel{fig_cfd_geom_bc}{{5}{8}{CFD model geometry and boundary condition descriptions.\relax }{figure.caption.5}{}}
 \citation{Versteeg2007}
 \citation{Modlinski2010}
 \citation{Rawlins2021,Rawlins2022}
@@ -94,9 +89,15 @@
 \citation{Baum1971}
 \citation{Sheng2004}
 \citation{Ansys}
+\newlabel{eqn_stddev}{{10}{8}{Mixture density networks (MDNs)}{equation.3.10}{}}
+\newlabel{eqn_nll}{{11}{8}{Mixture density networks (MDNs)}{equation.3.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Data generation}{8}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}CFD model setup}{8}{subsection.4.1}\protected@file@percent }
+\newlabel{eqn_cfd}{{12}{8}{CFD model setup}{equation.4.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces CFD model geometry and boundary condition descriptions.\relax }}{9}{figure.caption.5}\protected@file@percent }
+\newlabel{fig_cfd_geom_bc}{{5}{9}{CFD model geometry and boundary condition descriptions.\relax }{figure.caption.5}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of combustion models and constants used in the CFD model\relax }}{9}{table.caption.6}\protected@file@percent }
 \newlabel{tbl_combust}{{1}{9}{Summary of combustion models and constants used in the CFD model\relax }{table.caption.6}{}}
-\newlabel{eqn_cfd}{{12}{9}{CFD model setup}{equation.4.12}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Simulated dataset}{10}{subsection.4.2}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Design of experiments input ranges for simulations\relax }}{10}{table.caption.7}\protected@file@percent }
 \newlabel{tbl_doe}{{2}{10}{Design of experiments input ranges for simulations\relax }{table.caption.7}{}}
@@ -123,28 +124,30 @@
 \newlabel{sec_results_diss}{{6}{13}{Results and discussion}{section.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Validation}{13}{subsection.6.1}\protected@file@percent }
 \newlabel{sec_result_1}{{6.1}{13}{Validation}{subsection.6.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces MDN input vectors ($\overline  {X}$) for the validation and varied fuel case studies\relax }}{14}{table.caption.13}\protected@file@percent }
-\newlabel{tbl_inputs}{{5}{14}{MDN input vectors ($\overline {X}$) for the validation and varied fuel case studies\relax }{table.caption.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Load validation result comparison of the measured data and MDN model results for the various heat exchangers\relax }}{14}{figure.caption.14}\protected@file@percent }
-\newlabel{fig_heat_load}{{9}{14}{Load validation result comparison of the measured data and MDN model results for the various heat exchangers\relax }{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Load validation result comparison of the measured data and MDN model results for the steam exit and steam generation flowrates\relax }}{14}{figure.caption.15}\protected@file@percent }
-\newlabel{fig_steam_gen}{{10}{14}{Load validation result comparison of the measured data and MDN model results for the steam exit and steam generation flowrates\relax }{figure.caption.15}{}}
 \citation{Kakac1991}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Load validation result comparison of the measured data and MDN model results for the required attemperator flowrates to maintain operational integrity\relax }}{15}{figure.caption.16}\protected@file@percent }
-\newlabel{fig_attemp}{{11}{15}{Load validation result comparison of the measured data and MDN model results for the required attemperator flowrates to maintain operational integrity\relax }{figure.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Mill fuel flowrate biasing for the validation case study.\relax }}{14}{table.caption.13}\protected@file@percent }
+\newlabel{tbl_fuel_bias}{{5}{14}{Mill fuel flowrate biasing for the validation case study.\relax }{table.caption.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces MDN input vectors ($\overline  {X}$) for the validation and varied fuel case studies\relax }}{14}{table.caption.14}\protected@file@percent }
+\newlabel{tbl_inputs}{{6}{14}{MDN input vectors ($\overline {X}$) for the validation and varied fuel case studies\relax }{table.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Load validation result comparison of the measured data and MDN model results for the various heat exchangers\relax }}{14}{figure.caption.15}\protected@file@percent }
+\newlabel{fig_heat_load}{{9}{14}{Load validation result comparison of the measured data and MDN model results for the various heat exchangers\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Load validation result comparison of the measured data and MDN model results for the steam exit and steam generation flowrates\relax }}{15}{figure.caption.16}\protected@file@percent }
+\newlabel{fig_steam_gen}{{10}{15}{Load validation result comparison of the measured data and MDN model results for the steam exit and steam generation flowrates\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Load validation result comparison of the measured data and MDN model results for the required attemperator flowrates to maintain operational integrity\relax }}{15}{figure.caption.17}\protected@file@percent }
+\newlabel{fig_attemp}{{11}{15}{Load validation result comparison of the measured data and MDN model results for the required attemperator flowrates to maintain operational integrity\relax }{figure.caption.17}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Application}{15}{subsection.6.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Model results for poor quality fuel characteristics\relax }}{16}{table.caption.17}\protected@file@percent }
-\newlabel{tbl_fuel_results}{{6}{16}{Model results for poor quality fuel characteristics\relax }{table.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Integrated base case, high-ash and high-moisture case study comparison for; (a) the various heat exchangers, (b) the steam exit and generation flowrates, and (c) the required attemperator flowrates to maintain operational integrity\relax }}{16}{figure.caption.18}\protected@file@percent }
-\newlabel{fig_fuel_results}{{12}{16}{Integrated base case, high-ash and high-moisture case study comparison for; (a) the various heat exchangers, (b) the steam exit and generation flowrates, and (c) the required attemperator flowrates to maintain operational integrity\relax }{figure.caption.18}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Model results for poor quality fuel characteristics\relax }}{16}{table.caption.18}\protected@file@percent }
+\newlabel{tbl_fuel_results}{{7}{16}{Model results for poor quality fuel characteristics\relax }{table.caption.18}{}}
 \bibstyle{elsarticle-num}
 \bibdata{ML_paper}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Integrated base case, high-ash and high-moisture case study comparison for; (a) the various heat exchangers, (b) the steam exit and generation flowrates, and (c) the required attemperator flowrates to maintain operational integrity\relax }}{17}{figure.caption.19}\protected@file@percent }
+\newlabel{fig_fuel_results}{{12}{17}{Integrated base case, high-ash and high-moisture case study comparison for; (a) the various heat exchangers, (b) the steam exit and generation flowrates, and (c) the required attemperator flowrates to maintain operational integrity\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{17}{section.7}\protected@file@percent }
 \bibcite{Rousseau2020}{{1}{}{{}}{{}}}
 \bibcite{Safdarnejad2019}{{2}{}{{}}{{}}}
 \bibcite{Modlinski2019}{{3}{}{{}}{{}}}
 \bibcite{Liu2021}{{4}{}{{}}{{}}}
 \bibcite{dugum2019}{{5}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{17}{section.7}\protected@file@percent }
 \bibcite{Gu2020}{{6}{}{{}}{{}}}
 \bibcite{Laubscher2020}{{7}{}{{}}{{}}}
 \bibcite{Rawlins2021}{{8}{}{{}}{{}}}
