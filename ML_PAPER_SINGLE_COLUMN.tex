@@ -196,7 +196,7 @@ An integrated data-driven surrogate model and one-dimensional (1D) process model
 % Keywords
 % Each keyword is seperated by \sep
 \begin{keywords}
-Mixture density network \sep data-driven surrogate modelling \sep Computational fluid dynamics \sep
+Mixture density network \sep Data-driven surrogate modelling \sep Computational fluid dynamics \sep
 \end{keywords}
 
 \maketitle
@@ -264,7 +264,7 @@ The optimal solution can be estimated by minimizing the cost function ($J$). A c
 J_{MSE}=\frac{1}{n}\sum^n_{i=1}(y_i-\hat{y_i})^2
 \end{equation} 
 
-In the present work we utilised the gradient descent algorithm \cite{Wen2022} to minimize the cost function. The gradient descent algorithm is an iterative procedure used to find the local minimum/maximum. Considering the cost function as a function of the weight, the algorithm can be written as shown in Equation \ref{eqn_grad_descent}.  
+In the present work the gradient descent algorithm \cite{Wen2022} was utilised to minimize the cost function. The gradient descent algorithm is an iterative procedure used to find the local minimum/maximum. Considering the cost function as a function of the weight, the algorithm can be written as shown in Equation \ref{eqn_grad_descent}.  
 \begin{equation}\label{eqn_grad_descent}
 \beta_{m} = \beta_m-\eta\frac{\partial}{\partial\beta_m}J(\beta_m)
 \end{equation}
@@ -356,7 +356,7 @@ A steady-state multiphase non-thermal equilibrium CFD model was used to generate
 \subsection{CFD model setup}
 The current study makes use of an existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the boiler under investigation using the commercial CFD software package ANSYS\textsuperscript{\textregistered} Fluent 2019 R3 to resolve the fluid flow, heat transfer and combustion processes. This section provides a short overview of the model for the sake of completeness.\\
 
-The modelled boiler consisted of a furnace with a depth of 13.77 ($m$), width of 24.01 ($m$) and maximum height of 64.00 ($m$). The CFD computation domain was created for half of the furnace width and has a symmetry boundary condition loacted at 12.01 ($m$). This was done to reduce the total cell count of the numerical mesh. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and defines the important boundary conditions. The general conservation equations of mass, momentum, energy, and species were solved using a Eulerian approach. These are provided in Equation (\ref{eqn_cfd}).
+The modelled boiler consisted of a furnace with a depth of 13.77 ($m$), a width of 24.01 ($m$) and a maximum height of 64.00 ($m$). The CFD computational domain was created for half of the furnace width and has a symmetry boundary condition loacted at 12.01 ($m$). This was done to reduce the total cell count of the numerical mesh. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and defines the important boundary conditions. The general conservation equations of mass, momentum, energy, and species were solved using a Eulerian approach. These are provided in Equation (\ref{eqn_cfd}).
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=0.45]{CFD_GEOMETRY}
@@ -486,12 +486,12 @@ The results of hyper-parameter search are given in Table \ref{tbl_hyper_results}
     \includegraphics[width=\textwidth]{OVERALL_TEST}
     \caption{}
     \end{subfigure}
-    \caption{Error distributions for the selected MLP and MDN model h; (a) training data and (b) testing data.}\label{fig_frequency_data}
+    \caption{Overall error distributions for the selected MLP and MDN model; (a) training data and (b) testing data.}\label{fig_frequency_data}
 \end{figure}
 
 \begin{table}[h!]
 \caption{Hyper-parameter search results}\label{tbl_hyper_results}
-\begin{tabular*}{\tblwidth}{lp{0.1\textwidth}l}
+\begin{tabular*}{\tblwidth}{p{0.35\textwidth}p{0.2\textwidth}p{0.2\textwidth}}
 \toprule
  Parameter& MLP & MDN \\ % Table header row
 \midrule
@@ -519,20 +519,7 @@ The results predicted using the surrogate model were validated for the 100\%, 80
 
 In the current work the integrated model is applied in conjunction with the Monte Carlo method \cite{Thomopoulos2013}. Firstly, random sampling of the input variables to the integrated model are performed based on the mean and standard deviation predicted by the surrogate model.  Following this, simulations are run for each sample and the outputs are evaluated to determine the predicted mean and standard deviation of each overall plant parameter.\\
 
-Fortunately, Flownex SE\textsuperscript{\textregistered} 2021, provides a built-in Monte Carlo facility. It requires as input the mean and standard deviation values for each model input \cite{flownex}. The Monte Carlo model input used in this study are the predicted mean and standard deviation results obtained with the surrogate model, which utilized the MDN input vectors ($\overline{X}$) provided in Table \ref{tbl_inputs}. These inputs were obtained from the works of Laubscher and Rousseau \cite{Laubscher2019b}. For this study $N=1000$ simulations were performed for each validation case with the mean and standard deviation being used as measures to determine convergence. Table \ref{tbl_fuel_bias} provides the total mill fuel flow rate for the validation cases. Biasing of the mill fuel flow rates was introduced to provide a realistic operational uncertainty to the model.\\
-
-\begin{table}[h!]
-\caption{Mill fuel flowrate biasing for the validation case study.}\label{tbl_fuel_bias}
-\begin{tabular*}{\tblwidth}{c p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}}
-\toprule
- MCR load& Mill 1 & Mill 2 &Mill 3 &Mill 4 &Mill 5 &Mill 6 & Unit \\ % Table header row
-\midrule
- 100\% & 19.14 & 20.22 & 19.92 & 19.98 & 19.41 & 0.00 & $kg/s$  \\
- 80\% & 18.23 & 19.72 & 19.02 & 17.82 & 18.02 & 0.00 & $kg/s$  \\
- 60\% & 15.46 & 16.13 & 0.00 & 15.11 & 15.32 & 0.00 & $kg/s$  \\
-\bottomrule
-\end{tabular*}
-\end{table}  
+Fortunately, Flownex SE\textsuperscript{\textregistered} 2021, provides a built-in Monte Carlo facility. It requires as input the mean and standard deviation values for each model input \cite{flownex}. The Monte Carlo model input used in this study are the predicted mean and standard deviation results obtained with the surrogate model, which utilized the MDN input vectors ($\overline{X}$) provided in Table \ref{tbl_inputs}. These inputs were obtained from the works of Laubscher and Rousseau \cite{Laubscher2019b}. For this study $N=1000$ simulations were performed for each validation case with the mean and standard deviation being used as measures to determine convergence. Table \ref{tbl_fuel_bias} provides the total mill fuel flow rate for the validation cases. Biasing of the mill fuel flow rates was introduced to provide a realistic operation of the combustion system.\\
 
 \begin{table}[h!]
 \caption{MDN input vectors ($\overline{X}$) for the validation and varied fuel case studies}\label{tbl_inputs}
@@ -553,7 +540,24 @@ Final SH mean steam temp. - [$K$]& 787 & 793 &781 &787 &787  \\
 \bottomrule
 \end{tabular*}
 \end{table}  
-\begin{figure}
+
+\begin{table}[h!]
+\caption{Mill fuel flowrate biasing for the validation case study.}\label{tbl_fuel_bias}
+\begin{tabular*}{\tblwidth}{c p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}}
+\toprule
+ MCR load& Mill 1 & Mill 2 &Mill 3 &Mill 4 &Mill 5 &Mill 6 & Unit \\ % Table header row
+\midrule
+ 100\% & 19.14 & 20.22 & 19.92 & 19.98 & 19.41 & 0.00 & $kg/s$  \\
+ 80\% & 18.23 & 19.72 & 19.02 & 17.82 & 18.02 & 0.00 & $kg/s$  \\
+ 60\% & 15.46 & 16.13 & 0.00 & 15.11 & 15.32 & 0.00 & $kg/s$  \\
+\bottomrule
+\end{tabular*}
+\end{table}  
+
+Figures \ref{fig_heat_load} - \ref{fig_attemp} provide comparative results of the measured data and integrated model responses for all three load cases. It can be seen for a range of MCR loads that the integrated model is able to capture the heat loads to the various heat exchangers (Figures \ref{fig_heat_load} (a-c)) with sufficient accuracy. In general, the model under-predicts the mean of the heat loads in the furnace and radiative pass, with slight over-predictions seen in the convective pass. However, the associated uncertainty of the integrated model overlaps with the measured data uncertainty with minimal outliers, therefore, inferring that the model predictions are sufficiently accurate.\\ 
+
+
+\begin{figure}[h!]
 \centering
 \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\textwidth, height = 4.25cm]{100_CASE}
@@ -571,7 +575,7 @@ Final SH mean steam temp. - [$K$]& 787 & 793 &781 &787 &787  \\
 \label{fig_heat_load}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \begin{subfigure}{0.33\textwidth}
 \includegraphics[width=\linewidth, height = 4.25cm]{100_CASE_STEAM}
@@ -589,7 +593,7 @@ Final SH mean steam temp. - [$K$]& 787 & 793 &781 &787 &787  \\
 \label{fig_steam_gen}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\linewidth, height = 4.25cm]{100_CASE_ATTEMP}
@@ -607,7 +611,6 @@ Final SH mean steam temp. - [$K$]& 787 & 793 &781 &787 &787  \\
 \label{fig_attemp}
 \end{figure}
 
-Figures \ref{fig_heat_load} - \ref{fig_attemp} provide comparative results of the measured data and integrated model responses for all three load cases. It can be seen for a range of MCR loads that the integrated model is able to capture the heat loads to the various heat exchangers (Figures \ref{fig_heat_load} (a-c)) with sufficient accuracy. In general, the model under-predicts the mean of the heat loads in the furnace and radiative pass, with slight over-predictions seen in the convective pass. However, the associated uncertainty of the integrated model overlaps with the measured data uncertainty with minimal outliers, therefore, inferring that the model predictions are sufficiently accurate.\\ 
 
 Considering the steam generation and exit flowrates of Figure \ref{fig_steam_gen} (a-c), the integrated model can sufficiently capture the hydraulic response of the case study boiler for a wide range of loads. More uncertainty is associated with the integrated model, but this is deemed acceptable since the response overlaps with the measured data in all but one case. The attemperators of a utility scale boiler are an integral part of the control systems put in place to ensure safe operating conditions and minimal wear on the downstream components, namely the steam HP and LP steam turbines \cite{Kakac1991}. Figure  \ref{fig_attemp} (a-c) highlight the attemperator flowrates across a wide range of loads. The integrated model is shown to adequately resolve the flowrates with a slightly higher mean being predicted for the 80\% load case.\\
 
