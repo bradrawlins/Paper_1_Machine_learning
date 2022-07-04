@@ -354,7 +354,7 @@ J_{NLL}(\overline{Y},\overline{\pi},\overline{\sigma},\overline{\mu})=-\sum^N_{n
 \section{Data generation}
 A steady-state multiphase non-thermal equilibrium CFD model was used to generate the training and testing data, which was subsequently used for training/testing of an appropriate surrogate model.
 \subsection{CFD model setup}
-The current study makes use of an existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the boiler under investigation using the commercial CFD software package ANSYS\textsuperscript{\textregistered} Fluent 2019 R3 to resolve the fluid flow, heat transfer and combustion processes. This section provides a short overview of the model for the sake of completeness.\\
+The current study makes use of an existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the boiler under investigation using the commercial CFD software package ANSYS Fluent\textsuperscript{\textregistered} 2019 R3 to resolve the fluid flow, heat transfer and combustion processes. This section provides a short overview of the model for the sake of completeness.\\
 
 The modelled boiler consisted of a furnace with a depth of 13.77 ($m$), a width of 24.01 ($m$) and a maximum height of 64.00 ($m$). The CFD computational domain was created for half of the furnace width and has a symmetry boundary condition loacted at 12.01 ($m$). This was done to reduce the total cell count of the numerical mesh. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and defines the important boundary conditions. The general conservation equations of mass, momentum, energy, and species were solved using a Eulerian approach. These are provided in Equation (\ref{eqn_cfd}).
 \begin{figure}[h!]
