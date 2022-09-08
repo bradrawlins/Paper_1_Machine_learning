@@ -218,9 +218,9 @@ It is noted that CFD cannot meet the near real time requirement for on line perf
  
 In the present work, an integrated data-driven surrogate model and 1-D process model is proposed to investigate the thermal response of a 620 $MW_e$ utility scale boiler. An existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the 620 $MW_e$ utility scale boiler under investigation was used to generate a simulation dataset for 180 different operating states. To determine the required complexity of the data-driven surrogate model, two different ANN frameworks were considered, namely a standard multi-layer perception (MLP) and a mixture density network MDN, where the latter allows the introduction of uncertainty into the model predictions. A hyper-parameter search was conducted to establish the best performing model, with the lowest mean absolute error (MAE) being the essential criterion. Validation of the integrated surrogate and process model was performed for maximum continuous ratings (MCR) of 100\%, 80\% and 60\% load for which measured data is available. Following this, the validated model was used to investigate the impact of poor fuel quality at 100\% MCR, where the ash and moisture contents were varied for two separate cases.
 \newpage
-\section{Case study boiler}
+\section{Materials and methods}
 This section provides an overview of the case study boiler layout as well as a description of the integrated model.
-\subsection{Boiler layout}
+\subsection{Case study boiler}
 The overall layout of the case study boiler is shown schematically in Figure \ref{fig_case_layout} \cite{Rousseau2020}.
 
 \begin{figure}[h!]
@@ -231,8 +231,50 @@ The overall layout of the case study boiler is shown schematically in Figure \re
 
 The boiler forms part of a 620 MWe power plant and consists of a furnace with water wall evaporator (EV), primary superheater (SH1), platen superheater (SH2) and final superheater (SH3), as well as a primary reheater (RH1), secondary reheater (RH2) and economizer (EC).  The furnace height, width and depth are 64 m, 24 m, and 13.7 m respectively.  The combustion chamber is fitted with three rows of six swirl burners each on the front and rear walls.  Primary air is injected via the inner annulus of the burners, and secondary air via the outer annulus (refer to Figure \ref{fig_cfd_geom_bc}).
 
-\subsection{Integrated model layout}
+\subsection{CFD model}
+The current study makes use of an existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the boiler under investigation using the commercial CFD software package ANSYS Fluent\textsuperscript{\textregistered} 2019 R3 to resolve the fluid flow, heat transfer and combustion processes. This section provides a short overview of the model for the sake of completeness.\\
 
+The modelled boiler consisted of a furnace with a depth of 13.77 ($m$), a width of 24.01 ($m$) and a maximum height of 64.00 ($m$). The CFD computational domain was created for half of the furnace width and has a symmetry boundary condition loacted at 12.01 ($m$). This was done to reduce the total cell count of the numerical mesh. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and defines the important boundary conditions. The general conservation equations of mass, momentum, energy, and species were solved using a Eulerian approach. These are provided in Equation (\ref{eqn_cfd}).
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.45]{CFD_GEOMETRY}
+	  \caption{CFD model geometry and boundary condition descriptions.}\label{fig_cfd_geom_bc}
+\end{figure}
+\begin{flalign} \label{eqn_cfd}
+&\frac{\partial}{\partial x_{i}}(\rho \bar{u}_{i})=S \nonumber &&\\
+&\frac{\partial}{\partial x_{i}}(\rho_{eff} u_{i}u_{j})+\frac{\partial \overline{p}}{\partial x_{j}}= \nonumber&&\\
+&\frac{\partial}{\partial x_{i}}\left[\mu\left\{\frac{\partial u_{j}}{\partial x_{i}}+\frac{\partial u_{i}}{\partial x_{j}}-\frac{2}{3}\delta_{ij}\frac{\partial u_{i}}{\partial x_{i}}\right\}\right]+\frac{\partial}{\partial x_{i}}(-\rho\overline{u_{i}^{'}u_{j}^{'}})+S_m \nonumber \nonumber &&\\
+&\frac{\partial }{\partial x_{i}} (u_{i}[\rho E+p])=\frac{\partial }{\partial x_{j}}\left[\lambda\frac{\partial T_{g}}{\partial x_{j}}\right] +S_{h} &&\\
+&\frac{\partial}{\partial x_{i}}(\rho u_{j}Y_{k})=-\frac{\partial}{\partial x_{j}}(\vec{J_{k}})+ \sum_r R_{j,r} + S_{k} \nonumber && 
+\end{flalign}
+
+The solution of the Reynolds stress term found in the momentum equation ($-\rho\overline{u_{i}^{'}u_{j}^{'}}$) was approximated using the Boussineq equation \citep{Versteeg2007}. In the present study the realizable k-$\varepsilon$ turbulence model was utilized to address the turbulence closure problem and was selected for its applicability in modelling the effects of coal-fired swirl burners \citep{Modlinski2010}.\\
+
+The P1 radiation model was used to resolve the radiative field in the domain. Particle transport was modelled using a multiphase Eulerian-Eulerian approach, further details of which are provided in the validation study of Rawlins et al \citep{Rawlins2021, Rawlins2022}. Modelling of combustion follows a four-step sequential process, beginning with the heating and evaporation of the moisture present in the fuel, followed by the devolatilization process where the volatiles are liberated from the solid particle, followed by the phenomena of char burnout, and finally the gas phase reactions would commence. The char oxidation reaction product species was set to that of carbon monoxide ($CO$). For the gas-phase reactions the turbulence-chemistry interaction was approximated using the eddy dissipation model (EDM). A summary of the combustion equations and constants is provided in Table \ref{tbl_combust}.\\
+\begin{table}[h!]
+\caption{Summary of combustion models and constants used in the CFD model}\label{tbl_combust}
+\begin{tabular*}{\tblwidth}{p{0.325\textwidth}p{0.35\textwidth}p{0.25\textwidth}}
+\toprule
+Model & Equation/s & Constant/s\\
+\midrule
+\multicolumn{3}{l}{\textit{Devolatilization}} \\ % Table header row
+Single rate kinetic model &$\frac{dm_{vol}}{dt} = R_{vol}(m_{0,vol}-m_{vol})$,  & $A_{vol} = 2\times10^5 [s^{-1}]$, \\
+& $R_{vol} = A_{vol}exp\left(\frac{E_{a,vol}}{RT_p}\right)$ & $ E_{a,vol} = 6.7\times10^7 [J/kmol]$ - \cite{Sheng2004} \\
+\multicolumn{3}{l}{\textit{Char oxidation}} \\
+Diffusion/kinetic - \citep{Baum1971} & $\frac{dm_{char}}{dt} = -A_p p_{O_{2}} \frac{R_{diff}R_c}{R_{diff} + R_c}$,  & $A_{c} = 0.0053 [kg/m^2sPa]$, \\
+& $R_{c} = A_{c}exp\left(\frac{E_{a,c}}{RT_p}\right)$,  & $E_{a,c} = 8.37\times10^7 [J/kmol]$ - \cite{Sheng2004} \\
+& $R_{diff} = \frac{5\times10^{-12}}{d_p} \left(\frac{T_g+T_p}{2}\right)^{0.75}$&\\
+\multicolumn{3}{l}{\textit{Gaseous reactions of volatiles and $CO$}} \\
+Eddy dissipation model - \cite{Ansys} & $R_{k,r,P} =\vartheta_{k,r}M_{w,k}AB\rho\frac{\varepsilon}{k}min\left(\frac{\sum_{p} Y_p}{\sum_{j}\vartheta_{j,r}M_{w,j}}\right)$, $R_{k,r,R} =\vartheta_{k,r}M_{w,k}A\rho\frac{\varepsilon}{k}min\left(\frac{Y_R}{\vartheta_{R,r}M_{w,R}}\right)$ & $A=4.0$, $B=0.5$\\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+The simulations were solved using the SIMPLE pressure–velocity coupling scheme. The pressure term was discretized using the PRESTO! scheme. Momentum, species, and energy equations were discretized using the second order upwind scheme and the turbulent kinetic energy and dissipation rate using the first-order upwind scheme. The numerical mesh was generated using quadrilateral elements consisting of approximately 6 million cells.  The convergence criteria for the simulation model were set to $1\times10^{-3}$ for the continuity equation, $1\times10^{-4}$ for the velocity equations, $1\times10^{-6}$ for the remaining transport equations, and $1\times10^{-4}$ for monitored key parameters. Convergence criteria was enforced for all the various simulation runs.
+
+\subsection{Process model}
+
+\subsection{Integrated model}
 The validation and the subsequent case-studies presented here, make use of an integrated surrogate and network based 1D process model. The process model is used to capture the thermodynamic response of the water/steam side of the utility boiler under investigation, with the developed data-driven surrogate model providing predictions of the gas-side thermal characteristics (i.e. combustion product species, temperature and incident radiation flux) and heat-exchanger heat loads to the EV, SH2 and SH3 walls.\\
 
 The network model is set up in the process modelling software, Flownex SE\textsuperscript{\textregistered} 2021 \cite{flownex}.  The software can solve both the steady state and transient forms of the fundamental conservation equations of mass, energy, and momentum together with built in fluid property relations and component characteristics representative of all the different types of components.  It is also possible to add control elements to obtain a complete integrated dynamic system simulation model of a plant, sub system or component. 
@@ -246,31 +288,13 @@ In the current work a C\# script is used to access the Python application progra
 
 The boiler can be split into three sections namely, the furnace consisting of EV waterwalls, the radiative pass consisting of SH2 and SH3, and the convective pass consisting of RH2, SH1, RH1 and the EC. The furnace heat load predictions to the EV walls determine the evaporation rate. The high pressure (HP) steam outlet flow rate is calculated as the sum of the attemperation flow rates (ATT1 and ATT2) and the evaporation flow rate. The attemperators are used to control the steam temperature to ensure an exit temperature of $808K$ at both the HP outlet and RH outlet. In addition to the furnace heat loads the surrogate model predicts the SH2 and SH3 heat loads. Lastly the surrogate model is able to predict the flue-gas conditions at the inlet to the convective pass (i.e. RH2). The EV, SH2 and SH3 walls are each represented by a single lumped parameter pipe flow component, interconnected with nodes that introduce the attemperation flows to the water/steam side. The convective pass components are modelled using an in-house heat exchanger model that accounts for the radiative (gas and direct), convective and conduction heat transfer mechanisms to and from the gas-side and steam-side control volumes, as well as between the up- and downstream heat exchangers on the gas side.
 
+The goal of the surrogate model is to predict the heat load distributions to the furnace water walls (EV), the platen superheater (SH2) tubes, and the final superheater (SH3) tubes, as well as the combustion characteristics and flue-gas temperatures at the exit, using the high level inputs for the ranges provided in Table \ref{tbl_doe}.\\
+
+The total CFD solution data matrix size will consist of $180\times\overline{Y}=243000$ data points. Using the total solution data matrix for training and testing would typically result in a slower convergence \cite{goodfellow}. However, the use of subset data packages, referred to as batches or mini-batches, allows for a faster convergence. The batch size is a term used in machine learning that specifies a number of training/testing examples utilized in one iteration \cite{Wheeler2019}. Thus, for a data batch size, $m_b$, the output tensor for the MLP model will be $\hat{Y}\in \mathbb{R}^{m_b\times 27}$ since $d_{targets}=27$. However, the output data for the MDN model will consist of three parts, namely; the mixing coefficients tensor of shape  $\overline{\pi}\in \mathbb{R}^{m_b \times K}$, the output standard deviation tensor of shape $\overline{\sigma}\in \mathbb{R}^{K\times m_b\times 27}$, and the predicted means of tensor shape $\overline{\mu}\in \mathbb{R}^{K\times m_b\times 27}$, where $K$ is the number of distributions. The input data fed into both the MLP and MDN will have shape $\overline{X}\in \mathbb{R}^{m_b\times d_{inputs}}$. The input features will be varied based on the DOE, to account for burner mill biassing, fuel quality and the superheaters fouling thickness.
+
 \section{Applicable machine learning theory}
 The present work makes use of various machine learning architectures to develop a surrogate model that can predict the thermal and combustion characteristics of a utility scale boiler using high level inputs. The current section discusses the details of the respective architectures, namely linear regression, ANN and MDN models.
-\newpage
-\subsection{Multivariate linear regression}
-A multivariate linear regression model was established as a base model for comparative purposes in the validation case study of Section \ref{sec_result_1}. The main assumption of a multiple linear regression model is that the output/s can be calculated from a linear combination of the input variables. In other words, a linear regression models aims to determine the quantitative linear relationship between the dependent and independent variables \cite{Wen2022}. The representation of the $i$-th dependent variable ($y_i$) can be written as follows for $m$-number of independent variables ($x_{mi}$);
-\begin{equation}
-\begin{split}
-&y_i = \beta_0+\beta_1 x_{1i}+...+\beta_m x_{mi}\\
-&i = 1,2,3...n
-\end{split}
-\end{equation}
-where $\beta_0$ is a constant term, $\beta_{m}$ is the $m$-th coefficient, and $n$ is the total number of observations.\\
  
-The optimal solution can be estimated by minimizing the cost function ($J$). A cost function usually calculates the difference between the estimated and the desired values and is reported as a single number. Multivariate linear regression problems typically utilize the mean square error (MSE) between the desired and estimated ($\hat{y_i}$)  values \cite{Wheeler2019}, which is given in Equation \ref{eqn_lin_cost}.
- \begin{equation}\label{eqn_lin_cost}
-J_{MSE}=\frac{1}{n}\sum^n_{i=1}(y_i-\hat{y_i})^2
-\end{equation} 
-
-In the present work the gradient descent algorithm \cite{Wen2022} was utilised to minimize the cost function. The gradient descent algorithm is an iterative procedure used to find the local minimum/maximum. Considering the cost function as a function of the weight, the algorithm can be written as shown in Equation \ref{eqn_grad_descent}.  
-\begin{equation}\label{eqn_grad_descent}
-\beta_{m} = \beta_m-\eta\frac{\partial}{\partial\beta_m}J(\beta_m)
-\end{equation}
-where $\eta$ is known as the learning rate.\\
-
-In most cases the relationship between the dependent and independent variables are not linear. Special non-linear basis models, such as polynomial, sinusoidal, and radial can be used to optimize the training results \cite{Rasmussen2006}. For the current work a multiple linear regression model is utilized as a base model for comparison in Section \ref{sec_result_1}. 
 \subsection{Multilayer perception networks}
 Artificial neural networks (ANN) are machine learning systems inspired by biological neural activity \cite{Rasmussen2006}. There are many classifications of ANNs, with multilayer perception networks (MLP) being the standard representation \citep{goodfellow}. Typically, MLPs are adapted for supervised learning problems where the input variables are mapped to labelled output variables. The relationship between the input and output variables are learned by optimizing the weights ($\overline{w}$) and biases ($\overline{b}$) to minimize a selected cost function, which for most cases is the MSE given in equation \ref{eqn_lin_cost}. A standard MLP schematic is given in figure \ref{fig_mlp_schematic}, illustrating the common features of a MLP, that being the input, hidden and output layers.\\
 
@@ -353,46 +377,7 @@ J_{NLL}(\overline{Y},\overline{\pi},\overline{\sigma},\overline{\mu})=-\sum^N_{n
 \end{equation}
 \section{Data generation}
 A steady-state multiphase non-thermal equilibrium CFD model was used to generate the training and testing data, which was subsequently used for training/testing of an appropriate surrogate model.
-\subsection{CFD model setup}
-The current study makes use of an existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the boiler under investigation using the commercial CFD software package ANSYS Fluent\textsuperscript{\textregistered} 2019 R3 to resolve the fluid flow, heat transfer and combustion processes. This section provides a short overview of the model for the sake of completeness.\\
 
-The modelled boiler consisted of a furnace with a depth of 13.77 ($m$), a width of 24.01 ($m$) and a maximum height of 64.00 ($m$). The CFD computational domain was created for half of the furnace width and has a symmetry boundary condition loacted at 12.01 ($m$). This was done to reduce the total cell count of the numerical mesh. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and defines the important boundary conditions. The general conservation equations of mass, momentum, energy, and species were solved using a Eulerian approach. These are provided in Equation (\ref{eqn_cfd}).
-\begin{figure}[h!]
-	\centering
-		\includegraphics[scale=0.45]{CFD_GEOMETRY}
-	  \caption{CFD model geometry and boundary condition descriptions.}\label{fig_cfd_geom_bc}
-\end{figure}
-\begin{flalign} \label{eqn_cfd}
-&\frac{\partial}{\partial x_{i}}(\rho \bar{u}_{i})=S \nonumber &&\\
-&\frac{\partial}{\partial x_{i}}(\rho_{eff} u_{i}u_{j})+\frac{\partial \overline{p}}{\partial x_{j}}= \nonumber&&\\
-&\frac{\partial}{\partial x_{i}}\left[\mu\left\{\frac{\partial u_{j}}{\partial x_{i}}+\frac{\partial u_{i}}{\partial x_{j}}-\frac{2}{3}\delta_{ij}\frac{\partial u_{i}}{\partial x_{i}}\right\}\right]+\frac{\partial}{\partial x_{i}}(-\rho\overline{u_{i}^{'}u_{j}^{'}})+S_m \nonumber \nonumber &&\\
-&\frac{\partial }{\partial x_{i}} (u_{i}[\rho E+p])=\frac{\partial }{\partial x_{j}}\left[\lambda\frac{\partial T_{g}}{\partial x_{j}}\right] +S_{h} &&\\
-&\frac{\partial}{\partial x_{i}}(\rho u_{j}Y_{k})=-\frac{\partial}{\partial x_{j}}(\vec{J_{k}})+ \sum_r R_{j,r} + S_{k} \nonumber && 
-\end{flalign}
-
-The solution of the Reynolds stress term found in the momentum equation ($-\rho\overline{u_{i}^{'}u_{j}^{'}}$) was approximated using the Boussineq equation \citep{Versteeg2007}. In the present study the realizable k-$\varepsilon$ turbulence model was utilized to address the turbulence closure problem and was selected for its applicability in modelling the effects of coal-fired swirl burners \citep{Modlinski2010}.\\
-
-The P1 radiation model was used to resolve the radiative field in the domain. Particle transport was modelled using a multiphase Eulerian-Eulerian approach, further details of which are provided in the validation study of Rawlins et al \citep{Rawlins2021, Rawlins2022}. Modelling of combustion follows a four-step sequential process, beginning with the heating and evaporation of the moisture present in the fuel, followed by the devolatilization process where the volatiles are liberated from the solid particle, followed by the phenomena of char burnout, and finally the gas phase reactions would commence. The char oxidation reaction product species was set to that of carbon monoxide ($CO$). For the gas-phase reactions the turbulence-chemistry interaction was approximated using the eddy dissipation model (EDM). A summary of the combustion equations and constants is provided in Table \ref{tbl_combust}.\\
-\begin{table}[h!]
-\caption{Summary of combustion models and constants used in the CFD model}\label{tbl_combust}
-\begin{tabular*}{\tblwidth}{p{0.325\textwidth}p{0.35\textwidth}p{0.25\textwidth}}
-\toprule
-Model & Equation/s & Constant/s\\
-\midrule
-\multicolumn{3}{l}{\textit{Devolatilization}} \\ % Table header row
-Single rate kinetic model &$\frac{dm_{vol}}{dt} = R_{vol}(m_{0,vol}-m_{vol})$,  & $A_{vol} = 2\times10^5 [s^{-1}]$, \\
-& $R_{vol} = A_{vol}exp\left(\frac{E_{a,vol}}{RT_p}\right)$ & $ E_{a,vol} = 6.7\times10^7 [J/kmol]$ - \cite{Sheng2004} \\
-\multicolumn{3}{l}{\textit{Char oxidation}} \\
-Diffusion/kinetic - \citep{Baum1971} & $\frac{dm_{char}}{dt} = -A_p p_{O_{2}} \frac{R_{diff}R_c}{R_{diff} + R_c}$,  & $A_{c} = 0.0053 [kg/m^2sPa]$, \\
-& $R_{c} = A_{c}exp\left(\frac{E_{a,c}}{RT_p}\right)$,  & $E_{a,c} = 8.37\times10^7 [J/kmol]$ - \cite{Sheng2004} \\
-& $R_{diff} = \frac{5\times10^{-12}}{d_p} \left(\frac{T_g+T_p}{2}\right)^{0.75}$&\\
-\multicolumn{3}{l}{\textit{Gaseous reactions of volatiles and $CO$}} \\
-Eddy dissipation model - \cite{Ansys} & $R_{k,r,P} =\vartheta_{k,r}M_{w,k}AB\rho\frac{\varepsilon}{k}min\left(\frac{\sum_{p} Y_p}{\sum_{j}\vartheta_{j,r}M_{w,j}}\right)$, $R_{k,r,R} =\vartheta_{k,r}M_{w,k}A\rho\frac{\varepsilon}{k}min\left(\frac{Y_R}{\vartheta_{R,r}M_{w,R}}\right)$ & $A=4.0$, $B=0.5$\\
-\bottomrule
-\end{tabular*}
-\end{table}
-
-The simulations were solved using the SIMPLE pressure–velocity coupling scheme. The pressure term was discretized using the PRESTO! scheme. Momentum, species, and energy equations were discretized using the second order upwind scheme and the turbulent kinetic energy and dissipation rate using the first-order upwind scheme. The numerical mesh was generated using quadrilateral elements consisting of approximately 6 million cells.  The convergence criteria for the simulation model were set to $1\times10^{-3}$ for the continuity equation, $1\times10^{-4}$ for the velocity equations, $1\times10^{-6}$ for the remaining transport equations, and $1\times10^{-4}$ for monitored key parameters. Convergence criteria was enforced for all the various simulation runs.
 \subsection{Simulated dataset}
 The inputs to the surrogate model include the following: the excess air ratio per burner, the total mill flowrate for the six mills in operation, the average steam temperatures for the platen and final superheaters, the fouling resistance for the platen and final superheaters, the composition of ash and moisture of the fuel and the gross calorific value of the fuel (which is a function of the fuel composition). Thus the input field has a dimensionality of $d_{inputs}=14$.\\
 
@@ -419,16 +404,14 @@ Final SH internal steam temperature& \multicolumn{2}{l}{$R_{final}$} & $K$\\
 \end{tabular*}
 \end{table}
 
-Once the CFD simulations achieved convergence, the target data, comprising of the discretized heat loads to the furnace, platen SH and final SH, the exit flue-gas temperatures and flue-gas composition, was stored for each case. A total of 27 output target values ($d_{targets}$) are extracted from the results for each CFD simulation case. Due to the inherently unsteady nature of the CFD simulations even when convergence has been achieved, the output target values were extracted after every 50 iterations for an additional 2500 iterations once convergence was achieved. This results in each CFD simulation case having a solution data matrix size of ($\bar{Y}\in \mathbb{R}^{50\times27}$).\\
+Once the CFD simulations achieved convergence, the target data, comprising of the discretised heat loads to the furnace, platen SH and final SH, the exit flue-gas temperatures and flue-gas composition, was stored for each case. A total of 27 output target values ($d_{targets}$) are extracted from the results for each CFD simulation case. Due to the inherently unsteady nature of the CFD simulations even when convergence has been achieved, the output target values were extracted after every 50 iterations for an additional 2500 iterations once convergence was achieved. This results in each CFD simulation case having a solution data matrix size of ($\bar{Y}\in \mathbb{R}^{50\times27}$).\\
 
 The target dataset was split with 80\% for training purposes and the remainder for testing. To reduce the training time of the neural networks a min-max normalization was utilized to scale all the dataset entries to values between $0\rightarrow1$.
-\section{Surrogate model development}
-The present work makes use of two types of machine learning models, namely a standard artificial neural network (ANN/MLP) and a mixture density designated model connected to a standard ANN (MDN). The following section will discuss the hyper parameter tuning and final selected model configuration. The programming language Python 3.7.8 and the Tensorflow machine learning libraries were utilized in the present study.
-\newpage
-\subsection{Model configuration}
-The goal of the surrogate model is to predict the heat load distributions to the furnace water walls (EV), the platen superheater (SH2) tubes, and the final superheater (SH3) tubes, as well as the combustion characteristics and flue-gas temperatures at the exit, using the high level inputs for the ranges provided in Table \ref{tbl_doe}.\\
+\section{Results and discussion}\label{sec_results_diss}
+This section provides the results of the validation study of the integrated model, as well as an application case study that investigates the effects of fuel quality on the integrated boiler performance.\\
 
-The total CFD solution data matrix size will consist of $180\times\overline{Y}=243000$ data points. Using the total solution data matrix for training and testing would typically result in a slower convergence \cite{goodfellow}. However, the use of subset data packages, referred to as batches or mini-batches, allows for a faster convergence. The batch size is a term used in machine learning that specifies a number of training/testing examples utilized in one iteration \cite{Wheeler2019}. Thus, for a data batch size, $m_b$, the output tensor for the MLP model will be $\hat{Y}\in \mathbb{R}^{m_b\times 27}$ since $d_{targets}=27$. However, the output data for the MDN model will consist of three parts, namely; the mixing coefficients tensor of shape  $\overline{\pi}\in \mathbb{R}^{m_b \times K}$, the output standard deviation tensor of shape $\overline{\sigma}\in \mathbb{R}^{K\times m_b\times 27}$, and the predicted means of tensor shape $\overline{\mu}\in \mathbb{R}^{K\times m_b\times 27}$, where $K$ is the number of distributions. The input data fed into both the MLP and MDN will have shape $\overline{X}\in \mathbb{R}^{m_b\times d_{inputs}}$. The input features will be varied based on the DOE, to account for burner mill biassing, fuel quality and the superheaters fouling thickness.
+
+The present work makes use of two types of machine learning models, namely a standard artificial neural network (ANN/MLP) and a mixture density designated model connected to a standard ANN (MDN). The following section will discuss the hyper parameter tuning and final selected model configuration. The programming language Python 3.7.8 and the \textit{Tensorflow} machine learning libraries were utilized in the present study.
 
 \subsection{Hyper-parameter tuning \& final model selection}\label{sec_hyper}
 Table \ref{tbl_tuning} highlights the hyper-parameter search spaces for both the MLP and MDN model. The MDN has an added parameter, namely the number of additional distributions that the MDN would need to fit to the output data. The hyper-parameter tuning of both the MLP and MDN models made use of 1000 epochs. This was deemed adequate to train/test the models for the various hyper-parameter search spaces and was utilized to reduce the computational effort/time.
@@ -511,10 +494,9 @@ MAE & 0.0282& 0.0263\\
 
 Based on the above analysis, the MDN model was selected as the best model to be used for the surrogate model implementation. The benefit of using the MDN surrogate model is the ability to provide not only the expected mean (most-probable) value of each output parameter, but also the associated standard deviation. Having the mean value of each of the furnace and heat exchanger heat loads together with its uncertainty in the form of a standard deviation, allows the uncertainty to be propagated through the entire integrated model. It is therefore possible to obtain the resultant mean values of the overall plant performance parameters together with their uncertainties emanating from the surrogate model prediction.
 
-\section{Results and discussion}\label{sec_results_diss}
-This section provides the results of the validation study of the integrated model, as well as an application case study that investigates the effects of fuel quality on the integrated boiler performance. 
 
-\subsection{Validation}\label{sec_result_1}
+
+\subsection{Validation of integrated model using experimental data}\label{sec_result_1}
 The results predicted using the surrogate model were validated for the 100\%, 80\% and 60\% MCR load cases. Measured data was made available for these load cases, which allow the mean and standard deviation to be determined.  The mean and standard deviation of each output can then be compared with the predicted mean and standard deviation obtained with the integrated model.\\
 
 In the current work the integrated model is applied in conjunction with the Monte Carlo method \cite{Thomopoulos2013}. Firstly, random sampling of the input variables to the integrated model are performed based on the mean and standard deviation predicted by the surrogate model.  Following this, simulations are run for each sample and the outputs are evaluated to determine the predicted mean and standard deviation of each overall plant parameter.\\
@@ -615,7 +597,7 @@ Figures \ref{fig_heat_load} - \ref{fig_attemp} provide comparative results of th
 Considering the steam generation and exit flowrates of Figure \ref{fig_steam_gen} (a-c), the integrated model can sufficiently capture the hydraulic response of the case study boiler for a wide range of loads. More uncertainty is associated with the integrated model, but this is deemed acceptable since the response overlaps with the measured data in all but one case. The attemperators of a utility scale boiler are an integral part of the control systems put in place to ensure safe operating conditions and minimal wear on the downstream components, namely the steam HP and LP steam turbines \cite{Kakac1991}. Figure  \ref{fig_attemp} (a-c) highlight the attemperator flowrates across a wide range of loads. The integrated model is shown to adequately resolve the flowrates with a slightly higher mean being predicted for the 80\% load case.\\
 
 It has been shown that the integrated model is able to resolve the thermal response based on the predictions of the MDN model for a wide range of loads with sufficient accuracy. The heat loads are within a 5\% tolerance of the measured mean values, while the steam generation rates exhibit a maximum difference of 7\%, which is seen in the 60\% MCR load case (refer to Figure \ref{fig_steam_gen} (c)). The attemperator flow rate results show the largest uncertainty/confidence band of all the results (Figure \ref{fig_attemp}), however these overlap with the measured values in all but one case. 
-\subsection{Application}
+\subsection{Off-design analysis using integrated model}
 This section demonstrates the application of the validated integrated model by investigating the impact of fuel quality on the overall plant performance. The fuel quality parameters that are varied are the energy content of the fuel ($HHV$), together with the ash ($Y_{ASH}$) and moisture ($Y_{H_{2}O}$) contents. Two case studies are considered to determine the impact of the parameters on the boiler efficiency, heat pick-up and thermal response. The input vectors for the two fuel cases are provided in Table \ref{tbl_inputs}. The inputs are the same as those of the 100\% load case except for the ash, moisture, and higher heating value of the respective fuels.\\
 
 As with the validation case studies of Section \ref{sec_result_1}, the Monte Carlo method was employed to ascertain the mean and standard deviation values predicted via the integrated model. The base case in Figure \ref{fig_fuel_results} (a-c) refers to 100\% load case of Figures \ref{fig_heat_load}-\ref{fig_attemp}. Figure \ref{fig_fuel_results}  (a) highlights the effects that poor quality fuel has on the heat load to the various heat exchangers, with a 20\% drop being observed on average. This can reasonably be expected since the energy content of the fuel is lower than that of the base case. To maintain 100\% load capabilities using the poor quality fuel would require an increase in the fuel flowrate, which would provide more energy content. However, the mill operational capacities are limited. The operational protocol for the 100\% load case makes use of 5 mills operating 30 of the 36 burners at full capacity, with a standby mill and burner arrangement placed in reserve to help mitigate operational risks, such as maintenance schedules. Using the the standby mill would allow the fuel flowrate to be increased by a maximum of 17\%. However, this would in turn decrease the operational integrity and increase the associated risks. This situation would therefore imply an unwanted load loss. When burning the high-ash content fuel the likelihood of ash deposition/fouling of the heat exchanger components also increases.\\
