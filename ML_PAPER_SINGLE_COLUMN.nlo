@@ -1,0 +1,15 @@
+\nomenclatureentry{C$CFD$@[{$CFD$}]\begingroup Computational Fluid Dynamics\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{A$u$@[{$u$}]\begingroup Directional velocity \nomunit{$m/s$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{A$p$@[{$p$}]\begingroup Pressure \nomunit{$Pa$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{A$E$@[{$E$}]\begingroup Total energy \nomunit{$J/kg$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{A$Y_k$@[{$Y_k$}]\begingroup Mass fraction of species $k$ \nomunit{$kg/kg$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{A$T_g$@[{$T_g$}]\begingroup Gas temperature \nomunit{$K$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{B$\lambda$@[{$\lambda$}]\begingroup Thermal conductivity \nomunit{$W/mK$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{B$\mu$@[{$\mu$}]\begingroup Viscosity \nomunit{$Pa.s$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{A$S$@[{$S$}]\begingroup Mass source term \nomunit{$kg/m^3$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{A$S_m$@[{$S_m$}]\begingroup Momentum source term \nomunit{$N/m^3$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{A$S_h$@[{$S_h$}]\begingroup Energy source term\nomunit{$W/m^3$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{A$S_k$@[{$S_k$}]\begingroup Species source term \nomunit{$kg/m^3$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{A$J_k$@[{$J_k$}]\begingroup Diffusion flux of species $k$ \nomunit{$kg/m^3$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{B$\rho$@[{$\rho$}]\begingroup Gas density \nomunit{$kg/m^3$}\nomeqref {0}|nompageref}{2}
+\nomenclatureentry{B$\rho_{eff}$@[{$\rho_{eff}$}]\begingroup Effective density \nomunit{$kg/m^3$}\nomeqref {0}|nompageref}{2}

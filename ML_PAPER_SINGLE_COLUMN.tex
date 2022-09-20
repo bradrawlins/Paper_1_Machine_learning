@@ -17,6 +17,7 @@
 %% Template article for cas-sc documentclass for 
 %% single column output.
 
+
 \documentclass[a4paper,fleqn]{cas-sc}
 % Use to make nonmenclature
 \usepackage{framed} % Framing content
@@ -27,12 +28,16 @@
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage[numbers]{natbib}
-%\makenomenclature
 
+\makenomenclature
+
+\renewcommand{\nomgroup}[1]{%
+\ifthenelse{\equal{#1}{A}}{\item[\textbf{Variables}]}{%
+\ifthenelse{\equal{#1}{C}}{\item[\textbf{Abbreviations}]}{%
+\ifthenelse{\equal{#1}{B}}{\item[\textbf{Greek variables}]}{}}}
+}
 \setlength{\nomitemsep}{-\parskip} % Baseline skip between items
-
 \renewcommand*\nompreamble{\begin{multicols}{2}}
-
 \renewcommand*\nompostamble{\end{multicols}}
 % If the frontmatter runs over more than one page
 % use the longmktitle option.
@@ -48,6 +53,9 @@
 \tsc{WGM}
 \tsc{QE}
 %%%
+
+\newcommand{\nomunit}[1]{%
+   \renewcommand{\nomentryend}{\unskip\dotfill #1}}
 
 % Uncomment and use as if needed
 \newtheorem{theorem}{Algorithm}
@@ -65,33 +73,6 @@
 \shorttitle{}    
 
 \shortauthors{B.T. Rawlins et el.}  
-%
-%
-%\begin{table*}[!t]   
-%
-%\begin{framed}
-%
-%\nomenclature{$abbreviation$}{explanation for the abbreviation}
-%\nomenclature{$CFD$}{Computational Fluid Dynamics}
-%\nomenclature{$u,\,\,\,[m/s]$}{Directional velocity}
-%\nomenclature{$p,\,\,\,[Pa]$}{Pressure}
-%\nomenclature{$E,\,\,\,[J/kg]$}{Total energy}
-%\nomenclature{$Y_k,\,\,\,[kg/kg]$}{Mass fraction of species $k$}
-%\nomenclature{$T_g,\,\,\,[K]$}{Gas temperature}
-%\nomenclature{$\lambda,\,\,\,[W/mK]$}{Thermal conductivity}
-%\nomenclature{$\mu,\,\,\,[Pa.s]$}{Viscosity}
-%\nomenclature{$S,\,\,\,[kg/m^3]$}{Mass source term}
-%\nomenclature{$S_m,\,\,\,[N/m^3]$}{Momentum source term}
-%\nomenclature{$S_h,\,\,\,[W/m^3]$}{Energy source term}
-%\nomenclature{$S_k,\,\,\,[kg/m^3]$}{Species source term}
-%\nomenclature{$J_k,\,\,\,[kg/m^3]$}{Diffusion flux of species $k$}
-%\nomenclature{$\rho,\,\,\,[kg/m^3]$}{Gas density}
-%\nomenclature{$\rho_{eff},\,\,\,[kg/m^3]$}{Effective density}
-%\printnomenclature
-%
-%\end{framed}
-%
-%\end{table*}
 
 % Main title of the paper
 \title [mode = title]{An integrated data-driven surrogate model and thermofluid network-based model of a 620 $MW_e$ utility-scale boiler using a fully connected mixture density network}  
@@ -199,14 +180,34 @@ An integrated data-driven surrogate model and one-dimensional (1D) process model
 Mixture density network \sep Data-driven surrogate modelling \sep Computational fluid dynamics \sep
 \end{keywords}
 
+
+
 \maketitle
 % Main text
 \section{Introduction}\label{intro}
-A significant portion of the developing world still rely on conventional coal fired power plants to meet local energy demands \cite{Rousseau2020}. However, increased penetration of renewable energy sources onto electrical grids will force conventional base-load thermal power plants to operate on a mid-merit basis. Mid-merit operation requires improved flexibility with faster load following characteristics and start-up rates \cite{Safdarnejad2019}, as well as running at off-design and low load conditions for extended periods. This can result in an increase in thermal stresses on key operational components \cite{Modlinski2019}. Therefore, it is important to be able to predict the integrated thermofluid response of boilers and the impact on components at off-design conditions.\\
+A significant portion of the developing world still rely on conventional coal fired power plants to meet local energy demands \cite{Rousseau2020}. However, increased penetration of renewable energy sources onto electrical grids will force conventional base-load thermal power plants to operate on a mid-merit basis. Mid-merit operation requires improved flexibility with faster load following characteristics and start-up rates \cite{Safdarnejad2019}, as well as running at off-design and low load conditions for extended periods. This can result in an increase in thermal stresses on key operational components \cite{Modlinski2019}. Therefore, it is important to be able to predict the integrated thermofluid response of boilers and the impact on components at off-design conditions. Computational fluid dynamic (CFD) models are typically utilised in modelling the fire-side interactions of pulverised coal fired boilers \cite{}, since the modelling approach can adequately resolve the complex fluid flow and heat transfer phenomena, including the mechanical and thermal interactions between the flue-gas and the particles. CFD simulations are predominately used for detailed exploration of the flue-gas side flow and heat transfer phenomena of boilers to investigate pollutant production \cite{Liu2021}, perform design optimization \cite{dugum2019, Gu2020} and study particle effects \cite{Laubscher2020}. For utility-scale boilers the associated computational burden practically limits the use of CFD to steady-state analysis of specific areas of interest, such as the furnace and radiant heat exchangers, and does not allow for integrated whole-boiler modelling in other words modelling the water- and flue gas-sides in a single model.\\
+\begin{table*}[!t]   
+\begin{framed}
+\nomenclature[C]{$CFD$}{Computational Fluid Dynamics}
+\nomenclature[A]{$u$}{Directional velocity \nomunit{$m/s$}}
+\nomenclature[A]{$p$}{Pressure \nomunit{$Pa$}}
+\nomenclature[A]{$E$}{Total energy \nomunit{$J/kg$}}
+\nomenclature[A]{$Y_k$}{Mass fraction of species $k$ \nomunit{$kg/kg$}}
+\nomenclature[A]{$T_g$}{Gas temperature \nomunit{$K$}}
+\nomenclature[B]{$\lambda$}{Thermal conductivity \nomunit{$W/mK$}}
+\nomenclature[B]{$\mu$}{Viscosity \nomunit{$Pa.s$}}
+\nomenclature[A]{$S$}{Mass source term \nomunit{$kg/m^3$}}
+\nomenclature[A]{$S_m$}{Momentum source term \nomunit{$N/m^3$}}
+\nomenclature[A]{$S_h$}{Energy source term\nomunit{$W/m^3$}}
+\nomenclature[A]{$S_k$}{Species source term \nomunit{$kg/m^3$}}
+\nomenclature[A]{$J_k$}{Diffusion flux of species $k$ \nomunit{$kg/m^3$}}
+\nomenclature[B]{$\rho$}{Gas density \nomunit{$kg/m^3$}}
+\nomenclature[B]{$\rho_{eff}$}{Effective density \nomunit{$kg/m^3$}}
+\printnomenclature
+\end{framed}
+\end{table*}
 
-Computational fluid dynamics (CFD) is well suited for the analysis of solid fuel combustion systems. It can adequately resolve the complex fluid flow and heat transfer phenomena, including the mechanical and thermal interaction between the flue-gas and the particles. CFD simulations are predominately used for detailed exploration of the flue-gas side flow and heat transfer phenomena of boilers to investigate pollutant production \cite{Liu2021}, do design optimization \cite{dugum2019, Gu2020} and study particle effects \cite{Laubscher2020}. For utility-scale boilers the associated computational burden practically limits the use of CFD to steady-state analysis of specific areas of interest, such as the furnace and radiant heat exchangers, and does not allow for integrated whole-boiler modelling in other words modelling the water- and flue gas-sides in a single model\\
-
-Investigating the integrated whole-boiler thermofluid response requires the use of 1-D process models to capture the response of the steam/water cycle integrated with suitable models of the flue-gas side in a co-simulation approach. Rousseau and Laubscher \cite{Rousseau2020} used this approach to investigate the effects of high ash fuel on the heat absorption of radiant superheaters (SHs). As expected, this requires significant computational resources on the CFD side to allow for the integration of the two different models, and is therefore not a feasible approach for extensive studies of flexible operation. This has led to the development of reduced order multiphase modelling approaches \cite{Rawlins2021, INFUB2022}, which proved to reduce the computational effort by approximately 25\% for a full-scale utility boiler.  However, this is still not enough to allow direct integration of CFD into whole-boiler system analysis tools which cannot be used to quickly analyse different operating cases. \\
+Investigating the integrated whole-boiler thermofluid response requires the use of 1-D process models to capture the response of the steam/water cycle integrated with suitable models of the flue-gas side in a co-simulation approach. Rousseau and Laubscher \cite{Rousseau2020} used this approach, utilising a 1-D process model of the water-side and CFD model of the fire-side, to investigate the effects high ash fuel has on the heat absorption of the radiant superheaters (SHs). As expected, this requires significant computational resources on the CFD side to allow for the integration of the two different models, and is therefore not a feasible approach for extensive studies of flexible operation. This has led to the development of reduced order multiphase modelling approaches \cite{Rawlins2021, INFUB2022}, which proved to reduce the computational effort by approximately 25\% for a full-scale utility boiler.  However, this is still not enough to allow direct integration of CFD into whole-boiler system analysis tools which cannot be used to quickly analyse different operating cases.\\
 
 Data-driven surrogate models can potentially be used to reduce the computational burden introduced via the CFD model. Data driven surrogate models form part of statistical regression models, where the predicted objective function is fitted using true evaluations of the objective function \cite{Wheeler2019}. Artificial neural networks (ANNs) are one of the most popular machine learning algorithms/techniques to facilitate the learning process. Other procedures include Kriging models \cite{Fei2015}, gradient boosting models \cite{Si2020,Qin2022} and support vector machines \cite{Lv2017}.\\
 
@@ -214,36 +215,40 @@ The works of Singh and Abbassi \cite{Singh2018} incorporated the use of an ANN a
 
 Acknowledging and predicting the impact of uncertainties in conventional coal fired power plants are paramount for the safe operation and maintenance of these plants \cite{Madejski_18}. The uncertainties associated with the operational parameters of thermal power plants, such as fuel quality, combustion processes, and  burner biasing, can lead to significant changes in the thermofluid response \cite{Sarkar2015}. The design space load uncertainty of a combined cooling, heating and power system was investigated by Lu et al \cite{Lu2021}. Using a multi-objective optimization model, factors such as pollutant emission, economy and the system reliability were incorporated to improve the operational performance. The model illustrated its future use for designers in providing the best configuration scheme under system load uncertainties.\\ 
 
-It is noted that CFD cannot meet the near real time requirement for on line performance monitoring, due to the complex solution mechanisms and time-consuming calculations. However, it is a feasible alternative to generate training and testing datasets for ANN implementation, since using CFD does not interfere with normal operation of the plant. In addition to this a wider range of appropriate operating conditions can be simulated.\\
- 
-In the present work, an integrated data-driven surrogate model and 1-D process model is proposed to investigate the thermal response of a 620 $MW_e$ utility scale boiler. An existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the 620 $MW_e$ utility scale boiler under investigation was used to generate a simulation dataset for 180 different operating states. To determine the required complexity of the data-driven surrogate model, two different ANN frameworks were considered, namely a standard multi-layer perception (MLP) and a mixture density network MDN, where the latter allows the introduction of uncertainty into the model predictions. A hyper-parameter search was conducted to establish the best performing model, with the lowest mean absolute error (MAE) being the essential criterion. Validation of the integrated surrogate and process model was performed for maximum continuous ratings (MCR) of 100\%, 80\% and 60\% load for which measured data is available. Following this, the validated model was used to investigate the impact of poor fuel quality at 100\% MCR, where the ash and moisture contents were varied for two separate cases.
+It is noted that CFD cannot meet the near real time requirement for on-line performance monitoring, due to the complex solution mechanisms and time-consuming calculations. However, it is a feasible alternative to generate training and testing datasets for ANN implementation, since using CFD does not interfere with normal operation of the plant. In addition, a wider range of appropriate operating conditions can be simulated. The works of Shi et al. \cite{Shi2019} developed an optimisation method, which employed an ANN to predict the thermal efficiency and emission properties, for a 660 [$MW_e$] ultra-supercritical coal fired power plant. Training and testing data was obtained from historical operating data, as well as using the solution data of a 100 unique CFD simulation cases covering a wide range of operating cases. The additional CFD simulation data strengthened the generalization of the ANN model, mainly because the CFD simulation provided different kinds of operating condition making the model adapt to different working conditions. Good agreement between the predictions and measured data was realised with a maximum mean error of 0.04\%. Researchers Dal Secco et al. \cite{DalSecco2015}, conducted a comparable study to identify boiler operational configurations to minimise the $NO_x$ emissions in a 600 [$MW$] tangentially fired pulverised coal boiler. The study made use of a Genetic Algorithm (GA) to correlate the operating parameters to the output data produced from a large CFD simulation dataset. The GA helped identify the optimal firing configurations from the CFD dataset that establish a good compromise between low $NO_x$ emissions and the reduction of fire-side corrosion.\\
+
+In the present work, a modelling methodology is employed that incorporates the use of a CFD generated solution database in the training and testing of data-driven surrogate model that captures the fire-side of a 620 [$MW_e$] utility scale boiler. Subsequently, the data-driven surrogate model is integrated with a 1-D process model of the water-/steam-side. This integrated model is proposed to investigate the thermal response of the 620 [$MW_e$] utility scale boiler under investigation. An existing validated steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} was used to generate a CFD simulation dataset for 180 different operating states. To determine the required complexity of the data-driven surrogate model, two different ANN frameworks were considered, namely a standard multi-layer perception (MLP) and a mixture density network MDN, where the latter allows the introduction of uncertainty into the model predictions. A hyper-parameter search was conducted to establish the best performing model, with the lowest mean absolute error (MAE) being the essential criterion. Validation of the integrated model was performed for maximum continuous ratings (MCR) of 100\%, 80\% and 60\% load for which measured data is available. Following this, the validated model was used to investigate the impact of poor fuel quality at 100\% MCR, where the ash and moisture contents were varied for two separate cases.
 \newpage
 \section{Materials and methods}
-This section provides an overview of the case study boiler layout as well as a description of the integrated model.
+The following section provides an overview of the case study boiler, the CFD modelling methodology utilised for the generation of testing and training data, the 1-D process model and a description of the integrated model.
 \subsection{Case study boiler}
-The overall layout of the case study boiler is shown schematically in Figure \ref{fig_case_layout} \cite{Rousseau2020}.
-
+The overall layout of the case study boiler is shown schematically in Figure \ref{fig_case_layout} \cite{Rousseau2020}. The boiler is defined as a two-pass sub-critical boiler, which is designed to deliver steam at a pressure of 16 [$MPa$] and an exit temperature of 535 [$^\circ C$] at full load. 
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=0.5]{CASE_STUDY_BOILER}
 	  \caption{Case study boiler layout \citep{Rousseau2020}.}\label{fig_case_layout}
 \end{figure}
 
-The boiler forms part of a 620 MWe power plant and consists of a furnace with water wall evaporator (EV), primary superheater (SH1), platen superheater (SH2) and final superheater (SH3), as well as a primary reheater (RH1), secondary reheater (RH2) and economizer (EC).  The furnace height, width and depth are 64 m, 24 m, and 13.7 m respectively.  The combustion chamber is fitted with three rows of six swirl burners each on the front and rear walls.  Primary air is injected via the inner annulus of the burners, and secondary air via the outer annulus (refer to Figure \ref{fig_cfd_geom_bc}).
+The boiler forms part of a 620 [$MW_e$] power plant and consists of a furnace with water wall evaporator (EV), primary superheater (SH1), platen superheater (SH2) and final superheater (SH3), as well as a primary reheater (RH1), secondary reheater (RH2) and economizer (EC). The furnace height, width and depth are 64.0 [$m$], 24.0 [$m$], and 13.7 [$m$] respectively. The boiler furnace is fed by six mills, each supplying a pulverised fuel and primary air (PA) mixture to a burner row consisting of six opposing wall-mounted swirl burners. The fuel/PA mixture is injected through the inner annulus of the burner while the SA air is fed through the outer annulus as as indicated in Figure \ref{fig_cfd_geom_bc}.
 
 \subsection{CFD model}
-The current study makes use of an existing steady-state multiphase CFD model \cite{Rawlins2021, INFUB2022} of the boiler under investigation using the commercial CFD software package ANSYS Fluent\textsuperscript{\textregistered} 2019 R3 to resolve the fluid flow, heat transfer and combustion processes. This section provides a short overview of the model for the sake of completeness.\\
+The current study makes use of an existing steady-state multiphase CFD model \cite{INFUB2022}. The CFD model utilises an Eulerian-Eulerian approach to capture the solid and gaseous phase interactions. The model was implemented in the commercial CFD software package ANSYS Fluent\textsuperscript{\textregistered} v19.5 to resolve the fluid flow, heat transfer and combustion processes. The primary features of the coming
 
-The modelled boiler consisted of a furnace with a depth of 13.77 ($m$), a width of 24.01 ($m$) and a maximum height of 64.00 ($m$). The CFD computational domain was created for half of the furnace width and has a symmetry boundary condition loacted at 12.01 ($m$). This was done to reduce the total cell count of the numerical mesh. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and defines the important boundary conditions. The general conservation equations of mass, momentum, energy, and species were solved using a Eulerian approach. These are provided in Equation (\ref{eqn_cfd}).
+
+The model has been validated and verified for various operational load cases as demonstrated by Rawlins et al. \cite{Rawlins2021, INFUB2022}.\\
+
+The CFD computational domain was created for half of the furnace width and has a symmetry boundary condition located at 12.01 [$m$]. This was done to reduce the total cell count of the numerical mesh. Figure \ref{fig_cfd_geom_bc} highlights the computational domain and indicates the relevant CFD boundary types/planes (i.e. inlet, outlet, walls and symmetry).\\
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=0.45]{CFD_GEOMETRY}
-	  \caption{CFD model geometry and boundary condition descriptions.}\label{fig_cfd_geom_bc}
+	  \caption{Overview of CFD model geometry and the computational domain.}\label{fig_cfd_geom_bc}
 \end{figure}
+
+The general conservation equations of mass, momentum, energy, and species were solved using an Eulerian approach. These are provided in Equation (\ref{eqn_cfd}).
+
 \begin{flalign} \label{eqn_cfd}
 &\frac{\partial}{\partial x_{i}}(\rho \bar{u}_{i})=S \nonumber &&\\
-&\frac{\partial}{\partial x_{i}}(\rho_{eff} u_{i}u_{j})+\frac{\partial \overline{p}}{\partial x_{j}}= \nonumber&&\\
-&\frac{\partial}{\partial x_{i}}\left[\mu\left\{\frac{\partial u_{j}}{\partial x_{i}}+\frac{\partial u_{i}}{\partial x_{j}}-\frac{2}{3}\delta_{ij}\frac{\partial u_{i}}{\partial x_{i}}\right\}\right]+\frac{\partial}{\partial x_{i}}(-\rho\overline{u_{i}^{'}u_{j}^{'}})+S_m \nonumber \nonumber &&\\
+&\frac{\partial}{\partial x_{i}}(\rho_{eff} u_{i}u_{j})+\frac{\partial \overline{p}}{\partial x_{j}} = \frac{\partial}{\partial x_{i}}\left[\mu\left\{\frac{\partial u_{j}}{\partial x_{i}}+\frac{\partial u_{i}}{\partial x_{j}}-\frac{2}{3}\delta_{ij}\frac{\partial u_{i}}{\partial x_{i}}\right\}\right]+\frac{\partial}{\partial x_{i}}(-\rho\overline{u_{i}^{'}u_{j}^{'}})+S_m \nonumber &&\\
 &\frac{\partial }{\partial x_{i}} (u_{i}[\rho E+p])=\frac{\partial }{\partial x_{j}}\left[\lambda\frac{\partial T_{g}}{\partial x_{j}}\right] +S_{h} &&\\
 &\frac{\partial}{\partial x_{i}}(\rho u_{j}Y_{k})=-\frac{\partial}{\partial x_{j}}(\vec{J_{k}})+ \sum_r R_{j,r} + S_{k} \nonumber && 
 \end{flalign}
@@ -270,9 +275,55 @@ Eddy dissipation model - \cite{Ansys} & $R_{k,r,P} =\vartheta_{k,r}M_{w,k}AB\rho
 \end{tabular*}
 \end{table}
 
+A numerical mesh consisting
+of approximately 6 million cells was used for the CFD simulations
+of this current study. To ensure that the results are grid size
+independent, simulations were also performed for mesh sizes of
+3.5 million and 10 million cells during the validation study, discusses
+in Sec. 4.1. To ensure numerical stability during simulation,
+the aspect ratio and mesh orthogonality quality were kept below 20
+and above 0.2, respectively.
+The CFD simulations were performed using ANSYS FLUENT v19.5®
+pressure-based solver. The pressure–momentum coupling utilized
+the SIMPLE method. Second-order upwinding was used to discretize
+the momentum, energy, and species equations, whereas
+PRESTO! was used to discretize the pressure equation. The scalar
+field equations used a second-order upwind scheme.
+
 The simulations were solved using the SIMPLE pressure–velocity coupling scheme. The pressure term was discretized using the PRESTO! scheme. Momentum, species, and energy equations were discretized using the second order upwind scheme and the turbulent kinetic energy and dissipation rate using the first-order upwind scheme. The numerical mesh was generated using quadrilateral elements consisting of approximately 6 million cells.  The convergence criteria for the simulation model were set to $1\times10^{-3}$ for the continuity equation, $1\times10^{-4}$ for the velocity equations, $1\times10^{-6}$ for the remaining transport equations, and $1\times10^{-4}$ for monitored key parameters. Convergence criteria was enforced for all the various simulation runs.
 
 \subsection{Process model}
+
+Process Simulation Model. A 1D discretized model of the
+furnace evaporator, platen SH, final SH, and subsequent downstream
+heat exchangers was developed using Flownex SE® 2021.
+The data transfer between the two models makes use of a
+one-way approach, where the CFD simulation data are transferred
+to the Flownex process model when convergence of each case is
+achieved, a further explanation of the coupling interface is given
+in Sec. 3.1. The model simulates the internal convection heat transfer
+inside the tubes and the conduction through the tube walls. The
+model is able to simulate the attemperation flows and momentum
+transport through the steam/water circuit. The heat exchangers
+were modeled using a homogeneous two-phase mixture approach,
+which assumes that the fluid properties, phase velocities, and temperatures
+are uniform per cross-sectional area. The homogeneous
+mixture fraction and mixture density are defined in Eqs. (18) and
+
+
+Figure 4 illustrates the heat-exchanger component process model.
+This component is used for the heat exchangers downstream of SH3
+(Fig. 3). The component model accounts for the radiative (gas and
+direct), convective, and conduction heat transfer mechanisms to
+and from the flue gas-side and steam-side control volumes. The
+total heat transferred to the water-side control volume can be
+written as the sum of the absorbed direct radiation and the combined
+convective and gas radiative heat transfer (i.e.,
+The direct radiative interactions are incorporated in each heat exchanger. It shows
+that the portion of direct radiation from the preceding heat exchanger
+that is not absorbed is joined by the bypass radiation () of the
+flue-gas control volume which together make up the direct radiation
+passed on to the downstream components.
 
 \subsection{Integrated model}
 The validation and the subsequent case-studies presented here, make use of an integrated surrogate and network based 1D process model. The process model is used to capture the thermodynamic response of the water/steam side of the utility boiler under investigation, with the developed data-driven surrogate model providing predictions of the gas-side thermal characteristics (i.e. combustion product species, temperature and incident radiation flux) and heat-exchanger heat loads to the EV, SH2 and SH3 walls.\\
@@ -289,6 +340,11 @@ In the current work a C\# script is used to access the Python application progra
 The boiler can be split into three sections namely, the furnace consisting of EV waterwalls, the radiative pass consisting of SH2 and SH3, and the convective pass consisting of RH2, SH1, RH1 and the EC. The furnace heat load predictions to the EV walls determine the evaporation rate. The high pressure (HP) steam outlet flow rate is calculated as the sum of the attemperation flow rates (ATT1 and ATT2) and the evaporation flow rate. The attemperators are used to control the steam temperature to ensure an exit temperature of $808K$ at both the HP outlet and RH outlet. In addition to the furnace heat loads the surrogate model predicts the SH2 and SH3 heat loads. Lastly the surrogate model is able to predict the flue-gas conditions at the inlet to the convective pass (i.e. RH2). The EV, SH2 and SH3 walls are each represented by a single lumped parameter pipe flow component, interconnected with nodes that introduce the attemperation flows to the water/steam side. The convective pass components are modelled using an in-house heat exchanger model that accounts for the radiative (gas and direct), convective and conduction heat transfer mechanisms to and from the gas-side and steam-side control volumes, as well as between the up- and downstream heat exchangers on the gas side.
 
 The goal of the surrogate model is to predict the heat load distributions to the furnace water walls (EV), the platen superheater (SH2) tubes, and the final superheater (SH3) tubes, as well as the combustion characteristics and flue-gas temperatures at the exit, using the high level inputs for the ranges provided in Table \ref{tbl_doe}.\\
+
+\begin{figure}
+\centerline{\includegraphics[scale=0.5]{WORK_FLOW}}
+\caption{Summary of the model development process from data generation and collection to the final integrated model}
+\end{figure}
 
 The total CFD solution data matrix size will consist of $180\times\overline{Y}=243000$ data points. Using the total solution data matrix for training and testing would typically result in a slower convergence \cite{goodfellow}. However, the use of subset data packages, referred to as batches or mini-batches, allows for a faster convergence. The batch size is a term used in machine learning that specifies a number of training/testing examples utilized in one iteration \cite{Wheeler2019}. Thus, for a data batch size, $m_b$, the output tensor for the MLP model will be $\hat{Y}\in \mathbb{R}^{m_b\times 27}$ since $d_{targets}=27$. However, the output data for the MDN model will consist of three parts, namely; the mixing coefficients tensor of shape  $\overline{\pi}\in \mathbb{R}^{m_b \times K}$, the output standard deviation tensor of shape $\overline{\sigma}\in \mathbb{R}^{K\times m_b\times 27}$, and the predicted means of tensor shape $\overline{\mu}\in \mathbb{R}^{K\times m_b\times 27}$, where $K$ is the number of distributions. The input data fed into both the MLP and MDN will have shape $\overline{X}\in \mathbb{R}^{m_b\times d_{inputs}}$. The input features will be varied based on the DOE, to account for burner mill biassing, fuel quality and the superheaters fouling thickness.
 
