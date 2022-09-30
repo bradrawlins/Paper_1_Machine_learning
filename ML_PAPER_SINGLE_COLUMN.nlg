@@ -7,8 +7,8 @@ Scanning style file C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/makeindex/n
 ** Input style error (file = C:/Users/RWLBRA001/AppData/Local/Programs/MiKTeX/makeindex/nomencl/nomencl.ist, line = 38):
    -- Unknown specifier lethead_flag.
 ....done (12 attributes redefined, 3 ignored).
-Scanning input file ML_PAPER_SINGLE_COLUMN.nlo....done (15 entries accepted, 0 rejected).
-Sorting entries....done (72 comparisons).
-Generating output file ML_PAPER_SINGLE_COLUMN.nls....done (22 lines written, 0 warnings).
+Scanning input file ML_PAPER_SINGLE_COLUMN.nlo....done (69 entries accepted, 0 rejected).
+Sorting entries....done (440 comparisons).
+Generating output file ML_PAPER_SINGLE_COLUMN.nls....done (76 lines written, 0 warnings).
 Output written in ML_PAPER_SINGLE_COLUMN.nls.
 Transcript written in ML_PAPER_SINGLE_COLUMN.nlg.

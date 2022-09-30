@@ -148,16 +148,76 @@ C.~Lu, J.~Wang, R.~Yan,
   {\path{doi:10.1016/j.est.2021.102819}}.
 \newline\urlprefix\url{https://doi.org/10.1016/j.est.2021.102819}
 
+\bibitem{Shi2019}
+Y.~Shi, W.~Zhong, X.~Chen, A.~B. Yu, J.~Li, {Combustion optimization of ultra
+  supercritical boiler based on artificial intelligence}, Energy 170 (2019)
+  804--817.
+\newblock \href {http://dx.doi.org/10.1016/j.energy.2018.12.172}
+  {\path{doi:10.1016/j.energy.2018.12.172}}.
+
+\bibitem{DalSecco2015}
+S.~{Dal Secco}, O.~Juan, M.~Louis-Louisy, J.~Y. Lucas, P.~Plion, L.~Porcheron,
+  \href{http://dx.doi.org/10.1016/j.fuel.2015.06.021}{{Using a genetic
+  algorithm and CFD to identify low NOx configurations in an industrial
+  boiler}}, Fuel 158~(x) (2015) 672--683.
+\newblock \href {http://dx.doi.org/10.1016/j.fuel.2015.06.021}
+  {\path{doi:10.1016/j.fuel.2015.06.021}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1016/j.fuel.2015.06.021}
+
+\bibitem{Versteeg2007}
+H.~Versteeg, W.~Malalasekera, {Introduction to Computational Fluid Dynamics,
+  The finite volume method}, 2nd Edition, Pearson Prentice Hall, 2007.
+\newblock \href {http://dx.doi.org/10.1002/9781119369189}
+  {\path{doi:10.1002/9781119369189}}.
+
+\bibitem{Modlinski2010}
+N.~Modlinski, {Computational modeling of a utility boiler tangentially-fired
+  furnace retrofitted with swirl burners}, Fuel Processing Technology 91~(11)
+  (2010) 1601--1608.
+\newblock \href {http://dx.doi.org/10.1016/j.fuproc.2010.06.008}
+  {\path{doi:10.1016/j.fuproc.2010.06.008}}.
+
+\bibitem{Lockwood1986}
+F.~Lockwood, S.~Rizvi, N.~Shah, {Comparative predictive experience of coal
+  firing}, Proceedings of the Institution of Mechanical Engineers 200 (1986)
+  79--87.
+\newblock \href {http://dx.doi.org/10.1243/PIME} {\path{doi:10.1243/PIME}}.
+
+\bibitem{Yin2015}
+C.~Yin, \href{http://dx.doi.org/10.1016/j.apenergy.2015.01.142}{{On gas and
+  particle radiation in pulverized fuel combustion furnaces}}, Applied Energy
+  157 (2015) 554--561.
+\newblock \href {http://dx.doi.org/10.1016/j.apenergy.2015.01.142}
+  {\path{doi:10.1016/j.apenergy.2015.01.142}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1016/j.apenergy.2015.01.142}
+
+\bibitem{Sheng2004}
+C.~Sheng, B.~Moghtaderi, R.~Gupta, T.~F. Wall, {A computational fluid dynamics
+  based study of the combustion characteristics of coal blends in pulverised
+  coal-fired furnace}, Fuel 83~(11-12) (2004) 1543--1552.
+\newblock \href {http://dx.doi.org/10.1016/j.fuel.2004.02.011}
+  {\path{doi:10.1016/j.fuel.2004.02.011}}.
+
+\bibitem{Baum1971}
+M.~Baum, P.~Street, {Predicting the combustion behaviour of coal particles},
+  Combustion science and Technolodgy 3~(43) (1971) 231.
+
+\bibitem{Ansys}
+ANSYS, {ANSYS Fluent Theory Guide}, 20th Edition, Ansys Inc., 2021.
+
+\bibitem{Rawlins2022}
+B.~Rawlins, R.~Laubscher, P.~Rousseau,
+  \href{https://doi.org/10.1115/1.4054010}{{Application of computational fluid
+  dynamics and process modelling to investigate low-load operation of a
+  subcritical utility-scale boiler.}}, ASME Journal of Thermal Science and
+  Engineering Applications (2022) 1--29\href
+  {http://arxiv.org/abs/https://asmedigitalcollection.asme.org/thermalscienceapplication/article-pdf/doi/10.1115/1.4054010/6856445/tsea-21-1636.pdf}
+  {\path{arXiv:https://asmedigitalcollection.asme.org/thermalscienceapplication/article-pdf/doi/10.1115/1.4054010/6856445/tsea-21-1636.pdf}},
+  \href {http://dx.doi.org/10.1115/1.4054010} {\path{doi:10.1115/1.4054010}}.
+\newline\urlprefix\url{https://doi.org/10.1115/1.4054010}
+
 \bibitem{flownex}
 MTech, {Flownex Theory Guide}, MTech inc., 2021.
-
-\bibitem{Wen2022}
-D.~Wen, Y.~Pan, X.~Chen, M.~Aziz, Q.~Zhou, N.~Li, {Analysis and prediction of
-  thermal stress distribution on the membrane wall in the arch-fired boiler
-  based on machine learning technology}, Thermal Science and Engineering
-  Progress 28 (2022) 101137.
-\newblock \href {http://dx.doi.org/10.1016/j.tsep.2021.101137}
-  {\path{doi:10.1016/j.tsep.2021.101137}}.
 
 \bibitem{Rasmussen2006}
 C.~Rasmussen, C.~Williams, {Gaussian Processes for Machine Learning}, 1st
@@ -187,56 +247,22 @@ C.~Bishop, {Mixture Density Networks}, Tech. rep., Aston University (1994).
 \newblock \href {http://dx.doi.org/10.1007/978-3-322-81570-5_8}
   {\path{doi:10.1007/978-3-322-81570-5_8}}.
 
-\bibitem{Versteeg2007}
-H.~Versteeg, W.~Malalasekera, {Introduction to Computational Fluid Dynamics,
-  The finite volume method}, 2nd Edition, Pearson Prentice Hall, 2007.
-\newblock \href {http://dx.doi.org/10.1002/9781119369189}
-  {\path{doi:10.1002/9781119369189}}.
+\bibitem{Ganapathy2014}
+V.~Ganapathy, {Steam generators and waste heat boilers: For process and plant
+  engineers}, 2014.
+\newblock \href {http://dx.doi.org/10.1201/b17519} {\path{doi:10.1201/b17519}}.
 
-\bibitem{Modlinski2010}
-N.~Modlinski, {Computational modeling of a utility boiler tangentially-fired
-  furnace retrofitted with swirl burners}, Fuel Processing Technology 91~(11)
-  (2010) 1601--1608.
-\newblock \href {http://dx.doi.org/10.1016/j.fuproc.2010.06.008}
-  {\path{doi:10.1016/j.fuproc.2010.06.008}}.
-
-\bibitem{Rawlins2022}
-B.~Rawlins, R.~Laubscher, P.~Rousseau,
-  \href{https://doi.org/10.1115/1.4054010}{{Application of computational fluid
-  dynamics and process modelling to investigate low-load operation of a
-  subcritical utility-scale boiler.}}, ASME Journal of Thermal Science and
-  Engineering Applications (2022) 1--29\href
-  {http://arxiv.org/abs/https://asmedigitalcollection.asme.org/thermalscienceapplication/article-pdf/doi/10.1115/1.4054010/6856445/tsea-21-1636.pdf}
-  {\path{arXiv:https://asmedigitalcollection.asme.org/thermalscienceapplication/article-pdf/doi/10.1115/1.4054010/6856445/tsea-21-1636.pdf}},
-  \href {http://dx.doi.org/10.1115/1.4054010} {\path{doi:10.1115/1.4054010}}.
-\newline\urlprefix\url{https://doi.org/10.1115/1.4054010}
-
-\bibitem{Sheng2004}
-C.~Sheng, B.~Moghtaderi, R.~Gupta, T.~F. Wall, {A computational fluid dynamics
-  based study of the combustion characteristics of coal blends in pulverised
-  coal-fired furnace}, Fuel 83~(11-12) (2004) 1543--1552.
-\newblock \href {http://dx.doi.org/10.1016/j.fuel.2004.02.011}
-  {\path{doi:10.1016/j.fuel.2004.02.011}}.
-
-\bibitem{Baum1971}
-M.~Baum, P.~Street, {Predicting the combustion behaviour of coal particles},
-  Combustion science and Technolodgy 3~(43) (1971) 231.
-
-\bibitem{Ansys}
-ANSYS, {ANSYS Fluent Theory Guide}, 20th Edition, Ansys Inc., 2021.
+\bibitem{Cheen2017}
+D.~Chen, J.~Chen (Eds.), {Monte-Carlo Simulation-Based Statistical Modeling},
+  Springer, Singapore, 2017.
+\newblock \href {http://dx.doi.org/10.1007/978-981-10-3307-0}
+  {\path{doi:10.1007/978-981-10-3307-0}}.
 
 \bibitem{Thomopoulos2013}
 N.~T. Thomopoulos, {Essentials of Monte Carlo simulation: Statistical methods
   for building simulation models}, Vol. 9781461460220, 2013.
 \newblock \href {http://dx.doi.org/10.1007/978-1-4614-6022-0}
   {\path{doi:10.1007/978-1-4614-6022-0}}.
-
-\bibitem{Laubscher2019b}
-R.~Laubscher, P.~Rousseau, {CFD study of pulverized coal-fired boiler
-  evaporator and radiant superheaters at varying loads}, Applied Thermal
-  Engineering 160.
-\newblock \href {http://dx.doi.org/10.1016/j.applthermaleng.2019.114057}
-  {\path{doi:10.1016/j.applthermaleng.2019.114057}}.
 
 \bibitem{Kakac1991}
 S.~Kakac, {Boilers, Evaporators and Condensers}, Wiley Interscience, 1991.

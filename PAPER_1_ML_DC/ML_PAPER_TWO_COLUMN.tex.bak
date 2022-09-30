@@ -222,7 +222,7 @@ A linear regression model was established as a base model for comparative purpos
 where $\beta_0$ is a constant term, $\beta_{m}$ is the $m$-th coefficient, and $n$ is the total number of observations.\\
  
 The optimal solution can be estimated by minimizing the cost function ($J$). A cost function usually calculates the difference between the estimated and the desired values and is reported as a single number. Multiple linear regression problems typically utilize the mean square error (MSE) between the desired and estimated ($\hat{y_i}$)  values \cite{Wheeler2019}, which is given in Equation \ref{eqn_lin_cost}.
- \begin{equation}\label{eqn_lin_cost}
+\begin{equation}\label{eqn_lin_cost}
 J_{MSE}=\frac{1}{n}\sum^n_{i=1}(y_i-\hat{y_i})^2
 \end{equation} 
 

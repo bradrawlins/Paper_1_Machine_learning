@@ -1,22 +1,76 @@
 
 \begin{thenomenclature} 
 \nomgroup{A}
-  \item [{$\rho$}]\begingroup Gas density \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{0}
-  \item [{$\rho_{eff}$}]\begingroup Effective density \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{0}
-  \item [{$E$}]\begingroup Total energy \nomunit{$J/kg$}\nomeqref {0}\nompageref{0}
-  \item [{$J_k$}]\begingroup Diffusion flux of species $k$ \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{0}
-  \item [{$p$}]\begingroup Pressure \nomunit{$Pa$}\nomeqref {0}\nompageref{0}
-  \item [{$S$}]\begingroup Mass source term \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{0}
-  \item [{$S_h$}]\begingroup Energy source term\nomunit{$W/m^3$}\nomeqref {0}\nompageref{0}
-  \item [{$S_k$}]\begingroup Species source term \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{0}
-  \item [{$S_m$}]\begingroup Momentum source term \nomunit{$N/m^3$}\nomeqref {0}\nompageref{0}
-  \item [{$T_g$}]\begingroup Gas temperature \nomunit{$K$}\nomeqref {0}\nompageref{0}
-  \item [{$u$}]\begingroup Directional velocity \nomunit{$m/s$}\nomeqref {0}\nompageref{0}
-  \item [{$Y_k$}]\begingroup Mass fraction of species $k$ \nomunit{$kg/kg$}\nomeqref {0}\nompageref{0}
+  \item [{$\bar{h}_{l}$}]\begingroup Neural network signal for layer $l$ \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$\bar{P}_r$}]\begingroup Surrogate model prediction vector \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$\bar{X}$}]\begingroup High-level input vector \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$\bar{Y}$}]\begingroup CFD solution output vector \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$\bar{z}_{l}$}]\begingroup Summed signal to network neural for layer $l$ \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$A$}]\begingroup Area \nomunit{$m^{2}$}\nomeqref {0}\nompageref{2}
+  \item [{$A_{c}$}]\begingroup Char pre-exponential factor \nomunit{$kg/m^2sPa$}\nomeqref {0}\nompageref{2}
+  \item [{$A_{vol}$}]\begingroup Volatile pre-exponential factor \nomunit{$s^{-1}$}\nomeqref {0}\nompageref{2}
+  \item [{$d_{p}$}]\begingroup Particle diameter \nomunit{$m$}\nomeqref {0}\nompageref{2}
+  \item [{$E$}]\begingroup Total energy \nomunit{$J/kg$}\nomeqref {0}\nompageref{2}
+  \item [{$E_{a,c}$}]\begingroup Char activation energy \nomunit{$J/mol$}\nomeqref {0}\nompageref{2}
+  \item [{$E_{a,vol}$}]\begingroup Volatile matter activation energy  \nomunit{$J/mol$}\nomeqref {0}\nompageref{2}
+  \item [{$h_{M}$}]\begingroup Mixture enthalpy \nomunit{$J/kg$}\nomeqref {0}\nompageref{2}
+  \item [{$J_k$}]\begingroup Diffusion flux of species $k$ \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{2}
+  \item [{$m_{b}$}]\begingroup Batch size \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$m_{c}$}]\begingroup Char mass \nomunit{$kg$}\nomeqref {0}\nompageref{2}
+  \item [{$m_{c}$}]\begingroup Volatile mass \nomunit{$kg$}\nomeqref {0}\nompageref{2}
+  \item [{$P$}]\begingroup Perimeter \nomunit{$m$}\nomeqref {0}\nompageref{2}
+  \item [{$p$}]\begingroup Pressure \nomunit{$Pa$}\nomeqref {0}\nompageref{2}
+  \item [{$p_{O_2}$}]\begingroup Oxygen partial pressure \nomunit{$Pa$}\nomeqref {0}\nompageref{2}
+  \item [{$R_{c}$}]\begingroup Chemical reaction rate \nomunit{$kg/m^2 sPa$}\nomeqref {0}\nompageref{2}
+  \item [{$R_{diff}$}]\begingroup Diffusion reaction rate coefficient \nomunit{$kg/m^2 sPa$}\nomeqref {0}\nompageref{2}
+  \item [{$R_{vol}$}]\begingroup Volatile reaction rate \nomunit{$s^{-1}$}\nomeqref {0}\nompageref{2}
+  \item [{$S$}]\begingroup Mass source term \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{2}
+  \item [{$S_h$}]\begingroup Energy source term\nomunit{$W/m^3$}\nomeqref {0}\nompageref{2}
+  \item [{$S_k$}]\begingroup Species source term \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{2}
+  \item [{$S_m$}]\begingroup Momentum source term \nomunit{$N/m^3$}\nomeqref {0}\nompageref{2}
+  \item [{$T_g$}]\begingroup Gas temperature \nomunit{$K$}\nomeqref {0}\nompageref{2}
+  \item [{$T_p$}]\begingroup Particle temperature \nomunit{$K$}\nomeqref {0}\nompageref{2}
+  \item [{$u$}]\begingroup Directional velocity \nomunit{$m/s$}\nomeqref {0}\nompageref{2}
+  \item [{$x$}]\begingroup Quality \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$Y_k$}]\begingroup Mass fraction of species $k$ \nomunit{$kg/kg$}\nomeqref {0}\nompageref{2}
 \nomgroup{B}
-  \item [{$\lambda$}]\begingroup Thermal conductivity \nomunit{$W/mK$}\nomeqref {0}\nompageref{0}
-  \item [{$\mu$}]\begingroup Viscosity \nomunit{$Pa.s$}\nomeqref {0}\nompageref{0}
+  \item [{$\alpha_{M}$}]\begingroup Mixture fraction \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$\bar{\mu}_k$}]\begingroup MDN predicted mean for distribution $k$ \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$\bar{\pi}_k$}]\begingroup MDN mixing coefficient for distribution $k$ \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$\bar{\theta}_k$}]\begingroup MDN standard deviation for distribution $k$ \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$\eta$}]\begingroup Learning rate \nomunit{$-$}\nomeqref {0}\nompageref{2}
+  \item [{$\lambda$}]\begingroup Thermal conductivity \nomunit{$W/mK$}\nomeqref {0}\nompageref{2}
+  \item [{$\mu$}]\begingroup Viscosity \nomunit{$Pa.s$}\nomeqref {0}\nompageref{2}
+  \item [{$\phi_{mp}$}]\begingroup Pseudo particle mass fraction \nomunit{$kg/kg_{fuel}$}\nomeqref {0}\nompageref{2}
+  \item [{$\rho$}]\begingroup Gas density \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{2}
+  \item [{$\rho_{eff}$}]\begingroup Effective density \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{2}
+  \item [{$\rho_{g}$}]\begingroup Gas phase density \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{2}
+  \item [{$\rho_{l}$}]\begingroup Liquid phase density \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{2}
+  \item [{$\rho_{M}$}]\begingroup Mixture density \nomunit{$kg/m^3$}\nomeqref {0}\nompageref{2}
 \nomgroup{C}
-  \item [{$CFD$}]\begingroup Computational Fluid Dynamics\nomeqref {0}\nompageref{0}
+  \item [{$ANN$}]\begingroup Artificial Neural Network\nomeqref {0}\nompageref{2}
+  \item [{$ATT$-$RH$}]\begingroup Reheater Attemperator\nomeqref {0}\nompageref{2}
+  \item [{$ATT1$}]\begingroup Attemperator 2\nomeqref {0}\nompageref{2}
+  \item [{$ATT2$}]\begingroup Attemperator 1\nomeqref {0}\nompageref{2}
+  \item [{$CFD$}]\begingroup Computational Fluid Dynamics\nomeqref {0}\nompageref{2}
+  \item [{$DOE$}]\begingroup Design of Experiments\nomeqref {0}\nompageref{2}
+  \item [{$EC$}]\begingroup Economiser\nomeqref {0}\nompageref{2}
+  \item [{$EDM$}]\begingroup Eddy Dissipation Model\nomeqref {0}\nompageref{2}
+  \item [{$EV$}]\begingroup Evaporator\nomeqref {0}\nompageref{2}
+  \item [{$HHV$}]\begingroup Higher Heating Value\nomeqref {0}\nompageref{2}
+  \item [{$J_{MSE}$}]\begingroup Mean Square Error cost function\nomeqref {0}\nompageref{2}
+  \item [{$J_{NLL}$}]\begingroup Negative Log Likelihood cost function\nomeqref {0}\nompageref{2}
+  \item [{$MAE$}]\begingroup Mean Absolute Error\nomeqref {0}\nompageref{2}
+  \item [{$MDN$}]\begingroup Mixture Density Network\nomeqref {0}\nompageref{2}
+  \item [{$MLP$}]\begingroup Multi-layer Perceptron\nomeqref {0}\nompageref{2}
+  \item [{$MSE$}]\begingroup Mean Square Error\nomeqref {0}\nompageref{2}
+  \item [{$RH1$}]\begingroup Primary Reheater\nomeqref {0}\nompageref{2}
+  \item [{$RH2$}]\begingroup Secondary Reheater\nomeqref {0}\nompageref{2}
+  \item [{$RMSE$}]\begingroup Root Mean Square\nomeqref {0}\nompageref{2}
+  \item [{$RNN$}]\begingroup Recurrent Neural Network\nomeqref {0}\nompageref{2}
+  \item [{$ROM$}]\begingroup Reduced Order Model\nomeqref {0}\nompageref{2}
+  \item [{$SH1$}]\begingroup Primary Superheater\nomeqref {0}\nompageref{2}
+  \item [{$SH2$}]\begingroup Platen Superheater\nomeqref {0}\nompageref{2}
+  \item [{$SH3$}]\begingroup Final Superheater\nomeqref {0}\nompageref{2}
 
 \end{thenomenclature}
